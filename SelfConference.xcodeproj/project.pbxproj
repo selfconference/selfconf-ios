@@ -13,7 +13,7 @@
 		1F0BAA881A9989890059C73A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BAA871A9989890059C73A /* LaunchScreen.xib */; };
 		1F0BAA8B1A998D520059C73A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BAA8A1A998D520059C73A /* Main.storyboard */; };
 		1F0BAA8F1A998FFD0059C73A /* SCSchedulePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAA8E1A998FFD0059C73A /* SCSchedulePageViewController.m */; };
-		1F0BAA931A9990B10059C73A /* SCDayScheduleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAA911A9990B10059C73A /* SCDayScheduleTableViewController.m */; };
+		1F0BAA931A9990B10059C73A /* SCDayScheduleCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAA911A9990B10059C73A /* SCDayScheduleCollectionViewController.m */; };
 		1F0BAA981A9994970059C73A /* SCSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAA971A9994970059C73A /* SCSession.m */; };
 		1F0BAA9B1A9995850059C73A /* SCSpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAA9A1A9995850059C73A /* SCSpeaker.m */; };
 		1F0BAA9E1A9995DE0059C73A /* SCRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAA9D1A9995DE0059C73A /* SCRoom.m */; };
@@ -43,8 +43,8 @@
 		1F0BAA8A1A998D520059C73A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1F0BAA8D1A998FFD0059C73A /* SCSchedulePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSchedulePageViewController.h; sourceTree = "<group>"; };
 		1F0BAA8E1A998FFD0059C73A /* SCSchedulePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSchedulePageViewController.m; sourceTree = "<group>"; };
-		1F0BAA901A9990B10059C73A /* SCDayScheduleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCDayScheduleTableViewController.h; path = ../Views/SCDayScheduleTableViewController.h; sourceTree = "<group>"; };
-		1F0BAA911A9990B10059C73A /* SCDayScheduleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCDayScheduleTableViewController.m; path = ../Views/SCDayScheduleTableViewController.m; sourceTree = "<group>"; };
+		1F0BAA901A9990B10059C73A /* SCDayScheduleCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCDayScheduleCollectionViewController.h; path = ../Views/SCDayScheduleCollectionViewController.h; sourceTree = "<group>"; };
+		1F0BAA911A9990B10059C73A /* SCDayScheduleCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCDayScheduleCollectionViewController.m; path = ../Views/SCDayScheduleCollectionViewController.m; sourceTree = "<group>"; };
 		1F0BAA961A9994970059C73A /* SCSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSession.h; sourceTree = "<group>"; };
 		1F0BAA971A9994970059C73A /* SCSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSession.m; sourceTree = "<group>"; };
 		1F0BAA991A9995850059C73A /* SCSpeaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSpeaker.h; sourceTree = "<group>"; };
@@ -129,8 +129,8 @@
 			children = (
 				1F0BAA8D1A998FFD0059C73A /* SCSchedulePageViewController.h */,
 				1F0BAA8E1A998FFD0059C73A /* SCSchedulePageViewController.m */,
-				1F0BAA901A9990B10059C73A /* SCDayScheduleTableViewController.h */,
-				1F0BAA911A9990B10059C73A /* SCDayScheduleTableViewController.m */,
+				1F0BAA901A9990B10059C73A /* SCDayScheduleCollectionViewController.h */,
+				1F0BAA911A9990B10059C73A /* SCDayScheduleCollectionViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -403,7 +403,7 @@
 				1F0BAA9B1A9995850059C73A /* SCSpeaker.m in Sources */,
 				1F0BAA9E1A9995DE0059C73A /* SCRoom.m in Sources */,
 				1F0BAA981A9994970059C73A /* SCSession.m in Sources */,
-				1F0BAA931A9990B10059C73A /* SCDayScheduleTableViewController.m in Sources */,
+				1F0BAA931A9990B10059C73A /* SCDayScheduleCollectionViewController.m in Sources */,
 				1F0BAAA51A99A3680059C73A /* SCSharedStoryboardInstances.m in Sources */,
 				1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */,
 				1F0BAA8F1A998FFD0059C73A /* SCSchedulePageViewController.m in Sources */,
