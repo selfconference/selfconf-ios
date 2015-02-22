@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class SCSession;
+
 @interface SCSessionCollectionViewCell : UICollectionViewCell
+
+/** Configures the cell for the given 'SCSession' instance */
+@property (nonatomic) SCSession *session;
 
 @end

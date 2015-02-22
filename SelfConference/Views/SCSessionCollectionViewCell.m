@@ -7,6 +7,7 @@
 //
 
 #import "SCSessionCollectionViewCell.h"
+#import "SCSession.h"
 
 @interface SCSessionCollectionViewCell ()
 
@@ -17,5 +18,17 @@
 @end
 
 @implementation SCSessionCollectionViewCell
+
+- (void)setSession:(SCSession *)session {
+    self.nameLabel.text = session.name;
+    self.detailsLabel.text = session.details;
+    
+    NSArray *speakerNames =
+    [session.speakers valueForKey:NSStringFromSelector(@selector(name))];
+    
+    self.speakersLabel.text = [speakerNames componentsJoinedByString:@", "];
+    
+    _session = session;
+}
 
 @end
