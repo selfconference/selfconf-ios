@@ -8,11 +8,16 @@
 
 #import "SCAppDelegate.h"
 #import "SCParseSetupService.h"
+#import "SCSession.h"
 
 @implementation SCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [SCParseSetupService setupWithLaunchOptions:launchOptions];
+    
+    [SCSession fetchAllSessionsFromTheAPIWithBlock:^(NSArray *sessions, NSError *error) {
+        
+    }];
     
     return YES;
 }
