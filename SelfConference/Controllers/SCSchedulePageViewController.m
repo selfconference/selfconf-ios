@@ -75,4 +75,14 @@
     return nextViewController;
 }
 
+#pragma mark - UIPageViewControllerDataSource methods
+
+- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
+    return self.viewControllersToUse.count;
+}
+
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
+    return [self.viewControllersToUse indexOfObject:pageViewController.viewControllers.firstObject];
+}
+
 @end

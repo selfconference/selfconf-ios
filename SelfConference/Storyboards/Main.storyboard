@@ -9,7 +9,7 @@
             <objects>
                 <tabBarController id="SOT-3y-gyG" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="WcL-KC-pSn">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="WcL-KC-pSn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
