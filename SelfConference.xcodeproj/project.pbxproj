@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F7392B81A9985BE00F4B10F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7392B71A9985BE00F4B10F /* main.m */; };
+		1F0BAA7A1A99886F0059C73A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BAA781A99886F0059C73A /* Info.plist */; };
+		1F0BAA7B1A99886F0059C73A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAA791A99886F0059C73A /* main.m */; };
 		1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */; };
 		1F7392C61A9985BE00F4B10F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F7392C51A9985BE00F4B10F /* Images.xcassets */; };
 		1F7392C91A9985BE00F4B10F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F7392C71A9985BE00F4B10F /* LaunchScreen.xib */; };
@@ -26,9 +27,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F0BAA781A99886F0059C73A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F0BAA791A99886F0059C73A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F7392B21A9985BE00F4B10F /* SelfConference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelfConference.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F7392B61A9985BE00F4B10F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1F7392B71A9985BE00F4B10F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F7392B91A9985BE00F4B10F /* SCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCAppDelegate.h; sourceTree = "<group>"; };
 		1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCAppDelegate.m; sourceTree = "<group>"; };
 		1F7392C51A9985BE00F4B10F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -60,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F0BAA771A99886F0059C73A /* Supporting-Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F0BAA781A99886F0059C73A /* Info.plist */,
+				1F0BAA791A99886F0059C73A /* main.m */,
+			);
+			path = "Supporting-Files";
+			sourceTree = "<group>";
+		};
 		1F7392A91A9985BD00F4B10F = {
 			isa = PBXGroup;
 			children = (
@@ -87,18 +97,9 @@
 				1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */,
 				1F7392C51A9985BE00F4B10F /* Images.xcassets */,
 				1F7392C71A9985BE00F4B10F /* LaunchScreen.xib */,
-				1F7392B51A9985BE00F4B10F /* Supporting Files */,
+				1F0BAA771A99886F0059C73A /* Supporting-Files */,
 			);
 			path = SelfConference;
-			sourceTree = "<group>";
-		};
-		1F7392B51A9985BE00F4B10F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				1F7392B61A9985BE00F4B10F /* Info.plist */,
-				1F7392B71A9985BE00F4B10F /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		1F7392D11A9985BE00F4B10F /* SelfConferenceTests */ = {
@@ -219,6 +220,7 @@
 			files = (
 				1F7392C91A9985BE00F4B10F /* LaunchScreen.xib in Resources */,
 				1F7392C61A9985BE00F4B10F /* Images.xcassets in Resources */,
+				1F0BAA7A1A99886F0059C73A /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,8 +271,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F0BAA7B1A99886F0059C73A /* main.m in Sources */,
 				1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */,
-				1F7392B81A9985BE00F4B10F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,7 +388,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = SelfConference/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SelfConference/Supporting-Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -396,7 +398,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = SelfConference/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SelfConference/Supporting-Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
