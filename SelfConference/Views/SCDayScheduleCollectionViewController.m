@@ -19,15 +19,24 @@
 
 @implementation SCDayScheduleCollectionViewController
 
-- (void)setStartOfDay:(NSDate *)startOfDay {
-    [SCSession
-     getLocalSessionsWithStartOfDay:startOfDay
-     block:^(NSArray *sessions, NSError *error) {
-         self.sessions = sessions;
-         [self.collectionView reloadData];
-     }];
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(reloadSessionsLocally)
+     name:kSCSessionNotificationNameForInstancesWereUpdatedFromTheServer
+     object:nil];
+}
+
+- (void)setStartOfDay:(NSDate *)startOfDay {
     _startOfDay = startOfDay;
+    
+    [self reloadSessionsLocally];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -57,6 +66,21 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return CGSizeMake(320.0f, 175.0f);
+}
+
+#pragma mark - Other
+
+/** 
+ Fetches all of the 'SCSession' instances for '_startOfDay', stores them, then 
+ reloads '_collectionView'. 
+ */
+- (void)reloadSessionsLocally {
+    [SCSession
+     getLocalSessionsWithStartOfDay:self.startOfDay
+     block:^(NSArray *sessions, NSError *error) {
+         self.sessions = sessions;
+         [self.collectionView reloadData];
+     }];
 }
 
 @end
