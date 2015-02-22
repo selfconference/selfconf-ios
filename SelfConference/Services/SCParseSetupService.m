@@ -22,6 +22,8 @@
     [self registerWithParse];
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    [self fetchConfig];
 }
 
 #pragma mark - Internal
