@@ -17,6 +17,8 @@
 + (void)setupWithLaunchOptions:(NSDictionary*)launchOptions {
     [self setDefaultACLs];
     
+    [Parse enableLocalDatastore];
+    
     [self registerWithParse];
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
