@@ -19,4 +19,14 @@
     return @"Session";
 }
 
++ (void)getLocalSessionsWithCompletionBlock:(SCSessionFetchSessionsWithErrorBlock)block {
+    PFQuery *query = [self query];
+    [query fromLocalDatastore];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (block) {
+            block(objects, error);
+        }
+    }];
+}
+
 @end

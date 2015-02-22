@@ -10,6 +10,8 @@
 #import <Parse/PFSubclassing.h>
 #import <Parse/PFRelation.h>
 
+typedef void (^SCSessionFetchSessionsWithErrorBlock)(NSArray *sessions, NSError *error);
+
 @class SCSpeaker, SCRoom;
 
 @interface SCSession : PFObject <PFSubclassing>
@@ -28,5 +30,8 @@
 
 /** A relationship of many 'SCSpeaker' instances who own the session. */
 @property (nonatomic) NSArray *speakers;
+
+/** Asynchronously fetches 'SCSession' instances that live on the device's database. */
++ (void)getLocalSessionsWithCompletionBlock:(SCSessionFetchSessionsWithErrorBlock)block;
 
 @end
