@@ -8,6 +8,7 @@
 
 #import <Parse/PFObject.h>
 #import <Parse/PFSubclassing.h>
+#import <Parse/PFRelation.h>
 
 @interface SCRoom : PFObject <PFSubclassing>
 
