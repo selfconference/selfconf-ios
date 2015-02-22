@@ -49,4 +49,25 @@
     [SCRoom registerSubclass];
 }
 
+/** 
+ Fetches the config at most once every 12 hours per app runtime. This is 
+ accessible using '[PFConfig currentConfig]' throughout the app. 
+ */
++ (void)fetchConfig {
+    // Fetches the config at most once every 12 hours per app runtime
+    const NSTimeInterval configRefreshInterval = 12.0 * 60.0 * 60.0;
+    
+    static NSDate *configLastFetchedAt;
+    
+    if (!configLastFetchedAt ||
+        [configLastFetchedAt timeIntervalSinceNow] * -1.0 > configRefreshInterval) {
+        // Intentionally running this synchronously so we can use the values
+        // right away. According to the docs, this is a super lightweight call,
+        // so this shouldn't be too big of a deal
+        // https://parse.com/docs/ios_guide#config/iOS
+        [PFConfig getConfig];
+        configLastFetchedAt = [NSDate date];
+    }
+}
+
 @end
