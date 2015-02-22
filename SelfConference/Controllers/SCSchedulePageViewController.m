@@ -8,6 +8,7 @@
 
 #import "SCSchedulePageViewController.h"
 #import "SCDayScheduleTableViewController.h"
+#import "SCSharedStoryboardInstances.h"
 
 @interface SCSchedulePageViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
@@ -35,10 +36,10 @@
         NSMutableArray *viewControllersToUse = [NSMutableArray array];
         
         // Day one
-        [viewControllersToUse addObject:[SCDayScheduleTableViewController new]];
+        [viewControllersToUse addObject:[self createSCDayScheduleTableViewControllerInstance]];
 
         // Day two
-        [viewControllersToUse addObject:[SCDayScheduleTableViewController new]];
+        [viewControllersToUse addObject:[self createSCDayScheduleTableViewControllerInstance]];
         
         _viewControllersToUse = viewControllersToUse;
     }
@@ -83,6 +84,20 @@
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
     return [self.viewControllersToUse indexOfObject:pageViewController.viewControllers.firstObject];
+}
+         
+#pragma mark - Other
+
+/** 
+ Instantiates a new 'SCDayScheduleTableViewController' instance from 
+ 'Main.storyboard'.
+ */
+- (SCDayScheduleTableViewController *)createSCDayScheduleTableViewControllerInstance {
+    NSString *dayScheduleTableViewControllerClassName =
+    NSStringFromClass([SCDayScheduleTableViewController class]);
+    
+    return [[SCSharedStoryboardInstances sharedMainStoryboardInstance]
+            instantiateViewControllerWithIdentifier:dayScheduleTableViewControllerClassName];
 }
 
 @end
