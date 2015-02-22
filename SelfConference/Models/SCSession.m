@@ -8,6 +8,8 @@
 
 #import "SCSession.h"
 #import <Parse/PFObject+Subclass.h>
+#import <MTDates/NSDate+MTDates.h>
+#import "NSError+SCError.h"
 
 @implementation SCSession
 
@@ -19,14 +21,33 @@
     return @"Session";
 }
 
-+ (void)getLocalSessionsWithCompletionBlock:(SCSessionFetchSessionsWithErrorBlock)block {
-    PFQuery *query = [self query];
-    [query fromLocalDatastore];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
++ (void)getLocalSessionsWithStartOfDay:(NSDate *)startOfDay
+                                 block:(SCSessionFetchSessionsWithErrorBlock)block {
+    if (!startOfDay) {
         if (block) {
-            block(objects, error);
+            block(nil, [NSError SC_errorWithDescription:@"Expected startOfDay to be non-nil"]);
         }
-    }];
+    }
+    else {
+        PFQuery *query = [self query];
+        [query fromLocalDatastore];
+        
+        [query
+         whereKey:NSStringFromSelector(@selector(scheduledAt))
+         greaterThanOrEqualTo:startOfDay];
+        
+        NSDate *startOfNextDay = [startOfDay mt_dateDaysAfter:1];
+        
+        [query
+         whereKey:NSStringFromSelector(@selector(scheduledAt))
+         lessThanOrEqualTo:startOfNextDay];
+        
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (block) {
+                block(objects, error);
+            }
+        }];
+    }
 }
 
 @end

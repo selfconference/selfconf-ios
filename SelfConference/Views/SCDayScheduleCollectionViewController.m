@@ -19,14 +19,15 @@
 
 @implementation SCDayScheduleCollectionViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
+- (void)setStartOfDay:(NSDate *)startOfDay {
     [SCSession
-     getLocalSessionsWithCompletionBlock:^(NSArray *sessions, NSError *error) {
-        self.sessions = sessions;
-        [self.collectionView reloadData];
-    }];
+     getLocalSessionsWithStartOfDay:startOfDay
+     block:^(NSArray *sessions, NSError *error) {
+         self.sessions = sessions;
+         [self.collectionView reloadData];
+     }];
+    
+    _startOfDay = startOfDay;
 }
 
 #pragma mark - UICollectionViewDataSource

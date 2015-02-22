@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+/** 
+ Represents a single day full of sessions. The day is determined by 
+ 'startOfDay'. 
+ */
 @interface SCDayScheduleCollectionViewController : UICollectionViewController
 
 /** Represents the beginning of the day in which this view controller represents */

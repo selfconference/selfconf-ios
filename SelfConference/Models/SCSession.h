@@ -31,7 +31,12 @@ typedef void (^SCSessionFetchSessionsWithErrorBlock)(NSArray *sessions, NSError 
 /** A relationship of many 'SCSpeaker' instances who own the session. */
 @property (nonatomic) NSArray *speakers;
 
-/** Asynchronously fetches 'SCSession' instances that live on the device's database. */
-+ (void)getLocalSessionsWithCompletionBlock:(SCSessionFetchSessionsWithErrorBlock)block;
+/** 
+ Asynchronously fetches 'SCSession' instances that live on the device's database 
+ for the given 'startOfDay'. Any sessions prior to 'startOfDay' or 24+ hours
+ after 'startOfDay' are ignored.
+ */
++ (void)getLocalSessionsWithStartOfDay:(NSDate *)startOfDay
+                                 block:(SCSessionFetchSessionsWithErrorBlock)block;
 
 @end
