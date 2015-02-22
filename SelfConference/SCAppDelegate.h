@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  AppDelegate.h
 //  SelfConference
 //
 //  Created by Jeff Burt on 2/21/15.
@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface SCAppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
 
 
 @end

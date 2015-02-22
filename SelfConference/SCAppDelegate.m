@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Self Conference. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "SCAppDelegate.h"
 
-@interface AppDelegate ()
+@interface SCAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation SCAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
