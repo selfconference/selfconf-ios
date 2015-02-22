@@ -9,6 +9,9 @@
 #import "SCSchedulePageViewController.h"
 #import "SCDayScheduleCollectionViewController.h"
 #import "SCSharedStoryboardInstances.h"
+#import <Parse/PFConfig.h>
+#import "SCConfigStrings.h"
+#import <MTDates/NSDate+MTDates.h>
 
 @interface SCSchedulePageViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
@@ -35,11 +38,20 @@
     if (!_viewControllersToUse) {
         NSMutableArray *viewControllersToUse = [NSMutableArray array];
         
+        // Most likely returns 8:00 am EST
+        NSDate *conferenceStartTime =
+        [PFConfig currentConfig][SCConfigStrings.conferenceStartTime];
+        
+        NSDate *beginningOfDay1 = conferenceStartTime.mt_startOfCurrentDay;
+        NSDate *beginningOfDay2 = [beginningOfDay1 mt_dateDaysAfter:1];
+        
         // Day one
-        [viewControllersToUse addObject:[self createSCDayScheduleCollectionViewControllerInstance]];
+        [viewControllersToUse
+         addObject:[self createSCDayScheduleCollectionViewControllerInstanceWithStartOfDay:beginningOfDay1]];
 
         // Day two
-        [viewControllersToUse addObject:[self createSCDayScheduleCollectionViewControllerInstance]];
+        [viewControllersToUse
+         addObject:[self createSCDayScheduleCollectionViewControllerInstanceWithStartOfDay:beginningOfDay2]];
         
         _viewControllersToUse = viewControllersToUse;
     }
@@ -92,12 +104,17 @@
  Instantiates a new 'SCDayScheduleCollectionViewController' instance from 
  'Main.storyboard'.
  */
-- (SCDayScheduleCollectionViewController *)createSCDayScheduleCollectionViewControllerInstance {
+- (SCDayScheduleCollectionViewController *)createSCDayScheduleCollectionViewControllerInstanceWithStartOfDay:(NSDate *)startOfDay {
     NSString *dayScheduleTableViewControllerClassName =
     NSStringFromClass([SCDayScheduleCollectionViewController class]);
     
-    return [[SCSharedStoryboardInstances sharedMainStoryboardInstance]
-            instantiateViewControllerWithIdentifier:dayScheduleTableViewControllerClassName];
+    SCDayScheduleCollectionViewController *dayScheduleCollectionViewController =
+    [[SCSharedStoryboardInstances sharedMainStoryboardInstance]
+     instantiateViewControllerWithIdentifier:dayScheduleTableViewControllerClassName];
+    
+    dayScheduleCollectionViewController.startOfDay = startOfDay;
+    
+    return dayScheduleCollectionViewController;
 }
 
 @end
