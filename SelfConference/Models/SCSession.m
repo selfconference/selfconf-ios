@@ -11,6 +11,8 @@
 
 @implementation SCSession
 
+@dynamic name, scheduledAt, room, speakers;
+
 #pragma mark - PFSubclassing
 
 + (NSString *)parseClassName {
