@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F0BAA7A1A99886F0059C73A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BAA781A99886F0059C73A /* Info.plist */; };
 		1F0BAA7B1A99886F0059C73A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAA791A99886F0059C73A /* main.m */; };
 		1F0BAA851A9989460059C73A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BAA841A9989460059C73A /* Images.xcassets */; };
 		1F0BAA881A9989890059C73A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BAA871A9989890059C73A /* LaunchScreen.xib */; };
@@ -352,7 +351,6 @@
 			files = (
 				1F0BAA881A9989890059C73A /* LaunchScreen.xib in Resources */,
 				1F0BAA851A9989460059C73A /* Images.xcassets in Resources */,
-				1F0BAA7A1A99886F0059C73A /* Info.plist in Resources */,
 				1F0BAA8B1A998D520059C73A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
