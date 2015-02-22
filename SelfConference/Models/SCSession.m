@@ -11,7 +11,7 @@
 
 @implementation SCSession
 
-@dynamic name, scheduledAt, room, speakers;
+@dynamic name, details, scheduledAt, room, speakers;
 
 #pragma mark - PFSubclassing
 

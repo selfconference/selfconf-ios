@@ -17,6 +17,9 @@
 /** The name of the session. */
 @property (nonatomic) NSString *name;
 
+/** The details of the session. */
+@property (nonatomic) NSString *details;
+
 /** The date when the session is scheduled to take place. */
 @property (nonatomic) NSDate *scheduledAt;
 
