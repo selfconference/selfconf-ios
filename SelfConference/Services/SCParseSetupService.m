@@ -11,6 +11,7 @@
 #import "SCSession.h"
 #import "SCSpeaker.h"
 #import "SCRoom.h"
+#import "NSUserDefaults+SCUserDefaults.h"
 
 @implementation SCParseSetupService
 
@@ -59,7 +60,9 @@
     // Fetches the config at most once every 12 hours per app runtime
     const NSTimeInterval configRefreshInterval = 12.0 * 60.0 * 60.0;
     
-    static NSDate *configLastFetchedAt;
+    NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSDate *configLastFetchedAt = standardUserDefaults.SC_configLastFetchedAt;
     
     if (!configLastFetchedAt ||
         [configLastFetchedAt timeIntervalSinceNow] * -1.0 > configRefreshInterval) {
@@ -68,7 +71,8 @@
         // so this shouldn't be too big of a deal
         // https://parse.com/docs/ios_guide#config/iOS
         [PFConfig getConfig];
-        configLastFetchedAt = [NSDate date];
+        
+        [standardUserDefaults SC_setConfigLastFetchedAt:[NSDate date]];
     }
 }
 
