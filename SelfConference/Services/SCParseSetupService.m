@@ -53,12 +53,12 @@
 }
 
 /** 
- Fetches the config at most once every 12 hours per app runtime. This is 
+ Fetches the config at most once every 3 hours per app runtime. This is 
  accessible using '[PFConfig currentConfig]' throughout the app. 
  */
 + (void)fetchConfig {
-    // Fetches the config at most once every 12 hours per app runtime
-    const NSTimeInterval configRefreshInterval = 12.0 * 60.0 * 60.0;
+    // Fetches the config at most once every 3 hours per app runtime
+    const NSTimeInterval configRefreshInterval = 3.0 * 60.0 * 60.0;
     
     NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
     
