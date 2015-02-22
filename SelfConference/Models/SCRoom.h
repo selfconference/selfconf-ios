@@ -15,7 +15,4 @@
 /** The name of the room. */
 @property (nonatomic) NSString *name;
 
-/** The 'SCSession' instances that are hosted in this room. */
-@property (nonatomic) PFRelation *sessions;
-
 @end

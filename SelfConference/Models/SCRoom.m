@@ -13,7 +13,7 @@
 
 #pragma mark - PFSubclassing
 
-@dynamic name, sessions;
+@dynamic name;
 
 + (NSString *)parseClassName {
     return @"Room";

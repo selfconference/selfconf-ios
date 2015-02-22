@@ -24,6 +24,6 @@
 @property (nonatomic) SCRoom *room;
 
 /** A relationship of many 'SCSpeaker' instances who own the session. */
-@property (nonatomic) PFRelation *speakers;
+@property (nonatomic) NSArray *speakers;
 
 @end

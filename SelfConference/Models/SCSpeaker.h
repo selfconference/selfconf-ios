@@ -21,7 +21,4 @@
 /** The biography of the speaker. */
 @property (nonatomic) NSString *biography;
 
-/** A relationship of many 'SCSession' instances who own the session. */
-@property (nonatomic) PFRelation *sessions;
-
 @end

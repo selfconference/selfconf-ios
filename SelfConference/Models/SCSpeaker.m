@@ -13,7 +13,7 @@
 
 #pragma mark - PFSubclassing
 
-@dynamic name, twitterHandle, biography, sessions;
+@dynamic name, twitterHandle, biography;
 
 + (NSString *)parseClassName {
     return @"Speaker";
