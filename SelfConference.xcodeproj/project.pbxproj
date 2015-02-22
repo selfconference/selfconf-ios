@@ -13,6 +13,8 @@
 		1F0BAA881A9989890059C73A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BAA871A9989890059C73A /* LaunchScreen.xib */; };
 		1F0BAA8B1A998D520059C73A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BAA8A1A998D520059C73A /* Main.storyboard */; };
 		1F0BAA8F1A998FFD0059C73A /* SCSchedulePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAA8E1A998FFD0059C73A /* SCSchedulePageViewController.m */; };
+		1F0BAA931A9990B10059C73A /* SCDayScheduleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAA911A9990B10059C73A /* SCDayScheduleTableViewController.m */; };
+		1F0BAA941A9990B10059C73A /* SCDayScheduleTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BAA921A9990B10059C73A /* SCDayScheduleTableViewController.xib */; };
 		1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */; };
 		1F7392D51A9985BE00F4B10F /* SelfConferenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7392D41A9985BE00F4B10F /* SelfConferenceTests.m */; };
 		52177A65E8B8CFE8659C76EF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1457BA96527132726AC017 /* libPods.a */; };
@@ -37,6 +39,9 @@
 		1F0BAA8A1A998D520059C73A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1F0BAA8D1A998FFD0059C73A /* SCSchedulePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSchedulePageViewController.h; sourceTree = "<group>"; };
 		1F0BAA8E1A998FFD0059C73A /* SCSchedulePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSchedulePageViewController.m; sourceTree = "<group>"; };
+		1F0BAA901A9990B10059C73A /* SCDayScheduleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCDayScheduleTableViewController.h; path = ../Views/SCDayScheduleTableViewController.h; sourceTree = "<group>"; };
+		1F0BAA911A9990B10059C73A /* SCDayScheduleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCDayScheduleTableViewController.m; path = ../Views/SCDayScheduleTableViewController.m; sourceTree = "<group>"; };
+		1F0BAA921A9990B10059C73A /* SCDayScheduleTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SCDayScheduleTableViewController.xib; path = ../Views/SCDayScheduleTableViewController.xib; sourceTree = "<group>"; };
 		1F7392B21A9985BE00F4B10F /* SelfConference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelfConference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7392B91A9985BE00F4B10F /* SCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCAppDelegate.h; sourceTree = "<group>"; };
 		1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCAppDelegate.m; sourceTree = "<group>"; };
@@ -109,6 +114,9 @@
 			children = (
 				1F0BAA8D1A998FFD0059C73A /* SCSchedulePageViewController.h */,
 				1F0BAA8E1A998FFD0059C73A /* SCSchedulePageViewController.m */,
+				1F0BAA901A9990B10059C73A /* SCDayScheduleTableViewController.h */,
+				1F0BAA911A9990B10059C73A /* SCDayScheduleTableViewController.m */,
+				1F0BAA921A9990B10059C73A /* SCDayScheduleTableViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -269,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F0BAA881A9989890059C73A /* LaunchScreen.xib in Resources */,
+				1F0BAA941A9990B10059C73A /* SCDayScheduleTableViewController.xib in Resources */,
 				1F0BAA851A9989460059C73A /* Images.xcassets in Resources */,
 				1F0BAA7A1A99886F0059C73A /* Info.plist in Resources */,
 				1F0BAA8B1A998D520059C73A /* Main.storyboard in Resources */,
@@ -353,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F0BAA7B1A99886F0059C73A /* main.m in Sources */,
+				1F0BAA931A9990B10059C73A /* SCDayScheduleTableViewController.m in Sources */,
 				1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */,
 				1F0BAA8F1A998FFD0059C73A /* SCSchedulePageViewController.m in Sources */,
 			);
