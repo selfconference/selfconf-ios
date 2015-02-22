@@ -12,6 +12,9 @@
 
 typedef void (^SCSessionFetchSessionsWithErrorBlock)(NSArray *sessions, NSError *error);
 
+/** Gets posted when 'SCSession' instances were updated from the server */
+FOUNDATION_EXPORT NSString * const kSCSessionNotificationNameForInstancesWereUpdatedFromTheServer;
+
 @class SCSpeaker, SCRoom;
 
 @interface SCSession : PFObject <PFSubclassing>
@@ -38,5 +41,8 @@ typedef void (^SCSessionFetchSessionsWithErrorBlock)(NSArray *sessions, NSError 
  */
 + (void)getLocalSessionsWithStartOfDay:(NSDate *)startOfDay
                                  block:(SCSessionFetchSessionsWithErrorBlock)block;
+
+/** Fetches all of the recently updated 'SCSession' instances from the server. */
++ (void)fetchAllSessionsFromTheAPIWithBlock:(SCSessionFetchSessionsWithErrorBlock)block;
 
 @end
