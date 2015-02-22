@@ -46,16 +46,57 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SCSessionCollectionViewCell" id="Nmc-7q-EOh">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SCSessionCollectionViewCell" id="Nmc-7q-EOh" customClass="SCSessionCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="175"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" ambiguous="YES" misplaced="YES" text="A Gentle Introduction to OpenGL ES on iOS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJc-6f-N1b" userLabel="Name Label">
+                                            <rect key="frame" x="20" y="20" width="280" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" ambiguous="YES" misplaced="YES" text="Jeff Kelley" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ab9-Bi-spV" userLabel="Speakers Label">
+                                            <rect key="frame" x="20" y="130" width="280" height="25"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="751" ambiguous="YES" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHY-jv-h5b" userLabel="Details Label">
+                                            <rect key="frame" x="20" y="60" width="280" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="FPx-Xp-843"/>
+                                            </constraints>
+                                            <string key="text">OpenGL ES is one of the most intimidating technology stacks on mobile platforms today. Outside of audio/video processing, there isn’t much with the same performance demands, intractable troubleshooting, and deeply entrenched knowledge. Yet the introductory texts available online tend to be of two varieties: “Introduction to OpenGL” and “OpenGL ES If You’re An OpenGL Expert.”</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="customSize" width="320" height="100"/>
+                                <constraints>
+                                    <constraint firstItem="nJc-6f-N1b" firstAttribute="trailing" secondItem="mHY-jv-h5b" secondAttribute="trailing" id="2Bu-Md-ql7"/>
+                                    <constraint firstAttribute="bottom" secondItem="ab9-Bi-spV" secondAttribute="bottom" constant="20" id="BZy-YI-QaE"/>
+                                    <constraint firstItem="nJc-6f-N1b" firstAttribute="top" secondItem="Nmc-7q-EOh" secondAttribute="top" constant="20" id="F5O-RI-UcL"/>
+                                    <constraint firstItem="mHY-jv-h5b" firstAttribute="top" secondItem="nJc-6f-N1b" secondAttribute="bottom" constant="20" id="IKV-aT-Z2L"/>
+                                    <constraint firstAttribute="trailing" secondItem="nJc-6f-N1b" secondAttribute="trailing" constant="20" id="OZH-KG-Xit"/>
+                                    <constraint firstItem="ab9-Bi-spV" firstAttribute="top" secondItem="mHY-jv-h5b" secondAttribute="bottom" constant="20" id="SlU-Kb-ly0"/>
+                                    <constraint firstItem="nJc-6f-N1b" firstAttribute="leading" secondItem="ab9-Bi-spV" secondAttribute="leading" id="flL-0g-48l"/>
+                                    <constraint firstItem="nJc-6f-N1b" firstAttribute="leading" secondItem="mHY-jv-h5b" secondAttribute="leading" id="itH-lm-PvT"/>
+                                    <constraint firstItem="nJc-6f-N1b" firstAttribute="trailing" secondItem="ab9-Bi-spV" secondAttribute="trailing" id="rJp-Yj-UVD"/>
+                                    <constraint firstItem="nJc-6f-N1b" firstAttribute="leading" secondItem="Nmc-7q-EOh" secondAttribute="leading" constant="20" id="yHb-hN-Xi5"/>
+                                </constraints>
+                                <size key="customSize" width="320" height="175"/>
+                                <connections>
+                                    <outlet property="detailsLabel" destination="mHY-jv-h5b" id="VeG-vh-T3J"/>
+                                    <outlet property="nameLabel" destination="nJc-6f-N1b" id="vBQ-eJ-AWZ"/>
+                                    <outlet property="speakersLabel" destination="ab9-Bi-spV" id="OqH-E7-NuN"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>

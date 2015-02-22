@@ -8,6 +8,14 @@
 
 #import "SCSessionCollectionViewCell.h"
 
+@interface SCSessionCollectionViewCell ()
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *detailsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *speakersLabel;
+
+@end
+
 @implementation SCSessionCollectionViewCell
 
 @end
