@@ -10,8 +10,8 @@
 		1F0BAA7A1A99886F0059C73A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BAA781A99886F0059C73A /* Info.plist */; };
 		1F0BAA7B1A99886F0059C73A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAA791A99886F0059C73A /* main.m */; };
 		1F0BAA851A9989460059C73A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BAA841A9989460059C73A /* Images.xcassets */; };
+		1F0BAA881A9989890059C73A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BAA871A9989890059C73A /* LaunchScreen.xib */; };
 		1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */; };
-		1F7392C91A9985BE00F4B10F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F7392C71A9985BE00F4B10F /* LaunchScreen.xib */; };
 		1F7392D51A9985BE00F4B10F /* SelfConferenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7392D41A9985BE00F4B10F /* SelfConferenceTests.m */; };
 		FEEAC01EB9E2FC1CB6FE80F7 /* libPods-SelfConferenceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8F553853A58875DD1A6969 /* libPods-SelfConferenceTests.a */; };
 /* End PBXBuildFile section */
@@ -30,10 +30,10 @@
 		1F0BAA781A99886F0059C73A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F0BAA791A99886F0059C73A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F0BAA841A9989460059C73A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1F0BAA871A9989890059C73A /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		1F7392B21A9985BE00F4B10F /* SelfConference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelfConference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7392B91A9985BE00F4B10F /* SCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCAppDelegate.h; sourceTree = "<group>"; };
 		1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCAppDelegate.m; sourceTree = "<group>"; };
-		1F7392C81A9985BE00F4B10F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1F7392CE1A9985BE00F4B10F /* SelfConferenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SelfConferenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7392D31A9985BE00F4B10F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F7392D41A9985BE00F4B10F /* SelfConferenceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelfConferenceTests.m; sourceTree = "<group>"; };
@@ -78,6 +78,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		1F0BAA861A9989890059C73A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1F0BAA871A9989890059C73A /* LaunchScreen.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1F7392A91A9985BD00F4B10F = {
 			isa = PBXGroup;
 			children = (
@@ -103,9 +111,9 @@
 			children = (
 				1F7392B91A9985BE00F4B10F /* SCAppDelegate.h */,
 				1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */,
-				1F7392C71A9985BE00F4B10F /* LaunchScreen.xib */,
 				1F0BAA831A9989460059C73A /* Resources */,
 				1F0BAA771A99886F0059C73A /* Supporting-Files */,
+				1F0BAA861A9989890059C73A /* Views */,
 			);
 			path = SelfConference;
 			sourceTree = "<group>";
@@ -226,8 +234,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F0BAA881A9989890059C73A /* LaunchScreen.xib in Resources */,
 				1F0BAA851A9989460059C73A /* Images.xcassets in Resources */,
-				1F7392C91A9985BE00F4B10F /* LaunchScreen.xib in Resources */,
 				1F0BAA7A1A99886F0059C73A /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,17 +309,6 @@
 			targetProxy = 1F7392CF1A9985BE00F4B10F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		1F7392C71A9985BE00F4B10F /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1F7392C81A9985BE00F4B10F /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1F7392D61A9985BE00F4B10F /* Debug */ = {
