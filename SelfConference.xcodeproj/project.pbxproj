@@ -22,6 +22,7 @@
 		1F0BAAA81A99A6AB0059C73A /* SCSessionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAA71A99A6AB0059C73A /* SCSessionCollectionViewCell.m */; };
 		1F0BAAAC1A99B23F0059C73A /* SCConfigStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAAB1A99B23F0059C73A /* SCConfigStrings.m */; };
 		1F0BAAB01A99B7DE0059C73A /* NSError+SCError.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAAF1A99B7DE0059C73A /* NSError+SCError.m */; };
+		1F0BAAB31A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAB21A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m */; };
 		1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */; };
 		1F7392D51A9985BE00F4B10F /* SelfConferenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7392D41A9985BE00F4B10F /* SelfConferenceTests.m */; };
 		52177A65E8B8CFE8659C76EF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1457BA96527132726AC017 /* libPods.a */; };
@@ -64,6 +65,8 @@
 		1F0BAAAB1A99B23F0059C73A /* SCConfigStrings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCConfigStrings.m; sourceTree = "<group>"; };
 		1F0BAAAE1A99B7DE0059C73A /* NSError+SCError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+SCError.h"; sourceTree = "<group>"; };
 		1F0BAAAF1A99B7DE0059C73A /* NSError+SCError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+SCError.m"; sourceTree = "<group>"; };
+		1F0BAAB11A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+SCUserDefaults.h"; sourceTree = "<group>"; };
+		1F0BAAB21A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+SCUserDefaults.m"; sourceTree = "<group>"; };
 		1F7392B21A9985BE00F4B10F /* SelfConference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelfConference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7392B91A9985BE00F4B10F /* SCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCAppDelegate.h; sourceTree = "<group>"; };
 		1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCAppDelegate.m; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 			children = (
 				1F0BAAAE1A99B7DE0059C73A /* NSError+SCError.h */,
 				1F0BAAAF1A99B7DE0059C73A /* NSError+SCError.m */,
+				1F0BAAB11A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.h */,
+				1F0BAAB21A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -441,6 +446,7 @@
 				1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */,
 				1F0BAAB01A99B7DE0059C73A /* NSError+SCError.m in Sources */,
 				1F0BAA8F1A998FFD0059C73A /* SCSchedulePageViewController.m in Sources */,
+				1F0BAAB31A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
