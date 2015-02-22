@@ -10,4 +10,7 @@
 
 @interface SCDayScheduleCollectionViewController : UICollectionViewController
 
+/** Represents the beginning of the day in which this view controller represents */
+@property (nonatomic) NSDate *startOfDay;
+
 @end
