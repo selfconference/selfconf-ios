@@ -7,7 +7,14 @@
 //
 
 #import "SCAppDelegate.h"
+#import "SCParseSetupService.h"
 
 @implementation SCAppDelegate
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [SCParseSetupService setupWithLaunchOptions:launchOptions];
+    
+    return YES;
+}
 
 @end

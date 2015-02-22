@@ -18,6 +18,7 @@
 		1F0BAA981A9994970059C73A /* SCSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAA971A9994970059C73A /* SCSession.m */; };
 		1F0BAA9B1A9995850059C73A /* SCSpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAA9A1A9995850059C73A /* SCSpeaker.m */; };
 		1F0BAA9E1A9995DE0059C73A /* SCRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAA9D1A9995DE0059C73A /* SCRoom.m */; };
+		1F0BAAA21A999C400059C73A /* SCParseSetupService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAA11A999C400059C73A /* SCParseSetupService.m */; };
 		1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */; };
 		1F7392D51A9985BE00F4B10F /* SelfConferenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7392D41A9985BE00F4B10F /* SelfConferenceTests.m */; };
 		52177A65E8B8CFE8659C76EF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1457BA96527132726AC017 /* libPods.a */; };
@@ -51,6 +52,8 @@
 		1F0BAA9A1A9995850059C73A /* SCSpeaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSpeaker.m; sourceTree = "<group>"; };
 		1F0BAA9C1A9995DE0059C73A /* SCRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRoom.h; sourceTree = "<group>"; };
 		1F0BAA9D1A9995DE0059C73A /* SCRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCRoom.m; sourceTree = "<group>"; };
+		1F0BAAA01A999C400059C73A /* SCParseSetupService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCParseSetupService.h; sourceTree = "<group>"; };
+		1F0BAAA11A999C400059C73A /* SCParseSetupService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCParseSetupService.m; sourceTree = "<group>"; };
 		1F7392B21A9985BE00F4B10F /* SelfConference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelfConference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7392B91A9985BE00F4B10F /* SCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCAppDelegate.h; sourceTree = "<group>"; };
 		1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCAppDelegate.m; sourceTree = "<group>"; };
@@ -143,6 +146,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		1F0BAA9F1A999C400059C73A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1F0BAAA01A999C400059C73A /* SCParseSetupService.h */,
+				1F0BAAA11A999C400059C73A /* SCParseSetupService.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		1F7392A91A9985BD00F4B10F = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +183,7 @@
 				1F0BAA8C1A998F8B0059C73A /* Controllers */,
 				1F0BAA951A9994000059C73A /* Models */,
 				1F0BAA831A9989460059C73A /* Resources */,
+				1F0BAA9F1A999C400059C73A /* Services */,
 				1F0BAA891A998D480059C73A /* Storyboards */,
 				1F0BAA771A99886F0059C73A /* Supporting-Files */,
 				1F0BAA861A9989890059C73A /* Views */,
@@ -384,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F0BAAA21A999C400059C73A /* SCParseSetupService.m in Sources */,
 				1F0BAA7B1A99886F0059C73A /* main.m in Sources */,
 				1F0BAA9B1A9995850059C73A /* SCSpeaker.m in Sources */,
 				1F0BAA9E1A9995DE0059C73A /* SCRoom.m in Sources */,
