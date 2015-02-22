@@ -25,7 +25,7 @@
         <!--Schedule-->
         <scene sceneID="eWb-Ro-BrF">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="ZPj-zd-TK9" customClass="SCSchedulePageViewController" sceneMemberID="viewController">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ZPj-zd-TK9" customClass="SCSchedulePageViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Schedule" id="5jt-rb-KT8"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qyr-HZ-N4A" userLabel="First Responder" sceneMemberID="firstResponder"/>
