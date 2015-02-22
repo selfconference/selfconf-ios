@@ -15,11 +15,27 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [SCParseSetupService setupWithLaunchOptions:launchOptions];
     
-    [SCSession fetchAllSessionsFromTheAPIWithBlock:^(NSArray *sessions, NSError *error) {
-        
-    }];
+    [self fetchUpdatedSessionsFromTheAPI];
     
     return YES;
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    [self fetchUpdatedSessionsFromTheAPI];
+}
+
+#pragma mark - Internal
+
+/** 
+ Fetches all of the 'SCSession' instances from the server. If called multiple 
+ times, only recently updated instances are fetched. 
+ */
+- (void)fetchUpdatedSessionsFromTheAPI {
+    [SCSession fetchAllSessionsFromTheAPIWithBlock:^(NSArray *sessions, NSError *error) {
+        NSLog(@"Fetched %zd sessions from the API with error: %@",
+              sessions.count,
+              error.localizedDescription);
+    }];
 }
 
 @end
