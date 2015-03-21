@@ -59,8 +59,16 @@ NSString * const kSCSessionNotificationNameForInstancesWereUpdatedFromTheServer 
          lessThanOrEqualTo:startOfNextDay];
         
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            NSSortDescriptor *sortedByScheduledAtDescriptor =
+            [NSSortDescriptor
+             sortDescriptorWithKey:NSStringFromSelector(@selector(scheduledAt))
+             ascending:YES];
+            
+            NSArray *sortedObjects =
+            [objects sortedArrayUsingDescriptors:@[sortedByScheduledAtDescriptor]];
+            
             if (block) {
-                block(objects, error);
+                block(sortedObjects, error);
             }
         }];
     }
