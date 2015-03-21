@@ -9,10 +9,13 @@
 #import "SCAppDelegate.h"
 #import "SCParseSetupService.h"
 #import "SCSession.h"
+#import "UIColor+SCColor.h"
 
 @implementation SCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self styleTabBarGlobally];
+    
     [SCParseSetupService setupWithLaunchOptions:launchOptions];
     
     [self fetchUpdatedSessionsFromTheAPI];
@@ -25,6 +28,12 @@
 }
 
 #pragma mark - Internal
+
+/** Applies styles to all UITabBar instances that are created */
+- (void)styleTabBarGlobally {
+    [UITabBar appearance].barTintColor = [UIColor SC_teal];
+    [UITabBar appearance].tintColor = [UIColor whiteColor];
+}
 
 /** 
  Fetches all of the 'SCSession' instances from the server. If called multiple 
