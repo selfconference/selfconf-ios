@@ -15,14 +15,31 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="cbA-Ka-T50" kind="relationship" relationship="viewControllers" id="Oxu-4A-dGS"/>
+                        <segue destination="uGS-Es-x35" kind="relationship" relationship="viewControllers" id="fQh-Uc-HNx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftP-Sj-02V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="864" y="534"/>
+            <point key="canvasLocation" x="-62" y="1064"/>
         </scene>
         <!--Schedule-->
+        <scene sceneID="Pep-8j-EXW">
+            <objects>
+                <navigationController id="uGS-Es-x35" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Schedule" id="QVS-Gv-FB8"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4ri-MS-IPm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cbA-Ka-T50" kind="relationship" relationship="rootViewController" id="d6l-1s-mxX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IWF-VZ-Wn1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="871" y="534"/>
+        </scene>
+        <!--Self.conference-->
         <scene sceneID="IE9-6l-dKh">
             <objects>
                 <viewController id="cbA-Ka-T50" customClass="SCScheduleViewController" sceneMemberID="viewController">
@@ -35,7 +52,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kIl-ZP-vXz" userLabel="Page View Controller Container View">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -44,10 +61,16 @@
                             <constraint firstItem="kIl-ZP-vXz" firstAttribute="top" secondItem="M5s-Aw-WMs" secondAttribute="top" id="GGN-6Y-DMc"/>
                             <constraint firstItem="etP-2l-K3L" firstAttribute="top" secondItem="kIl-ZP-vXz" secondAttribute="bottom" id="JDL-yb-MML"/>
                             <constraint firstAttribute="trailing" secondItem="kIl-ZP-vXz" secondAttribute="trailing" id="MQF-yS-Az3"/>
+                            <constraint firstItem="kIl-ZP-vXz" firstAttribute="top" secondItem="iwb-ct-PKs" secondAttribute="bottom" id="Yiw-rW-FFt"/>
                             <constraint firstItem="kIl-ZP-vXz" firstAttribute="leading" secondItem="M5s-Aw-WMs" secondAttribute="leading" id="tHG-3C-3BG"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="GGN-6Y-DMc"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Schedule" id="eph-cK-F5L"/>
+                    <navigationItem key="navigationItem" title="Self.conference" id="cUA-Aw-C19"/>
                     <connections>
                         <outlet property="pageViewControllerContainerView" destination="kIl-ZP-vXz" id="PsV-Nc-Typ"/>
                     </connections>
