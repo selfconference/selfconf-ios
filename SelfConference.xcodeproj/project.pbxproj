@@ -30,6 +30,8 @@
 		1F86EF331ABE0AB7001E30DD /* SCDaySelectionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF321ABE0AB7001E30DD /* SCDaySelectionButton.m */; };
 		1F86EF361ABE0D30001E30DD /* NSDate+SCDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF351ABE0D30001E30DD /* NSDate+SCDate.m */; };
 		1F86EF391ABE1101001E30DD /* SCFadeWhenHighlightedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF381ABE1101001E30DD /* SCFadeWhenHighlightedButton.m */; };
+		1F86EF3C1ABE1C91001E30DD /* SCLogoColorsLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF3B1ABE1C91001E30DD /* SCLogoColorsLineView.m */; };
+		1F86EF411ABE213F001E30DD /* SCLogoColorsNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF401ABE213F001E30DD /* SCLogoColorsNavigationBar.m */; };
 		52177A65E8B8CFE8659C76EF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1457BA96527132726AC017 /* libPods.a */; };
 		FEEAC01EB9E2FC1CB6FE80F7 /* libPods-SelfConferenceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8F553853A58875DD1A6969 /* libPods-SelfConferenceTests.a */; };
 /* End PBXBuildFile section */
@@ -90,6 +92,10 @@
 		1F86EF351ABE0D30001E30DD /* NSDate+SCDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+SCDate.m"; sourceTree = "<group>"; };
 		1F86EF371ABE1101001E30DD /* SCFadeWhenHighlightedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCFadeWhenHighlightedButton.h; sourceTree = "<group>"; };
 		1F86EF381ABE1101001E30DD /* SCFadeWhenHighlightedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCFadeWhenHighlightedButton.m; sourceTree = "<group>"; };
+		1F86EF3A1ABE1C91001E30DD /* SCLogoColorsLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLogoColorsLineView.h; sourceTree = "<group>"; };
+		1F86EF3B1ABE1C91001E30DD /* SCLogoColorsLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLogoColorsLineView.m; sourceTree = "<group>"; };
+		1F86EF3F1ABE213F001E30DD /* SCLogoColorsNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLogoColorsNavigationBar.h; sourceTree = "<group>"; };
+		1F86EF401ABE213F001E30DD /* SCLogoColorsNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLogoColorsNavigationBar.m; sourceTree = "<group>"; };
 		2D10993C3C99F6944FEAF14F /* Pods-SelfConferenceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelfConferenceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SelfConferenceTests/Pods-SelfConferenceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		37D95520F9868BAA20A1EBC8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3B1457BA96527132726AC017 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +151,10 @@
 				1F86EF321ABE0AB7001E30DD /* SCDaySelectionButton.m */,
 				1F86EF371ABE1101001E30DD /* SCFadeWhenHighlightedButton.h */,
 				1F86EF381ABE1101001E30DD /* SCFadeWhenHighlightedButton.m */,
+				1F86EF3A1ABE1C91001E30DD /* SCLogoColorsLineView.h */,
+				1F86EF3B1ABE1C91001E30DD /* SCLogoColorsLineView.m */,
+				1F86EF3F1ABE213F001E30DD /* SCLogoColorsNavigationBar.h */,
+				1F86EF401ABE213F001E30DD /* SCLogoColorsNavigationBar.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -463,6 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F0BAAA21A999C400059C73A /* SCParseSetupService.m in Sources */,
+				1F86EF3C1ABE1C91001E30DD /* SCLogoColorsLineView.m in Sources */,
 				1F0BAA7B1A99886F0059C73A /* main.m in Sources */,
 				1F86EF2A1ABE0317001E30DD /* UIViewController+SCChildViewController.m in Sources */,
 				1F86EF331ABE0AB7001E30DD /* SCDaySelectionButton.m in Sources */,
@@ -471,6 +482,7 @@
 				1F0BAA9B1A9995850059C73A /* SCSpeaker.m in Sources */,
 				1F0BAA9E1A9995DE0059C73A /* SCRoom.m in Sources */,
 				1F0BAA981A9994970059C73A /* SCSession.m in Sources */,
+				1F86EF411ABE213F001E30DD /* SCLogoColorsNavigationBar.m in Sources */,
 				1F0BAAAC1A99B23F0059C73A /* SCConfigStrings.m in Sources */,
 				1F0BAAA81A99A6AB0059C73A /* SCSessionCollectionViewCell.m in Sources */,
 				1F0BAA931A9990B10059C73A /* SCDayScheduleCollectionViewController.m in Sources */,

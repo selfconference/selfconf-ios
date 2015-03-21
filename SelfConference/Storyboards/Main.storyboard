@@ -27,7 +27,7 @@
             <objects>
                 <navigationController id="uGS-Es-x35" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Schedule" id="QVS-Gv-FB8"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="4ri-MS-IPm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="4ri-MS-IPm" customClass="SCLogoColorsNavigationBar">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
