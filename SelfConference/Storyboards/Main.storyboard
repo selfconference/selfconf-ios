@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SOT-3y-gyG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SOT-3y-gyG">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -15,7 +15,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="ZPj-zd-TK9" kind="relationship" relationship="viewControllers" id="IfW-u1-FMQ"/>
+                        <segue destination="cbA-Ka-T50" kind="relationship" relationship="viewControllers" id="Oxu-4A-dGS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftP-Sj-02V" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -23,12 +23,36 @@
             <point key="canvasLocation" x="864" y="534"/>
         </scene>
         <!--Schedule-->
-        <scene sceneID="eWb-Ro-BrF">
+        <scene sceneID="IE9-6l-dKh">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ZPj-zd-TK9" customClass="SCSchedulePageViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Schedule" id="5jt-rb-KT8"/>
-                </pageViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qyr-HZ-N4A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="cbA-Ka-T50" customClass="SCScheduleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iwb-ct-PKs"/>
+                        <viewControllerLayoutGuide type="bottom" id="etP-2l-K3L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M5s-Aw-WMs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kIl-ZP-vXz" userLabel="Page View Controller Container View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kIl-ZP-vXz" firstAttribute="top" secondItem="M5s-Aw-WMs" secondAttribute="top" id="GGN-6Y-DMc"/>
+                            <constraint firstItem="etP-2l-K3L" firstAttribute="top" secondItem="kIl-ZP-vXz" secondAttribute="bottom" id="JDL-yb-MML"/>
+                            <constraint firstAttribute="trailing" secondItem="kIl-ZP-vXz" secondAttribute="trailing" id="MQF-yS-Az3"/>
+                            <constraint firstItem="kIl-ZP-vXz" firstAttribute="leading" secondItem="M5s-Aw-WMs" secondAttribute="leading" id="tHG-3C-3BG"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Schedule" id="eph-cK-F5L"/>
+                    <connections>
+                        <outlet property="pageViewControllerContainerView" destination="kIl-ZP-vXz" id="PsV-Nc-Typ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mhC-HM-1WJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1656" y="534"/>
         </scene>
@@ -53,20 +77,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="175"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" ambiguous="YES" misplaced="YES" text="A Gentle Introduction to OpenGL ES on iOS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJc-6f-N1b" userLabel="Name Label">
-                                            <rect key="frame" x="20" y="20" width="280" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="A Gentle Introduction to OpenGL ES on iOS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJc-6f-N1b" userLabel="Name Label">
+                                            <rect key="frame" x="20" y="20" width="280" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" ambiguous="YES" misplaced="YES" text="Jeff Kelley" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ab9-Bi-spV" userLabel="Speakers Label">
-                                            <rect key="frame" x="20" y="130" width="280" height="25"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="249" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Jeff Kelley" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ab9-Bi-spV" userLabel="Speakers Label">
+                                            <rect key="frame" x="20" y="131" width="280" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="751" ambiguous="YES" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHY-jv-h5b" userLabel="Details Label">
-                                            <rect key="frame" x="20" y="60" width="280" height="50"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="751" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHY-jv-h5b" userLabel="Details Label">
+                                            <rect key="frame" x="20" y="61" width="280" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="FPx-Xp-843"/>
                                             </constraints>

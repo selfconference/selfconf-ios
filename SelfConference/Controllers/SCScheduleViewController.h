@@ -1,5 +1,5 @@
 //
-//  SCSchedulePageViewController.h
+//  SCScheduleViewController.h
 //  SelfConference
 //
 //  Created by Jeff Burt on 2/21/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SCSchedulePageViewController : UIPageViewController
+@interface SCScheduleViewController : UIViewController
 
 @end

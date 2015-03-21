@@ -1,37 +1,64 @@
 //
-//  SCSchedulePageViewController.m
+//  SCScheduleViewController.m
 //  SelfConference
 //
 //  Created by Jeff Burt on 2/21/15.
 //  Copyright (c) 2015 Self Conference. All rights reserved.
 //
 
-#import "SCSchedulePageViewController.h"
+#import "SCScheduleViewController.h"
 #import "SCDayScheduleCollectionViewController.h"
 #import "SCSharedStoryboardInstances.h"
 #import <Parse/PFConfig.h>
 #import "SCConfigStrings.h"
 #import <MTDates/NSDate+MTDates.h>
+#import "UIViewController+SCChildViewController.h"
 
-@interface SCSchedulePageViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
+@interface SCScheduleViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
+
+/**
+ A container for '_pageViewController' that way we can constrain its position
+ in the storyboard.
+ */
+@property (weak, nonatomic) IBOutlet UIView *pageViewControllerContainerView;
+
+@property (nonatomic) UIPageViewController *pageViewController;
 
 /** A collection of the view controllers that will exist in the specific order */
 @property (nonatomic, strong) NSMutableArray *viewControllersToUse;
 
 @end
 
-@implementation SCSchedulePageViewController
+@implementation SCScheduleViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.delegate = self;
-    self.dataSource = self;
+    [self SC_addChildViewController:self.pageViewController
+                        onTopOfView:self.pageViewControllerContainerView];
+}
+
+#pragma mark - Lazy loading
+
+- (UIPageViewController *)pageViewController {
+    if (!_pageViewController) {
+        _pageViewController =
+        [[UIPageViewController alloc]
+         initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
+         navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
+         options:kNilOptions];
+        
+        [_pageViewController
+         setViewControllers:@[self.viewControllersToUse.firstObject]
+         direction:UIPageViewControllerNavigationDirectionForward
+         animated:NO
+         completion:NULL];
+        
+        _pageViewController.delegate = self;
+        _pageViewController.dataSource = self;
+    }
     
-    [self setViewControllers:@[self.viewControllersToUse.firstObject]
-                   direction:UIPageViewControllerNavigationDirectionForward
-                    animated:NO
-                  completion:NULL];
+    return _pageViewController;
 }
 
 - (NSMutableArray *)viewControllersToUse {
@@ -86,16 +113,6 @@
     }
     
     return nextViewController;
-}
-
-#pragma mark - UIPageViewControllerDataSource methods
-
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
-    return self.viewControllersToUse.count;
-}
-
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
-    return [self.viewControllersToUse indexOfObject:pageViewController.viewControllers.firstObject];
 }
          
 #pragma mark - Other
