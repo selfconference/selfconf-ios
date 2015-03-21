@@ -13,6 +13,7 @@
 #import "SCConfigStrings.h"
 #import <MTDates/NSDate+MTDates.h>
 #import "UIViewController+SCChildViewController.h"
+#import "UIColor+SCColor.h"
 
 @interface SCScheduleViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
@@ -33,6 +34,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UINavigationBar *navigationBar = self.navigationController.navigationBar;
+    
+    navigationBar.barTintColor = [UIColor SC_teal];
+    
+    navigationBar.titleTextAttributes =
+    @{NSForegroundColorAttributeName: [UIColor whiteColor]};
     
     [self SC_addChildViewController:self.pageViewController
                         onTopOfView:self.pageViewControllerContainerView];
