@@ -26,7 +26,7 @@
         <scene sceneID="Pep-8j-EXW">
             <objects>
                 <navigationController id="uGS-Es-x35" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Schedule" id="QVS-Gv-FB8"/>
+                    <tabBarItem key="tabBarItem" title="Schedule" image="scheduleTabBarIcon" id="QVS-Gv-FB8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="4ri-MS-IPm" customClass="SCLogoColorsNavigationBar">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -192,4 +192,7 @@
             <point key="canvasLocation" x="2417" y="534"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="scheduleTabBarIcon" width="25" height="25"/>
+    </resources>
 </document>
