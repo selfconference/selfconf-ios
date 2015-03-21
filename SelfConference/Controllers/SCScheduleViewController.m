@@ -70,6 +70,8 @@
          navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
          options:kNilOptions];
         
+        _pageViewController.view.backgroundColor = [UIColor SC_teal];
+        
         _pageViewController.delegate = self;
         _pageViewController.dataSource = self;
     }
