@@ -28,6 +28,7 @@
 		1F86EF2D1ABE033D001E30DD /* UIView+SCConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF2C1ABE033D001E30DD /* UIView+SCConstraints.m */; };
 		1F86EF301ABE05DD001E30DD /* UIColor+SCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF2F1ABE05DD001E30DD /* UIColor+SCColor.m */; };
 		1F86EF361ABE0D30001E30DD /* NSDate+SCDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF351ABE0D30001E30DD /* NSDate+SCDate.m */; };
+		1F86EF391ABE1101001E30DD /* SCFadeWhenHighlightedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF381ABE1101001E30DD /* SCFadeWhenHighlightedButton.m */; };
 		52177A65E8B8CFE8659C76EF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1457BA96527132726AC017 /* libPods.a */; };
 		FEEAC01EB9E2FC1CB6FE80F7 /* libPods-SelfConferenceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8F553853A58875DD1A6969 /* libPods-SelfConferenceTests.a */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,8 @@
 		1F86EF2F1ABE05DD001E30DD /* UIColor+SCColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SCColor.m"; sourceTree = "<group>"; };
 		1F86EF341ABE0D30001E30DD /* NSDate+SCDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+SCDate.h"; sourceTree = "<group>"; };
 		1F86EF351ABE0D30001E30DD /* NSDate+SCDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+SCDate.m"; sourceTree = "<group>"; };
+		1F86EF371ABE1101001E30DD /* SCFadeWhenHighlightedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCFadeWhenHighlightedButton.h; sourceTree = "<group>"; };
+		1F86EF381ABE1101001E30DD /* SCFadeWhenHighlightedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCFadeWhenHighlightedButton.m; sourceTree = "<group>"; };
 		2D10993C3C99F6944FEAF14F /* Pods-SelfConferenceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelfConferenceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SelfConferenceTests/Pods-SelfConferenceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		37D95520F9868BAA20A1EBC8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3B1457BA96527132726AC017 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +138,8 @@
 				1F0BAA871A9989890059C73A /* LaunchScreen.xib */,
 				1F0BAAA61A99A6AB0059C73A /* SCSessionCollectionViewCell.h */,
 				1F0BAAA71A99A6AB0059C73A /* SCSessionCollectionViewCell.m */,
+				1F86EF371ABE1101001E30DD /* SCFadeWhenHighlightedButton.h */,
+				1F86EF381ABE1101001E30DD /* SCFadeWhenHighlightedButton.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -456,6 +461,7 @@
 				1F0BAA7B1A99886F0059C73A /* main.m in Sources */,
 				1F86EF2A1ABE0317001E30DD /* UIViewController+SCChildViewController.m in Sources */,
 				1F86EF361ABE0D30001E30DD /* NSDate+SCDate.m in Sources */,
+				1F86EF391ABE1101001E30DD /* SCFadeWhenHighlightedButton.m in Sources */,
 				1F0BAA9B1A9995850059C73A /* SCSpeaker.m in Sources */,
 				1F0BAA9E1A9995DE0059C73A /* SCRoom.m in Sources */,
 				1F0BAA981A9994970059C73A /* SCSession.m in Sources */,
