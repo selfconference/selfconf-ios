@@ -73,20 +73,13 @@
     if (!_viewControllersToUse) {
         NSMutableArray *viewControllersToUse = [NSMutableArray array];
         
-        // Most likely returns 8:00 am EST
-        NSDate *conferenceStartTime =
-        [PFConfig currentConfig][SCConfigStrings.conferenceStartTime];
-        
-        NSDate *beginningOfDay1 = conferenceStartTime.mt_startOfCurrentDay;
-        NSDate *beginningOfDay2 = [beginningOfDay1 mt_dateDaysAfter:1];
-        
         // Day one
         [viewControllersToUse
-         addObject:[self createSCDayScheduleCollectionViewControllerInstanceWithStartOfDay:beginningOfDay1]];
+         addObject:[self createSCDayScheduleCollectionViewControllerInstanceWithStartOfDay:[NSDate SC_firstDayOfConference]]];
 
         // Day two
         [viewControllersToUse
-         addObject:[self createSCDayScheduleCollectionViewControllerInstanceWithStartOfDay:beginningOfDay2]];
+         addObject:[self createSCDayScheduleCollectionViewControllerInstanceWithStartOfDay:[NSDate SC_secondDayOfConference]]];
         
         _viewControllersToUse = viewControllersToUse;
     }
