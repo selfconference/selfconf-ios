@@ -26,6 +26,7 @@
 		1F7392D51A9985BE00F4B10F /* SelfConferenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7392D41A9985BE00F4B10F /* SelfConferenceTests.m */; };
 		1F86EF2A1ABE0317001E30DD /* UIViewController+SCChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF291ABE0317001E30DD /* UIViewController+SCChildViewController.m */; };
 		1F86EF2D1ABE033D001E30DD /* UIView+SCConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF2C1ABE033D001E30DD /* UIView+SCConstraints.m */; };
+		1F86EF301ABE05DD001E30DD /* UIColor+SCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF2F1ABE05DD001E30DD /* UIColor+SCColor.m */; };
 		52177A65E8B8CFE8659C76EF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1457BA96527132726AC017 /* libPods.a */; };
 		FEEAC01EB9E2FC1CB6FE80F7 /* libPods-SelfConferenceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8F553853A58875DD1A6969 /* libPods-SelfConferenceTests.a */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,8 @@
 		1F86EF291ABE0317001E30DD /* UIViewController+SCChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SCChildViewController.m"; sourceTree = "<group>"; };
 		1F86EF2B1ABE033D001E30DD /* UIView+SCConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SCConstraints.h"; sourceTree = "<group>"; };
 		1F86EF2C1ABE033D001E30DD /* UIView+SCConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SCConstraints.m"; sourceTree = "<group>"; };
+		1F86EF2E1ABE05DD001E30DD /* UIColor+SCColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SCColor.h"; sourceTree = "<group>"; };
+		1F86EF2F1ABE05DD001E30DD /* UIColor+SCColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SCColor.m"; sourceTree = "<group>"; };
 		2D10993C3C99F6944FEAF14F /* Pods-SelfConferenceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelfConferenceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SelfConferenceTests/Pods-SelfConferenceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		37D95520F9868BAA20A1EBC8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3B1457BA96527132726AC017 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +199,8 @@
 				1F86EF2C1ABE033D001E30DD /* UIView+SCConstraints.m */,
 				1F86EF281ABE0317001E30DD /* UIViewController+SCChildViewController.h */,
 				1F86EF291ABE0317001E30DD /* UIViewController+SCChildViewController.m */,
+				1F86EF2E1ABE05DD001E30DD /* UIColor+SCColor.h */,
+				1F86EF2F1ABE05DD001E30DD /* UIColor+SCColor.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -451,6 +456,7 @@
 				1F0BAAAC1A99B23F0059C73A /* SCConfigStrings.m in Sources */,
 				1F0BAAA81A99A6AB0059C73A /* SCSessionCollectionViewCell.m in Sources */,
 				1F0BAA931A9990B10059C73A /* SCDayScheduleCollectionViewController.m in Sources */,
+				1F86EF301ABE05DD001E30DD /* UIColor+SCColor.m in Sources */,
 				1F0BAAA51A99A3680059C73A /* SCSharedStoryboardInstances.m in Sources */,
 				1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */,
 				1F0BAAB01A99B7DE0059C73A /* NSError+SCError.m in Sources */,
