@@ -27,7 +27,7 @@
             <objects>
                 <navigationController id="uGS-Es-x35" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Schedule" id="QVS-Gv-FB8"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4ri-MS-IPm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="4ri-MS-IPm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -48,31 +48,66 @@
                         <viewControllerLayoutGuide type="bottom" id="etP-2l-K3L"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="M5s-Aw-WMs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kIl-ZP-vXz" userLabel="Page View Controller Container View">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="50" width="600" height="437"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDo-U5-jxI" userLabel="First Day Button" customClass="SCDaySelectionButton">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="TI2-bm-SPY"/>
+                                </constraints>
+                                <state key="normal" title="Friday">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapFirstDayButton:" destination="cbA-Ka-T50" eventType="touchUpInside" id="sYP-N7-6Bb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="858-Ro-v06" userLabel="Second Day Button" customClass="SCDaySelectionButton">
+                                <rect key="frame" x="300" y="0.0" width="300" height="50"/>
+                                <color key="backgroundColor" red="0.52801452020202022" green="0.52801452020202022" blue="0.52801452020202022" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Saturday">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapSecondDayButton:" destination="cbA-Ka-T50" eventType="touchUpInside" id="vlI-vq-I9L"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="kIl-ZP-vXz" firstAttribute="top" secondItem="M5s-Aw-WMs" secondAttribute="top" id="GGN-6Y-DMc"/>
                             <constraint firstItem="etP-2l-K3L" firstAttribute="top" secondItem="kIl-ZP-vXz" secondAttribute="bottom" id="JDL-yb-MML"/>
                             <constraint firstAttribute="trailing" secondItem="kIl-ZP-vXz" secondAttribute="trailing" id="MQF-yS-Az3"/>
+                            <constraint firstItem="858-Ro-v06" firstAttribute="width" secondItem="mDo-U5-jxI" secondAttribute="width" id="OWx-Eb-SFu"/>
                             <constraint firstItem="kIl-ZP-vXz" firstAttribute="top" secondItem="iwb-ct-PKs" secondAttribute="bottom" id="Yiw-rW-FFt"/>
+                            <constraint firstItem="858-Ro-v06" firstAttribute="top" secondItem="mDo-U5-jxI" secondAttribute="top" id="YoE-wN-JsY"/>
+                            <constraint firstItem="858-Ro-v06" firstAttribute="leading" secondItem="mDo-U5-jxI" secondAttribute="trailing" id="bPu-jz-wvC"/>
+                            <constraint firstItem="858-Ro-v06" firstAttribute="height" secondItem="mDo-U5-jxI" secondAttribute="height" id="bob-TQ-9gr"/>
+                            <constraint firstAttribute="trailing" secondItem="858-Ro-v06" secondAttribute="trailing" id="cMv-Af-OZ5"/>
+                            <constraint firstItem="kIl-ZP-vXz" firstAttribute="top" secondItem="mDo-U5-jxI" secondAttribute="bottom" id="dRa-9S-Mg5"/>
+                            <constraint firstItem="mDo-U5-jxI" firstAttribute="leading" secondItem="M5s-Aw-WMs" secondAttribute="leading" id="fYA-xT-CmA"/>
+                            <constraint firstItem="858-Ro-v06" firstAttribute="bottom" secondItem="mDo-U5-jxI" secondAttribute="bottom" id="i14-IB-nnY"/>
+                            <constraint firstItem="mDo-U5-jxI" firstAttribute="top" secondItem="iwb-ct-PKs" secondAttribute="bottom" id="mmH-3y-bxy"/>
                             <constraint firstItem="kIl-ZP-vXz" firstAttribute="leading" secondItem="M5s-Aw-WMs" secondAttribute="leading" id="tHG-3C-3BG"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="GGN-6Y-DMc"/>
+                                <exclude reference="Yiw-rW-FFt"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Self.conference" id="cUA-Aw-C19"/>
                     <connections>
+                        <outlet property="firstDayButton" destination="mDo-U5-jxI" id="bjx-IA-pyx"/>
                         <outlet property="pageViewControllerContainerView" destination="kIl-ZP-vXz" id="PsV-Nc-Typ"/>
+                        <outlet property="secondDayButton" destination="858-Ro-v06" id="KzY-4A-Jo5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mhC-HM-1WJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
