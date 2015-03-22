@@ -184,7 +184,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="72" id="pAY-qa-vxx" customClass="SCSessionNameTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SCSessionNameTableViewCell" rowHeight="72" id="pAY-qa-vxx" customClass="SCSessionNameTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pAY-qa-vxx" id="TAW-Fc-K4K">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -207,7 +207,7 @@
                                     <outlet property="nameLabel" destination="0Xr-cK-FSM" id="uF3-mL-VUP"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="298" id="5nO-2D-SIo" customClass="SCSessionDetailsTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SCSessionDetailsTableViewCell" rowHeight="298" id="5nO-2D-SIo" customClass="SCSessionDetailsTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5nO-2D-SIo" id="Hhf-cm-ixv">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -234,7 +234,7 @@ Lao Tzu said The world is won by those who let it go. Giving up the steps and pr
                                     <outlet property="detailsLabel" destination="16k-06-kH1" id="Wpl-hA-waY"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="52" id="DLL-Ix-N6K" customClass="SCSessionSpeakerHeaderTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SCSessionSpeakerHeaderTableViewCell" rowHeight="52" id="DLL-Ix-N6K" customClass="SCSessionSpeakerHeaderTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DLL-Ix-N6K" id="JTh-rh-x74">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -256,7 +256,7 @@ Lao Tzu said The world is won by those who let it go. Giving up the steps and pr
                                     <outlet property="speakerLabel" destination="B0t-Em-tSc" id="T85-Ij-OLl"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="352" id="eIA-1J-zc4" customClass="SCSessionSpeakerDetailsTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SCSessionSpeakerDetailsTableViewCell" rowHeight="352" id="eIA-1J-zc4" customClass="SCSessionSpeakerDetailsTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eIA-1J-zc4" id="i6F-Sy-axY">
                                     <autoresizingMask key="autoresizingMask"/>
