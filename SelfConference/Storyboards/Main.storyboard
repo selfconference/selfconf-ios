@@ -123,7 +123,6 @@
                                 <connections>
                                     <outlet property="dayLabel" destination="Krg-kC-bVY" id="bCD-pX-8fb"/>
                                     <outlet property="flagView" destination="ln1-Av-RQt" id="8f6-5J-i2g"/>
-                                    <segue destination="XOO-aK-DHw" kind="showDetail" id="7x4-2i-HF0"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SCSessionTableViewCell" rowHeight="140" id="0OE-gJ-CAJ" customClass="SCSessionTableViewCell">
@@ -180,6 +179,7 @@
                                     <outlet property="roomNameLabel" destination="fa4-aT-Dvh" id="pph-cx-Gfo"/>
                                     <outlet property="timeLabel" destination="IaR-Hi-0d6" id="bo2-Ni-58f"/>
                                     <outlet property="timeLabelCircleContainerView" destination="zxc-ZA-efd" id="DYi-SS-Zdf"/>
+                                    <segue destination="XOO-aK-DHw" kind="showDetail" id="Thk-PJ-JTz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -229,6 +229,6 @@
         <image name="scheduleTabBarIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7x4-2i-HF0"/>
+        <segue reference="Thk-PJ-JTz"/>
     </inferredMetricsTieBreakers>
 </document>
