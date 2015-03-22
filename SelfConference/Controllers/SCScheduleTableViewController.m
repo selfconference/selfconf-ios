@@ -10,7 +10,7 @@
 #import "SCSession.h"
 #import "SCSessionTableViewCell.h"
 
-@interface SCScheduleTableViewController ()
+@interface SCScheduleTableViewController () <UISplitViewControllerDelegate>
 
 /** An array of 'SCSession' instances */
 @property (nonatomic) NSArray *sessions;
@@ -25,6 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.splitViewController.delegate = self;
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 160.0f;
@@ -59,6 +61,23 @@
     cell.session = self.sessions[indexPath.row];
     
     return cell;
+}
+
+#pragma mark - UISplitViewControllerDelegate
+
+- (BOOL)splitViewController:(UISplitViewController *)splitViewController
+collapseSecondaryViewController:(UIViewController *)secondaryViewController
+  ontoPrimaryViewController:(UIViewController *)primaryViewController {
+    __block BOOL shouldCollapse = NO;
+    
+    // When the user first opens the app, make sure to show the table view
+    // controller and not the session details
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        shouldCollapse = YES;
+    });
+    
+    return shouldCollapse;
 }
 
 #pragma mark - Other
