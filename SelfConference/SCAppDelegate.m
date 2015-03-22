@@ -19,7 +19,7 @@
     [SCParseSetupService setupWithLaunchOptions:launchOptions];
     
     [self fetchUpdatedSessionsFromTheAPI];
-    
+
     return YES;
 }
 

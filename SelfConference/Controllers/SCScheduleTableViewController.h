@@ -1,5 +1,5 @@
 //
-//  SCScheduleViewController.h
+//  SCDayScheduleTableViewController.h
 //  SelfConference
 //
 //  Created by Jeff Burt on 2/21/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SCScheduleViewController : UIViewController
+@interface SCScheduleTableViewController : UITableViewController
 
 @end

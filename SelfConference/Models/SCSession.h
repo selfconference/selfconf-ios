@@ -35,12 +35,10 @@ FOUNDATION_EXPORT NSString * const kSCSessionNotificationNameForInstancesWereUpd
 @property (nonatomic) NSArray *speakers;
 
 /** 
- Asynchronously fetches 'SCSession' instances that live on the device's database 
- for the given 'startOfDay'. Any sessions prior to 'startOfDay' or 24+ hours
- after 'startOfDay' are ignored.
+ Asynchronously fetches 'SCSession' instances that live on the device's 
+ database.
  */
-+ (void)getLocalSessionsWithStartOfDay:(NSDate *)startOfDay
-                                 block:(SCSessionFetchSessionsWithErrorBlock)block;
++ (void)getLocalSessionsWithBlock:(SCSessionFetchSessionsWithErrorBlock)block;
 
 /** Fetches all of the recently updated 'SCSession' instances from the server. */
 + (void)fetchAllSessionsFromTheAPIWithBlock:(SCSessionFetchSessionsWithErrorBlock)block;

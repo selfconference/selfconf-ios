@@ -37,41 +37,23 @@ NSString * const kSCSessionNotificationNameForInstancesWereUpdatedFromTheServer 
     return query;
 }
 
-+ (void)getLocalSessionsWithStartOfDay:(NSDate *)startOfDay
-                                 block:(SCSessionFetchSessionsWithErrorBlock)block {
-    if (!startOfDay) {
++ (void)getLocalSessionsWithBlock:(SCSessionFetchSessionsWithErrorBlock)block {
+    PFQuery *query = [self query];
+    [query fromLocalDatastore];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        NSSortDescriptor *sortedByScheduledAtDescriptor =
+        [NSSortDescriptor
+         sortDescriptorWithKey:NSStringFromSelector(@selector(scheduledAt))
+         ascending:YES];
+        
+        NSArray *sortedObjects =
+        [objects sortedArrayUsingDescriptors:@[sortedByScheduledAtDescriptor]];
+        
         if (block) {
-            block(nil, [NSError SC_errorWithDescription:@"Expected startOfDay to be non-nil"]);
+            block(sortedObjects, error);
         }
-    }
-    else {
-        PFQuery *query = [self query];
-        [query fromLocalDatastore];
-        
-        [query
-         whereKey:NSStringFromSelector(@selector(scheduledAt))
-         greaterThanOrEqualTo:startOfDay];
-        
-        NSDate *startOfNextDay = [startOfDay mt_dateDaysAfter:1];
-        
-        [query
-         whereKey:NSStringFromSelector(@selector(scheduledAt))
-         lessThanOrEqualTo:startOfNextDay];
-        
-        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            NSSortDescriptor *sortedByScheduledAtDescriptor =
-            [NSSortDescriptor
-             sortDescriptorWithKey:NSStringFromSelector(@selector(scheduledAt))
-             ascending:YES];
-            
-            NSArray *sortedObjects =
-            [objects sortedArrayUsingDescriptors:@[sortedByScheduledAtDescriptor]];
-            
-            if (block) {
-                block(sortedObjects, error);
-            }
-        }];
-    }
+    }];
 }
 
 + (void)fetchAllSessionsFromTheAPIWithBlock:(SCSessionFetchSessionsWithErrorBlock)block {
