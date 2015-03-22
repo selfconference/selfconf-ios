@@ -14,6 +14,7 @@
 @implementation SCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self styleNavigationBarGlobally];
     [self styleTabBarGlobally];
     
     [SCParseSetupService setupWithLaunchOptions:launchOptions];
@@ -29,10 +30,21 @@
 
 #pragma mark - Internal
 
-/** Applies styles to all UITabBar instances that are created */
+/** Applies styles to all 'UITabBar' instances that are created */
 - (void)styleTabBarGlobally {
-    [UITabBar appearance].barTintColor = [UIColor SC_teal];
-    [UITabBar appearance].tintColor = [UIColor whiteColor];
+    UITabBar *tabBar = [UITabBar appearance];
+    
+    tabBar.barTintColor = [UIColor SC_teal];
+    tabBar.tintColor = [UIColor whiteColor];
+}
+
+/** Applies styles to all 'UINavigationBar' instances that are created */
+- (void)styleNavigationBarGlobally {
+    UINavigationBar *navigationBar = [UINavigationBar appearance];
+    
+    navigationBar.tintColor = [UIColor whiteColor];
+    navigationBar.titleTextAttributes =
+  @{NSForegroundColorAttributeName: navigationBar.tintColor};
 }
 
 /** 

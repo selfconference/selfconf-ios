@@ -7,6 +7,7 @@
 //
 
 #import "SCSessionDetailsTableViewCell.h"
+#import "SCSession.h"
 
 @interface SCSessionDetailsTableViewCell ()
 
@@ -15,5 +16,13 @@
 @end
 
 @implementation SCSessionDetailsTableViewCell
+
+#pragma mark - Overrides
+
+- (void)setSession:(SCSession *)session {
+    self.detailsLabel.text = session.details;
+    
+    _session = session;
+}
 
 @end

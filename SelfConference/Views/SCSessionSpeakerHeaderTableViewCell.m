@@ -7,6 +7,8 @@
 //
 
 #import "SCSessionSpeakerHeaderTableViewCell.h"
+#import "SCSession.h"
+#import "UIColor+SCColor.h"
 
 @interface SCSessionSpeakerHeaderTableViewCell ()
 
@@ -15,5 +17,19 @@
 @end
 
 @implementation SCSessionSpeakerHeaderTableViewCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    // TODO: determine this based on the speaker instance
+    self.speakerLabel.textColor = [UIColor SC_orange];
+}
+
+- (void)configureWithNumberOfSpeakers:(NSInteger)numberOfSpeakers {
+    self.speakerLabel.text =
+    numberOfSpeakers > 1 ?
+    @"Speakers" :
+    @"Speaker";
+}
 
 @end

@@ -10,6 +10,11 @@
 #import "SCSession.h"
 #import "SCSessionTableViewCell.h"
 #import "SCSessionsInADayHeaderTableViewCell.h"
+#import "SCSessionDetailsTableViewController.h"
+
+/** The Storyboard segue that fires when selecting an 'SCSessionTableViewCell' */
+static NSString * const kSCSessionTableViewCellShowSessionDetailsSegue =
+@"SCSessionTableViewCellShowSessionDetailsSegue";
 
 @interface SCScheduleTableViewController () <UISplitViewControllerDelegate>
 
@@ -29,6 +34,7 @@
     
     self.splitViewController.delegate = self;
     
+    // Dynamic row heights
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
     
@@ -108,6 +114,17 @@ collapseSecondaryViewController:(UIViewController *)secondaryViewController
          self.sessions = sessions;
          [self.tableView reloadData];
      }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:kSCSessionTableViewCellShowSessionDetailsSegue]) {
+        SCSessionTableViewCell *sessionTableViewCell = (SCSessionTableViewCell *)sender;
+        
+        SCSessionDetailsTableViewController *sessionDetailsTableViewController =
+        (SCSessionDetailsTableViewController *)[segue.destinationViewController viewControllers].firstObject;
+        
+        sessionDetailsTableViewController.session = sessionTableViewCell.session;
+    }
 }
 
 @end

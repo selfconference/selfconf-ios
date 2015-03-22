@@ -41,8 +41,6 @@
 
 - (void)commonInit {
     self.barTintColor = [UIColor SC_teal];
-    self.tintColor = [UIColor whiteColor];
-    self.titleTextAttributes = @{NSForegroundColorAttributeName: self.tintColor};
     
     // Add our custom bottom border
     [self addSubview:self.logoColorsLineView];

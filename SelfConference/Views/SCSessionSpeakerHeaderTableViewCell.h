@@ -10,4 +10,6 @@
 
 @interface SCSessionSpeakerHeaderTableViewCell : UITableViewCell
 
+- (void)configureWithNumberOfSpeakers:(NSInteger)numberOfSpeakers;
+
 @end

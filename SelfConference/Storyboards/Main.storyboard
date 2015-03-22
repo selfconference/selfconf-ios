@@ -57,7 +57,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ln1-Av-RQt" userLabel="Flag View">
                                             <rect key="frame" x="0.0" y="0.0" width="360" height="49"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friday, May 29th, 2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Krg-kC-bVY" userLabel="Day Label">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friday, May 29th, 2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Krg-kC-bVY" userLabel="Day Label">
                                                     <rect key="frame" x="20" y="10" width="320" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -160,7 +160,7 @@
                                     <outlet property="roomNameLabel" destination="fa4-aT-Dvh" id="pph-cx-Gfo"/>
                                     <outlet property="timeLabel" destination="IaR-Hi-0d6" id="bo2-Ni-58f"/>
                                     <outlet property="timeLabelCircleContainerView" destination="zxc-ZA-efd" id="DYi-SS-Zdf"/>
-                                    <segue destination="XOO-aK-DHw" kind="showDetail" id="Thk-PJ-JTz"/>
+                                    <segue destination="XOO-aK-DHw" kind="showDetail" identifier="SCSessionTableViewCellShowSessionDetailsSegue" id="Thk-PJ-JTz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -175,23 +175,23 @@
             </objects>
             <point key="canvasLocation" x="2482" y="-245"/>
         </scene>
-        <!--Session-->
+        <!--Session Details Table View Controller-->
         <scene sceneID="xXR-jl-05e">
             <objects>
                 <tableViewController id="x8l-rn-IxH" customClass="SCSessionDetailsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0L1-K6-S8X">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0L1-K6-S8X">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SCSessionNameTableViewCell" rowHeight="72" id="pAY-qa-vxx" customClass="SCSessionNameTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SCSessionNameTableViewCell" rowHeight="112" id="pAY-qa-vxx" customClass="SCSessionNameTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pAY-qa-vxx" id="TAW-Fc-K4K">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Careful with those People Skills: You'll Poke Somebody's Eye Out!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xr-cK-FSM" userLabel="Name Label">
-                                            <rect key="frame" x="90" y="10" width="490" height="51"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="90" y="10" width="490" height="92"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -207,18 +207,18 @@
                                     <outlet property="nameLabel" destination="0Xr-cK-FSM" id="uF3-mL-VUP"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SCSessionDetailsTableViewCell" rowHeight="298" id="5nO-2D-SIo" customClass="SCSessionDetailsTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SCSessionDetailsTableViewCell" rowHeight="254" id="5nO-2D-SIo" customClass="SCSessionDetailsTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5nO-2D-SIo" id="Hhf-cm-ixv">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16k-06-kH1" userLabel="Details Label">
-                                            <rect key="frame" x="90" y="10" width="490" height="277"/>
+                                            <rect key="frame" x="90" y="10" width="490" height="234"/>
                                             <mutableString key="text">People skills are offered up as a way to get along with people better, to get them to do what you want, and to generally make your life easier. But often, a simple technique can backfire and produce the opposite response. How do you know you're doing it right? Why do people get mad when you give your feedback exactly like the book says to do it?
 
 Lao Tzu said The world is won by those who let it go. Giving up the steps and practices -- focusing instead on the underlying ideas and values -- can guide you to better relationships and better collaboration. Dig deep and learn how empathetic listening, authentic connection, and embodying compassion can fit naturally into your life and your work."
 </mutableString>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -240,14 +240,15 @@ Lao Tzu said The world is won by those who let it go. Giving up the steps and pr
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaker" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0t-Em-tSc" userLabel="Speaker Label">
-                                            <rect key="frame" x="20" y="10" width="560" height="27"/>
+                                            <rect key="frame" x="90" y="10" width="490" height="32"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="B0t-Em-tSc" firstAttribute="leading" secondItem="JTh-rh-x74" secondAttribute="leading" constant="20" id="Lwu-QH-eSS"/>
+                                        <constraint firstAttribute="bottom" secondItem="B0t-Em-tSc" secondAttribute="bottom" constant="10" id="6KA-Vc-1rM"/>
+                                        <constraint firstItem="B0t-Em-tSc" firstAttribute="leading" secondItem="JTh-rh-x74" secondAttribute="leading" constant="90" id="Lwu-QH-eSS"/>
                                         <constraint firstAttribute="trailing" secondItem="B0t-Em-tSc" secondAttribute="trailing" constant="20" id="Pu9-pT-ibw"/>
                                         <constraint firstItem="B0t-Em-tSc" firstAttribute="top" secondItem="JTh-rh-x74" secondAttribute="top" constant="10" id="xgX-pm-7bs"/>
                                     </constraints>
@@ -256,13 +257,13 @@ Lao Tzu said The world is won by those who let it go. Giving up the steps and pr
                                     <outlet property="speakerLabel" destination="B0t-Em-tSc" id="T85-Ij-OLl"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SCSessionSpeakerDetailsTableViewCell" rowHeight="352" id="eIA-1J-zc4" customClass="SCSessionSpeakerDetailsTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SCSessionSpeakerDetailsTableViewCell" rowHeight="328" id="eIA-1J-zc4" customClass="SCSessionSpeakerDetailsTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eIA-1J-zc4" id="i6F-Sy-axY">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xjo-Ye-Qyc" userLabel="Avatar Container View">
-                                            <rect key="frame" x="20" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="20" y="10" width="50" height="50"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWP-MN-Ghw" userLabel="Initial Label">
                                                     <rect key="frame" x="5" y="5" width="40" height="40"/>
@@ -282,27 +283,27 @@ Lao Tzu said The world is won by those who let it go. Giving up the steps and pr
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill Wagner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHe-hp-4Lv" userLabel="Name Label">
-                                            <rect key="frame" x="90" y="12" width="490" height="27"/>
+                                            <rect key="frame" x="90" y="22" width="490" height="27"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0kS-ev-G1T" userLabel="Biography Label">
-                                            <rect key="frame" x="90" y="39" width="490" height="312"/>
+                                            <rect key="frame" x="90" y="60" width="490" height="258"/>
                                             <mutableString key="text">Bill's time is spent between curly braces, primarily with C#. His technical areas of focus are C#, .NET, TypeScript. His other, non-coding passion is to help organizations build effective, high-functioning developer teams.
 
 Bill is the author of the best selling Effective C#, now in its second edition, and More Effective C#. He has created LiveLessons on Async programming in C# and C# Puzzlers. His articles have appeared in MSDN Magazine, the C# Developer Center, Visual C++ Developer's Journal, Visual Studio Magazine, ASP.NET Pro, .NET Developer's Journal and more. He's written hundreds of technical articles for software developers. He actively blogs about technical and business topics. Bill is also a regional director for Microsoft.</mutableString>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Xjo-Ye-Qyc" firstAttribute="top" secondItem="i6F-Sy-axY" secondAttribute="top" id="2tA-mR-sqS"/>
+                                        <constraint firstItem="Xjo-Ye-Qyc" firstAttribute="top" secondItem="i6F-Sy-axY" secondAttribute="top" constant="10" id="2tA-mR-sqS"/>
                                         <constraint firstItem="mHe-hp-4Lv" firstAttribute="trailing" secondItem="0kS-ev-G1T" secondAttribute="trailing" id="6Aq-3W-XzU"/>
-                                        <constraint firstItem="0kS-ev-G1T" firstAttribute="top" secondItem="mHe-hp-4Lv" secondAttribute="bottom" id="8Dw-6t-aMU"/>
                                         <constraint firstItem="mHe-hp-4Lv" firstAttribute="leading" secondItem="Xjo-Ye-Qyc" secondAttribute="trailing" constant="20" id="M3c-BS-cmw"/>
-                                        <constraint firstAttribute="bottom" secondItem="0kS-ev-G1T" secondAttribute="bottom" id="aqF-RD-lEi"/>
+                                        <constraint firstAttribute="bottom" secondItem="0kS-ev-G1T" secondAttribute="bottom" constant="10" id="aqF-RD-lEi"/>
+                                        <constraint firstItem="0kS-ev-G1T" firstAttribute="top" secondItem="Xjo-Ye-Qyc" secondAttribute="bottom" id="oBU-Js-YlR"/>
                                         <constraint firstItem="Xjo-Ye-Qyc" firstAttribute="leading" secondItem="i6F-Sy-axY" secondAttribute="leading" constant="20" id="oFT-ZI-P2Z"/>
                                         <constraint firstItem="Xjo-Ye-Qyc" firstAttribute="centerY" secondItem="mHe-hp-4Lv" secondAttribute="centerY" id="pOd-wN-dAh"/>
                                         <constraint firstItem="mHe-hp-4Lv" firstAttribute="leading" secondItem="0kS-ev-G1T" secondAttribute="leading" id="yX3-kV-432"/>
@@ -323,7 +324,7 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                             <outlet property="delegate" destination="x8l-rn-IxH" id="PhQ-Rt-cIr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Session" id="GBZ-gT-lzP"/>
+                    <navigationItem key="navigationItem" id="GBZ-gT-lzP"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1200"/>
                 </tableViewController>

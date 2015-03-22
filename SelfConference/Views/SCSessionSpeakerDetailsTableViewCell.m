@@ -7,6 +7,9 @@
 //
 
 #import "SCSessionSpeakerDetailsTableViewCell.h"
+#import "SCSpeaker.h"
+#import "UIColor+SCColor.h"
+#import "UIView+SCUtilities.h"
 
 @interface SCSessionSpeakerDetailsTableViewCell ()
 
@@ -19,4 +22,24 @@
 
 @implementation SCSessionSpeakerDetailsTableViewCell
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    // TODO: Select a random (but consistent) color when setting the speaker
+    self.avatarContainerView.backgroundColor = [UIColor SC_red];
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    [self.avatarContainerView SC_makeCircular];
+}
+
+- (void)setSpeaker:(SCSpeaker *)speaker {
+    self.initialLabel.text = [speaker.name substringToIndex:1];
+    self.nameLabel.text = speaker.name;
+    self.biographyLabel.text = speaker.biography;
+    
+    _speaker = speaker;
+}
 @end

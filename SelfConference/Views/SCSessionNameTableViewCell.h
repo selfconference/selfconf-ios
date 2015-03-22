@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class SCSession;
+
 @interface SCSessionNameTableViewCell : UITableViewCell
+
+/** The 'SCSession' instance that this cell represents */
+@property (nonatomic) SCSession *session;
 
 @end

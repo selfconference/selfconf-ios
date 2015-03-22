@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class SCSession;
+
 /** Represents the details for a single 'SCSession' instance */
 @interface SCSessionDetailsTableViewController : UITableViewController
+
+/** The 'SCSession' instance that this view controller represents */
+@property (nonatomic) SCSession *session;
 
 @end
