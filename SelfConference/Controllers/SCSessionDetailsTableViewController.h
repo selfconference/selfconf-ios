@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 /** Represents the details for a single 'SCSession' instance */
-@interface SCSessionDetailsViewController : UIViewController
+@interface SCSessionDetailsTableViewController : UITableViewController
 
 @end

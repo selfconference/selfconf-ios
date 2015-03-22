@@ -27,7 +27,7 @@
 		1F86EF301ABE05DD001E30DD /* UIColor+SCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF2F1ABE05DD001E30DD /* UIColor+SCColor.m */; };
 		1F86EF3C1ABE1C91001E30DD /* SCLogoColorsLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF3B1ABE1C91001E30DD /* SCLogoColorsLineView.m */; };
 		1F86EF411ABE213F001E30DD /* SCLogoColorsNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF401ABE213F001E30DD /* SCLogoColorsNavigationBar.m */; };
-		1F86EF441ABE35D2001E30DD /* SCSessionDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF431ABE35D2001E30DD /* SCSessionDetailsViewController.m */; };
+		1F86EF441ABE35D2001E30DD /* SCSessionDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF431ABE35D2001E30DD /* SCSessionDetailsTableViewController.m */; };
 		1F86EF471ABE35E7001E30DD /* SCScheduleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF461ABE35E7001E30DD /* SCScheduleTableViewController.m */; };
 		52177A65E8B8CFE8659C76EF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1457BA96527132726AC017 /* libPods.a */; };
 		FEEAC01EB9E2FC1CB6FE80F7 /* libPods-SelfConferenceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8F553853A58875DD1A6969 /* libPods-SelfConferenceTests.a */; };
@@ -83,8 +83,8 @@
 		1F86EF3B1ABE1C91001E30DD /* SCLogoColorsLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLogoColorsLineView.m; sourceTree = "<group>"; };
 		1F86EF3F1ABE213F001E30DD /* SCLogoColorsNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLogoColorsNavigationBar.h; sourceTree = "<group>"; };
 		1F86EF401ABE213F001E30DD /* SCLogoColorsNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLogoColorsNavigationBar.m; sourceTree = "<group>"; };
-		1F86EF421ABE35D2001E30DD /* SCSessionDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionDetailsViewController.h; sourceTree = "<group>"; };
-		1F86EF431ABE35D2001E30DD /* SCSessionDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionDetailsViewController.m; sourceTree = "<group>"; };
+		1F86EF421ABE35D2001E30DD /* SCSessionDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionDetailsTableViewController.h; sourceTree = "<group>"; };
+		1F86EF431ABE35D2001E30DD /* SCSessionDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionDetailsTableViewController.m; sourceTree = "<group>"; };
 		1F86EF451ABE35E7001E30DD /* SCScheduleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCScheduleTableViewController.h; sourceTree = "<group>"; };
 		1F86EF461ABE35E7001E30DD /* SCScheduleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCScheduleTableViewController.m; sourceTree = "<group>"; };
 		2D10993C3C99F6944FEAF14F /* Pods-SelfConferenceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelfConferenceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SelfConferenceTests/Pods-SelfConferenceTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,8 +163,8 @@
 			children = (
 				1F86EF451ABE35E7001E30DD /* SCScheduleTableViewController.h */,
 				1F86EF461ABE35E7001E30DD /* SCScheduleTableViewController.m */,
-				1F86EF421ABE35D2001E30DD /* SCSessionDetailsViewController.h */,
-				1F86EF431ABE35D2001E30DD /* SCSessionDetailsViewController.m */,
+				1F86EF421ABE35D2001E30DD /* SCSessionDetailsTableViewController.h */,
+				1F86EF431ABE35D2001E30DD /* SCSessionDetailsTableViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -457,7 +457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F86EF441ABE35D2001E30DD /* SCSessionDetailsViewController.m in Sources */,
+				1F86EF441ABE35D2001E30DD /* SCSessionDetailsTableViewController.m in Sources */,
 				1F0BAAA21A999C400059C73A /* SCParseSetupService.m in Sources */,
 				1F86EF3C1ABE1C91001E30DD /* SCLogoColorsLineView.m in Sources */,
 				1F0BAA7B1A99886F0059C73A /* main.m in Sources */,

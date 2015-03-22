@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Self Conference. All rights reserved.
 //
 
-#import "SCSessionDetailsViewController.h"
+#import "SCSessionDetailsTableViewController.h"
 
-@implementation SCSessionDetailsViewController
+@implementation SCSessionDetailsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
