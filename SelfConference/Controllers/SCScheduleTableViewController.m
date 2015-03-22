@@ -41,14 +41,12 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return self.sessions.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-    NSAssert(section == 0, @"There's no support for more than one section");
-    
-    return self.sessions.count;
+    return [self.sessions[section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -58,7 +56,7 @@
      dequeueReusableCellWithIdentifier:NSStringFromClass([SCSessionTableViewCell class])
      forIndexPath:indexPath];
     
-    cell.session = self.sessions[indexPath.row];
+    cell.session = self.sessions[indexPath.section][indexPath.row];
     
     return cell;
 }
@@ -88,7 +86,7 @@ collapseSecondaryViewController:(UIViewController *)secondaryViewController
  */
 - (void)reloadSessionsLocally {
     [SCSession
-     getLocalSessionsWithBlock:^(NSArray *sessions, NSError *error) {
+     getLocalSessionsArrangedByDayWithBlock:^(NSArray *sessions, NSError *error) {
          self.sessions = sessions;
          [self.tableView reloadData];
      }];

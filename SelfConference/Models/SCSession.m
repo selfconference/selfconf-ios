@@ -37,21 +37,36 @@ NSString * const kSCSessionNotificationNameForInstancesWereUpdatedFromTheServer 
     return query;
 }
 
-+ (void)getLocalSessionsWithBlock:(SCSessionFetchSessionsWithErrorBlock)block {
++ (void)getLocalSessionsArrangedByDayWithBlock:(SCSessionFetchSessionsWithErrorBlock)block {
     PFQuery *query = [self query];
     [query fromLocalDatastore];
     
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+    [query findObjectsInBackgroundWithBlock:^(NSArray *sessions, NSError *error) {
         NSSortDescriptor *sortedByScheduledAtDescriptor =
         [NSSortDescriptor
          sortDescriptorWithKey:NSStringFromSelector(@selector(scheduledAt))
          ascending:YES];
         
-        NSArray *sortedObjects =
-        [objects sortedArrayUsingDescriptors:@[sortedByScheduledAtDescriptor]];
+        NSArray *sortedSessions =
+        [sessions sortedArrayUsingDescriptors:@[sortedByScheduledAtDescriptor]];
+        
+        NSMutableArray *sessionsArrangedByDay = [NSMutableArray array];
+        
+        NSMutableArray *sessionsInOneDay = [NSMutableArray array];
+        
+        NSDate *previousScheduledAtDate = [sortedSessions.firstObject scheduledAt];
+        
+        for (SCSession *session in sortedSessions) {
+            [sessionsInOneDay addObject:session];
+            
+            if (![session.scheduledAt mt_isWithinSameDay:previousScheduledAtDate]) {
+                [sessionsArrangedByDay addObject:sessionsInOneDay];
+                sessionsInOneDay = [NSMutableArray array];
+            }
+        }
         
         if (block) {
-            block(sortedObjects, error);
+            block(sessionsArrangedByDay, error);
         }
     }];
 }

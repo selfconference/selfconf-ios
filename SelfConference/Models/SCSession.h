@@ -36,9 +36,10 @@ FOUNDATION_EXPORT NSString * const kSCSessionNotificationNameForInstancesWereUpd
 
 /** 
  Asynchronously fetches 'SCSession' instances that live on the device's 
- database.
+ database. Returns a 2D array, each subarray represents a different day of
+ sessions scheduled. Sessions are sorted based on their 'scheduledAt' values.
  */
-+ (void)getLocalSessionsWithBlock:(SCSessionFetchSessionsWithErrorBlock)block;
++ (void)getLocalSessionsArrangedByDayWithBlock:(SCSessionFetchSessionsWithErrorBlock)block;
 
 /** Fetches all of the recently updated 'SCSession' instances from the server. */
 + (void)fetchAllSessionsFromTheAPIWithBlock:(SCSessionFetchSessionsWithErrorBlock)block;
