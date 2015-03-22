@@ -54,7 +54,7 @@
 - (void)setupConstraints {
     NSDictionary *views = NSDictionaryOfVariableBindings(_logoColorsLineView);
     
-    NSArray *visualFormats = @[@"V:[_logoColorsLineView(1)]|",
+    NSArray *visualFormats = @[@"V:[_logoColorsLineView(3)]|",
                                @"H:|[_logoColorsLineView]|"];
     
     for (NSString *visualFormat in visualFormats) {
