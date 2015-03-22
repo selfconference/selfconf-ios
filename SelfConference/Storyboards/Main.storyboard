@@ -23,6 +23,22 @@
             </objects>
             <point key="canvasLocation" x="-62" y="1064"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mPf-on-AR3">
+            <objects>
+                <navigationController id="XOO-aK-DHw" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xZ5-wi-DuO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="N7D-gK-uit" kind="relationship" relationship="rootViewController" id="DRp-5l-7ps"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bS9-GH-KWO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1662" y="542"/>
+        </scene>
         <!--Session Details View Controller-->
         <scene sceneID="YfL-BW-Cqm">
             <objects>
@@ -36,10 +52,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="4TA-Tf-a9l"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="odd-BI-t3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1662" y="422"/>
+            <point key="canvasLocation" x="2476" y="542"/>
         </scene>
         <!--Self.conference-->
         <scene sceneID="ZPj-Tl-e61">
@@ -104,6 +121,7 @@
                                     <outlet property="roomNameLabel" destination="6ei-oH-BbJ" id="cKk-QA-qqr"/>
                                     <outlet property="timeLabel" destination="SPP-PO-IB4" id="Det-IC-ghR"/>
                                     <outlet property="timeLabelCircleContainerView" destination="UPg-MF-AgY" id="84O-fW-UIu"/>
+                                    <segue destination="XOO-aK-DHw" kind="showDetail" id="7x4-2i-HF0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -141,7 +159,7 @@
                     <tabBarItem key="tabBarItem" title="Schedule" image="scheduleTabBarIcon" id="Ap3-nT-xVA"/>
                     <connections>
                         <segue destination="zOa-Ef-3YB" kind="relationship" relationship="masterViewController" id="vac-vm-wJN"/>
-                        <segue destination="N7D-gK-uit" kind="relationship" relationship="detailViewController" id="scR-1a-bDa"/>
+                        <segue destination="XOO-aK-DHw" kind="relationship" relationship="detailViewController" id="j9b-ou-rdx"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tzD-tQ-MsN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -152,4 +170,7 @@
     <resources>
         <image name="scheduleTabBarIcon" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="j9b-ou-rdx"/>
+    </inferredMetricsTieBreakers>
 </document>

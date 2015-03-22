@@ -10,4 +10,11 @@
 
 @implementation SCSessionDetailsViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+    self.navigationItem.leftItemsSupplementBackButton = YES;
+}
+
 @end
