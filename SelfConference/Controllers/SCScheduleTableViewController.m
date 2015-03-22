@@ -9,6 +9,7 @@
 #import "SCScheduleTableViewController.h"
 #import "SCSession.h"
 #import "SCSessionTableViewCell.h"
+#import "SCSessionsInADayHeaderTableViewCell.h"
 
 @interface SCScheduleTableViewController () <UISplitViewControllerDelegate>
 
@@ -29,7 +30,10 @@
     self.splitViewController.delegate = self;
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.tableView.estimatedRowHeight = 160.0f;
+    self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
+    
+    self.tableView.estimatedRowHeight = 150.0f;
+    self.tableView.estimatedSectionHeaderHeight = 50.0f;
     
     [[NSNotificationCenter defaultCenter]
      addObserver:self
@@ -59,6 +63,20 @@
     cell.session = self.sessions[indexPath.section][indexPath.row];
     
     return cell;
+}
+
+#pragma mark - UITableViewDelegate
+
+- (UIView *)tableView:(UITableView *)tableView
+viewForHeaderInSection:(NSInteger)section {
+    SCSession *firstSessionInSection = [self.sessions[section] firstObject];
+    
+    SCSessionsInADayHeaderTableViewCell *sessionsInADayHeaderTableViewCell =
+    [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SCSessionsInADayHeaderTableViewCell class])];
+    
+    [sessionsInADayHeaderTableViewCell configureWithDate:firstSessionInSection.scheduledAt];
+    
+    return sessionsInADayHeaderTableViewCell.contentView;
 }
 
 #pragma mark - UISplitViewControllerDelegate
