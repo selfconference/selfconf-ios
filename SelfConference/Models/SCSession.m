@@ -57,13 +57,18 @@ NSString * const kSCSessionNotificationNameForInstancesWereUpdatedFromTheServer 
         NSDate *previousScheduledAtDate = [sortedSessions.firstObject scheduledAt];
         
         for (SCSession *session in sortedSessions) {
-            [sessionsInOneDay addObject:session];
+            NSDate *sessionScheduledAt = session.scheduledAt;
             
-            if (![session.scheduledAt mt_isWithinSameDay:previousScheduledAtDate]) {
+            if (![sessionScheduledAt mt_isWithinSameDay:previousScheduledAtDate]) {
+                previousScheduledAtDate = sessionScheduledAt;
                 [sessionsArrangedByDay addObject:sessionsInOneDay];
                 sessionsInOneDay = [NSMutableArray array];
             }
+            
+            [sessionsInOneDay addObject:session];
         }
+        
+        [sessionsArrangedByDay addObject:sessionsInOneDay];
         
         if (block) {
             block(sessionsArrangedByDay, error);
