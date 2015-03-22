@@ -68,7 +68,11 @@ NSString * const kSCSessionNotificationNameForInstancesWereUpdatedFromTheServer 
             [sessionsInOneDay addObject:session];
         }
         
-        [sessionsArrangedByDay addObject:sessionsInOneDay];
+        // If there are 0 sorted sessions, don't add an empty array giving the
+        // app a false positive that there are sessions
+        if (sessionsInOneDay.count > 0) {
+            [sessionsArrangedByDay addObject:sessionsInOneDay];
+        }
         
         if (block) {
             block(sessionsArrangedByDay, error);
