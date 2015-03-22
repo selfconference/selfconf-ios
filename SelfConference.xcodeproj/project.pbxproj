@@ -22,6 +22,10 @@
 		1F0BAAB31A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAB21A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m */; };
 		1F5AC6F71ABE40A00076E341 /* UIView+SCUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC6F61ABE40A00076E341 /* UIView+SCUtilities.m */; };
 		1F5AC6FD1ABE4CE10076E341 /* SCSessionsInADayHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC6FC1ABE4CE10076E341 /* SCSessionsInADayHeaderTableViewCell.m */; };
+		1F5AC7001ABE62680076E341 /* SCSessionNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC6FF1ABE62680076E341 /* SCSessionNameTableViewCell.m */; };
+		1F5AC7031ABE62A50076E341 /* SCSessionDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7021ABE62A50076E341 /* SCSessionDetailsTableViewCell.m */; };
+		1F5AC7061ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7051ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m */; };
+		1F5AC7091ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7081ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m */; };
 		1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */; };
 		1F7392D51A9985BE00F4B10F /* SelfConferenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7392D41A9985BE00F4B10F /* SelfConferenceTests.m */; };
 		1F86EF301ABE05DD001E30DD /* UIColor+SCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF2F1ABE05DD001E30DD /* UIColor+SCColor.m */; };
@@ -71,6 +75,14 @@
 		1F5AC6F61ABE40A00076E341 /* UIView+SCUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SCUtilities.m"; sourceTree = "<group>"; };
 		1F5AC6FB1ABE4CE10076E341 /* SCSessionsInADayHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionsInADayHeaderTableViewCell.h; sourceTree = "<group>"; };
 		1F5AC6FC1ABE4CE10076E341 /* SCSessionsInADayHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionsInADayHeaderTableViewCell.m; sourceTree = "<group>"; };
+		1F5AC6FE1ABE62680076E341 /* SCSessionNameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionNameTableViewCell.h; sourceTree = "<group>"; };
+		1F5AC6FF1ABE62680076E341 /* SCSessionNameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionNameTableViewCell.m; sourceTree = "<group>"; };
+		1F5AC7011ABE62A50076E341 /* SCSessionDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionDetailsTableViewCell.h; sourceTree = "<group>"; };
+		1F5AC7021ABE62A50076E341 /* SCSessionDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionDetailsTableViewCell.m; sourceTree = "<group>"; };
+		1F5AC7041ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionSpeakerHeaderTableViewCell.h; sourceTree = "<group>"; };
+		1F5AC7051ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionSpeakerHeaderTableViewCell.m; sourceTree = "<group>"; };
+		1F5AC7071ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionSpeakerDetailsTableViewCell.h; sourceTree = "<group>"; };
+		1F5AC7081ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionSpeakerDetailsTableViewCell.m; sourceTree = "<group>"; };
 		1F7392B21A9985BE00F4B10F /* SelfConference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelfConference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7392B91A9985BE00F4B10F /* SCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCAppDelegate.h; sourceTree = "<group>"; };
 		1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCAppDelegate.m; sourceTree = "<group>"; };
@@ -144,6 +156,14 @@
 				1F86EF401ABE213F001E30DD /* SCLogoColorsNavigationBar.m */,
 				1F5AC6FB1ABE4CE10076E341 /* SCSessionsInADayHeaderTableViewCell.h */,
 				1F5AC6FC1ABE4CE10076E341 /* SCSessionsInADayHeaderTableViewCell.m */,
+				1F5AC6FE1ABE62680076E341 /* SCSessionNameTableViewCell.h */,
+				1F5AC6FF1ABE62680076E341 /* SCSessionNameTableViewCell.m */,
+				1F5AC7011ABE62A50076E341 /* SCSessionDetailsTableViewCell.h */,
+				1F5AC7021ABE62A50076E341 /* SCSessionDetailsTableViewCell.m */,
+				1F5AC7041ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.h */,
+				1F5AC7051ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m */,
+				1F5AC7071ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.h */,
+				1F5AC7081ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -458,6 +478,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F86EF441ABE35D2001E30DD /* SCSessionDetailsTableViewController.m in Sources */,
+				1F5AC7061ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m in Sources */,
 				1F0BAAA21A999C400059C73A /* SCParseSetupService.m in Sources */,
 				1F86EF3C1ABE1C91001E30DD /* SCLogoColorsLineView.m in Sources */,
 				1F0BAA7B1A99886F0059C73A /* main.m in Sources */,
@@ -469,10 +490,13 @@
 				1F0BAAAC1A99B23F0059C73A /* SCConfigStrings.m in Sources */,
 				1F5AC6F71ABE40A00076E341 /* UIView+SCUtilities.m in Sources */,
 				1F0BAAA81A99A6AB0059C73A /* SCSessionTableViewCell.m in Sources */,
+				1F5AC7091ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m in Sources */,
 				1F86EF301ABE05DD001E30DD /* UIColor+SCColor.m in Sources */,
 				1F5AC6FD1ABE4CE10076E341 /* SCSessionsInADayHeaderTableViewCell.m in Sources */,
 				1F0BAAA51A99A3680059C73A /* SCSharedStoryboardInstances.m in Sources */,
 				1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */,
+				1F5AC7001ABE62680076E341 /* SCSessionNameTableViewCell.m in Sources */,
+				1F5AC7031ABE62A50076E341 /* SCSessionDetailsTableViewCell.m in Sources */,
 				1F0BAAB01A99B7DE0059C73A /* NSError+SCError.m in Sources */,
 				1F0BAAB31A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m in Sources */,
 			);
