@@ -1,19 +1,34 @@
 PODS:
-  - Bolts (1.1.3)
+  - Bolts/Tasks (1.1.5)
   - Kiwi (2.3.1)
-  - MTDates (1.0.0)
-  - Parse (1.6.3):
-    - Bolts (~> 1.1)
+  - MagicalRecord (2.3.0-beta.5):
+    - MagicalRecord/Core (= 2.3.0-beta.5)
+  - MagicalRecord/Core (2.3.0-beta.5)
+  - MTDates (1.0.2)
+  - Parse (1.7.2.2):
+    - Bolts/Tasks (>= 1.1.5)
 
 DEPENDENCIES:
   - Kiwi
+  - MagicalRecord (from `https://github.com/magicalpanda/MagicalRecord.git`, tag `v2.3.0-beta.5`)
   - MTDates
   - Parse
 
-SPEC CHECKSUMS:
-  Bolts: 3db0a875235e0c9042b013af13af0f00f79b102c
-  Kiwi: 73e1400209055ee9c8ba78c6012b6b642d0fb9f7
-  MTDates: e04c9433bf5f1d5cb55a1862ec018a01b5da75c3
-  Parse: f725f76ef200c5127420690fc6882e57c3813923
+EXTERNAL SOURCES:
+  MagicalRecord:
+    :git: https://github.com/magicalpanda/MagicalRecord.git
+    :tag: v2.3.0-beta.5
 
-COCOAPODS: 0.35.0
+CHECKOUT OPTIONS:
+  MagicalRecord:
+    :git: https://github.com/magicalpanda/MagicalRecord.git
+    :tag: v2.3.0-beta.5
+
+SPEC CHECKSUMS:
+  Bolts: aac24961496d504aa56fc267cde95162a71bac39
+  Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
+  MagicalRecord: 5b7e807bc07c5d642af1f7d894b7fe0d3c317ca2
+  MTDates: aa8006ac046c3fc4f2bb9df95603e9b5bdac9467
+  Parse: 6187586a80eb7b4960d755f85e1353148a611f87
+
+COCOAPODS: 0.36.4
