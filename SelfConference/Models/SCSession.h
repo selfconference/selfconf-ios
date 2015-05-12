@@ -13,7 +13,7 @@
 typedef void (^SCSessionFetchSessionsWithErrorBlock)(NSArray *sessions, NSError *error);
 
 /** Gets posted when 'SCSession' instances were updated from the server */
-FOUNDATION_EXPORT NSString * const kSCSessionNotificationNameForInstancesWereUpdatedFromTheServer;
+FOUNDATION_EXPORT NSString *const kSCSessionNotificationNameForInstancesWereUpdatedFromTheServer;
 
 @class SCSpeaker, SCRoom;
 
