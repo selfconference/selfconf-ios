@@ -13,7 +13,10 @@
 @interface Session : SCUpdatedAtCreatedAt
 
 @property (nonatomic, retain) NSString *sessionID;
+
+/** The date when the session is scheduled to take place. */
 @property (nonatomic, retain) NSDate *slot;
+
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *abstract;
 @property (nonatomic) BOOL isKeynote;
