@@ -8,8 +8,6 @@
 
 #import "SCUpdatedAtCreatedAt.h"
 
-@class Event;
-
 @interface Speaker : SCUpdatedAtCreatedAt
 
 @property (nonatomic, retain) NSString *biography;
@@ -17,7 +15,7 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *twitterHandle;
 @property (nonatomic, retain) NSString *photoUrlString;
-@property (nonatomic, retain) Event *event;
+@property (nonatomic, retain) NSSet *events;
 @property (nonatomic, retain) NSSet *sessions;
 
 @end
