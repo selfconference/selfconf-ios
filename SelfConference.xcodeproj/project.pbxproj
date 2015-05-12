@@ -42,6 +42,7 @@
 		1FBD60E51B019DDE008E0FEC /* NSManagedObjectContext+SCManagedObjectContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60E41B019DDE008E0FEC /* NSManagedObjectContext+SCManagedObjectContext.m */; };
 		1FBD60E81B019DFA008E0FEC /* NSPredicate+SCPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60E71B019DFA008E0FEC /* NSPredicate+SCPredicate.m */; };
 		1FBD60EC1B01A061008E0FEC /* SCAPIStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60EB1B01A061008E0FEC /* SCAPIStrings.m */; };
+		1FBD60EF1B01A908008E0FEC /* SCAPIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60EE1B01A908008E0FEC /* SCAPIService.m */; };
 		52177A65E8B8CFE8659C76EF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1457BA96527132726AC017 /* libPods.a */; };
 		FEEAC01EB9E2FC1CB6FE80F7 /* libPods-SelfConferenceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8F553853A58875DD1A6969 /* libPods-SelfConferenceTests.a */; };
 /* End PBXBuildFile section */
@@ -125,6 +126,8 @@
 		1FBD60E71B019DFA008E0FEC /* NSPredicate+SCPredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+SCPredicate.m"; sourceTree = "<group>"; };
 		1FBD60EA1B01A061008E0FEC /* SCAPIStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAPIStrings.h; sourceTree = "<group>"; };
 		1FBD60EB1B01A061008E0FEC /* SCAPIStrings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAPIStrings.m; sourceTree = "<group>"; };
+		1FBD60ED1B01A908008E0FEC /* SCAPIService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAPIService.h; sourceTree = "<group>"; };
+		1FBD60EE1B01A908008E0FEC /* SCAPIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAPIService.m; sourceTree = "<group>"; };
 		2D10993C3C99F6944FEAF14F /* Pods-SelfConferenceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelfConferenceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SelfConferenceTests/Pods-SelfConferenceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		37D95520F9868BAA20A1EBC8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3B1457BA96527132726AC017 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -337,6 +340,8 @@
 			children = (
 				1FBD60EA1B01A061008E0FEC /* SCAPIStrings.h */,
 				1FBD60EB1B01A061008E0FEC /* SCAPIStrings.m */,
+				1FBD60ED1B01A908008E0FEC /* SCAPIService.h */,
+				1FBD60EE1B01A908008E0FEC /* SCAPIService.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -538,6 +543,7 @@
 				1F0BAA7B1A99886F0059C73A /* main.m in Sources */,
 				1FBD60EC1B01A061008E0FEC /* SCAPIStrings.m in Sources */,
 				1FBD60D81B018EDC008E0FEC /* SCSession.m in Sources */,
+				1FBD60EF1B01A908008E0FEC /* SCAPIService.m in Sources */,
 				1F86EF471ABE35E7001E30DD /* SCScheduleTableViewController.m in Sources */,
 				1F86EF411ABE213F001E30DD /* SCLogoColorsNavigationBar.m in Sources */,
 				1FBD60DA1B018EDC008E0FEC /* SCSponsor.m in Sources */,
