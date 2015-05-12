@@ -43,6 +43,11 @@
                 <entry key="mappedKeyName" value="start_date"/>
             </userInfo>
         </attribute>
+        <attribute name="ticketsUrlString" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="tickets_link"/>
+            </userInfo>
+        </attribute>
         <attribute name="twitterHandle" optional="YES" attributeType="String" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="twitter"/>
@@ -368,7 +373,7 @@
         <relationship name="rooms" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Room" inverseName="venue" inverseEntity="Room" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="0" positionY="0" width="128" height="315"/>
+        <element name="Event" positionX="0" positionY="0" width="128" height="330"/>
         <element name="Organizer" positionX="0" positionY="0" width="128" height="210"/>
         <element name="Room" positionX="0" positionY="0" width="128" height="165"/>
         <element name="Session" positionX="0" positionY="0" width="128" height="225"/>

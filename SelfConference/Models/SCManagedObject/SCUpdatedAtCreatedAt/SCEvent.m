@@ -17,6 +17,7 @@
 @dynamic twitterHandle;
 @dynamic startDate;
 @dynamic endDate;
+@dynamic ticketsUrlString;
 @dynamic lanyrdPath;
 @dynamic isCurrent;
 @dynamic sessions;

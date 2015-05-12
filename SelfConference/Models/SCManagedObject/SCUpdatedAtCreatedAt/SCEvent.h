@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSString *twitterHandle;
 @property (nonatomic, retain) NSDate *startDate;
 @property (nonatomic, retain) NSDate *endDate;
+@property (nonatomic, retain) NSString *ticketsUrlString;
 
 /** The path to use with the Lanyrd service: http://lanyrd.com/ */
 @property (nonatomic, retain) NSString *lanyrdPath;
