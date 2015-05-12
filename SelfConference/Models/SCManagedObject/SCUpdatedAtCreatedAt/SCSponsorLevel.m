@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Self Conference. All rights reserved.
 //
 
-#import "SponsorLevel.h"
+#import "SCSponsorLevel.h"
 
-@implementation SponsorLevel
+@implementation SCSponsorLevel
 
 @dynamic sponsorLevelID;
 @dynamic name;

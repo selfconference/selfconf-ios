@@ -8,7 +8,7 @@
 
 #import "SCUpdatedAtCreatedAt.h"
 
-@interface Event : SCUpdatedAtCreatedAt
+@interface SCEvent : SCUpdatedAtCreatedAt
 
 @property (nonatomic, retain) NSString *eventID;
 @property (nonatomic, retain) NSString *name;

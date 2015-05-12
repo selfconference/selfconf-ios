@@ -8,15 +8,15 @@
 
 #import "SCUpdatedAtCreatedAt.h"
 
-@class Event;
+@class SCEvent;
 
-@interface Sponsor : SCUpdatedAtCreatedAt
+@interface SCSponsor : SCUpdatedAtCreatedAt
 
 @property (nonatomic, retain) NSString *sponsorID;
 @property (nonatomic, retain) NSString *link;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *photoUrlString;
-@property (nonatomic, retain) Event *event;
+@property (nonatomic, retain) SCEvent *event;
 @property (nonatomic, retain) NSSet *sponsorLevels;
 
 @end

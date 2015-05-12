@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 Self Conference. All rights reserved.
 //
 
-#import "Speaker.h"
-#import "Event.h"
-#import "Session.h"
+#import "SCSpeaker.h"
+#import "SCEvent.h"
+#import "SCSession.h"
 
-@implementation Speaker
+@implementation SCSpeaker
 
 @dynamic speakerID;
 @dynamic biography;

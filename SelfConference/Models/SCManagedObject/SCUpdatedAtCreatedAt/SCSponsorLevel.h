@@ -8,7 +8,7 @@
 
 #import "SCUpdatedAtCreatedAt.h"
 
-@interface SponsorLevel : SCUpdatedAtCreatedAt
+@interface SCSponsorLevel : SCUpdatedAtCreatedAt
 
 @property (nonatomic, retain) NSString *sponsorLevelID;
 @property (nonatomic, retain) NSString *name;

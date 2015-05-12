@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Self Conference. All rights reserved.
 //
 
-#import "Event.h"
-#import "SponsorLevel.h"
+#import "SCEvent.h"
+#import "SCSponsorLevel.h"
 
-@implementation Event
+@implementation SCEvent
 
 @dynamic eventID;
 @dynamic name;

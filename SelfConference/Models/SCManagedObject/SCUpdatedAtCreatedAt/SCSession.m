@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 Self Conference. All rights reserved.
 //
 
-#import "Session.h"
-#import "Event.h"
-#import "Room.h"
+#import "SCSession.h"
+#import "SCEvent.h"
+#import "SCRoom.h"
 
-@implementation Session
+@implementation SCSession
 
 @dynamic sessionID;
 @dynamic slot;

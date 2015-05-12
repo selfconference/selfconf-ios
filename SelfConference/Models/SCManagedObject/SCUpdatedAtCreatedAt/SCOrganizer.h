@@ -1,5 +1,5 @@
 //
-//  Speaker.h
+//  Organizer.h
 //  SelfConference
 //
 //  Created by Jeff Burt on 5/11/15.
@@ -8,14 +8,14 @@
 
 #import "SCUpdatedAtCreatedAt.h"
 
-@interface Speaker : SCUpdatedAtCreatedAt
+@interface SCOrganizer : SCUpdatedAtCreatedAt
 
-@property (nonatomic, retain) NSString *speakerID;
+@property (nonatomic, retain) NSString *organizerID;
 @property (nonatomic, retain) NSString *biography;
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSString *twitterHandle;
 @property (nonatomic, retain) NSString *photoUrlString;
+@property (nonatomic, retain) NSString *twitterHandle;
+@property (nonatomic, retain) NSString *email;
 @property (nonatomic, retain) NSSet *events;
-@property (nonatomic, retain) NSSet *sessions;
 
 @end

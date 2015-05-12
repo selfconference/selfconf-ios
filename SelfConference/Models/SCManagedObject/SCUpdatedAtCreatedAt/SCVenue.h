@@ -8,7 +8,7 @@
 
 #import "SCUpdatedAtCreatedAt.h"
 
-@interface Venue : SCUpdatedAtCreatedAt
+@interface SCVenue : SCUpdatedAtCreatedAt
 
 @property (nonatomic, retain) NSString *venueID;
 @property (nonatomic, retain) NSString *about;

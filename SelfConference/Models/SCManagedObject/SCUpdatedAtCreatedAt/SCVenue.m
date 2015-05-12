@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Self Conference. All rights reserved.
 //
 
-#import "Venue.h"
-#import "Event.h"
+#import "SCVenue.h"
+#import "SCEvent.h"
 
-@implementation Venue
+@implementation SCVenue
 
 @dynamic venueID;
 @dynamic about;

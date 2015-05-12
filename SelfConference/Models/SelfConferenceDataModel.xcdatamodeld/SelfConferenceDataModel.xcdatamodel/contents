@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Event" representedClassName="Event" syncable="YES">
+    <entity name="Event" representedClassName="SCEvent" syncable="YES">
         <attribute name="about" optional="YES" attributeType="String" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="about"/>
@@ -68,7 +68,7 @@
             </userInfo>
         </relationship>
     </entity>
-    <entity name="Organizer" representedClassName="Organizer" syncable="YES">
+    <entity name="Organizer" representedClassName="SCOrganizer" syncable="YES">
         <attribute name="biography" optional="YES" attributeType="String" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="bio"/>
@@ -113,7 +113,7 @@
         </attribute>
         <relationship name="events" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Event" inverseName="organizers" inverseEntity="Event" syncable="YES"/>
     </entity>
-    <entity name="Room" representedClassName="Room" syncable="YES">
+    <entity name="Room" representedClassName="SCRoom" syncable="YES">
         <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES">
@@ -143,7 +143,7 @@
             </userInfo>
         </relationship>
     </entity>
-    <entity name="Session" representedClassName="Session" syncable="YES">
+    <entity name="Session" representedClassName="SCSession" syncable="YES">
         <attribute name="abstract" optional="YES" attributeType="String" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="abstract"/>
@@ -197,7 +197,7 @@
             </userInfo>
         </relationship>
     </entity>
-    <entity name="Speaker" representedClassName="Speaker" syncable="YES">
+    <entity name="Speaker" representedClassName="SCSpeaker" syncable="YES">
         <attribute name="biography" optional="YES" attributeType="String" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="bio"/>
@@ -242,7 +242,7 @@
         </relationship>
         <relationship name="sessions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Session" inverseName="speakers" inverseEntity="Session" syncable="YES"/>
     </entity>
-    <entity name="Sponsor" representedClassName="Sponsor" syncable="YES">
+    <entity name="Sponsor" representedClassName="SCSponsor" syncable="YES">
         <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES">
@@ -286,7 +286,7 @@
             </userInfo>
         </relationship>
     </entity>
-    <entity name="SponsorLevel" representedClassName="SponsorLevel" syncable="YES">
+    <entity name="SponsorLevel" representedClassName="SCSponsorLevel" syncable="YES">
         <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES">
@@ -326,7 +326,7 @@
         </relationship>
         <relationship name="sponsors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sponsor" inverseName="sponsorLevels" inverseEntity="Sponsor" syncable="YES"/>
     </entity>
-    <entity name="Venue" representedClassName="Venue" syncable="YES">
+    <entity name="Venue" representedClassName="SCVenue" syncable="YES">
         <attribute name="about" optional="YES" attributeType="String" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="about"/>
@@ -368,13 +368,13 @@
         <relationship name="rooms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Room" inverseName="venue" inverseEntity="Room" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="-63" positionY="-18" width="128" height="315"/>
-        <element name="Session" positionX="-54" positionY="63" width="128" height="225"/>
-        <element name="Room" positionX="-36" positionY="126" width="128" height="165"/>
-        <element name="Speaker" positionX="-18" positionY="162" width="128" height="210"/>
-        <element name="Sponsor" positionX="0" positionY="180" width="128" height="195"/>
-        <element name="SponsorLevel" positionX="18" positionY="189" width="128" height="195"/>
-        <element name="Organizer" positionX="-27" positionY="135" width="128" height="210"/>
-        <element name="Venue" positionX="-18" positionY="144" width="128" height="210"/>
+        <element name="Event" positionX="0" positionY="0" width="128" height="315"/>
+        <element name="Organizer" positionX="0" positionY="0" width="128" height="210"/>
+        <element name="Room" positionX="0" positionY="0" width="128" height="165"/>
+        <element name="Session" positionX="0" positionY="0" width="128" height="225"/>
+        <element name="Speaker" positionX="0" positionY="0" width="128" height="210"/>
+        <element name="Sponsor" positionX="0" positionY="0" width="128" height="195"/>
+        <element name="SponsorLevel" positionX="0" positionY="0" width="128" height="195"/>
+        <element name="Venue" positionX="0" positionY="0" width="128" height="210"/>
     </elements>
 </model>

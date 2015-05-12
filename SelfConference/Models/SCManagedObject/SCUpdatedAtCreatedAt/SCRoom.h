@@ -8,13 +8,13 @@
 
 #import "SCUpdatedAtCreatedAt.h"
 
-@class Venue;
+@class SCVenue;
 
-@interface Room : SCUpdatedAtCreatedAt
+@interface SCRoom : SCUpdatedAtCreatedAt
 
 @property (nonatomic, retain) NSString *roomID;
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) Venue *venue;
+@property (nonatomic, retain) SCVenue *venue;
 @property (nonatomic, retain) NSSet *sessions;
 
 @end

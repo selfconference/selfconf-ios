@@ -8,9 +8,9 @@
 
 #import "SCUpdatedAtCreatedAt.h"
 
-@class Event, Room;
+@class SCEvent, SCRoom;
 
-@interface Session : SCUpdatedAtCreatedAt
+@interface SCSession : SCUpdatedAtCreatedAt
 
 @property (nonatomic, retain) NSString *sessionID;
 
@@ -20,8 +20,8 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *abstract;
 @property (nonatomic) BOOL isKeynote;
-@property (nonatomic, retain) Event *event;
-@property (nonatomic, retain) Room *room;
+@property (nonatomic, retain) SCEvent *event;
+@property (nonatomic, retain) SCRoom *room;
 @property (nonatomic, retain) NSSet *speakers;
 
 @end
