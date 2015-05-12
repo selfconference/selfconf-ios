@@ -18,7 +18,7 @@
                 <entry key="mappedKeyName" value="end_date"/>
             </userInfo>
         </attribute>
-        <attribute name="eventID" optional="YES" attributeType="String" syncable="YES">
+        <attribute name="eventID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="id"/>
             </userInfo>
@@ -91,7 +91,7 @@
                 <entry key="mappedKeyName" value="name"/>
             </userInfo>
         </attribute>
-        <attribute name="organizerID" optional="YES" attributeType="String" syncable="YES">
+        <attribute name="organizerID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="id"/>
             </userInfo>
@@ -126,7 +126,7 @@
                 <entry key="mappedKeyName" value="name"/>
             </userInfo>
         </attribute>
-        <attribute name="roomID" optional="YES" attributeType="String" syncable="YES">
+        <attribute name="roomID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="id"/>
             </userInfo>
@@ -166,7 +166,7 @@
                 <entry key="mappedKeyName" value="name"/>
             </userInfo>
         </attribute>
-        <attribute name="sessionID" optional="YES" attributeType="String" syncable="YES">
+        <attribute name="sessionID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="id"/>
             </userInfo>
@@ -220,7 +220,7 @@
                 <entry key="mappedKeyName" value="photo"/>
             </userInfo>
         </attribute>
-        <attribute name="speakerID" optional="YES" attributeType="String" syncable="YES">
+        <attribute name="speakerID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="id"/>
             </userInfo>
@@ -265,7 +265,7 @@
                 <entry key="mappedKeyName" value="photo"/>
             </userInfo>
         </attribute>
-        <attribute name="sponsorID" optional="YES" attributeType="String" syncable="YES">
+        <attribute name="sponsorID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="id"/>
             </userInfo>
@@ -309,7 +309,7 @@
                 <entry key="mappedKeyName" value="photo"/>
             </userInfo>
         </attribute>
-        <attribute name="sponsorLevelID" optional="YES" attributeType="String" syncable="YES">
+        <attribute name="sponsorLevelID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="id"/>
             </userInfo>
@@ -359,7 +359,7 @@
                 <entry key="mappedKeyName" value="updated_at"/>
             </userInfo>
         </attribute>
-        <attribute name="venueID" optional="YES" attributeType="String" syncable="YES">
+        <attribute name="venueID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="id"/>
             </userInfo>

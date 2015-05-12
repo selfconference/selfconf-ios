@@ -10,7 +10,7 @@
 
 @interface SCVenue : SCUpdatedAtCreatedAt
 
-@property (nonatomic, retain) NSString *venueID;
+@property (nonatomic) NSInteger venueID;
 @property (nonatomic, retain) NSString *about;
 @property (nonatomic, retain) NSString *mapsUrlString;
 @property (nonatomic, retain) NSString *name;

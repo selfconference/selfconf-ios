@@ -10,7 +10,7 @@
 
 @interface SCOrganizer : SCUpdatedAtCreatedAt
 
-@property (nonatomic, retain) NSString *organizerID;
+@property (nonatomic) NSInteger organizerID;
 @property (nonatomic, retain) NSString *biography;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *photoUrlString;

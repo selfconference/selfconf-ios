@@ -12,7 +12,7 @@
 
 @interface SCSession : SCUpdatedAtCreatedAt
 
-@property (nonatomic, retain) NSString *sessionID;
+@property (nonatomic) NSInteger sessionID;
 
 /** The date when the session is scheduled to take place. */
 @property (nonatomic, retain) NSDate *slot;

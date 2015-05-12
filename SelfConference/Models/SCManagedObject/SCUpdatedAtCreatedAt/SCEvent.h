@@ -10,7 +10,7 @@
 
 @interface SCEvent : SCUpdatedAtCreatedAt
 
-@property (nonatomic, retain) NSString *eventID;
+@property (nonatomic) NSInteger eventID;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *about;
 @property (nonatomic, retain) NSString *twitterHandle;

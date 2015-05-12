@@ -12,7 +12,7 @@
 
 @interface SCRoom : SCUpdatedAtCreatedAt
 
-@property (nonatomic, retain) NSString *roomID;
+@property (nonatomic) NSInteger roomID;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) SCVenue *venue;
 @property (nonatomic, retain) NSSet *sessions;
