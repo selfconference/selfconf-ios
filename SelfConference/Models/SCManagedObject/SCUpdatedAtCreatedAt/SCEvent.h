@@ -8,6 +8,8 @@
 
 #import "SCUpdatedAtCreatedAt.h"
 
+@class SCVenue;
+
 @interface SCEvent : SCUpdatedAtCreatedAt
 
 @property (nonatomic) NSInteger eventID;
@@ -28,7 +30,7 @@
 @property (nonatomic, retain) NSSet *sponsors;
 @property (nonatomic, retain) NSSet *sponsorLevels;
 @property (nonatomic, retain) NSSet *organizers;
-@property (nonatomic, retain) NSManagedObject *venue;
+@property (nonatomic, retain) SCVenue *venue;
 
 /** Returns a url string to GET all of the events */
 + (NSString *)getAllEventsUrlString;
