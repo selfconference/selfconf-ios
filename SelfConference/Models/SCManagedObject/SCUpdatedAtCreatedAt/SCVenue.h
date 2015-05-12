@@ -18,4 +18,10 @@
 @property (nonatomic, retain) NSSet *events;
 @property (nonatomic, retain) NSSet *rooms;
 
+/** Returns a url string to GET all of the venues */
++ (NSString *)getAllVenuesUrlString;
+
+/** Returns a url string to GET all of the rooms for the given venue */
+- (NSString *)getRoomsUrlString;
+
 @end

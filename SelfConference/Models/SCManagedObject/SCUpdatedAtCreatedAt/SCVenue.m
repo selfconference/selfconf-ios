@@ -7,7 +7,7 @@
 //
 
 #import "SCVenue.h"
-#import "SCEvent.h"
+#import "SCAPIStrings.h"
 
 @implementation SCVenue
 
@@ -18,5 +18,16 @@
 @dynamic address;
 @dynamic events;
 @dynamic rooms;
+
++ (NSString *)getAllVenuesUrlString {
+    return SCAPIRelativeUrlStrings.venues;
+}
+
+- (NSString *)getRoomsUrlString {
+    return [NSString stringWithFormat:@"%@/%@/%@",
+            SCAPIRelativeUrlStrings.venues,
+            self.venueID,
+            SCAPIRelativeUrlStrings.rooms];
+}
 
 @end

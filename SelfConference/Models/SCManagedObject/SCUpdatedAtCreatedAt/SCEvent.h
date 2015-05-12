@@ -30,4 +30,22 @@
 @property (nonatomic, retain) NSSet *organizers;
 @property (nonatomic, retain) NSManagedObject *venue;
 
+/** Returns a url string to GET all of the events */
++ (NSString *)getAllEventsUrlString;
+
+/** Returns a url string to GET the current event's sessions */
+- (NSString *)getSessionsUrlString;
+
+/** Returns a url string to GET the current event's speakers */
+- (NSString *)getSpeakersUrlString;
+
+/** Returns a url string to GET the current event's sponsors */
+- (NSString *)getSponsorsUrlString;
+
+/** Returns a url string to GET the current event's sponsor levels */
+- (NSString *)getSponserLevelsUrlString;
+
+/** Returns a url string to GET the current event's organizers */
+- (NSString *)getOrganizersUrlString;
+
 @end

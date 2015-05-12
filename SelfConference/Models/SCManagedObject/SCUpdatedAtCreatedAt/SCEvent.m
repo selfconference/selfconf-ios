@@ -7,7 +7,7 @@
 //
 
 #import "SCEvent.h"
-#import "SCSponsorLevel.h"
+#import "SCAPIStrings.h"
 
 @implementation SCEvent
 
@@ -25,5 +25,39 @@
 @dynamic sponsorLevels;
 @dynamic organizers;
 @dynamic venue;
+
++ (NSString *)getAllEventsUrlString {
+    return SCAPIRelativeUrlStrings.events;
+}
+
+- (NSString *)getSessionsUrlString {
+    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.sessions];
+}
+
+- (NSString *)getSpeakersUrlString {
+    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.speakers];
+}
+
+- (NSString *)getSponsorsUrlString {
+    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.sponsors];
+}
+
+- (NSString *)getSponserLevelsUrlString {
+    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.sponsorLevels];
+}
+
+- (NSString *)getOrganizersUrlString {
+    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.organizers];
+}
+
+#pragma mark - Internal
+
+/** Returns a GET url string for 'self' and appends 'suffix'/ */
+- (NSString *)getUrlWithSuffix:(NSString *)suffix {
+    return [NSString stringWithFormat:@"%@/%@/%@",
+            SCAPIRelativeUrlStrings.events,
+            self.eventID,
+            suffix];
+}
 
 @end
