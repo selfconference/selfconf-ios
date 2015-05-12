@@ -59,7 +59,7 @@ static NSString * const kSCSessionTableViewCellShowSessionDetailsSegue =
      dequeueReusableCellWithIdentifier:NSStringFromClass([SCSessionTableViewCell class])
      forIndexPath:indexPath];
     
-    cell.session = self.sessions[indexPath.section][indexPath.row];
+    // TODO: set the cell session
     
     return cell;
 }
@@ -106,7 +106,7 @@ collapseSecondaryViewController:(UIViewController *)secondaryViewController
         SCSessionDetailsTableViewController *sessionDetailsTableViewController =
         (SCSessionDetailsTableViewController *)[segue.destinationViewController viewControllers].firstObject;
         
-        sessionDetailsTableViewController.session = sessionTableViewCell.session;
+        // TODO: set the session on the table view controller
     }
 }
 

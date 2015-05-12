@@ -13,7 +13,6 @@
 		1F0BAA8B1A998D520059C73A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BAA8A1A998D520059C73A /* Main.storyboard */; };
 		1F0BAAA51A99A3680059C73A /* SCSharedStoryboardInstances.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAA41A99A3680059C73A /* SCSharedStoryboardInstances.m */; };
 		1F0BAAA81A99A6AB0059C73A /* SCSessionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAA71A99A6AB0059C73A /* SCSessionTableViewCell.m */; };
-		1F0BAAAC1A99B23F0059C73A /* SCConfigStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAAB1A99B23F0059C73A /* SCConfigStrings.m */; };
 		1F0BAAB01A99B7DE0059C73A /* NSError+SCError.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAAF1A99B7DE0059C73A /* NSError+SCError.m */; };
 		1F0BAAB31A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAB21A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m */; };
 		1F5AC6F71ABE40A00076E341 /* UIView+SCUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC6F61ABE40A00076E341 /* UIView+SCUtilities.m */; };
@@ -64,8 +63,6 @@
 		1F0BAAA41A99A3680059C73A /* SCSharedStoryboardInstances.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSharedStoryboardInstances.m; sourceTree = "<group>"; };
 		1F0BAAA61A99A6AB0059C73A /* SCSessionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionTableViewCell.h; sourceTree = "<group>"; };
 		1F0BAAA71A99A6AB0059C73A /* SCSessionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionTableViewCell.m; sourceTree = "<group>"; };
-		1F0BAAAA1A99B23F0059C73A /* SCConfigStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCConfigStrings.h; sourceTree = "<group>"; };
-		1F0BAAAB1A99B23F0059C73A /* SCConfigStrings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCConfigStrings.m; sourceTree = "<group>"; };
 		1F0BAAAE1A99B7DE0059C73A /* NSError+SCError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+SCError.h"; sourceTree = "<group>"; };
 		1F0BAAAF1A99B7DE0059C73A /* NSError+SCError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+SCError.m"; sourceTree = "<group>"; };
 		1F0BAAB11A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+SCUserDefaults.h"; sourceTree = "<group>"; };
@@ -220,15 +217,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		1F0BAAA91A99B20D0059C73A /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				1F0BAAAA1A99B23F0059C73A /* SCConfigStrings.h */,
-				1F0BAAAB1A99B23F0059C73A /* SCConfigStrings.m */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		1F0BAAAD1A99B7D00059C73A /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,7 +259,6 @@
 				1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */,
 				1F0BAAAD1A99B7D00059C73A /* Categories */,
 				1F0BAA8C1A998F8B0059C73A /* Controllers */,
-				1F0BAAA91A99B20D0059C73A /* Helpers */,
 				1F0BAA951A9994000059C73A /* Models */,
 				1F0BAA831A9989460059C73A /* Resources */,
 				1F0BAA891A998D480059C73A /* Storyboards */,
@@ -528,7 +515,6 @@
 				1FBD60D81B018EDC008E0FEC /* SCSession.m in Sources */,
 				1F86EF471ABE35E7001E30DD /* SCScheduleTableViewController.m in Sources */,
 				1F86EF411ABE213F001E30DD /* SCLogoColorsNavigationBar.m in Sources */,
-				1F0BAAAC1A99B23F0059C73A /* SCConfigStrings.m in Sources */,
 				1FBD60DA1B018EDC008E0FEC /* SCSponsor.m in Sources */,
 				1F5AC6F71ABE40A00076E341 /* UIView+SCUtilities.m in Sources */,
 				1FBD60E21B018F81008E0FEC /* SCUpdatedAtCreatedAt.m in Sources */,
