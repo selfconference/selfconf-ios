@@ -53,16 +53,16 @@
                 <entry key="mappedKeyName" value="updated_at"/>
             </userInfo>
         </attribute>
-        <relationship name="organizers" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Organizer" inverseName="events" inverseEntity="Organizer" syncable="YES">
+        <relationship name="organizers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Organizer" inverseName="events" inverseEntity="Organizer" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="organizers"/>
             </userInfo>
         </relationship>
-        <relationship name="sessions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Session" inverseName="event" inverseEntity="Session" syncable="YES"/>
-        <relationship name="speakers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Speaker" inverseName="events" inverseEntity="Speaker" syncable="YES"/>
-        <relationship name="sponsorLevels" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SponsorLevel" inverseName="event" inverseEntity="SponsorLevel" syncable="YES"/>
-        <relationship name="sponsors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sponsor" inverseName="event" inverseEntity="Sponsor" syncable="YES"/>
-        <relationship name="venue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Venue" inverseName="events" inverseEntity="Venue" syncable="YES">
+        <relationship name="sessions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Session" inverseName="event" inverseEntity="Session" syncable="YES"/>
+        <relationship name="speakers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Speaker" inverseName="events" inverseEntity="Speaker" syncable="YES"/>
+        <relationship name="sponsorLevels" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SponsorLevel" inverseName="event" inverseEntity="SponsorLevel" syncable="YES"/>
+        <relationship name="sponsors" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Sponsor" inverseName="event" inverseEntity="Sponsor" syncable="YES"/>
+        <relationship name="venue" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Venue" inverseName="events" inverseEntity="Venue" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="venue_id"/>
             </userInfo>
@@ -111,7 +111,7 @@
                 <entry key="mappedKeyName" value="updated_at"/>
             </userInfo>
         </attribute>
-        <relationship name="events" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Event" inverseName="organizers" inverseEntity="Event" syncable="YES"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="organizers" inverseEntity="Event" syncable="YES"/>
     </entity>
     <entity name="Room" representedClassName="SCRoom" syncable="YES">
         <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES"/>
@@ -235,7 +235,7 @@
                 <entry key="mappedKeyName" value="updated_at"/>
             </userInfo>
         </attribute>
-        <relationship name="events" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Event" inverseName="speakers" inverseEntity="Event" syncable="YES">
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="speakers" inverseEntity="Event" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="events"/>
             </userInfo>
@@ -275,7 +275,7 @@
                 <entry key="mappedKeyName" value="updated_at"/>
             </userInfo>
         </attribute>
-        <relationship name="event" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Event" inverseName="sponsors" inverseEntity="Event" syncable="YES">
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="sponsors" inverseEntity="Event" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="event_id"/>
             </userInfo>
@@ -319,7 +319,7 @@
                 <entry key="mappedKeyName" value="updated_at"/>
             </userInfo>
         </attribute>
-        <relationship name="event" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Event" inverseName="sponsorLevels" inverseEntity="Event" syncable="YES">
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="sponsorLevels" inverseEntity="Event" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="event_id"/>
             </userInfo>
@@ -364,8 +364,8 @@
                 <entry key="mappedKeyName" value="id"/>
             </userInfo>
         </attribute>
-        <relationship name="events" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Event" inverseName="venue" inverseEntity="Event" syncable="YES"/>
-        <relationship name="rooms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Room" inverseName="venue" inverseEntity="Room" syncable="YES"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="venue" inverseEntity="Event" syncable="YES"/>
+        <relationship name="rooms" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Room" inverseName="venue" inverseEntity="Room" syncable="YES"/>
     </entity>
     <elements>
         <element name="Event" positionX="0" positionY="0" width="128" height="315"/>
