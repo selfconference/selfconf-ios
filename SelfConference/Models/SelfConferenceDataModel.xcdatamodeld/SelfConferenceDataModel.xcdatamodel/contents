@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Event" syncable="YES">
+        <attribute name="about" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="about"/>
+            </userInfo>
+        </attribute>
+        <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="created_at"/>
+            </userInfo>
+        </attribute>
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="end_date"/>
+            </userInfo>
+        </attribute>
+        <attribute name="eventID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isCurrent" optional="YES" attributeType="Boolean" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="current"/>
+            </userInfo>
+        </attribute>
+        <attribute name="lanyrdPath" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="lanyard"/>
+            </userInfo>
+        </attribute>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="name"/>
+            </userInfo>
+        </attribute>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="start_date"/>
+            </userInfo>
+        </attribute>
+        <attribute name="twitterHandle" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="twitter"/>
+            </userInfo>
+        </attribute>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="updated_at"/>
+            </userInfo>
+        </attribute>
+        <relationship name="organizers" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Organizer" inverseName="events" inverseEntity="Organizer" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="organizers"/>
+            </userInfo>
+        </relationship>
+        <relationship name="rooms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Room" inverseName="event" inverseEntity="Room" syncable="YES"/>
+        <relationship name="sessions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Session" inverseName="event" inverseEntity="Session" syncable="YES"/>
+        <relationship name="speakers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Speaker" inverseName="event" inverseEntity="Speaker" syncable="YES"/>
+        <relationship name="sponsorLevels" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SponsorLevel" inverseName="event" inverseEntity="SponsorLevel" syncable="YES"/>
+        <relationship name="sponsors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sponsor" inverseName="event" inverseEntity="Sponsor" syncable="YES"/>
+        <relationship name="venue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Venue" inverseName="events" inverseEntity="Venue" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="venue_id"/>
+            </userInfo>
+        </relationship>
+    </entity>
+    <entity name="Organizer" syncable="YES">
+        <attribute name="biography" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="bio"/>
+            </userInfo>
+        </attribute>
+        <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="created_at"/>
+            </userInfo>
+        </attribute>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="email"/>
+            </userInfo>
+        </attribute>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="name"/>
+            </userInfo>
+        </attribute>
+        <attribute name="organizerID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="photoUrlString" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="photo"/>
+            </userInfo>
+        </attribute>
+        <attribute name="twitterHandle" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="twitter"/>
+            </userInfo>
+        </attribute>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="updated_at"/>
+            </userInfo>
+        </attribute>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Event" inverseName="organizers" inverseEntity="Event" syncable="YES"/>
+    </entity>
+    <entity name="Room" syncable="YES">
+        <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="created_at"/>
+            </userInfo>
+        </attribute>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="name"/>
+            </userInfo>
+        </attribute>
+        <attribute name="roomID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="updated_at"/>
+            </userInfo>
+        </attribute>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="rooms" inverseEntity="Event" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="event_id"/>
+            </userInfo>
+        </relationship>
+        <relationship name="sessions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Session" inverseName="room" inverseEntity="Session" syncable="YES"/>
+    </entity>
+    <entity name="Session" syncable="YES">
+        <attribute name="abstract" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="abstract"/>
+            </userInfo>
+        </attribute>
+        <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="created_at"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isKeynote" optional="YES" attributeType="Boolean" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="keynote"/>
+            </userInfo>
+        </attribute>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="name"/>
+            </userInfo>
+        </attribute>
+        <attribute name="sessionID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="slot" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="slot"/>
+            </userInfo>
+        </attribute>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="updated_at"/>
+            </userInfo>
+        </attribute>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="sessions" inverseEntity="Event" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="event_id"/>
+            </userInfo>
+        </relationship>
+        <relationship name="room" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="sessions" inverseEntity="Room" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="room"/>
+            </userInfo>
+        </relationship>
+        <relationship name="speakers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Speaker" inverseName="sessions" inverseEntity="Speaker" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="speakers"/>
+            </userInfo>
+        </relationship>
+    </entity>
+    <entity name="Speaker" syncable="YES">
+        <attribute name="biography" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="bio"/>
+            </userInfo>
+        </attribute>
+        <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="created_at"/>
+            </userInfo>
+        </attribute>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="name"/>
+            </userInfo>
+        </attribute>
+        <attribute name="photoUrlString" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="photo"/>
+            </userInfo>
+        </attribute>
+        <attribute name="speakerID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="twitterHandle" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="twitter"/>
+            </userInfo>
+        </attribute>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="updated_at"/>
+            </userInfo>
+        </attribute>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Event" inverseName="speakers" inverseEntity="Event" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="event_id"/>
+            </userInfo>
+        </relationship>
+        <relationship name="sessions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Session" inverseName="speakers" inverseEntity="Session" syncable="YES"/>
+    </entity>
+    <entity name="Sponsor" syncable="YES">
+        <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="created_at"/>
+            </userInfo>
+        </attribute>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="link"/>
+            </userInfo>
+        </attribute>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="name"/>
+            </userInfo>
+        </attribute>
+        <attribute name="photoUrlString" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="photo"/>
+            </userInfo>
+        </attribute>
+        <attribute name="sponsorID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="updated_at"/>
+            </userInfo>
+        </attribute>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Event" inverseName="sponsors" inverseEntity="Event" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="event_id"/>
+            </userInfo>
+        </relationship>
+        <relationship name="sponsorLevels" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SponsorLevel" inverseName="sponsors" inverseEntity="SponsorLevel" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="sponsor_levels"/>
+            </userInfo>
+        </relationship>
+    </entity>
+    <entity name="SponsorLevel" syncable="YES">
+        <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="created_at"/>
+            </userInfo>
+        </attribute>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="name"/>
+            </userInfo>
+        </attribute>
+        <attribute name="order" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="order"/>
+            </userInfo>
+        </attribute>
+        <attribute name="photoUrlString" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="photo"/>
+            </userInfo>
+        </attribute>
+        <attribute name="sponsorLevelID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="updated_at"/>
+            </userInfo>
+        </attribute>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Event" inverseName="sponsorLevels" inverseEntity="Event" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="event_id"/>
+            </userInfo>
+        </relationship>
+        <relationship name="sponsors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sponsor" inverseName="sponsorLevels" inverseEntity="Sponsor" syncable="YES"/>
+    </entity>
+    <entity name="Venue" syncable="YES">
+        <attribute name="about" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="about"/>
+            </userInfo>
+        </attribute>
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="address"/>
+            </userInfo>
+        </attribute>
+        <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="created_at"/>
+            </userInfo>
+        </attribute>
+        <attribute name="mapsUrlString" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="maps_link"/>
+            </userInfo>
+        </attribute>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="name"/>
+            </userInfo>
+        </attribute>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="updated_at"/>
+            </userInfo>
+        </attribute>
+        <attribute name="venueID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="id"/>
+            </userInfo>
+        </attribute>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Event" inverseName="venue" inverseEntity="Event" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Event" positionX="-63" positionY="-18" width="128" height="330"/>
+        <element name="Session" positionX="-54" positionY="63" width="128" height="225"/>
+        <element name="Room" positionX="-36" positionY="126" width="128" height="165"/>
+        <element name="Speaker" positionX="-18" positionY="162" width="128" height="210"/>
+        <element name="Sponsor" positionX="0" positionY="180" width="128" height="195"/>
+        <element name="SponsorLevel" positionX="18" positionY="189" width="128" height="195"/>
+        <element name="Organizer" positionX="-27" positionY="135" width="128" height="210"/>
+        <element name="Venue" positionX="-18" positionY="144" width="128" height="195"/>
+    </elements>
+</model>

@@ -33,6 +33,7 @@
 		1F86EF411ABE213F001E30DD /* SCLogoColorsNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF401ABE213F001E30DD /* SCLogoColorsNavigationBar.m */; };
 		1F86EF441ABE35D2001E30DD /* SCSessionDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF431ABE35D2001E30DD /* SCSessionDetailsTableViewController.m */; };
 		1F86EF471ABE35E7001E30DD /* SCScheduleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF461ABE35E7001E30DD /* SCScheduleTableViewController.m */; };
+		1FBD60AA1B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60A81B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld */; };
 		52177A65E8B8CFE8659C76EF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1457BA96527132726AC017 /* libPods.a */; };
 		FEEAC01EB9E2FC1CB6FE80F7 /* libPods-SelfConferenceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8F553853A58875DD1A6969 /* libPods-SelfConferenceTests.a */; };
 /* End PBXBuildFile section */
@@ -99,6 +100,7 @@
 		1F86EF431ABE35D2001E30DD /* SCSessionDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionDetailsTableViewController.m; sourceTree = "<group>"; };
 		1F86EF451ABE35E7001E30DD /* SCScheduleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCScheduleTableViewController.h; sourceTree = "<group>"; };
 		1F86EF461ABE35E7001E30DD /* SCScheduleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCScheduleTableViewController.m; sourceTree = "<group>"; };
+		1FBD60A91B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SelfConferenceDataModel.xcdatamodel; sourceTree = "<group>"; };
 		2D10993C3C99F6944FEAF14F /* Pods-SelfConferenceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelfConferenceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SelfConferenceTests/Pods-SelfConferenceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		37D95520F9868BAA20A1EBC8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3B1457BA96527132726AC017 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +194,7 @@
 		1F0BAA951A9994000059C73A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1FBD60A81B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld */,
 				1F0BAA961A9994970059C73A /* SCSession.h */,
 				1F0BAA971A9994970059C73A /* SCSession.m */,
 				1F0BAA991A9995850059C73A /* SCSpeaker.h */,
@@ -499,6 +502,7 @@
 				1F5AC7031ABE62A50076E341 /* SCSessionDetailsTableViewCell.m in Sources */,
 				1F0BAAB01A99B7DE0059C73A /* NSError+SCError.m in Sources */,
 				1F0BAAB31A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m in Sources */,
+				1FBD60AA1B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,6 +692,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1FBD60A81B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1FBD60A91B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodel */,
+			);
+			currentVersion = 1FBD60A91B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodel */;
+			path = SelfConferenceDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1F7392AA1A9985BD00F4B10F /* Project object */;
 }
