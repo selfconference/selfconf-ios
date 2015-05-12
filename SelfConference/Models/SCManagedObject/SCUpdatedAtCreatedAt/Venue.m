@@ -13,13 +13,9 @@
 
 @dynamic about;
 @dynamic mapsUrlString;
-@dynamic clientCreatedAt;
-@dynamic clientUpdatedAt;
-@dynamic createdAt;
 @dynamic venueID;
 @dynamic name;
 @dynamic address;
-@dynamic updatedAt;
 @dynamic events;
 
 @end

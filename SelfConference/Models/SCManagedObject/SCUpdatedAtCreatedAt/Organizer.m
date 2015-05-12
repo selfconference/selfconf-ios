@@ -12,14 +12,10 @@
 @implementation Organizer
 
 @dynamic biography;
-@dynamic clientCreatedAt;
-@dynamic clientUpdatedAt;
-@dynamic createdAt;
 @dynamic name;
 @dynamic photoUrlString;
 @dynamic organizerID;
 @dynamic twitterHandle;
-@dynamic updatedAt;
 @dynamic email;
 @dynamic events;
 

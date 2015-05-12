@@ -17,10 +17,6 @@
 @dynamic twitterHandle;
 @dynamic startDate;
 @dynamic endDate;
-@dynamic createdAt;
-@dynamic updatedAt;
-@dynamic clientCreatedAt;
-@dynamic clientUpdatedAt;
 @dynamic lanyrdPath;
 @dynamic isCurrent;
 @dynamic sessions;

@@ -12,11 +12,7 @@
 
 @implementation Session
 
-@dynamic clientUpdatedAt;
-@dynamic clientCreatedAt;
-@dynamic createdAt;
 @dynamic sessionID;
-@dynamic updatedAt;
 @dynamic slot;
 @dynamic name;
 @dynamic abstract;

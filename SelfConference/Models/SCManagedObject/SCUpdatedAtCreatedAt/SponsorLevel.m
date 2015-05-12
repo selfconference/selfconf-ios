@@ -10,13 +10,9 @@
 
 @implementation SponsorLevel
 
-@dynamic clientCreatedAt;
-@dynamic clientUpdatedAt;
-@dynamic createdAt;
 @dynamic name;
 @dynamic photoUrlString;
 @dynamic sponsorLevelID;
-@dynamic updatedAt;
 @dynamic order;
 @dynamic event;
 @dynamic sponsors;

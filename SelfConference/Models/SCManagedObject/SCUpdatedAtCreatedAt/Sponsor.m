@@ -13,12 +13,8 @@
 @implementation Sponsor
 
 @dynamic link;
-@dynamic clientCreatedAt;
-@dynamic clientUpdatedAt;
-@dynamic createdAt;
 @dynamic name;
 @dynamic sponsorID;
-@dynamic updatedAt;
 @dynamic photoUrlString;
 @dynamic event;
 @dynamic sponsorLevels;
