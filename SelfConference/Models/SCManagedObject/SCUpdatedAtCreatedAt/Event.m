@@ -20,7 +20,6 @@
 @dynamic lanyrdPath;
 @dynamic isCurrent;
 @dynamic sessions;
-@dynamic rooms;
 @dynamic speakers;
 @dynamic sponsors;
 @dynamic sponsorLevels;

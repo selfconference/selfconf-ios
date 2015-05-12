@@ -17,5 +17,6 @@
 @dynamic name;
 @dynamic address;
 @dynamic events;
+@dynamic rooms;
 
 @end

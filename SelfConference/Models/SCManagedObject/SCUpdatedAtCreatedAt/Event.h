@@ -19,7 +19,6 @@
 @property (nonatomic, retain) NSString *lanyrdPath;
 @property (nonatomic) BOOL isCurrent;
 @property (nonatomic, retain) NSSet *sessions;
-@property (nonatomic, retain) NSSet *rooms;
 @property (nonatomic, retain) NSSet *speakers;
 @property (nonatomic, retain) NSSet *sponsors;
 @property (nonatomic, retain) NSSet *sponsorLevels;

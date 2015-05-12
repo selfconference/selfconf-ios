@@ -16,5 +16,6 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *address;
 @property (nonatomic, retain) NSSet *events;
+@property (nonatomic, retain) NSSet *rooms;
 
 @end

@@ -13,7 +13,7 @@
 
 @dynamic name;
 @dynamic roomID;
-@dynamic event;
+@dynamic venue;
 @dynamic sessions;
 
 @end

@@ -58,7 +58,6 @@
                 <entry key="mappedKeyName" value="organizers"/>
             </userInfo>
         </relationship>
-        <relationship name="rooms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Room" inverseName="event" inverseEntity="Room" syncable="YES"/>
         <relationship name="sessions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Session" inverseName="event" inverseEntity="Session" syncable="YES"/>
         <relationship name="speakers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Speaker" inverseName="event" inverseEntity="Speaker" syncable="YES"/>
         <relationship name="sponsorLevels" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SponsorLevel" inverseName="event" inverseEntity="SponsorLevel" syncable="YES"/>
@@ -137,12 +136,12 @@
                 <entry key="mappedKeyName" value="updated_at"/>
             </userInfo>
         </attribute>
-        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="rooms" inverseEntity="Event" syncable="YES">
+        <relationship name="sessions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Session" inverseName="room" inverseEntity="Session" syncable="YES"/>
+        <relationship name="venue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Venue" inverseName="rooms" inverseEntity="Venue" syncable="YES">
             <userInfo>
-                <entry key="mappedKeyName" value="event_id"/>
+                <entry key="mappedKeyName" value="venue_id"/>
             </userInfo>
         </relationship>
-        <relationship name="sessions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Session" inverseName="room" inverseEntity="Session" syncable="YES"/>
     </entity>
     <entity name="Session" representedClassName="Session" syncable="YES">
         <attribute name="abstract" optional="YES" attributeType="String" syncable="YES">
@@ -366,15 +365,16 @@
             </userInfo>
         </attribute>
         <relationship name="events" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Event" inverseName="venue" inverseEntity="Event" syncable="YES"/>
+        <relationship name="rooms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Room" inverseName="venue" inverseEntity="Room" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="-63" positionY="-18" width="128" height="330"/>
+        <element name="Event" positionX="-63" positionY="-18" width="128" height="315"/>
         <element name="Session" positionX="-54" positionY="63" width="128" height="225"/>
         <element name="Room" positionX="-36" positionY="126" width="128" height="165"/>
         <element name="Speaker" positionX="-18" positionY="162" width="128" height="210"/>
         <element name="Sponsor" positionX="0" positionY="180" width="128" height="195"/>
         <element name="SponsorLevel" positionX="18" positionY="189" width="128" height="195"/>
         <element name="Organizer" positionX="-27" positionY="135" width="128" height="210"/>
-        <element name="Venue" positionX="-18" positionY="144" width="128" height="195"/>
+        <element name="Venue" positionX="-18" positionY="144" width="128" height="210"/>
     </elements>
 </model>
