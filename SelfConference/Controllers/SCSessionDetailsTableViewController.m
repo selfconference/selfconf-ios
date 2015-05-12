@@ -7,7 +7,6 @@
 //
 
 #import "SCSessionDetailsTableViewController.h"
-#import "SCSession.h"
 #import "SCSessionNameTableViewCell.h"
 #import "SCSessionDetailsTableViewCell.h"
 #import "SCSessionSpeakerHeaderTableViewCell.h"
@@ -54,9 +53,13 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
 }
 
 - (void)setSession:(SCSession *)session {
-    self.navigationItem.title = [session.scheduledAt
+    /* TODO: Set the navigationItem.title to a localized version of session's
+             slot time.
+     
+     self.navigationItem.title = [session.scheduledAt
                                  mt_stringFromDateWithFormat:@"EEEE ha"
                                  localized:YES];
+     */
     
     _session = session;
 }
@@ -73,7 +76,7 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
     
     // A session __could__ have more than 1 speaker
     if (section == SCSessionDetailsTableViewSectionSpeakerDetails) {
-        numberOfRows = self.session.speakers.count;
+        // TODO: set 'numberOfRows' to the number of speakers
     }
     
     return numberOfRows;
@@ -114,8 +117,9 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
              dequeueReusableCellWithIdentifier:NSStringFromClass([SCSessionSpeakerHeaderTableViewCell class])
              forIndexPath:indexPath];
             
-            [sessionSpeakerHeaderTableViewCell
-             configureWithNumberOfSpeakers:self.session.speakers.count];
+            // TODO: Call
+            // '[sessionSpeakerHeaderTableViewCell configureWithNumberOfSpeakers:#]'
+            // with the number of speakers
             
             cell = sessionSpeakerHeaderTableViewCell;
         } break;
@@ -126,8 +130,7 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
              dequeueReusableCellWithIdentifier:NSStringFromClass([SCSessionSpeakerDetailsTableViewCell class])
              forIndexPath:indexPath];
             
-            sessionSpeakerDetailsTableViewCell.speaker =
-            self.session.speakers[indexPath.row];
+            // TODO: set 'sessionSpeakerDetailsTableViewCell.speaker'
             
             cell = sessionSpeakerDetailsTableViewCell;
         } break;

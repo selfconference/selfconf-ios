@@ -7,8 +7,6 @@
 //
 
 #import "SCAppDelegate.h"
-#import "SCParseSetupService.h"
-#import "SCSession.h"
 #import "UIColor+SCColor.h"
 #import <MagicalRecord/MagicalRecord+Setup.h>
 
@@ -17,18 +15,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self styleNavigationBarGlobally];
     [self styleTabBarGlobally];
-    
-    [SCParseSetupService setupWithLaunchOptions:launchOptions];
-    
-    [self fetchUpdatedSessionsFromTheAPI];
-
+        
     [MagicalRecord setupAutoMigratingCoreDataStack];
     
     return YES;
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    [self fetchUpdatedSessionsFromTheAPI];
 }
 
 #pragma mark - Internal
@@ -48,18 +38,6 @@
     navigationBar.tintColor = [UIColor whiteColor];
     navigationBar.titleTextAttributes =
   @{NSForegroundColorAttributeName: navigationBar.tintColor};
-}
-
-/** 
- Fetches all of the 'SCSession' instances from the server. If called multiple 
- times, only recently updated instances are fetched. 
- */
-- (void)fetchUpdatedSessionsFromTheAPI {
-    [SCSession fetchAllSessionsFromTheAPIWithBlock:^(NSArray *sessions, NSError *error) {
-        NSLog(@"Fetched %zd sessions from the API with error: %@",
-              sessions.count,
-              error.localizedDescription);
-    }];
 }
 
 @end

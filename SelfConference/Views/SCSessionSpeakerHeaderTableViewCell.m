@@ -7,7 +7,6 @@
 //
 
 #import "SCSessionSpeakerHeaderTableViewCell.h"
-#import "SCSession.h"
 #import "UIColor+SCColor.h"
 
 @interface SCSessionSpeakerHeaderTableViewCell ()

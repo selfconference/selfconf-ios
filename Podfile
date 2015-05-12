@@ -2,7 +2,6 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '8.0'
 
-pod 'Parse'
 pod 'MTDates'
 
 # Since they haven't shipped a release lately. This build is stable though.

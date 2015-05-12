@@ -7,7 +7,6 @@
 //
 
 #import "SCScheduleTableViewController.h"
-#import "SCSession.h"
 #import "SCSessionTableViewCell.h"
 #import "SCSessionsInADayHeaderTableViewCell.h"
 #import "SCSessionDetailsTableViewController.h"
@@ -40,12 +39,6 @@ static NSString * const kSCSessionTableViewCellShowSessionDetailsSegue =
     
     self.tableView.estimatedRowHeight = 150.0f;
     self.tableView.estimatedSectionHeaderHeight = 50.0f;
-    
-    [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(reloadSessionsLocally)
-     name:kSCSessionNotificationNameForInstancesWereUpdatedFromTheServer
-     object:nil];
 }
 
 #pragma mark - UITableViewDataSource
@@ -80,7 +73,9 @@ viewForHeaderInSection:(NSInteger)section {
     SCSessionsInADayHeaderTableViewCell *sessionsInADayHeaderTableViewCell =
     [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SCSessionsInADayHeaderTableViewCell class])];
     
-    [sessionsInADayHeaderTableViewCell configureWithDate:firstSessionInSection.scheduledAt];
+    // TODO: call
+    // '[sessionsInADayHeaderTableViewCell configureWithDate:date]' with the
+    // session slot time.
     
     return sessionsInADayHeaderTableViewCell.contentView;
 }
@@ -103,18 +98,6 @@ collapseSecondaryViewController:(UIViewController *)secondaryViewController
 }
 
 #pragma mark - Other
-
-/** 
- Fetches all of the local 'SCSession' instances, stores them, then  reloads 
- '_tableView'.
- */
-- (void)reloadSessionsLocally {
-    [SCSession
-     getLocalSessionsArrangedByDayWithBlock:^(NSArray *sessions, NSError *error) {
-         self.sessions = sessions;
-         [self.tableView reloadData];
-     }];
-}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:kSCSessionTableViewCellShowSessionDetailsSegue]) {
