@@ -10,9 +10,9 @@
 
 @interface SponsorLevel : SCUpdatedAtCreatedAt
 
+@property (nonatomic, retain) NSString *sponsorLevelID;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *photoUrlString;
-@property (nonatomic, retain) NSString *sponsorLevelID;
 @property (nonatomic) NSInteger order;
 @property (nonatomic, retain) NSManagedObject *event;
 @property (nonatomic, retain) NSSet *sponsors;

@@ -10,10 +10,10 @@
 
 @interface Organizer : SCUpdatedAtCreatedAt
 
+@property (nonatomic, retain) NSString *organizerID;
 @property (nonatomic, retain) NSString *biography;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *photoUrlString;
-@property (nonatomic, retain) NSString *organizerID;
 @property (nonatomic, retain) NSString *twitterHandle;
 @property (nonatomic, retain) NSString *email;
 @property (nonatomic, retain) NSSet *events;

@@ -11,10 +11,10 @@
 
 @implementation Organizer
 
+@dynamic organizerID;
 @dynamic biography;
 @dynamic name;
 @dynamic photoUrlString;
-@dynamic organizerID;
 @dynamic twitterHandle;
 @dynamic email;
 @dynamic events;

@@ -11,8 +11,8 @@
 
 @implementation Room
 
-@dynamic name;
 @dynamic roomID;
+@dynamic name;
 @dynamic venue;
 @dynamic sessions;
 

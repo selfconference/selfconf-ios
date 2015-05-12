@@ -11,9 +11,9 @@
 
 @implementation Venue
 
+@dynamic venueID;
 @dynamic about;
 @dynamic mapsUrlString;
-@dynamic venueID;
 @dynamic name;
 @dynamic address;
 @dynamic events;

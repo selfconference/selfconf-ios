@@ -12,8 +12,8 @@
 
 @interface Room : SCUpdatedAtCreatedAt
 
-@property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *roomID;
+@property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) Venue *venue;
 @property (nonatomic, retain) NSSet *sessions;
 

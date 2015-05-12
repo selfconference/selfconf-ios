@@ -12,9 +12,9 @@
 
 @implementation Sponsor
 
+@dynamic sponsorID;
 @dynamic link;
 @dynamic name;
-@dynamic sponsorID;
 @dynamic photoUrlString;
 @dynamic event;
 @dynamic sponsorLevels;

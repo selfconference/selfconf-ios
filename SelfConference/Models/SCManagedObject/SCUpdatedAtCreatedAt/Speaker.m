@@ -12,8 +12,8 @@
 
 @implementation Speaker
 
-@dynamic biography;
 @dynamic speakerID;
+@dynamic biography;
 @dynamic name;
 @dynamic twitterHandle;
 @dynamic photoUrlString;

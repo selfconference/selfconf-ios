@@ -10,9 +10,9 @@
 
 @implementation SponsorLevel
 
+@dynamic sponsorLevelID;
 @dynamic name;
 @dynamic photoUrlString;
-@dynamic sponsorLevelID;
 @dynamic order;
 @dynamic event;
 @dynamic sponsors;
