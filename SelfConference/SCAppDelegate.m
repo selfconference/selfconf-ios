@@ -10,6 +10,7 @@
 #import "SCParseSetupService.h"
 #import "SCSession.h"
 #import "UIColor+SCColor.h"
+#import <MagicalRecord/MagicalRecord+Setup.h>
 
 @implementation SCAppDelegate
 
@@ -21,6 +22,8 @@
     
     [self fetchUpdatedSessionsFromTheAPI];
 
+    [MagicalRecord setupAutoMigratingCoreDataStack];
+    
     return YES;
 }
 
