@@ -8,6 +8,9 @@
 
 @import Foundation;
 
+/** The base url string to use for all API requests. */
+FOUNDATION_EXPORT NSString * const kSCAPIServiceBaseUrlString;
+
 extern const struct SCAPIRelativeUrlStrings {
     __unsafe_unretained NSString *events;
     __unsafe_unretained NSString *venues;

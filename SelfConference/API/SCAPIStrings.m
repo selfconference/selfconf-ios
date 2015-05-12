@@ -8,6 +8,8 @@
 
 #import "SCAPIStrings.h"
 
+NSString * const kSCAPIServiceBaseUrlString = @"http://selfconference.org/api";
+
 const struct SCAPIRelativeUrlStrings SCAPIRelativeUrlStrings = {
     .events = @"events",
     .venues = @"venues",
