@@ -8,8 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^SCAPIServiceResponseObjectWithErrorBlock)(id responseObject, NSError *error);
+
 @interface SCAPIService : NSObject
 
 + (instancetype)sharedInstance;
+
+/** GETs all events from the API */
+- (void)getAllEventsWithCompletionBlock:(SCAPIServiceResponseObjectWithErrorBlock)completionBlock;
 
 @end

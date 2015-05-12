@@ -25,6 +25,13 @@ typedef void (^SCAPIServiceTaskWithErrorBlock)(NSURLSessionDataTask *task, NSErr
     return sharedInstance;
 }
 
+- (void)getAllEventsWithCompletionBlock:(SCAPIServiceResponseObjectWithErrorBlock)completionBlock {
+    [self
+     GET:[SCEvent getAllEventsUrlString]
+     parameters:nil
+     completionBlock:completionBlock];
+}
+
 #pragma mark - Internal
 
 /**
