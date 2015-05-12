@@ -39,6 +39,7 @@
 		1FBD60DC1B018EDC008E0FEC /* SCVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60D41B018EDC008E0FEC /* SCVenue.m */; };
 		1FBD60DF1B018F04008E0FEC /* SCManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60DE1B018F04008E0FEC /* SCManagedObject.m */; };
 		1FBD60E21B018F81008E0FEC /* SCUpdatedAtCreatedAt.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60E11B018F81008E0FEC /* SCUpdatedAtCreatedAt.m */; };
+		1FBD60E51B019DDE008E0FEC /* NSManagedObjectContext+SCManagedObjectContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60E41B019DDE008E0FEC /* NSManagedObjectContext+SCManagedObjectContext.m */; };
 		1FBD60E81B019DFA008E0FEC /* NSPredicate+SCPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60E71B019DFA008E0FEC /* NSPredicate+SCPredicate.m */; };
 		52177A65E8B8CFE8659C76EF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1457BA96527132726AC017 /* libPods.a */; };
 		FEEAC01EB9E2FC1CB6FE80F7 /* libPods-SelfConferenceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8F553853A58875DD1A6969 /* libPods-SelfConferenceTests.a */; };
@@ -117,6 +118,8 @@
 		1FBD60DE1B018F04008E0FEC /* SCManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCManagedObject.m; path = SCManagedObject/SCManagedObject.m; sourceTree = "<group>"; };
 		1FBD60E01B018F81008E0FEC /* SCUpdatedAtCreatedAt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCUpdatedAtCreatedAt.h; path = SCUpdatedAtCreatedAt/SCUpdatedAtCreatedAt.h; sourceTree = "<group>"; };
 		1FBD60E11B018F81008E0FEC /* SCUpdatedAtCreatedAt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCUpdatedAtCreatedAt.m; path = SCUpdatedAtCreatedAt/SCUpdatedAtCreatedAt.m; sourceTree = "<group>"; };
+		1FBD60E31B019DDE008E0FEC /* NSManagedObjectContext+SCManagedObjectContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+SCManagedObjectContext.h"; sourceTree = "<group>"; };
+		1FBD60E41B019DDE008E0FEC /* NSManagedObjectContext+SCManagedObjectContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+SCManagedObjectContext.m"; sourceTree = "<group>"; };
 		1FBD60E61B019DFA008E0FEC /* NSPredicate+SCPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+SCPredicate.h"; sourceTree = "<group>"; };
 		1FBD60E71B019DFA008E0FEC /* NSPredicate+SCPredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+SCPredicate.m"; sourceTree = "<group>"; };
 		2D10993C3C99F6944FEAF14F /* Pods-SelfConferenceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelfConferenceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SelfConferenceTests/Pods-SelfConferenceTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -233,6 +236,8 @@
 				1F5AC6F61ABE40A00076E341 /* UIView+SCUtilities.m */,
 				1FBD60E61B019DFA008E0FEC /* NSPredicate+SCPredicate.h */,
 				1FBD60E71B019DFA008E0FEC /* NSPredicate+SCPredicate.m */,
+				1FBD60E31B019DDE008E0FEC /* NSManagedObjectContext+SCManagedObjectContext.h */,
+				1FBD60E41B019DDE008E0FEC /* NSManagedObjectContext+SCManagedObjectContext.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -512,6 +517,7 @@
 			files = (
 				1FBD60D71B018EDC008E0FEC /* SCRoom.m in Sources */,
 				1F86EF441ABE35D2001E30DD /* SCSessionDetailsTableViewController.m in Sources */,
+				1FBD60E51B019DDE008E0FEC /* NSManagedObjectContext+SCManagedObjectContext.m in Sources */,
 				1F5AC7061ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m in Sources */,
 				1F86EF3C1ABE1C91001E30DD /* SCLogoColorsLineView.m in Sources */,
 				1FBD60DB1B018EDC008E0FEC /* SCSponsorLevel.m in Sources */,
