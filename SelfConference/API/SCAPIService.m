@@ -15,17 +15,7 @@ typedef void (^SCAPIServiceTaskWithErrorBlock)(NSURLSessionDataTask *task, NSErr
 
 @implementation SCAPIService
 
-+ (instancetype)sharedInstance {
-    static dispatch_once_t onceToken;
-    static SCAPIService *sharedInstance;
-    dispatch_once(&onceToken, ^{
-        sharedInstance = [self new];
-    });
-    
-    return sharedInstance;
-}
-
-- (void)getAllEventsWithCompletionBlock:(SCAPIServiceResponseObjectWithErrorBlock)completionBlock {
++ (void)getAllEventsWithCompletionBlock:(SCAPIServiceResponseObjectWithErrorBlock)completionBlock {
     [self
      GET:[SCEvent getAllEventsUrlString]
      parameters:nil
@@ -38,7 +28,7 @@ typedef void (^SCAPIServiceTaskWithErrorBlock)(NSURLSessionDataTask *task, NSErr
  Calls a SCAPIServiceResponseObjectWithErrorBlock if it exists with the given
  parameters.
  */
-- (void)callSCAPIServiceResponseObjectWithErrorBlock:(SCAPIServiceResponseObjectWithErrorBlock)block
++ (void)callSCAPIServiceResponseObjectWithErrorBlock:(SCAPIServiceResponseObjectWithErrorBlock)block
                                       responseObject:(id)responseObject
                                                error:(NSError *)error {
     if (block) {
@@ -50,7 +40,7 @@ typedef void (^SCAPIServiceTaskWithErrorBlock)(NSURLSessionDataTask *task, NSErr
 }
 
 /** Custom HTTP get method that returns a BTAPIResponse in the success block */
-- (NSURLSessionDataTask *)GET:(NSString *)URLString
++ (NSURLSessionDataTask *)GET:(NSString *)URLString
                    parameters:(id)parameters
               completionBlock:(SCAPIServiceResponseObjectWithErrorBlock)completionBlock {
     return [[SCHTTPSessionManager sharedInstance]

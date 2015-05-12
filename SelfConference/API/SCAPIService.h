@@ -12,9 +12,7 @@ typedef void (^SCAPIServiceResponseObjectWithErrorBlock)(id responseObject, NSEr
 
 @interface SCAPIService : NSObject
 
-+ (instancetype)sharedInstance;
-
 /** GETs all events from the API */
-- (void)getAllEventsWithCompletionBlock:(SCAPIServiceResponseObjectWithErrorBlock)completionBlock;
++ (void)getAllEventsWithCompletionBlock:(SCAPIServiceResponseObjectWithErrorBlock)completionBlock;
 
 @end
