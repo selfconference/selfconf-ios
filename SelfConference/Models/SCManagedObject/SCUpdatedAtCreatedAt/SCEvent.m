@@ -11,6 +11,7 @@
 #import "SCAPIService.h"
 #import <MagicalRecord/NSManagedObject+MagicalFinders.h>
 #import <MagicalRecord/NSManagedObjectContext+MagicalRecord.h>
+#import <MagicalRecord/NSManagedObject+MagicalRecord.h>
 #import "SCSpeaker.h"
 #import "SCSession.h"
 #import "SCSponsor.h"
@@ -34,6 +35,28 @@
 @dynamic sponsorLevels;
 @dynamic organizers;
 @dynamic venue;
+
+#pragma mark - Overrides
+
+- (void)setIsCurrent:(BOOL)isCurrent {
+    if (isCurrent) {
+        // Delete old events when we mark a new one as current
+        for (SCEvent *event in [self.class MR_findAllInContext:self.managedObjectContext]) {
+            if (event != self) {
+                [event MR_deleteEntityInContext:self.managedObjectContext];
+            }
+        }
+    }
+    
+    NSString *isCurrentPropertyName = NSStringFromSelector(@selector(isCurrent));
+    
+    [self willChangeValueForKey:isCurrentPropertyName];
+    
+    [self setPrimitiveValue:[NSNumber numberWithBool:isCurrent]
+                     forKey:isCurrentPropertyName];
+    
+    [self didChangeValueForKey:isCurrentPropertyName];
+}
 
 #pragma mark - Typed API requests
 
