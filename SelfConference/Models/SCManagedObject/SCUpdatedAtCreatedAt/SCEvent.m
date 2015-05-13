@@ -77,13 +77,13 @@
      }];
 }
 
-- (void)getSpeakersWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock {
-    [SCSpeaker getObjectsFromUrlString:self.getSpeakersUrlString
+- (void)getSessionsWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock {
+    [SCSession getObjectsFromUrlString:self.getSessionsUrlString
                        completionBlock:completionBlock];
 }
 
-- (void)getSessionsWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock {
-    [SCSession getObjectsFromUrlString:self.getSessionsUrlString
+- (void)getSpeakersWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock {
+    [SCSpeaker getObjectsFromUrlString:self.getSpeakersUrlString
                        completionBlock:completionBlock];
 }
 
