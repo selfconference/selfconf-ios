@@ -35,32 +35,6 @@
 @dynamic organizers;
 @dynamic venue;
 
-#pragma mark - URL Strings
-
-+ (NSString *)getAllEventsUrlString {
-    return SCAPIRelativeUrlStrings.events;
-}
-
-- (NSString *)getSessionsUrlString {
-    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.sessions];
-}
-
-- (NSString *)getSpeakersUrlString {
-    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.speakers];
-}
-
-- (NSString *)getSponsorsUrlString {
-    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.sponsors];
-}
-
-- (NSString *)getSponsorLevelsUrlString {
-    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.sponsorLevels];
-}
-
-- (NSString *)getOrganizersUrlString {
-    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.organizers];
-}
-
 #pragma mark - Typed API requests
 
 + (void)getCurrentEventWithCompletionBlock:(SCEventWithErrorBlock)completionBlock {
@@ -155,6 +129,38 @@
     // this is an open issue).
     return [NSPredicate predicateWithFormat:@"%K == NO",
             NSStringFromSelector(@selector(isCurrent))];
+}
+
+#pragma mark - URL Strings
+
+/** Returns a url string to GET all of the events */
++ (NSString *)getAllEventsUrlString {
+    return SCAPIRelativeUrlStrings.events;
+}
+
+/** Returns a url string to GET the current event's sessions */
+- (NSString *)getSessionsUrlString {
+    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.sessions];
+}
+
+/** Returns a url string to GET the current event's speakers */
+- (NSString *)getSpeakersUrlString {
+    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.speakers];
+}
+
+/** Returns a url string to GET the current event's sponsors */
+- (NSString *)getSponsorsUrlString {
+    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.sponsors];
+}
+
+/** Returns a url string to GET the current event's sponsor levels */
+- (NSString *)getSponsorLevelsUrlString {
+    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.sponsorLevels];
+}
+
+/** Returns a url string to GET the current event's organizers */
+- (NSString *)getOrganizersUrlString {
+    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.organizers];
 }
 
 @end
