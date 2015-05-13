@@ -8,7 +8,7 @@
 
 #import <CoreData/CoreData.h>
 
-typedef void (^SCManagedObjectContextDidSaveWithErrorBlock)(BOOL contextDidSave, NSError *error);
+typedef void (^SCManagedObjectObjectsWithErrorBlock)(NSArray *objects, NSError *error);
 
 @interface SCManagedObject : NSManagedObject
 
@@ -17,6 +17,6 @@ typedef void (^SCManagedObjectContextDidSaveWithErrorBlock)(BOOL contextDidSave,
  new ones. 'saveCompletionBlock' is called after the entities are saved.
  */
 + (void)importFromResponseObject:(id)responseObject
-             saveCompletionBlock:(SCManagedObjectContextDidSaveWithErrorBlock)saveCompletionBlock;
+             saveCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)saveCompletionBlock;
 
 @end

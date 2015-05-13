@@ -68,9 +68,7 @@
         else {
             [self
              importFromResponseObject:responseObject
-             saveCompletionBlock:^(BOOL contextDidSave, NSError *error) {
-                 // Key off of 'error' instead of 'contextDidSave' since it's
-                 // possible that there were no updates made to the entity.
+             saveCompletionBlock:^(NSArray *objects, NSError *error) {
                  if (error) {
                      [self callSCEventWithErrorBlock:completionBlock
                                                event:nil

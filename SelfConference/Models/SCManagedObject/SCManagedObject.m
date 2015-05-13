@@ -45,11 +45,11 @@ insertIntoManagedObjectContext:(NSManagedObjectContext *)context {
 #pragma mark - Public instance methods
 
 + (void)importFromResponseObject:(id)responseObject
-             saveCompletionBlock:(SCManagedObjectContextDidSaveWithErrorBlock)saveCompletionBlock {
+             saveCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)saveCompletionBlock {
     if (!responseObject) {
-        [self callSCManagedObjectContextDidSaveWithErrorBlock:saveCompletionBlock
-                                               contextDidSave:NO
-                                                        error:nil];
+        [self callSCManagedObjectObjectsWithErrorBlock:saveCompletionBlock
+                                               objects:nil
+                                                 error:nil];
     }
     else {
         __block NSArray *backgroundContextObjects;
@@ -67,22 +67,30 @@ insertIntoManagedObjectContext:(NSManagedObjectContext *)context {
          completion:^(BOOL contextDidSave, NSError *error) {
              // Key off of 'error' in case there were no updates that were made.
              if (error) {
-                 [self callSCManagedObjectContextDidSaveWithErrorBlock:saveCompletionBlock
-                                                        contextDidSave:NO
-                                                                 error:error];
+                 [self callSCManagedObjectObjectsWithErrorBlock:saveCompletionBlock
+                                                        objects:nil
+                                                          error:error];
              }
              else {
+                 if (!contextDidSave) {
+                     [self callSCManagedObjectObjectsWithErrorBlock:saveCompletionBlock
+                                                            objects:nil
+                                                              error:nil];
+                 }
                  // If there were saved changes, go ahead and refresh all of the
                  // properties.
-                 if (contextDidSave) {
+                 else {
+                     NSMutableArray *defaultContextObjects = [NSMutableArray array];
+                     
                      for (SCManagedObject *object in backgroundContextObjects) {
-                         [object refreshOnDefaultContext];
+                         [defaultContextObjects
+                          addObject:[object refreshOnDefaultContext]];
                      }
+                     
+                     [self callSCManagedObjectObjectsWithErrorBlock:saveCompletionBlock
+                                                            objects:defaultContextObjects
+                                                              error:nil];
                  }
-                 
-                 [self callSCManagedObjectContextDidSaveWithErrorBlock:saveCompletionBlock
-                                                        contextDidSave:contextDidSave
-                                                                 error:nil];
              }
          }];
     }
@@ -115,28 +123,32 @@ insertIntoManagedObjectContext:(NSManagedObjectContext *)context {
 /**
  Fetches 'self' in '+[NSManagedObjectContext(MagicalRecord) MR_defaultContext]'
  and refreshes it, updating all properties in the cache that were changed on
- another thread context.
+ another thread context. Returns 'self' on the default context.
  */
-- (void)refreshOnDefaultContext {
+- (instancetype)refreshOnDefaultContext {
     NSManagedObjectContext *defaultContext =
     [NSManagedObjectContext MR_defaultContext];
     
-    [defaultContext refreshObject:[self MR_inContext:defaultContext]
-                     mergeChanges:YES];
+    SCManagedObject *defaultContextObject =
+    [self MR_inContext:defaultContext];
+    
+    [defaultContext refreshObject:defaultContextObject mergeChanges:YES];
+    
+    return defaultContextObject;
 }
 
-/** 
- Calls a SCManagedObjectContextDidSaveWithErrorBlock if it exists with the
- given parameters. 
+/**
+ Calls a SCManagedObjectObjectsWithErrorBlock if it exists with the
+ given parameters.
  */
-+ (void)callSCManagedObjectContextDidSaveWithErrorBlock:(SCManagedObjectContextDidSaveWithErrorBlock)block
-                                         contextDidSave:(BOOL)contextDidSave
-                                                  error:(NSError *)error {
++ (void)callSCManagedObjectObjectsWithErrorBlock:(SCManagedObjectObjectsWithErrorBlock)block
+                                         objects:(NSArray *)objects
+                                           error:(NSError *)error {
     if (block) {
-        block(contextDidSave, error);
+        block(objects, error);
     }
     else {
-        NSLog(@"SCManagedObjectContextDidSaveWithErrorBlock is nil");
+        NSLog(@"SCManagedObjectObjectsWithErrorBlock is nil");
     }
 }
 
