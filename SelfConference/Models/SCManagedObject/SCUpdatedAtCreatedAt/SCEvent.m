@@ -81,6 +81,11 @@
                         completionBlock:completionBlock];
 }
 
+- (void)getSessionsWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock {
+    [self.class getObjectsFromUrlString:self.getSessionsUrlString
+                        completionBlock:completionBlock];
+}
+
 #pragma mark - Local fetchers
 
 + (SCEvent *)currentEvent {

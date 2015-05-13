@@ -69,6 +69,12 @@ typedef void (^SCEventWithErrorBlock)(SCEvent *event, NSError *error);
  */
 - (void)getSpeakersWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock;
 
+/**
+ Fetches the event's 'SCSession' entities from the API and returns them inside
+ 'completionBlock'
+ */
+- (void)getSessionsWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock;
+
 #pragma mark - Local fetchers
 
 /** Returns the current 'SCEvent' instance. */
