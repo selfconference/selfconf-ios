@@ -42,7 +42,7 @@ insertIntoManagedObjectContext:(NSManagedObjectContext *)context {
                                                      range:NSMakeRange(0, classPrefix.length)];
 }
 
-#pragma mark - Public instance methods
+#pragma mark - Public class methdods
 
 + (void)importFromResponseObject:(id)responseObject
              saveCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)saveCompletionBlock {
@@ -96,6 +96,17 @@ insertIntoManagedObjectContext:(NSManagedObjectContext *)context {
     }
 }
 
++ (void)callSCManagedObjectObjectsWithErrorBlock:(SCManagedObjectObjectsWithErrorBlock)block
+                                         objects:(NSArray *)objects
+                                           error:(NSError *)error {
+    if (block) {
+        block(objects, error);
+    }
+    else {
+        NSLog(@"SCManagedObjectObjectsWithErrorBlock is nil");
+    }
+}
+
 #pragma mark - Internal
 
 /**
@@ -135,21 +146,6 @@ insertIntoManagedObjectContext:(NSManagedObjectContext *)context {
     [defaultContext refreshObject:defaultContextObject mergeChanges:YES];
     
     return defaultContextObject;
-}
-
-/**
- Calls a SCManagedObjectObjectsWithErrorBlock if it exists with the
- given parameters.
- */
-+ (void)callSCManagedObjectObjectsWithErrorBlock:(SCManagedObjectObjectsWithErrorBlock)block
-                                         objects:(NSArray *)objects
-                                           error:(NSError *)error {
-    if (block) {
-        block(objects, error);
-    }
-    else {
-        NSLog(@"SCManagedObjectObjectsWithErrorBlock is nil");
-    }
 }
 
 @end

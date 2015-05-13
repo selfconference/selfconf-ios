@@ -19,4 +19,12 @@ typedef void (^SCManagedObjectObjectsWithErrorBlock)(NSArray *objects, NSError *
 + (void)importFromResponseObject:(id)responseObject
              saveCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)saveCompletionBlock;
 
+/**
+ Calls a SCManagedObjectObjectsWithErrorBlock if it exists with the
+ given parameters.
+ */
++ (void)callSCManagedObjectObjectsWithErrorBlock:(SCManagedObjectObjectsWithErrorBlock)block
+                                         objects:(NSArray *)objects
+                                           error:(NSError *)error;
+
 @end
