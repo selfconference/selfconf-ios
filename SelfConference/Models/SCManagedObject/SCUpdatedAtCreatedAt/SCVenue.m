@@ -19,10 +19,14 @@
 @dynamic events;
 @dynamic rooms;
 
+#pragma mark - Internal
+
+/** Returns a url string to GET all of the venues */
 + (NSString *)getAllVenuesUrlString {
     return SCAPIRelativeUrlStrings.venues;
 }
 
+/** Returns a url string to GET all of the rooms for the given venue */
 - (NSString *)getRoomsUrlString {
     return [NSString stringWithFormat:@"%@/%@/%@",
             SCAPIRelativeUrlStrings.venues,
