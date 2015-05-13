@@ -15,6 +15,7 @@
 #import "SCSession.h"
 #import "SCSponsor.h"
 #import "SCSponsorLevel.h"
+#import "SCOrganizer.h"
 
 @implementation SCEvent
 
@@ -97,6 +98,11 @@
 - (void)getSponsorLevelsWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock {
     [SCSponsorLevel getObjectsFromUrlString:self.getSponserLevelsUrlString
                             completionBlock:completionBlock];
+}
+
+- (void)getOrganizersWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock {
+    [SCOrganizer getObjectsFromUrlString:self.getOrganizersUrlString
+                         completionBlock:completionBlock];
 }
 
 #pragma mark - Local fetchers
