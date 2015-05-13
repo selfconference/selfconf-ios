@@ -8,6 +8,7 @@
 
 #import "SCVenue.h"
 #import "SCAPIStrings.h"
+#import "SCRoom.h"
 
 @implementation SCVenue
 
@@ -24,6 +25,11 @@
 + (void)getVenuesWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock {
     [self getObjectsFromUrlString:[self getAllVenuesUrlString]
                   completionBlock:completionBlock];
+}
+
+- (void)getRoomsWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock {
+    [SCRoom getObjectsFromUrlString:self.getRoomsUrlString
+                    completionBlock:completionBlock];
 }
 
 #pragma mark - Internal

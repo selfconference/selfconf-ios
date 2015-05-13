@@ -24,4 +24,10 @@
  */
 + (void)getVenuesWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock;
 
+/**
+ Fetches the venue's 'SCRoom' entities from the API and returns them inside
+ 'completionBlock'
+ */
+- (void)getRoomsWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock;
+
 @end
