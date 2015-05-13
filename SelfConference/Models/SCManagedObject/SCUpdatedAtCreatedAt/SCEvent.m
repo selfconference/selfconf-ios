@@ -57,7 +57,7 @@
 - (NSString *)getUrlWithSuffix:(NSString *)suffix {
     return [NSString stringWithFormat:@"%@/%@/%@",
             SCAPIRelativeUrlStrings.events,
-            self.eventID,
+            [@(self.eventID) stringValue],
             suffix];
 }
 

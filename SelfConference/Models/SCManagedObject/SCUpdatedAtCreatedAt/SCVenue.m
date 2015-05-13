@@ -26,7 +26,7 @@
 - (NSString *)getRoomsUrlString {
     return [NSString stringWithFormat:@"%@/%@/%@",
             SCAPIRelativeUrlStrings.venues,
-            self.venueID,
+            [@(self.venueID) stringValue],
             SCAPIRelativeUrlStrings.rooms];
 }
 
