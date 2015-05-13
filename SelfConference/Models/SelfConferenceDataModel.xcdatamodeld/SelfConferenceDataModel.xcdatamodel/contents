@@ -23,7 +23,7 @@
                 <entry key="mappedKeyName" value="id"/>
             </userInfo>
         </attribute>
-        <attribute name="isCurrent" optional="YES" attributeType="Boolean" syncable="YES">
+        <attribute name="isCurrent" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="current"/>
             </userInfo>
@@ -161,7 +161,7 @@
                 <entry key="mappedKeyName" value="created_at"/>
             </userInfo>
         </attribute>
-        <attribute name="isKeynote" optional="YES" attributeType="Boolean" syncable="YES">
+        <attribute name="isKeynote" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="keynote"/>
             </userInfo>
