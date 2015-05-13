@@ -81,6 +81,12 @@ typedef void (^SCEventWithErrorBlock)(SCEvent *event, NSError *error);
  */
 - (void)getSponsorsWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock;
 
+/**
+ Fetches the event's 'SCSponsorLevel' entities from the API and returns them 
+ inside 'completionBlock'
+ */
+- (void)getSponsorLevelsWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock;
+
 #pragma mark - Local fetchers
 
 /** Returns the current 'SCEvent' instance. */
