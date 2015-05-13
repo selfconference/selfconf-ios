@@ -12,6 +12,7 @@
 #import <MagicalRecord/NSManagedObject+MagicalFinders.h>
 #import <MagicalRecord/NSManagedObjectContext+MagicalRecord.h>
 #import "SCSpeaker.h"
+#import "SCSession.h"
 
 @implementation SCEvent
 
@@ -77,13 +78,13 @@
 }
 
 - (void)getSpeakersWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock {
-    [self.class getObjectsFromUrlString:self.getSpeakersUrlString
-                        completionBlock:completionBlock];
+    [SCSpeaker getObjectsFromUrlString:self.getSpeakersUrlString
+                       completionBlock:completionBlock];
 }
 
 - (void)getSessionsWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock {
-    [self.class getObjectsFromUrlString:self.getSessionsUrlString
-                        completionBlock:completionBlock];
+    [SCSession getObjectsFromUrlString:self.getSessionsUrlString
+                       completionBlock:completionBlock];
 }
 
 #pragma mark - Local fetchers
