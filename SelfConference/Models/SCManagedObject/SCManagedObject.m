@@ -8,6 +8,10 @@
 
 #import "SCManagedObject.h"
 #import "NSAttributeDescription+SCAttributeDescription.h"
+#import <MagicalRecord/NSManagedObjectContext+MagicalRecord.h>
+#import <MagicalRecord/NSManagedObject+MagicalRecord.h>
+#import <MagicalRecord/MagicalRecord+Actions.h>
+#import <MagicalRecord/NSManagedObject+MagicalDataImport.h>
 
 @implementation SCManagedObject
 
@@ -37,6 +41,52 @@ insertIntoManagedObjectContext:(NSManagedObjectContext *)context {
                                                      range:NSMakeRange(0, classPrefix.length)];
 }
 
+#pragma mark - Public instance methods
+
++ (void)importFromResponseObject:(id)responseObject
+             saveCompletionBlock:(SCManagedObjectContextDidSaveWithErrorBlock)saveCompletionBlock {
+    if (!responseObject) {
+        [self callSCManagedObjectContextDidSaveWithErrorBlock:saveCompletionBlock
+                                               contextDidSave:NO
+                                                        error:nil];
+    }
+    else {
+        __block NSArray *backgroundContextObjects;
+        
+        [MagicalRecord
+         saveWithBlock:^(NSManagedObjectContext *localContext) {
+             if ([responseObject isKindOfClass:[NSArray class]]) {
+                 backgroundContextObjects =
+                 [self MR_importFromArray:responseObject inContext:localContext];
+             }
+             else {
+                 NSAssert(NO, @"Currently only handle responseObject arrays");
+             }
+         }
+         completion:^(BOOL contextDidSave, NSError *error) {
+             // Key off of 'error' in case there were no updates that were made.
+             if (error) {
+                 [self callSCManagedObjectContextDidSaveWithErrorBlock:saveCompletionBlock
+                                                        contextDidSave:NO
+                                                                 error:error];
+             }
+             else {
+                 // If there were saved changes, go ahead and refresh all of the
+                 // properties.
+                 if (contextDidSave) {
+                     for (SCManagedObject *object in backgroundContextObjects) {
+                         [object refreshOnDefaultContext];
+                     }
+                 }
+                 
+                 [self callSCManagedObjectContextDidSaveWithErrorBlock:saveCompletionBlock
+                                                        contextDidSave:contextDidSave
+                                                                 error:nil];
+             }
+         }];
+    }
+}
+
 #pragma mark - Internal
 
 /**
@@ -54,6 +104,34 @@ insertIntoManagedObjectContext:(NSManagedObjectContext *)context {
                  SC_setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSz"];
             }
         }
+    }
+}
+
+/**
+ Fetches 'self' in '+[NSManagedObjectContext(MagicalRecord) MR_defaultContext]'
+ and refreshes it, updating all properties in the cache that were changed on
+ another thread context.
+ */
+- (void)refreshOnDefaultContext {
+    NSManagedObjectContext *defaultContext =
+    [NSManagedObjectContext MR_defaultContext];
+    
+    [defaultContext refreshObject:[self MR_inContext:defaultContext]
+                     mergeChanges:YES];
+}
+
+/** 
+ Calls a SCManagedObjectContextDidSaveWithErrorBlock if it exists with the
+ given parameters. 
+ */
++ (void)callSCManagedObjectContextDidSaveWithErrorBlock:(SCManagedObjectContextDidSaveWithErrorBlock)block
+                                         contextDidSave:(BOOL)contextDidSave
+                                                  error:(NSError *)error {
+    if (block) {
+        block(contextDidSave, error);
+    }
+    else {
+        NSLog(@"SCManagedObjectContextDidSaveWithErrorBlock is nil");
     }
 }
 
