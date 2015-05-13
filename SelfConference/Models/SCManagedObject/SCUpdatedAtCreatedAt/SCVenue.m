@@ -19,6 +19,13 @@
 @dynamic events;
 @dynamic rooms;
 
+#pragma mark - Typed API requests
+
++ (void)getVenuesWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock {
+    [self getObjectsFromUrlString:[self getAllVenuesUrlString]
+                  completionBlock:completionBlock];
+}
+
 #pragma mark - Internal
 
 /** Returns a url string to GET all of the venues */

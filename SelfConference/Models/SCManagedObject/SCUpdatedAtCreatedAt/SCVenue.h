@@ -18,4 +18,10 @@
 @property (nonatomic, retain) NSSet *events;
 @property (nonatomic, retain) NSSet *rooms;
 
+/**
+ Fetches all 'SCVenue' entities from the API and returns them inside
+ 'completionBlock'
+ */
++ (void)getVenuesWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock;
+
 @end
