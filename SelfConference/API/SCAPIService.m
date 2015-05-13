@@ -22,6 +22,14 @@ typedef void (^SCAPIServiceTaskWithErrorBlock)(NSURLSessionDataTask *task, NSErr
      completionBlock:completionBlock];
 }
 
++ (void)getSpeakersForEvent:(SCEvent *)event
+            completionBlock:(SCAPIServiceResponseObjectWithErrorBlock)completionBlock {
+    [self
+     GET:[event getSpeakersUrlString]
+     parameters:nil
+     completionBlock:completionBlock];
+}
+
 #pragma mark - Internal
 
 /**
