@@ -13,6 +13,7 @@
 #import <MagicalRecord/NSManagedObjectContext+MagicalRecord.h>
 #import "SCSpeaker.h"
 #import "SCSession.h"
+#import "SCSponsor.h"
 
 @implementation SCEvent
 
@@ -84,6 +85,11 @@
 
 - (void)getSpeakersWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock {
     [SCSpeaker getObjectsFromUrlString:self.getSpeakersUrlString
+                       completionBlock:completionBlock];
+}
+
+- (void)getSponsorsWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock {
+    [SCSponsor getObjectsFromUrlString:self.getSponsorsUrlString
                        completionBlock:completionBlock];
 }
 
