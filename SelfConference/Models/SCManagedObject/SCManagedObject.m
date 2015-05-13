@@ -7,22 +7,23 @@
 //
 
 #import "SCManagedObject.h"
-#import "NSAttributeDescription+SCAttributeDescription.h"
 #import <MagicalRecord/NSManagedObjectContext+MagicalRecord.h>
 #import <MagicalRecord/NSManagedObject+MagicalRecord.h>
 #import <MagicalRecord/MagicalRecord+Actions.h>
 #import <MagicalRecord/NSManagedObject+MagicalDataImport.h>
 
+/** The default dateFormat to use for all date attributes. */
+static NSString * const kSCManagedObjectDefaultDateFormat =
+@"yyyy-MM-dd'T'HH:mm:ss.SSSz";
+
 @implementation SCManagedObject
 
 - (instancetype)initWithEntity:(NSEntityDescription *)entity
 insertIntoManagedObjectContext:(NSManagedObjectContext *)context {
+    [SCManagedObject verifyDateFormatForAllDateAttributesInEntity:entity];
+    
     self = [super initWithEntity:entity insertIntoManagedObjectContext:context];
-    
-    if (self) {
-        [self setDateFormatForAllDateAttributes];
-    }
-    
+
     return self;
 }
 
@@ -90,18 +91,22 @@ insertIntoManagedObjectContext:(NSManagedObjectContext *)context {
 #pragma mark - Internal
 
 /**
- Loops through each NSDateAttributeType attribute and applies the date format
- that is used by the API.
+ Loops through each 'NSDateAttributeType' attribute and makes sure 
+ 'userInfo[@"dateFormat"]' values are properly set.
  */
-- (void)setDateFormatForAllDateAttributes {
-    for (id property in self.entity.properties) {
++ (void)verifyDateFormatForAllDateAttributesInEntity:(NSEntityDescription *)entity {
+    for (id property in entity.properties) {
         if ([property isKindOfClass:[NSAttributeDescription class]]) {
             NSAttributeDescription *attributeDescription = property;
             
             if (attributeDescription.attributeType == NSDateAttributeType) {
-                // Example date string from the API: @"2015-03-02T14:50:47.944Z"
-                [attributeDescription
-                 SC_setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSz"];
+                BOOL dateFormatIsCorrect =
+                [attributeDescription.userInfo[kMagicalRecordImportCustomDateFormatKey]
+                 isEqualToString:kSCManagedObjectDefaultDateFormat];
+                
+                NSAssert(dateFormatIsCorrect,
+                         @"Expected dateFormat to be set to %@",
+                         kSCManagedObjectDefaultDateFormat);
             }
         }
     }

@@ -6,15 +6,25 @@
                 <entry key="mappedKeyName" value="about"/>
             </userInfo>
         </attribute>
-        <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
+            </userInfo>
+        </attribute>
+        <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
+            </userInfo>
+        </attribute>
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES">
             <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
                 <entry key="mappedKeyName" value="created_at"/>
             </userInfo>
         </attribute>
         <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES">
             <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
                 <entry key="mappedKeyName" value="end_date"/>
             </userInfo>
         </attribute>
@@ -40,6 +50,7 @@
         </attribute>
         <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES">
             <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
                 <entry key="mappedKeyName" value="start_date"/>
             </userInfo>
         </attribute>
@@ -55,6 +66,7 @@
         </attribute>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES">
             <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
                 <entry key="mappedKeyName" value="updated_at"/>
             </userInfo>
         </attribute>
@@ -79,10 +91,19 @@
                 <entry key="mappedKeyName" value="bio"/>
             </userInfo>
         </attribute>
-        <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
+            </userInfo>
+        </attribute>
+        <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
+            </userInfo>
+        </attribute>
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES">
             <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
                 <entry key="mappedKeyName" value="created_at"/>
             </userInfo>
         </attribute>
@@ -113,16 +134,26 @@
         </attribute>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES">
             <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
                 <entry key="mappedKeyName" value="updated_at"/>
             </userInfo>
         </attribute>
         <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="organizers" inverseEntity="Event" syncable="YES"/>
     </entity>
     <entity name="Room" representedClassName="SCRoom" syncable="YES">
-        <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
+            </userInfo>
+        </attribute>
+        <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
+            </userInfo>
+        </attribute>
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES">
             <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
                 <entry key="mappedKeyName" value="created_at"/>
             </userInfo>
         </attribute>
@@ -138,6 +169,7 @@
         </attribute>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES">
             <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
                 <entry key="mappedKeyName" value="updated_at"/>
             </userInfo>
         </attribute>
@@ -154,10 +186,19 @@
                 <entry key="mappedKeyName" value="abstract"/>
             </userInfo>
         </attribute>
-        <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
+            </userInfo>
+        </attribute>
+        <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
+            </userInfo>
+        </attribute>
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES">
             <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
                 <entry key="mappedKeyName" value="created_at"/>
             </userInfo>
         </attribute>
@@ -178,11 +219,13 @@
         </attribute>
         <attribute name="slot" optional="YES" attributeType="Date" syncable="YES">
             <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
                 <entry key="mappedKeyName" value="slot"/>
             </userInfo>
         </attribute>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES">
             <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
                 <entry key="mappedKeyName" value="updated_at"/>
             </userInfo>
         </attribute>
@@ -208,10 +251,19 @@
                 <entry key="mappedKeyName" value="bio"/>
             </userInfo>
         </attribute>
-        <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
+            </userInfo>
+        </attribute>
+        <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
+            </userInfo>
+        </attribute>
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES">
             <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
                 <entry key="mappedKeyName" value="created_at"/>
             </userInfo>
         </attribute>
@@ -237,6 +289,7 @@
         </attribute>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES">
             <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
                 <entry key="mappedKeyName" value="updated_at"/>
             </userInfo>
         </attribute>
@@ -248,10 +301,19 @@
         <relationship name="sessions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Session" inverseName="speakers" inverseEntity="Session" syncable="YES"/>
     </entity>
     <entity name="Sponsor" representedClassName="SCSponsor" syncable="YES">
-        <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
+            </userInfo>
+        </attribute>
+        <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
+            </userInfo>
+        </attribute>
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES">
             <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
                 <entry key="mappedKeyName" value="created_at"/>
             </userInfo>
         </attribute>
@@ -277,6 +339,7 @@
         </attribute>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES">
             <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
                 <entry key="mappedKeyName" value="updated_at"/>
             </userInfo>
         </attribute>
@@ -292,10 +355,19 @@
         </relationship>
     </entity>
     <entity name="SponsorLevel" representedClassName="SCSponsorLevel" syncable="YES">
-        <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
+            </userInfo>
+        </attribute>
+        <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
+            </userInfo>
+        </attribute>
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES">
             <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
                 <entry key="mappedKeyName" value="created_at"/>
             </userInfo>
         </attribute>
@@ -321,6 +393,7 @@
         </attribute>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES">
             <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
                 <entry key="mappedKeyName" value="updated_at"/>
             </userInfo>
         </attribute>
@@ -342,10 +415,19 @@
                 <entry key="mappedKeyName" value="address"/>
             </userInfo>
         </attribute>
-        <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="clientCreatedAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
+            </userInfo>
+        </attribute>
+        <attribute name="clientUpdatedAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
+            </userInfo>
+        </attribute>
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES">
             <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
                 <entry key="mappedKeyName" value="created_at"/>
             </userInfo>
         </attribute>
@@ -361,6 +443,7 @@
         </attribute>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES">
             <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSz"/>
                 <entry key="mappedKeyName" value="updated_at"/>
             </userInfo>
         </attribute>
