@@ -60,48 +60,25 @@
 #pragma mark - Typed API requests
 
 + (void)getCurrentEventWithCompletionBlock:(SCEventWithErrorBlock)completionBlock {
-    [SCAPIService
-     getUrlString:[self getAllEventsUrlString]
-     completionBlock:^(id responseObject, NSError *error) {
+    [self
+     getObjectsFromUrlString:[self getAllEventsUrlString]
+     completionBlock:^(NSArray *objects, NSError *error) {
          if (error) {
              [self callSCEventWithErrorBlock:completionBlock
                                        event:nil
                                        error:error];
          }
          else {
-             [self
-              importFromResponseObject:responseObject
-              saveCompletionBlock:^(NSArray *objects, NSError *error) {
-                  if (error) {
-                      [self callSCEventWithErrorBlock:completionBlock
-                                                event:nil
-                                                error:error];
-                  }
-                  else {
-                      [self callSCEventWithErrorBlock:completionBlock
-                                                event:[self currentEvent]
-                                                error:error];
-                  }
-              }];
+             [self callSCEventWithErrorBlock:completionBlock
+                                       event:[self currentEvent]
+                                       error:error];
          }
      }];
 }
 
 - (void)getSpeakersWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock {
-    [SCAPIService
-     getUrlString:self.getSpeakersUrlString
-     completionBlock:^(id responseObject, NSError *error) {
-         if (error) {
-             [self.class callSCManagedObjectObjectsWithErrorBlock:completionBlock
-                                                          objects:nil
-                                                            error:error];
-         }
-         else {
-             [SCSpeaker
-              importFromResponseObject:responseObject
-              saveCompletionBlock:completionBlock];
-         }
-     }];
+    [self.class getObjectsFromUrlString:self.getSpeakersUrlString
+                        completionBlock:completionBlock];
 }
 
 #pragma mark - Local fetchers
