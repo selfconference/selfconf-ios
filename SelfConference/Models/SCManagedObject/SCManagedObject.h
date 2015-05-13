@@ -27,4 +27,11 @@ typedef void (^SCManagedObjectObjectsWithErrorBlock)(NSArray *objects, NSError *
                                          objects:(NSArray *)objects
                                            error:(NSError *)error;
 
+/**
+ Fetches objects from the 'urlString' API endpoint, converts them into entities, 
+ and returns them inside 'completionBlock'.
+ */
++ (void)getObjectsFromUrlString:(NSString *)urlString
+                completionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock;
+
 @end

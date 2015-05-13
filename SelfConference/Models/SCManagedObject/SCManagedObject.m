@@ -11,6 +11,7 @@
 #import <MagicalRecord/NSManagedObject+MagicalRecord.h>
 #import <MagicalRecord/MagicalRecord+Actions.h>
 #import <MagicalRecord/NSManagedObject+MagicalDataImport.h>
+#import "SCAPIService.h"
 
 /** The default dateFormat to use for all date attributes. */
 static NSString * const kSCManagedObjectDefaultDateFormat =
@@ -105,6 +106,23 @@ insertIntoManagedObjectContext:(NSManagedObjectContext *)context {
     else {
         NSLog(@"SCManagedObjectObjectsWithErrorBlock is nil");
     }
+}
+
++ (void)getObjectsFromUrlString:(NSString *)urlString
+                completionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock {
+    [SCAPIService
+     getUrlString:urlString
+     completionBlock:^(id responseObject, NSError *error) {
+         if (error) {
+             [self.class callSCManagedObjectObjectsWithErrorBlock:completionBlock
+                                                          objects:nil
+                                                            error:error];
+         }
+         else {
+             [self importFromResponseObject:responseObject
+                        saveCompletionBlock:completionBlock];
+         }
+     }];
 }
 
 #pragma mark - Internal
