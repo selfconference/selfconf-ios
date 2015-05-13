@@ -60,34 +60,36 @@
 #pragma mark - Typed API requests
 
 + (void)getCurrentEventWithCompletionBlock:(SCEventWithErrorBlock)completionBlock {
-    [SCAPIService getAllEventsWithCompletionBlock:^(id responseObject, NSError *error) {
-        if (error) {
-            [self callSCEventWithErrorBlock:completionBlock
-                                      event:nil
-                                      error:error];
-        }
-        else {
-            [self
-             importFromResponseObject:responseObject
-             saveCompletionBlock:^(NSArray *objects, NSError *error) {
-                 if (error) {
-                     [self callSCEventWithErrorBlock:completionBlock
-                                               event:nil
-                                               error:error];
-                 }
-                 else {
-                     [self callSCEventWithErrorBlock:completionBlock
-                                               event:[self currentEvent]
-                                               error:error];
-                 }
-             }];
-        }
-    }];
+    [SCAPIService
+     getUrlString:[self getAllEventsUrlString]
+     completionBlock:^(id responseObject, NSError *error) {
+         if (error) {
+             [self callSCEventWithErrorBlock:completionBlock
+                                       event:nil
+                                       error:error];
+         }
+         else {
+             [self
+              importFromResponseObject:responseObject
+              saveCompletionBlock:^(NSArray *objects, NSError *error) {
+                  if (error) {
+                      [self callSCEventWithErrorBlock:completionBlock
+                                                event:nil
+                                                error:error];
+                  }
+                  else {
+                      [self callSCEventWithErrorBlock:completionBlock
+                                                event:[self currentEvent]
+                                                error:error];
+                  }
+              }];
+         }
+     }];
 }
 
 - (void)getSpeakersWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock {
     [SCAPIService
-     getSpeakersForEvent:self
+     getUrlString:self.getSpeakersUrlString
      completionBlock:^(id responseObject, NSError *error) {
          if (error) {
              [self.class callSCManagedObjectObjectsWithErrorBlock:completionBlock

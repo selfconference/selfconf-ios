@@ -8,20 +8,27 @@
 
 #import "SCAPIService.h"
 #import "SCHTTPSessionManager.h"
-#import "SCEvent.h"
 
 typedef void (^SCAPIServiceTaskWithResponseObjectBlock)(NSURLSessionDataTask *task, id responseObject);
 typedef void (^SCAPIServiceTaskWithErrorBlock)(NSURLSessionDataTask *task, NSError *error);
 
 @implementation SCAPIService
 
-+ (void)getAllEventsWithCompletionBlock:(SCAPIServiceResponseObjectWithErrorBlock)completionBlock {
-    [self GET:[SCEvent getAllEventsUrlString] completionBlock:completionBlock];
-}
-
-+ (void)getSpeakersForEvent:(SCEvent *)event
-            completionBlock:(SCAPIServiceResponseObjectWithErrorBlock)completionBlock {
-    [self GET:[event getSpeakersUrlString] completionBlock:completionBlock];
++ (void)getUrlString:(NSString *)urlString
+     completionBlock:(SCAPIServiceResponseObjectWithErrorBlock)completionBlock {
+    [[SCHTTPSessionManager sharedInstance]
+     GET:urlString
+     parameters:nil
+     success:^(NSURLSessionDataTask *task, id responseObject) {
+         [self callSCAPIServiceResponseObjectWithErrorBlock:completionBlock
+                                             responseObject:responseObject
+                                                      error:nil];
+     }
+     failure:^(NSURLSessionDataTask *task, NSError *error) {
+         [self callSCAPIServiceResponseObjectWithErrorBlock:completionBlock
+                                             responseObject:nil
+                                                      error:error];
+     }];
 }
 
 #pragma mark - Internal
@@ -39,24 +46,6 @@ typedef void (^SCAPIServiceTaskWithErrorBlock)(NSURLSessionDataTask *task, NSErr
     else {
         NSLog(@"SCAPIServiceResponseObjectWithErrorBlock is nil");
     }
-}
-
-/** Custom HTTP get method that returns a BTAPIResponse in the success block */
-+ (NSURLSessionDataTask *)GET:(NSString *)URLString
-              completionBlock:(SCAPIServiceResponseObjectWithErrorBlock)completionBlock {
-    return [[SCHTTPSessionManager sharedInstance]
-            GET:URLString
-            parameters:nil
-            success:^(NSURLSessionDataTask *task, id responseObject) {
-                [self callSCAPIServiceResponseObjectWithErrorBlock:completionBlock
-                                                    responseObject:responseObject
-                                                             error:nil];
-            }
-            failure:^(NSURLSessionDataTask *task, NSError *error) {
-                [self callSCAPIServiceResponseObjectWithErrorBlock:completionBlock
-                                                    responseObject:nil
-                                                             error:error];
-            }];
 }
 
 @end
