@@ -50,7 +50,7 @@ typedef void (^SCEventWithErrorBlock)(SCEvent *event, NSError *error);
 - (NSString *)getSponsorsUrlString;
 
 /** Returns a url string to GET the current event's sponsor levels */
-- (NSString *)getSponserLevelsUrlString;
+- (NSString *)getSponsorLevelsUrlString;
 
 /** Returns a url string to GET the current event's organizers */
 - (NSString *)getOrganizersUrlString;

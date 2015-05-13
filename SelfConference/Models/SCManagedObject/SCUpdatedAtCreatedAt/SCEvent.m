@@ -53,7 +53,7 @@
     return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.sponsors];
 }
 
-- (NSString *)getSponserLevelsUrlString {
+- (NSString *)getSponsorLevelsUrlString {
     return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.sponsorLevels];
 }
 
@@ -96,7 +96,7 @@
 }
 
 - (void)getSponsorLevelsWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock {
-    [SCSponsorLevel getObjectsFromUrlString:self.getSponserLevelsUrlString
+    [SCSponsorLevel getObjectsFromUrlString:self.getSponsorLevelsUrlString
                             completionBlock:completionBlock];
 }
 
