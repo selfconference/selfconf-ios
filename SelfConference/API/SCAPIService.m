@@ -16,18 +16,12 @@ typedef void (^SCAPIServiceTaskWithErrorBlock)(NSURLSessionDataTask *task, NSErr
 @implementation SCAPIService
 
 + (void)getAllEventsWithCompletionBlock:(SCAPIServiceResponseObjectWithErrorBlock)completionBlock {
-    [self
-     GET:[SCEvent getAllEventsUrlString]
-     parameters:nil
-     completionBlock:completionBlock];
+    [self GET:[SCEvent getAllEventsUrlString] completionBlock:completionBlock];
 }
 
 + (void)getSpeakersForEvent:(SCEvent *)event
             completionBlock:(SCAPIServiceResponseObjectWithErrorBlock)completionBlock {
-    [self
-     GET:[event getSpeakersUrlString]
-     parameters:nil
-     completionBlock:completionBlock];
+    [self GET:[event getSpeakersUrlString] completionBlock:completionBlock];
 }
 
 #pragma mark - Internal
@@ -49,11 +43,10 @@ typedef void (^SCAPIServiceTaskWithErrorBlock)(NSURLSessionDataTask *task, NSErr
 
 /** Custom HTTP get method that returns a BTAPIResponse in the success block */
 + (NSURLSessionDataTask *)GET:(NSString *)URLString
-                   parameters:(id)parameters
               completionBlock:(SCAPIServiceResponseObjectWithErrorBlock)completionBlock {
     return [[SCHTTPSessionManager sharedInstance]
             GET:URLString
-            parameters:parameters
+            parameters:nil
             success:^(NSURLSessionDataTask *task, id responseObject) {
                 [self callSCAPIServiceResponseObjectWithErrorBlock:completionBlock
                                                     responseObject:responseObject
