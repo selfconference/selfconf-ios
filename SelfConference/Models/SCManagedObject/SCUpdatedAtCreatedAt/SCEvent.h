@@ -57,8 +57,17 @@ typedef void (^SCEventWithErrorBlock)(SCEvent *event, NSError *error);
 
 #pragma mark - Typed API requests
 
-/** Fetches the current SCEvent from the API and returns it inside 'completionBlock' */
+/** 
+ Fetches the current SCEvent from the API and returns it inside
+ 'completionBlock' 
+ */
 + (void)getCurrentEventWithCompletionBlock:(SCEventWithErrorBlock)completionBlock;
+
+/** 
+ Fetches the event's 'SCSpeaker' entities from the API and returns them inside
+ 'completionBlock'
+ */
+- (void)getSpeakersWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock;
 
 #pragma mark - Local fetchers
 

@@ -11,6 +11,7 @@
 #import "SCAPIService.h"
 #import <MagicalRecord/NSManagedObject+MagicalFinders.h>
 #import <MagicalRecord/NSManagedObjectContext+MagicalRecord.h>
+#import "SCSpeaker.h"
 
 @implementation SCEvent
 
@@ -82,6 +83,23 @@
              }];
         }
     }];
+}
+
+- (void)getSpeakersWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock {
+    [SCAPIService
+     getSpeakersForEvent:self
+     completionBlock:^(id responseObject, NSError *error) {
+         if (error) {
+             [self.class callSCManagedObjectObjectsWithErrorBlock:completionBlock
+                                                          objects:nil
+                                                            error:error];
+         }
+         else {
+             [SCSpeaker
+              importFromResponseObject:responseObject
+              saveCompletionBlock:completionBlock];
+         }
+     }];
 }
 
 #pragma mark - Local fetchers
