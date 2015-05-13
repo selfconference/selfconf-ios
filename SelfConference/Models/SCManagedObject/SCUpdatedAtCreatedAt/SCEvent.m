@@ -8,6 +8,9 @@
 
 #import "SCEvent.h"
 #import "SCAPIStrings.h"
+#import "SCAPIService.h"
+#import <MagicalRecord/NSManagedObject+MagicalFinders.h>
+#import <MagicalRecord/NSManagedObjectContext+MagicalRecord.h>
 
 @implementation SCEvent
 
@@ -26,6 +29,8 @@
 @dynamic sponsorLevels;
 @dynamic organizers;
 @dynamic venue;
+
+#pragma mark - URL Strings
 
 + (NSString *)getAllEventsUrlString {
     return SCAPIRelativeUrlStrings.events;
@@ -51,6 +56,58 @@
     return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.organizers];
 }
 
+#pragma mark - Typed API requests
+
++ (void)getCurrentEventWithCompletionBlock:(SCEventWithErrorBlock)completionBlock {
+    [SCAPIService getAllEventsWithCompletionBlock:^(id responseObject, NSError *error) {
+        if (error) {
+            [self callSCEventWithErrorBlock:completionBlock
+                                      event:nil
+                                      error:error];
+        }
+        else {
+            [self
+             importFromResponseObject:responseObject
+             saveCompletionBlock:^(BOOL contextDidSave, NSError *error) {
+                 // Key off of 'error' instead of 'contextDidSave' since it's
+                 // possible that there were no updates made to the entity.
+                 if (error) {
+                     [self callSCEventWithErrorBlock:completionBlock
+                                               event:nil
+                                               error:error];
+                 }
+                 else {
+                     [self callSCEventWithErrorBlock:completionBlock
+                                               event:[self currentEvent]
+                                               error:error];
+                 }
+             }];
+        }
+    }];
+}
+
+#pragma mark - Local fetchers
+
++ (SCEvent *)currentEvent {
+    SCEvent *currentEvent;
+    
+    NSArray *currentEvents =
+    [self MR_findAllWithPredicate:[self isCurrentEventPredicate]
+                        inContext:[NSManagedObjectContext MR_defaultContext]];
+    
+    if (currentEvents.count == 0) {
+        NSLog(@"There is no current SCEvent");
+    }
+    else if (currentEvents.count == 1) {
+        currentEvent = currentEvents.firstObject;
+    }
+    else {
+        NSAssert(NO, @"More than 1 current event exists.");
+    }
+    
+    return currentEvent;
+}
+
 #pragma mark - Internal
 
 /** Returns a GET url string for 'self' and appends 'suffix'/ */
@@ -59,6 +116,26 @@
             SCAPIRelativeUrlStrings.events,
             [@(self.eventID) stringValue],
             suffix];
+}
+
+/** Calls a SCEventWithErrorBlock if it exists with the given parameters. */
++ (void)callSCEventWithErrorBlock:(SCEventWithErrorBlock)block
+                            event:(SCEvent *)event
+                            error:(NSError *)error {
+    if (block) {
+        block(event, error);
+    }
+    else {
+        NSLog(@"SCEventWithErrorBlock is nil");
+    }
+}
+
+/** Returns a 'NSPredicate' that can be used to find the current event. */
++ (NSPredicate *)isCurrentEventPredicate {
+    // TODO: Change 'NO' to 'YES' once the API sets 'isCurrent' (currently
+    // this is an open issue).
+    return [NSPredicate predicateWithFormat:@"%K == NO",
+            NSStringFromSelector(@selector(isCurrent))];
 }
 
 @end

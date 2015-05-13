@@ -12,6 +12,8 @@
 
 @interface SCEvent : SCUpdatedAtCreatedAt
 
+typedef void (^SCEventWithErrorBlock)(SCEvent *event, NSError *error);
+
 @property (nonatomic) NSInteger eventID;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *about;
@@ -33,6 +35,8 @@
 @property (nonatomic, retain) NSSet *organizers;
 @property (nonatomic, retain) SCVenue *venue;
 
+#pragma mark - URL Strings
+
 /** Returns a url string to GET all of the events */
 + (NSString *)getAllEventsUrlString;
 
@@ -50,5 +54,15 @@
 
 /** Returns a url string to GET the current event's organizers */
 - (NSString *)getOrganizersUrlString;
+
+#pragma mark - Typed API requests
+
+/** Fetches the current SCEvent from the API and returns it inside 'completionBlock' */
++ (void)getCurrentEventWithCompletionBlock:(SCEventWithErrorBlock)completionBlock;
+
+#pragma mark - Local fetchers
+
+/** Returns the current 'SCEvent' instance. */
++ (SCEvent *)currentEvent;
 
 @end
