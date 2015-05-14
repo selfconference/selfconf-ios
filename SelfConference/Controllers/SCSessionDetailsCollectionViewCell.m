@@ -35,7 +35,8 @@ static CGFloat const kCellShouldCollapseAfterDragOffset = 125.0f;
 
 @interface SCSessionDetailsCollectionViewCell () <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic) CGFloat shadowWidth;
+/** Returns the last known width */
+@property (nonatomic) CGFloat previousWidth;
 
 @end
 
@@ -51,15 +52,35 @@ static CGFloat const kCellShouldCollapseAfterDragOffset = 125.0f;
     // Don't show empty cells at the end of the table
     self.tableView.tableFooterView = [UIView new];
     
-    self.layer.cornerRadius = 10.0f;
-    self.layer.borderWidth = 0.5f;
-    self.layer.borderColor = [UIColor whiteColor].CGColor;
+    CGFloat cornerRadius = 10.0f;
+    
+    self.layer.masksToBounds = NO;
+    self.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.layer.shadowOpacity = 0.5f;
+    self.layer.shadowRadius = cornerRadius;
+    self.layer.shadowOffset = CGSizeZero;
+    self.layer.cornerRadius = cornerRadius;
+    self.tableView.layer.cornerRadius = cornerRadius;
 }
 
 - (void)prepareForReuse {
     [super prepareForReuse];
     
     self.session = nil;
+    self.backgroundColor = self.defaultBackgroundColor;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    CGRect bounds = self.bounds;
+    
+    CGFloat currentWidth = CGRectGetWidth(bounds);
+    
+    if (self.previousWidth != currentWidth) {
+        self.layer.shadowPath = [UIBezierPath bezierPathWithRect:bounds].CGPath;
+        self.previousWidth = currentWidth;
+    }
 }
 
 - (void)setSession:(SCSession *)session {
@@ -179,11 +200,18 @@ static CGFloat const kCellShouldCollapseAfterDragOffset = 125.0f;
         else {
             // If the user pulls up from the bottom, make sure to show the
             // default background color
-            newContentViewBackgroundColor = [UIColor whiteColor];
+            newContentViewBackgroundColor = self.defaultBackgroundColor;
         }
         
-        self.contentView.backgroundColor = newContentViewBackgroundColor;
+        // Set the 'backgroundColor' on 'self' directly that way we don't lose
+        // our top rounded corners.
+        self.backgroundColor = newContentViewBackgroundColor;
     }
+}
+
+/** The default '_backgroundColor' */
+- (UIColor *)defaultBackgroundColor {
+    return [UIColor whiteColor];
 }
 
 @end
