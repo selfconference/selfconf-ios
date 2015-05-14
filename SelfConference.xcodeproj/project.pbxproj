@@ -12,11 +12,9 @@
 		1F0BAA881A9989890059C73A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BAA871A9989890059C73A /* LaunchScreen.xib */; };
 		1F0BAA8B1A998D520059C73A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BAA8A1A998D520059C73A /* Main.storyboard */; };
 		1F0BAAA51A99A3680059C73A /* SCSharedStoryboardInstances.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAA41A99A3680059C73A /* SCSharedStoryboardInstances.m */; };
-		1F0BAAA81A99A6AB0059C73A /* SCSessionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAA71A99A6AB0059C73A /* SCSessionTableViewCell.m */; };
 		1F0BAAB01A99B7DE0059C73A /* NSError+SCError.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAAF1A99B7DE0059C73A /* NSError+SCError.m */; };
 		1F0BAAB31A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAB21A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m */; };
 		1F5AC6F71ABE40A00076E341 /* UIView+SCUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC6F61ABE40A00076E341 /* UIView+SCUtilities.m */; };
-		1F5AC6FD1ABE4CE10076E341 /* SCSessionsInADayHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC6FC1ABE4CE10076E341 /* SCSessionsInADayHeaderTableViewCell.m */; };
 		1F5AC7001ABE62680076E341 /* SCSessionNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC6FF1ABE62680076E341 /* SCSessionNameTableViewCell.m */; };
 		1F5AC7031ABE62A50076E341 /* SCSessionAbstractTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7021ABE62A50076E341 /* SCSessionAbstractTableViewCell.m */; };
 		1F5AC7061ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7051ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m */; };
@@ -28,10 +26,7 @@
 		1F7560821B043A8900795E54 /* SCScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7560811B043A8900795E54 /* SCScheduleViewController.m */; };
 		1F7560851B04448F00795E54 /* SCSessionDetailsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7560841B04448F00795E54 /* SCSessionDetailsCollectionViewCell.m */; };
 		1F86EF301ABE05DD001E30DD /* UIColor+SCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF2F1ABE05DD001E30DD /* UIColor+SCColor.m */; };
-		1F86EF3C1ABE1C91001E30DD /* SCLogoColorsLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF3B1ABE1C91001E30DD /* SCLogoColorsLineView.m */; };
-		1F86EF411ABE213F001E30DD /* SCLogoColorsNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF401ABE213F001E30DD /* SCLogoColorsNavigationBar.m */; };
 		1F86EF441ABE35D2001E30DD /* SCSessionDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF431ABE35D2001E30DD /* SCSessionDetailsTableViewController.m */; };
-		1F86EF471ABE35E7001E30DD /* SCScheduleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF461ABE35E7001E30DD /* SCScheduleTableViewController.m */; };
 		1FBD60AA1B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60A81B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld */; };
 		1FBD60D51B018EDC008E0FEC /* SCEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60C61B018EDC008E0FEC /* SCEvent.m */; };
 		1FBD60D61B018EDC008E0FEC /* SCOrganizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60C81B018EDC008E0FEC /* SCOrganizer.m */; };
@@ -70,16 +65,12 @@
 		1F0BAA8A1A998D520059C73A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1F0BAAA31A99A3680059C73A /* SCSharedStoryboardInstances.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSharedStoryboardInstances.h; sourceTree = "<group>"; };
 		1F0BAAA41A99A3680059C73A /* SCSharedStoryboardInstances.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSharedStoryboardInstances.m; sourceTree = "<group>"; };
-		1F0BAAA61A99A6AB0059C73A /* SCSessionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionTableViewCell.h; sourceTree = "<group>"; };
-		1F0BAAA71A99A6AB0059C73A /* SCSessionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionTableViewCell.m; sourceTree = "<group>"; };
 		1F0BAAAE1A99B7DE0059C73A /* NSError+SCError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+SCError.h"; sourceTree = "<group>"; };
 		1F0BAAAF1A99B7DE0059C73A /* NSError+SCError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+SCError.m"; sourceTree = "<group>"; };
 		1F0BAAB11A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+SCUserDefaults.h"; sourceTree = "<group>"; };
 		1F0BAAB21A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+SCUserDefaults.m"; sourceTree = "<group>"; };
 		1F5AC6F51ABE40A00076E341 /* UIView+SCUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SCUtilities.h"; sourceTree = "<group>"; };
 		1F5AC6F61ABE40A00076E341 /* UIView+SCUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SCUtilities.m"; sourceTree = "<group>"; };
-		1F5AC6FB1ABE4CE10076E341 /* SCSessionsInADayHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionsInADayHeaderTableViewCell.h; sourceTree = "<group>"; };
-		1F5AC6FC1ABE4CE10076E341 /* SCSessionsInADayHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionsInADayHeaderTableViewCell.m; sourceTree = "<group>"; };
 		1F5AC6FE1ABE62680076E341 /* SCSessionNameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionNameTableViewCell.h; sourceTree = "<group>"; };
 		1F5AC6FF1ABE62680076E341 /* SCSessionNameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionNameTableViewCell.m; sourceTree = "<group>"; };
 		1F5AC7011ABE62A50076E341 /* SCSessionAbstractTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionAbstractTableViewCell.h; sourceTree = "<group>"; };
@@ -104,14 +95,8 @@
 		1F7560841B04448F00795E54 /* SCSessionDetailsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCSessionDetailsCollectionViewCell.m; path = ../Controllers/SCSessionDetailsCollectionViewCell.m; sourceTree = "<group>"; };
 		1F86EF2E1ABE05DD001E30DD /* UIColor+SCColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SCColor.h"; sourceTree = "<group>"; };
 		1F86EF2F1ABE05DD001E30DD /* UIColor+SCColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SCColor.m"; sourceTree = "<group>"; };
-		1F86EF3A1ABE1C91001E30DD /* SCLogoColorsLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLogoColorsLineView.h; sourceTree = "<group>"; };
-		1F86EF3B1ABE1C91001E30DD /* SCLogoColorsLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLogoColorsLineView.m; sourceTree = "<group>"; };
-		1F86EF3F1ABE213F001E30DD /* SCLogoColorsNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLogoColorsNavigationBar.h; sourceTree = "<group>"; };
-		1F86EF401ABE213F001E30DD /* SCLogoColorsNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLogoColorsNavigationBar.m; sourceTree = "<group>"; };
 		1F86EF421ABE35D2001E30DD /* SCSessionDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionDetailsTableViewController.h; sourceTree = "<group>"; };
 		1F86EF431ABE35D2001E30DD /* SCSessionDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionDetailsTableViewController.m; sourceTree = "<group>"; };
-		1F86EF451ABE35E7001E30DD /* SCScheduleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCScheduleTableViewController.h; sourceTree = "<group>"; };
-		1F86EF461ABE35E7001E30DD /* SCScheduleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCScheduleTableViewController.m; sourceTree = "<group>"; };
 		1FBD60A91B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SelfConferenceDataModel.xcdatamodel; sourceTree = "<group>"; };
 		1FBD60C51B018EDC008E0FEC /* SCEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCEvent.h; sourceTree = "<group>"; };
 		1FBD60C61B018EDC008E0FEC /* SCEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCEvent.m; sourceTree = "<group>"; };
@@ -194,14 +179,6 @@
 				1F0BAA871A9989890059C73A /* LaunchScreen.xib */,
 				1F7560831B04448F00795E54 /* SCSessionDetailsCollectionViewCell.h */,
 				1F7560841B04448F00795E54 /* SCSessionDetailsCollectionViewCell.m */,
-				1F0BAAA61A99A6AB0059C73A /* SCSessionTableViewCell.h */,
-				1F0BAAA71A99A6AB0059C73A /* SCSessionTableViewCell.m */,
-				1F86EF3A1ABE1C91001E30DD /* SCLogoColorsLineView.h */,
-				1F86EF3B1ABE1C91001E30DD /* SCLogoColorsLineView.m */,
-				1F86EF3F1ABE213F001E30DD /* SCLogoColorsNavigationBar.h */,
-				1F86EF401ABE213F001E30DD /* SCLogoColorsNavigationBar.m */,
-				1F5AC6FB1ABE4CE10076E341 /* SCSessionsInADayHeaderTableViewCell.h */,
-				1F5AC6FC1ABE4CE10076E341 /* SCSessionsInADayHeaderTableViewCell.m */,
 				1F5AC6FE1ABE62680076E341 /* SCSessionNameTableViewCell.h */,
 				1F5AC6FF1ABE62680076E341 /* SCSessionNameTableViewCell.m */,
 				1F5AC7011ABE62A50076E341 /* SCSessionAbstractTableViewCell.h */,
@@ -227,12 +204,10 @@
 		1F0BAA8C1A998F8B0059C73A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1F86EF451ABE35E7001E30DD /* SCScheduleTableViewController.h */,
-				1F86EF461ABE35E7001E30DD /* SCScheduleTableViewController.m */,
-				1F86EF421ABE35D2001E30DD /* SCSessionDetailsTableViewController.h */,
-				1F86EF431ABE35D2001E30DD /* SCSessionDetailsTableViewController.m */,
 				1F7560801B043A8900795E54 /* SCScheduleViewController.h */,
 				1F7560811B043A8900795E54 /* SCScheduleViewController.m */,
+				1F86EF421ABE35D2001E30DD /* SCSessionDetailsTableViewController.h */,
+				1F86EF431ABE35D2001E30DD /* SCSessionDetailsTableViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -563,15 +538,12 @@
 				1FBD60E51B019DDE008E0FEC /* NSManagedObjectContext+SCManagedObjectContext.m in Sources */,
 				1F5AC7061ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m in Sources */,
 				1F7560851B04448F00795E54 /* SCSessionDetailsCollectionViewCell.m in Sources */,
-				1F86EF3C1ABE1C91001E30DD /* SCLogoColorsLineView.m in Sources */,
 				1FBD60DB1B018EDC008E0FEC /* SCSponsorLevel.m in Sources */,
 				1FBD60DF1B018F04008E0FEC /* SCManagedObject.m in Sources */,
 				1F0BAA7B1A99886F0059C73A /* main.m in Sources */,
 				1FBD60EC1B01A061008E0FEC /* SCAPIStrings.m in Sources */,
 				1FBD60D81B018EDC008E0FEC /* SCSession.m in Sources */,
 				1FBD60EF1B01A908008E0FEC /* SCAPIService.m in Sources */,
-				1F86EF471ABE35E7001E30DD /* SCScheduleTableViewController.m in Sources */,
-				1F86EF411ABE213F001E30DD /* SCLogoColorsNavigationBar.m in Sources */,
 				1F71944E1B0425020098DB48 /* NSSet+SCManagedObject.m in Sources */,
 				1FBD60DA1B018EDC008E0FEC /* SCSponsor.m in Sources */,
 				1F5AC6F71ABE40A00076E341 /* UIView+SCUtilities.m in Sources */,
@@ -579,12 +551,10 @@
 				1FBD60D51B018EDC008E0FEC /* SCEvent.m in Sources */,
 				1FBD60D91B018EDC008E0FEC /* SCSpeaker.m in Sources */,
 				1F7560821B043A8900795E54 /* SCScheduleViewController.m in Sources */,
-				1F0BAAA81A99A6AB0059C73A /* SCSessionTableViewCell.m in Sources */,
 				1FBD60F21B01AAC4008E0FEC /* SCHTTPSessionManager.m in Sources */,
 				1F5AC7091ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m in Sources */,
 				1FBD60E81B019DFA008E0FEC /* NSPredicate+SCPredicate.m in Sources */,
 				1F86EF301ABE05DD001E30DD /* UIColor+SCColor.m in Sources */,
-				1F5AC6FD1ABE4CE10076E341 /* SCSessionsInADayHeaderTableViewCell.m in Sources */,
 				1F0BAAA51A99A3680059C73A /* SCSharedStoryboardInstances.m in Sources */,
 				1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */,
 				1F5AC7001ABE62680076E341 /* SCSessionNameTableViewCell.m in Sources */,
