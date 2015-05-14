@@ -12,6 +12,9 @@
 #import "SCSessionDetailsTableViewController.h"
 #import "SCEvent.h"
 #import "SCSession.h"
+#import <MagicalRecord/NSManagedObjectContext+MagicalRecord.h>
+#import "NSDictionary+SCManagedObject.h"
+#import "NSSet+SCManagedObject.h"
 
 /** The Storyboard segue that fires when selecting an 'SCSessionTableViewCell' */
 static NSString * const kSCSessionTableViewCellShowSessionDetailsSegue =
@@ -42,6 +45,20 @@ static NSString * const kSCSessionTableViewCellShowSessionDetailsSegue =
     self.tableView.estimatedSectionHeaderHeight = 50.0f;
     
     self.event = [SCEvent currentEvent];
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(managedObjectContextObjectsDidChangeWithNotification:)
+     name:NSManagedObjectContextObjectsDidChangeNotification
+     object:[NSManagedObjectContext MR_defaultContext]];
+}
+
+- (void)setEvent:(SCEvent *)event {
+    if (event != _event) {
+        _event = event;
+        
+        [self refreshEventData];
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -108,6 +125,24 @@ collapseSecondaryViewController:(UIViewController *)secondaryViewController
         (SCSessionDetailsTableViewController *)[segue.destinationViewController viewControllers].firstObject;
         
         sessionDetailsTableViewController.session = sessionTableViewCell.session;
+    }
+}
+
+/** Refreshes all data associated with '_event'. */
+- (void)refreshEventData {
+    [self.tableView reloadData];
+}
+
+- (void)managedObjectContextObjectsDidChangeWithNotification:(NSNotification *)notification {
+    NSDictionary *userInfo = notification.userInfo;
+    
+    if ([userInfo.SC_insertedObjects SC_containsAtLeastOneObjectKindOfClass:[SCEvent class]]) {
+        // It's possible that we got a new current event. Allow the overridden
+        // setter to decide if it's new or not.
+        self.event = [SCEvent currentEvent];
+    }
+    else if ([userInfo.SC_allChangedObjects containsObject:self.event]) {
+        [self refreshEventData];
     }
 }
 
