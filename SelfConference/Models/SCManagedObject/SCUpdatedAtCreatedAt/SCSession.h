@@ -24,4 +24,7 @@
 @property (nonatomic, retain) SCRoom *room;
 @property (nonatomic, retain) NSSet *speakers;
 
+/** Returns 'speakers' ordered based on 'name'. */
+- (NSArray *)speakersOrderedByName;
+
 @end

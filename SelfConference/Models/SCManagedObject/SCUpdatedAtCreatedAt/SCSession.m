@@ -21,4 +21,14 @@
 @dynamic room;
 @dynamic speakers;
 
+- (NSArray *)speakersOrderedByName {
+    NSSortDescriptor *sortedBySlotSortDescriptor =
+    [NSSortDescriptor
+     sortDescriptorWithKey:NSStringFromSelector(@selector(name))
+     ascending:YES];
+    
+    return
+    [self.speakers sortedArrayUsingDescriptors:@[sortedBySlotSortDescriptor]];
+}
+
 @end
