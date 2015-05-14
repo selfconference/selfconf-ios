@@ -53,7 +53,7 @@ static CGFloat const kCellShouldCollapseAfterDragOffset = 125.0f;
     
     self.layer.cornerRadius = 10.0f;
     self.layer.borderWidth = 0.5f;
-    self.layer.borderColor = [UIColor blackColor].CGColor;
+    self.layer.borderColor = [UIColor whiteColor].CGColor;
 }
 
 - (void)prepareForReuse {

@@ -36,7 +36,6 @@
     NSArray *availableColors = @[[UIColor SC_red],
                                  [UIColor SC_orange],
                                  [UIColor SC_yellow],
-                                 [UIColor SC_teal],
                                  [UIColor SC_purple]];
     
     NSInteger indexOfColorToUse = self.sessionID % availableColors.count;

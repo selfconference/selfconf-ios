@@ -13,6 +13,7 @@
 #import "NSDictionary+SCManagedObject.h"
 #import "NSSet+SCManagedObject.h"
 #import <MTCardLayout/UICollectionView+CardLayout.h>
+#import "UIColor+SCColor.h"
 
 @interface SCScheduleViewController () <SCSessionDetailsCollectionViewCellDelegate>
 
@@ -24,6 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.collectionView.backgroundColor = [UIColor SC_teal];
     
     self.event = [SCEvent currentEvent];
 
