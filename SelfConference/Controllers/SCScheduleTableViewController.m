@@ -10,6 +10,8 @@
 #import "SCSessionTableViewCell.h"
 #import "SCSessionsInADayHeaderTableViewCell.h"
 #import "SCSessionDetailsTableViewController.h"
+#import "SCEvent.h"
+#import "SCSession.h"
 
 /** The Storyboard segue that fires when selecting an 'SCSessionTableViewCell' */
 static NSString * const kSCSessionTableViewCellShowSessionDetailsSegue =
@@ -17,8 +19,7 @@ static NSString * const kSCSessionTableViewCellShowSessionDetailsSegue =
 
 @interface SCScheduleTableViewController () <UISplitViewControllerDelegate>
 
-/** An array of 'SCSession' instances */
-@property (nonatomic) NSArray *sessions;
+@property (nonatomic) SCEvent *event;
 
 @end
 
@@ -39,17 +40,19 @@ static NSString * const kSCSessionTableViewCellShowSessionDetailsSegue =
     
     self.tableView.estimatedRowHeight = 150.0f;
     self.tableView.estimatedSectionHeaderHeight = 50.0f;
+    
+    self.event = [SCEvent currentEvent];
 }
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.sessions.count;
+    return self.event.sessionsArrangedByDay.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-    return [self.sessions[section] count];
+    return [self.event.sessionsArrangedByDay[section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -59,7 +62,7 @@ static NSString * const kSCSessionTableViewCellShowSessionDetailsSegue =
      dequeueReusableCellWithIdentifier:NSStringFromClass([SCSessionTableViewCell class])
      forIndexPath:indexPath];
     
-    // TODO: set the cell session
+    cell.session = self.event.sessionsArrangedByDay[indexPath.section][indexPath.row];
     
     return cell;
 }
@@ -68,14 +71,12 @@ static NSString * const kSCSessionTableViewCellShowSessionDetailsSegue =
 
 - (UIView *)tableView:(UITableView *)tableView
 viewForHeaderInSection:(NSInteger)section {
-    SCSession *firstSessionInSection = [self.sessions[section] firstObject];
+    SCSession *firstSessionInSection = [self.event.sessionsArrangedByDay[section] firstObject];
     
     SCSessionsInADayHeaderTableViewCell *sessionsInADayHeaderTableViewCell =
     [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SCSessionsInADayHeaderTableViewCell class])];
     
-    // TODO: call
-    // '[sessionsInADayHeaderTableViewCell configureWithDate:date]' with the
-    // session slot time.
+    [sessionsInADayHeaderTableViewCell configureWithDate:firstSessionInSection.slot];
     
     return sessionsInADayHeaderTableViewCell.contentView;
 }
@@ -106,7 +107,7 @@ collapseSecondaryViewController:(UIViewController *)secondaryViewController
         SCSessionDetailsTableViewController *sessionDetailsTableViewController =
         (SCSessionDetailsTableViewController *)[segue.destinationViewController viewControllers].firstObject;
         
-        // TODO: set the session on the table view controller
+        sessionDetailsTableViewController.session = sessionTableViewCell.session;
     }
 }
 

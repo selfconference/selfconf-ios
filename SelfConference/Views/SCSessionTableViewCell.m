@@ -10,6 +10,8 @@
 #import "UIColor+SCColor.h"
 #import <MTDates/NSDate+MTDates.h>
 #import "UIView+SCUtilities.h"
+#import "SCSession.h"
+#import "SCRoom.h"
 
 @interface SCSessionTableViewCell ()
 
@@ -34,6 +36,17 @@
     [super layoutSubviews];
     
     [self.timeLabelCircleContainerView SC_makeCircular];
+}
+
+- (void)setSession:(SCSession *)session {
+    self.nameLabel.text = session.name;
+    self.roomNameLabel.text = session.room.name;
+
+    self.timeLabel.text = [session.slot
+                           mt_stringFromDateWithFormat:@"ha"
+                           localized:YES].uppercaseString;
+    
+    _session = session;
 }
 
 @end

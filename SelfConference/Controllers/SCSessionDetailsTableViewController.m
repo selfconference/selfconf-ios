@@ -13,6 +13,7 @@
 #import "SCSessionSpeakerDetailsTableViewCell.h"
 #import "UIColor+SCColor.h"
 #import <MTDates/NSDate+MTDates.h>
+#import "SCSession.h"
 
 typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
     /** Holds the name of the session */
@@ -53,13 +54,9 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
 }
 
 - (void)setSession:(SCSession *)session {
-    /* TODO: Set the navigationItem.title to a localized version of session's
-             slot time.
-     
-     self.navigationItem.title = [session.scheduledAt
+    self.navigationItem.title = [session.slot
                                  mt_stringFromDateWithFormat:@"EEEE ha"
                                  localized:YES];
-     */
     
     _session = session;
 }
@@ -76,7 +73,7 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
     
     // A session __could__ have more than 1 speaker
     if (section == SCSessionDetailsTableViewSectionSpeakerDetails) {
-        // TODO: set 'numberOfRows' to the number of speakers
+        numberOfRows = self.session.speakersOrderedByName.count;
     }
     
     return numberOfRows;
@@ -117,9 +114,8 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
              dequeueReusableCellWithIdentifier:NSStringFromClass([SCSessionSpeakerHeaderTableViewCell class])
              forIndexPath:indexPath];
             
-            // TODO: Call
-            // '[sessionSpeakerHeaderTableViewCell configureWithNumberOfSpeakers:#]'
-            // with the number of speakers
+            [sessionSpeakerHeaderTableViewCell
+             configureWithNumberOfSpeakers:self.session.speakersOrderedByName.count];
             
             cell = sessionSpeakerHeaderTableViewCell;
         } break;
@@ -130,7 +126,8 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
              dequeueReusableCellWithIdentifier:NSStringFromClass([SCSessionSpeakerDetailsTableViewCell class])
              forIndexPath:indexPath];
             
-            // TODO: set 'sessionSpeakerDetailsTableViewCell.speaker'
+            sessionSpeakerDetailsTableViewCell.speaker =
+            self.session.speakersOrderedByName[indexPath.row];
             
             cell = sessionSpeakerDetailsTableViewCell;
         } break;

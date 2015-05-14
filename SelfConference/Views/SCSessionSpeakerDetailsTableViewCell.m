@@ -7,6 +7,7 @@
 //
 
 #import "SCSessionSpeakerDetailsTableViewCell.h"
+#import "SCSpeaker.h"
 #import "UIColor+SCColor.h"
 #import "UIView+SCUtilities.h"
 
@@ -32,6 +33,14 @@
     [super layoutSubviews];
     
     [self.avatarContainerView SC_makeCircular];
+}
+
+- (void)setSpeaker:(SCSpeaker *)speaker {
+    self.initialLabel.text = [speaker.name substringToIndex:1];
+    self.nameLabel.text = speaker.name;
+    self.biographyLabel.text = speaker.biography;
+
+    _speaker = speaker;
 }
 
 @end
