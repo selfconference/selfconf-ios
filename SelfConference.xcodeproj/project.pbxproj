@@ -18,7 +18,7 @@
 		1F5AC6F71ABE40A00076E341 /* UIView+SCUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC6F61ABE40A00076E341 /* UIView+SCUtilities.m */; };
 		1F5AC6FD1ABE4CE10076E341 /* SCSessionsInADayHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC6FC1ABE4CE10076E341 /* SCSessionsInADayHeaderTableViewCell.m */; };
 		1F5AC7001ABE62680076E341 /* SCSessionNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC6FF1ABE62680076E341 /* SCSessionNameTableViewCell.m */; };
-		1F5AC7031ABE62A50076E341 /* SCSessionDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7021ABE62A50076E341 /* SCSessionDetailsTableViewCell.m */; };
+		1F5AC7031ABE62A50076E341 /* SCSessionAbstractTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7021ABE62A50076E341 /* SCSessionAbstractTableViewCell.m */; };
 		1F5AC7061ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7051ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m */; };
 		1F5AC7091ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7081ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m */; };
 		1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */; };
@@ -78,8 +78,8 @@
 		1F5AC6FC1ABE4CE10076E341 /* SCSessionsInADayHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionsInADayHeaderTableViewCell.m; sourceTree = "<group>"; };
 		1F5AC6FE1ABE62680076E341 /* SCSessionNameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionNameTableViewCell.h; sourceTree = "<group>"; };
 		1F5AC6FF1ABE62680076E341 /* SCSessionNameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionNameTableViewCell.m; sourceTree = "<group>"; };
-		1F5AC7011ABE62A50076E341 /* SCSessionDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionDetailsTableViewCell.h; sourceTree = "<group>"; };
-		1F5AC7021ABE62A50076E341 /* SCSessionDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionDetailsTableViewCell.m; sourceTree = "<group>"; };
+		1F5AC7011ABE62A50076E341 /* SCSessionAbstractTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionAbstractTableViewCell.h; sourceTree = "<group>"; };
+		1F5AC7021ABE62A50076E341 /* SCSessionAbstractTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionAbstractTableViewCell.m; sourceTree = "<group>"; };
 		1F5AC7041ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionSpeakerHeaderTableViewCell.h; sourceTree = "<group>"; };
 		1F5AC7051ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionSpeakerHeaderTableViewCell.m; sourceTree = "<group>"; };
 		1F5AC7071ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionSpeakerDetailsTableViewCell.h; sourceTree = "<group>"; };
@@ -190,8 +190,8 @@
 				1F5AC6FC1ABE4CE10076E341 /* SCSessionsInADayHeaderTableViewCell.m */,
 				1F5AC6FE1ABE62680076E341 /* SCSessionNameTableViewCell.h */,
 				1F5AC6FF1ABE62680076E341 /* SCSessionNameTableViewCell.m */,
-				1F5AC7011ABE62A50076E341 /* SCSessionDetailsTableViewCell.h */,
-				1F5AC7021ABE62A50076E341 /* SCSessionDetailsTableViewCell.m */,
+				1F5AC7011ABE62A50076E341 /* SCSessionAbstractTableViewCell.h */,
+				1F5AC7021ABE62A50076E341 /* SCSessionAbstractTableViewCell.m */,
 				1F5AC7041ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.h */,
 				1F5AC7051ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m */,
 				1F5AC7071ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.h */,
@@ -565,7 +565,7 @@
 				1F0BAAA51A99A3680059C73A /* SCSharedStoryboardInstances.m in Sources */,
 				1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */,
 				1F5AC7001ABE62680076E341 /* SCSessionNameTableViewCell.m in Sources */,
-				1F5AC7031ABE62A50076E341 /* SCSessionDetailsTableViewCell.m in Sources */,
+				1F5AC7031ABE62A50076E341 /* SCSessionAbstractTableViewCell.m in Sources */,
 				1F0BAAB01A99B7DE0059C73A /* NSError+SCError.m in Sources */,
 				1FBD60D61B018EDC008E0FEC /* SCOrganizer.m in Sources */,
 				1FBD60DC1B018EDC008E0FEC /* SCVenue.m in Sources */,

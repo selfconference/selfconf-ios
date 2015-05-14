@@ -1,5 +1,5 @@
 //
-//  SCSessionDetailsTableViewCell.h
+//  SCSessionAbstractTableViewCell.h
 //  SelfConference
 //
 //  Created by Jeff Burt on 3/21/15.
@@ -10,7 +10,7 @@
 
 @class SCSession;
 
-@interface SCSessionDetailsTableViewCell : UITableViewCell
+@interface SCSessionAbstractTableViewCell : UITableViewCell
 
 /** The 'SCSession' instance that this cell represents */
 @property (nonatomic) SCSession *session;

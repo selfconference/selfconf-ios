@@ -8,7 +8,7 @@
 
 #import "SCSessionDetailsTableViewController.h"
 #import "SCSessionNameTableViewCell.h"
-#import "SCSessionDetailsTableViewCell.h"
+#import "SCSessionAbstractTableViewCell.h"
 #import "SCSessionSpeakerHeaderTableViewCell.h"
 #import "SCSessionSpeakerDetailsTableViewCell.h"
 #import "UIColor+SCColor.h"
@@ -20,7 +20,7 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
     SCSessionDetailsTableViewSectionName,
     
     /** Holds the details of the session */
-    SCSessionDetailsTableViewSectionDetails,
+    SCSessionDetailsTableViewSectionAbstract,
     
     /** Acts like a header to introduce the speaker(s) */
     SCSessionDetailsTableViewSectionSpeakerLabel,
@@ -97,15 +97,15 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
             cell = sessionNameTableViewCell;
         } break;
             
-        case SCSessionDetailsTableViewSectionDetails: {
-            SCSessionDetailsTableViewCell *sessionDetailsTableViewCell =
+        case SCSessionDetailsTableViewSectionAbstract: {
+            SCSessionAbstractTableViewCell *sessionAbstractTableViewCell =
             [tableView
-             dequeueReusableCellWithIdentifier:NSStringFromClass([SCSessionDetailsTableViewCell class])
+             dequeueReusableCellWithIdentifier:NSStringFromClass([SCSessionAbstractTableViewCell class])
              forIndexPath:indexPath];
             
-            sessionDetailsTableViewCell.session = self.session;
+            sessionAbstractTableViewCell.session = self.session;
 
-            cell = sessionDetailsTableViewCell;
+            cell = sessionAbstractTableViewCell;
         } break;
             
         case SCSessionDetailsTableViewSectionSpeakerLabel: {
