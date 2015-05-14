@@ -21,6 +21,7 @@
 		1F5AC7031ABE62A50076E341 /* SCSessionAbstractTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7021ABE62A50076E341 /* SCSessionAbstractTableViewCell.m */; };
 		1F5AC7061ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7051ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m */; };
 		1F5AC7091ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7081ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m */; };
+		1F71944B1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F71944A1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m */; };
 		1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */; };
 		1F7392D51A9985BE00F4B10F /* SelfConferenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7392D41A9985BE00F4B10F /* SelfConferenceTests.m */; };
 		1F86EF301ABE05DD001E30DD /* UIColor+SCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF2F1ABE05DD001E30DD /* UIColor+SCColor.m */; };
@@ -84,6 +85,8 @@
 		1F5AC7051ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionSpeakerHeaderTableViewCell.m; sourceTree = "<group>"; };
 		1F5AC7071ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionSpeakerDetailsTableViewCell.h; sourceTree = "<group>"; };
 		1F5AC7081ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionSpeakerDetailsTableViewCell.m; sourceTree = "<group>"; };
+		1F7194491B0423CD0098DB48 /* NSDictionary+SCManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SCManagedObject.h"; sourceTree = "<group>"; };
+		1F71944A1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SCManagedObject.m"; sourceTree = "<group>"; };
 		1F7392B21A9985BE00F4B10F /* SelfConference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelfConference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7392B91A9985BE00F4B10F /* SCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCAppDelegate.h; sourceTree = "<group>"; };
 		1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCAppDelegate.m; sourceTree = "<group>"; };
@@ -247,6 +250,8 @@
 				1FBD60E71B019DFA008E0FEC /* NSPredicate+SCPredicate.m */,
 				1FBD60E31B019DDE008E0FEC /* NSManagedObjectContext+SCManagedObjectContext.h */,
 				1FBD60E41B019DDE008E0FEC /* NSManagedObjectContext+SCManagedObjectContext.m */,
+				1F7194491B0423CD0098DB48 /* NSDictionary+SCManagedObject.h */,
+				1F71944A1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -569,6 +574,7 @@
 				1F0BAAB01A99B7DE0059C73A /* NSError+SCError.m in Sources */,
 				1FBD60D61B018EDC008E0FEC /* SCOrganizer.m in Sources */,
 				1FBD60DC1B018EDC008E0FEC /* SCVenue.m in Sources */,
+				1F71944B1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m in Sources */,
 				1F0BAAB31A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m in Sources */,
 				1FBD60AA1B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld in Sources */,
 			);
