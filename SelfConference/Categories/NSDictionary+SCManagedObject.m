@@ -12,18 +12,33 @@
 
 @implementation NSDictionary (SCManagedObject)
 
+- (NSSet *)SC_allChangedObjects {
+    NSMutableSet *allChangedObjects = [NSMutableSet set];
+    [allChangedObjects unionSet:self.SC_insertedObjects];
+    [allChangedObjects unionSet:self.SC_updatedObjects];
+    [allChangedObjects unionSet:self.SC_deletedObjects];
+    [allChangedObjects unionSet:self.SC_refreshedObjects];
+    
+    return allChangedObjects;
+}
+
 - (NSSet *)SC_insertedObjects {
     return self[NSInsertedObjectsKey];
 }
 
+#pragma mark - Internal
+
+/** Returns objects updated on an 'NSManagedObjectContext'. */
 - (NSSet *)SC_updatedObjects {
     return self[NSUpdatedObjectsKey];
 }
 
+/** Returns objects deleted from an 'NSManagedObjectContext'. */
 - (NSSet *)SC_deletedObjects {
     return self[NSDeletedObjectsKey];
 }
 
+/** Returns objects refreshed on an 'NSManagedObjectContext'. */
 - (NSSet *)SC_refreshedObjects {
     return self[NSRefreshedObjectsKey];
 }

@@ -10,16 +10,13 @@
 
 @interface NSDictionary (SCManagedObject)
 
+/** 
+ Returns all objects inserted, updated, deleted and refreshed on an 
+ 'NSManagedObjectContext'. 
+ */
+- (NSSet *)SC_allChangedObjects;
+
 /** Returns objects inserted into an 'NSManagedObjectContext'. */
 - (NSSet *)SC_insertedObjects;
-
-/** Returns objects updated on an 'NSManagedObjectContext'. */
-- (NSSet *)SC_updatedObjects;
-
-/** Returns objects deleted from an 'NSManagedObjectContext'. */
-- (NSSet *)SC_deletedObjects;
-
-/** Returns objects refreshed on an 'NSManagedObjectContext'. */
-- (NSSet *)SC_refreshedObjects;
 
 @end
