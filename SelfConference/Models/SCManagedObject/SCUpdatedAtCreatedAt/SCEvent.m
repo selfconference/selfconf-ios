@@ -17,6 +17,7 @@
 #import "SCSponsor.h"
 #import "SCSponsorLevel.h"
 #import "SCOrganizer.h"
+#import <MTDates/NSDate+MTDates.h>
 
 @implementation SCEvent
 
@@ -122,6 +123,42 @@
     }
     
     return currentEvent;
+}
+
+- (NSArray *)sessionsArrangedByDay {
+    NSSortDescriptor *sortedBySlotSortDescriptor =
+    [NSSortDescriptor
+     sortDescriptorWithKey:NSStringFromSelector(@selector(slot))
+     ascending:YES];
+    
+    NSArray *sortedSessions =
+    [self.sessions sortedArrayUsingDescriptors:@[sortedBySlotSortDescriptor]];
+    
+    NSMutableArray *sessionsArrangedByDay = [NSMutableArray array];
+    
+    NSMutableArray *sessionsInOneDay = [NSMutableArray array];
+    
+    NSDate *previousSessionSlot = [sortedSessions.firstObject slot];
+    
+    for (SCSession *session in sortedSessions) {
+        NSDate *sessionSlot = session.slot;
+        
+        if (![sessionSlot mt_isWithinSameDay:previousSessionSlot]) {
+            previousSessionSlot = sessionSlot;
+            [sessionsArrangedByDay addObject:sessionsInOneDay];
+            sessionsInOneDay = [NSMutableArray array];
+        }
+        
+        [sessionsInOneDay addObject:session];
+    }
+    
+    // If there are 0 sorted sessions, don't add an empty array giving the
+    // app a false positive that there are sessions
+    if (sessionsInOneDay.count > 0) {
+        [sessionsArrangedByDay addObject:sessionsInOneDay];
+    }
+    
+    return sessionsArrangedByDay;
 }
 
 #pragma mark - Internal

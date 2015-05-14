@@ -78,4 +78,10 @@ typedef void (^SCEventWithErrorBlock)(SCEvent *event, NSError *error);
 /** Returns the current 'SCEvent' instance. */
 + (SCEvent *)currentEvent;
 
+/**
+ Returns a 2D array, each subarray represents a different day of sessions 
+ scheduled. Sessions are sorted based on their 'slot' values.
+ */
+- (NSArray *)sessionsArrangedByDay;
+
 @end
