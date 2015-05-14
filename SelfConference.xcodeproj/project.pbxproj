@@ -22,6 +22,7 @@
 		1F5AC7061ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7051ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m */; };
 		1F5AC7091ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7081ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m */; };
 		1F71944B1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F71944A1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m */; };
+		1F71944E1B0425020098DB48 /* NSSet+SCManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F71944D1B0425020098DB48 /* NSSet+SCManagedObject.m */; };
 		1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */; };
 		1F7392D51A9985BE00F4B10F /* SelfConferenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7392D41A9985BE00F4B10F /* SelfConferenceTests.m */; };
 		1F86EF301ABE05DD001E30DD /* UIColor+SCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF2F1ABE05DD001E30DD /* UIColor+SCColor.m */; };
@@ -87,6 +88,8 @@
 		1F5AC7081ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionSpeakerDetailsTableViewCell.m; sourceTree = "<group>"; };
 		1F7194491B0423CD0098DB48 /* NSDictionary+SCManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SCManagedObject.h"; sourceTree = "<group>"; };
 		1F71944A1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SCManagedObject.m"; sourceTree = "<group>"; };
+		1F71944C1B0425020098DB48 /* NSSet+SCManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+SCManagedObject.h"; sourceTree = "<group>"; };
+		1F71944D1B0425020098DB48 /* NSSet+SCManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+SCManagedObject.m"; sourceTree = "<group>"; };
 		1F7392B21A9985BE00F4B10F /* SelfConference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelfConference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7392B91A9985BE00F4B10F /* SCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCAppDelegate.h; sourceTree = "<group>"; };
 		1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCAppDelegate.m; sourceTree = "<group>"; };
@@ -252,6 +255,8 @@
 				1FBD60E41B019DDE008E0FEC /* NSManagedObjectContext+SCManagedObjectContext.m */,
 				1F7194491B0423CD0098DB48 /* NSDictionary+SCManagedObject.h */,
 				1F71944A1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m */,
+				1F71944C1B0425020098DB48 /* NSSet+SCManagedObject.h */,
+				1F71944D1B0425020098DB48 /* NSSet+SCManagedObject.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -556,6 +561,7 @@
 				1FBD60EF1B01A908008E0FEC /* SCAPIService.m in Sources */,
 				1F86EF471ABE35E7001E30DD /* SCScheduleTableViewController.m in Sources */,
 				1F86EF411ABE213F001E30DD /* SCLogoColorsNavigationBar.m in Sources */,
+				1F71944E1B0425020098DB48 /* NSSet+SCManagedObject.m in Sources */,
 				1FBD60DA1B018EDC008E0FEC /* SCSponsor.m in Sources */,
 				1F5AC6F71ABE40A00076E341 /* UIView+SCUtilities.m in Sources */,
 				1FBD60E21B018F81008E0FEC /* SCUpdatedAtCreatedAt.m in Sources */,
