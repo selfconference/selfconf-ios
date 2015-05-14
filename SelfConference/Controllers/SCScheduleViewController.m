@@ -15,9 +15,10 @@
 #import <MTCardLayout/UICollectionView+CardLayout.h>
 #import "UIColor+SCColor.h"
 
-@interface SCScheduleViewController () <SCSessionDetailsCollectionViewCellDelegate>
+@interface SCScheduleViewController () <SCSessionDetailsCollectionViewCellDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic) SCEvent *event;
+@property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 
 @end
 

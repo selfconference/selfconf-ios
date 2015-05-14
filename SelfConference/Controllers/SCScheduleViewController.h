@@ -8,6 +8,6 @@
 
 @import UIKit;
 
-@interface SCScheduleViewController : UICollectionViewController
+@interface SCScheduleViewController : UIViewController
 
 @end
