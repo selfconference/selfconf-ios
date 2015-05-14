@@ -8,6 +8,8 @@
 
 #import "SCUpdatedAtCreatedAt.h"
 
+@import UIKit;
+
 @class SCEvent, SCRoom;
 
 @interface SCSession : SCUpdatedAtCreatedAt
@@ -23,7 +25,7 @@
 @property (nonatomic, retain) SCEvent *event;
 @property (nonatomic, retain) SCRoom *room;
 @property (nonatomic, retain) NSSet *speakers;
-
+@property (nonatomic, readonly) UIColor *color;
 /** Returns 'speakers' ordered based on 'name'. */
 - (NSArray *)speakersOrderedByName;
 

@@ -9,6 +9,7 @@
 #import "SCSession.h"
 #import "SCEvent.h"
 #import "SCRoom.h"
+#import "UIColor+SCColor.h"
 
 @implementation SCSession
 
@@ -29,6 +30,18 @@
     
     return
     [self.speakers sortedArrayUsingDescriptors:@[sortedBySlotSortDescriptor]];
+}
+
+- (UIColor *)color {
+    NSArray *availableColors = @[[UIColor SC_red],
+                                 [UIColor SC_orange],
+                                 [UIColor SC_yellow],
+                                 [UIColor SC_teal],
+                                 [UIColor SC_purple]];
+    
+    NSInteger indexOfColorToUse = self.sessionID % availableColors.count;
+    
+    return availableColors[indexOfColorToUse];
 }
 
 @end
