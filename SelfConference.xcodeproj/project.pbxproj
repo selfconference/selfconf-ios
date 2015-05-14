@@ -26,7 +26,6 @@
 		1F7560821B043A8900795E54 /* SCScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7560811B043A8900795E54 /* SCScheduleViewController.m */; };
 		1F7560851B04448F00795E54 /* SCSessionDetailsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7560841B04448F00795E54 /* SCSessionDetailsCollectionViewCell.m */; };
 		1F86EF301ABE05DD001E30DD /* UIColor+SCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF2F1ABE05DD001E30DD /* UIColor+SCColor.m */; };
-		1F86EF441ABE35D2001E30DD /* SCSessionDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF431ABE35D2001E30DD /* SCSessionDetailsTableViewController.m */; };
 		1FBD60AA1B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60A81B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld */; };
 		1FBD60D51B018EDC008E0FEC /* SCEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60C61B018EDC008E0FEC /* SCEvent.m */; };
 		1FBD60D61B018EDC008E0FEC /* SCOrganizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60C81B018EDC008E0FEC /* SCOrganizer.m */; };
@@ -95,8 +94,6 @@
 		1F7560841B04448F00795E54 /* SCSessionDetailsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCSessionDetailsCollectionViewCell.m; path = ../Controllers/SCSessionDetailsCollectionViewCell.m; sourceTree = "<group>"; };
 		1F86EF2E1ABE05DD001E30DD /* UIColor+SCColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SCColor.h"; sourceTree = "<group>"; };
 		1F86EF2F1ABE05DD001E30DD /* UIColor+SCColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SCColor.m"; sourceTree = "<group>"; };
-		1F86EF421ABE35D2001E30DD /* SCSessionDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionDetailsTableViewController.h; sourceTree = "<group>"; };
-		1F86EF431ABE35D2001E30DD /* SCSessionDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionDetailsTableViewController.m; sourceTree = "<group>"; };
 		1FBD60A91B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SelfConferenceDataModel.xcdatamodel; sourceTree = "<group>"; };
 		1FBD60C51B018EDC008E0FEC /* SCEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCEvent.h; sourceTree = "<group>"; };
 		1FBD60C61B018EDC008E0FEC /* SCEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCEvent.m; sourceTree = "<group>"; };
@@ -206,8 +203,6 @@
 			children = (
 				1F7560801B043A8900795E54 /* SCScheduleViewController.h */,
 				1F7560811B043A8900795E54 /* SCScheduleViewController.m */,
-				1F86EF421ABE35D2001E30DD /* SCSessionDetailsTableViewController.h */,
-				1F86EF431ABE35D2001E30DD /* SCSessionDetailsTableViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -534,7 +529,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FBD60D71B018EDC008E0FEC /* SCRoom.m in Sources */,
-				1F86EF441ABE35D2001E30DD /* SCSessionDetailsTableViewController.m in Sources */,
 				1FBD60E51B019DDE008E0FEC /* NSManagedObjectContext+SCManagedObjectContext.m in Sources */,
 				1F5AC7061ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m in Sources */,
 				1F7560851B04448F00795E54 /* SCSessionDetailsCollectionViewCell.m in Sources */,
