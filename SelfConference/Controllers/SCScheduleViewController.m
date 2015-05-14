@@ -30,6 +30,9 @@
     
     self.event = [SCEvent currentEvent];
 
+    self.collectionView.cardLayoutPanGestureRecognizer.enabled = NO;
+    self.collectionView.cardLayoutTapGestureRecognizer.enabled = NO;
+    
     [[NSNotificationCenter defaultCenter]
      addObserver:self
      selector:@selector(managedObjectContextObjectsDidChangeWithNotification:)

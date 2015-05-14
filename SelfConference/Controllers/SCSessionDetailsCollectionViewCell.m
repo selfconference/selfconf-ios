@@ -168,6 +168,13 @@ static CGFloat const kCellShouldCollapseAfterDragOffset = 125.0f;
     return cell;
 }
 
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.delegate sessionDetailsCollectionViewCellShouldCollapse:self];
+}
+
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
