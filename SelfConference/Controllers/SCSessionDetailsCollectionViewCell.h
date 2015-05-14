@@ -27,5 +27,6 @@
 /** Called when the cell is ready to be closed manually. */
 - (void)sessionDetailsCollectionViewCellShouldCollapse:(SCSessionDetailsCollectionViewCell *)cell;
 
+- (UICollectionViewLayoutAttributes *)collectionViewLayoutAttributesForSessionDetailsCollectionViewCell:(SCSessionDetailsCollectionViewCell *)cell;
 
 @end

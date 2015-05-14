@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
     SCSessionDetailsTableViewSectionCount
 };
 
-static CGFloat const kCellShouldCollapseAfterDragOffset = 125.0f;
+static CGFloat const kCellShouldCollapseAfterDragOffset = 75.0f;
 
 @interface SCSessionDetailsCollectionViewCell () <UITableViewDataSource, UITableViewDelegate>
 
@@ -181,26 +181,29 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (scrollView == self.tableView) {
         UITableView *tableView = self.tableView;
         
-        CGFloat tableViewYPosition = tableView.contentOffset.y;
+        CGPoint tableViewContentOffset = tableView.contentOffset;
         
         UIColor *newContentViewBackgroundColor;
         
+        UICollectionViewLayoutAttributes *attributes = [self.delegate collectionViewLayoutAttributesForSessionDetailsCollectionViewCell:self];
+        CGRect originFrame = attributes.frame;
+
+        CGFloat tableViewContentOffsetY = tableViewContentOffset.y;
+
         // User is pulling down from the very top of the table
-        if (tableViewYPosition < 0) {
-            CGFloat offset = -tableViewYPosition;
+        if (tableViewContentOffsetY < 0) {
+            CGFloat newY = -tableViewContentOffsetY;
             
             // Move 'self' downwards based on the scroll position
-            CGRect frame = self.frame;
-            frame.origin.y = offset;
-            self.frame = frame;
+            self.frame = CGRectOffset(originFrame, 0, newY);
             
             // Don't show a white area above the session color
             newContentViewBackgroundColor = self.session.color;
             
             // If we pass a certain threshold, go ahead and request to be
-            // collapsed
+            // collapsed (only when the user flicked the table)
             if (!tableView.dragging &&
-                offset > kCellShouldCollapseAfterDragOffset) {
+                newY > kCellShouldCollapseAfterDragOffset) {
                 [self.delegate sessionDetailsCollectionViewCellShouldCollapse:self];
             }
         }
@@ -208,6 +211,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
             // If the user pulls up from the bottom, make sure to show the
             // default background color
             newContentViewBackgroundColor = self.defaultBackgroundColor;
+            
+            self.frame = originFrame;
         }
         
         // Set the 'backgroundColor' on 'self' directly that way we don't lose

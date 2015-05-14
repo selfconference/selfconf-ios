@@ -149,4 +149,8 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     [self.collectionView setPresenting:NO animated:YES completion:NULL];
 }
 
+- (UICollectionViewLayoutAttributes *)collectionViewLayoutAttributesForSessionDetailsCollectionViewCell:(SCSessionDetailsCollectionViewCell *)cell {
+    return [self.collectionView layoutAttributesForItemAtIndexPath:[self.collectionView indexPathForCell:cell]];
+}
+
 @end
