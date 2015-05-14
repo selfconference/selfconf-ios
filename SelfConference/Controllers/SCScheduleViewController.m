@@ -77,6 +77,7 @@
     
     // Disable scrolling by default, until it becomes exposed
     cell.tableView.userInteractionEnabled = NO;
+    cell.tableView.scrollEnabled = NO;
     
     cell.session = self.event.sessionsArrangedByDay[indexPath.section][indexPath.row];
     
@@ -95,6 +96,8 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     (SCSessionDetailsCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
     
     cell.tableView.userInteractionEnabled = YES;
+    cell.tableView.scrollEnabled = YES
+    ;
     [self.collectionView setPresenting:YES animated:YES completion:NULL];
 }
 
@@ -108,7 +111,9 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     (SCSessionDetailsCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
     
     cell.tableView.userInteractionEnabled = NO;
-    [cell.tableView setContentOffset:CGPointZero animated:NO];
+    cell.tableView.scrollEnabled = NO;
+    
+    cell.tableView.contentOffset = CGPointZero;
 }
 
 #pragma mark - Other
