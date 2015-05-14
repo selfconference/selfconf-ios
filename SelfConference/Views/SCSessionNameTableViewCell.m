@@ -21,7 +21,7 @@
 
 - (void)setSession:(SCSession *)session {
     self.nameLabel.text = session.name;
-    
+
     _session = session;
 }
 

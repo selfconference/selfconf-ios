@@ -39,7 +39,8 @@
     self.initialLabel.text = [speaker.name substringToIndex:1];
     self.nameLabel.text = speaker.name;
     self.biographyLabel.text = speaker.biography;
-    
+
     _speaker = speaker;
 }
+
 @end

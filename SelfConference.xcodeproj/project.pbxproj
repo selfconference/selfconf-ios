@@ -11,21 +11,18 @@
 		1F0BAA851A9989460059C73A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BAA841A9989460059C73A /* Images.xcassets */; };
 		1F0BAA881A9989890059C73A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BAA871A9989890059C73A /* LaunchScreen.xib */; };
 		1F0BAA8B1A998D520059C73A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BAA8A1A998D520059C73A /* Main.storyboard */; };
-		1F0BAA981A9994970059C73A /* SCSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAA971A9994970059C73A /* SCSession.m */; };
-		1F0BAA9B1A9995850059C73A /* SCSpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAA9A1A9995850059C73A /* SCSpeaker.m */; };
-		1F0BAA9E1A9995DE0059C73A /* SCRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAA9D1A9995DE0059C73A /* SCRoom.m */; };
-		1F0BAAA21A999C400059C73A /* SCParseSetupService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAA11A999C400059C73A /* SCParseSetupService.m */; };
 		1F0BAAA51A99A3680059C73A /* SCSharedStoryboardInstances.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAA41A99A3680059C73A /* SCSharedStoryboardInstances.m */; };
 		1F0BAAA81A99A6AB0059C73A /* SCSessionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAA71A99A6AB0059C73A /* SCSessionTableViewCell.m */; };
-		1F0BAAAC1A99B23F0059C73A /* SCConfigStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAAB1A99B23F0059C73A /* SCConfigStrings.m */; };
 		1F0BAAB01A99B7DE0059C73A /* NSError+SCError.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAAF1A99B7DE0059C73A /* NSError+SCError.m */; };
 		1F0BAAB31A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAB21A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m */; };
 		1F5AC6F71ABE40A00076E341 /* UIView+SCUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC6F61ABE40A00076E341 /* UIView+SCUtilities.m */; };
 		1F5AC6FD1ABE4CE10076E341 /* SCSessionsInADayHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC6FC1ABE4CE10076E341 /* SCSessionsInADayHeaderTableViewCell.m */; };
 		1F5AC7001ABE62680076E341 /* SCSessionNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC6FF1ABE62680076E341 /* SCSessionNameTableViewCell.m */; };
-		1F5AC7031ABE62A50076E341 /* SCSessionDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7021ABE62A50076E341 /* SCSessionDetailsTableViewCell.m */; };
+		1F5AC7031ABE62A50076E341 /* SCSessionAbstractTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7021ABE62A50076E341 /* SCSessionAbstractTableViewCell.m */; };
 		1F5AC7061ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7051ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m */; };
 		1F5AC7091ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7081ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m */; };
+		1F71944B1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F71944A1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m */; };
+		1F71944E1B0425020098DB48 /* NSSet+SCManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F71944D1B0425020098DB48 /* NSSet+SCManagedObject.m */; };
 		1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */; };
 		1F7392D51A9985BE00F4B10F /* SelfConferenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7392D41A9985BE00F4B10F /* SelfConferenceTests.m */; };
 		1F86EF301ABE05DD001E30DD /* UIColor+SCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF2F1ABE05DD001E30DD /* UIColor+SCColor.m */; };
@@ -34,16 +31,21 @@
 		1F86EF441ABE35D2001E30DD /* SCSessionDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF431ABE35D2001E30DD /* SCSessionDetailsTableViewController.m */; };
 		1F86EF471ABE35E7001E30DD /* SCScheduleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF461ABE35E7001E30DD /* SCScheduleTableViewController.m */; };
 		1FBD60AA1B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60A81B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld */; };
-		1FBD60D51B018EDC008E0FEC /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60C61B018EDC008E0FEC /* Event.m */; };
-		1FBD60D61B018EDC008E0FEC /* Organizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60C81B018EDC008E0FEC /* Organizer.m */; };
-		1FBD60D71B018EDC008E0FEC /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60CA1B018EDC008E0FEC /* Room.m */; };
-		1FBD60D81B018EDC008E0FEC /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60CC1B018EDC008E0FEC /* Session.m */; };
-		1FBD60D91B018EDC008E0FEC /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60CE1B018EDC008E0FEC /* Speaker.m */; };
-		1FBD60DA1B018EDC008E0FEC /* Sponsor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60D01B018EDC008E0FEC /* Sponsor.m */; };
-		1FBD60DB1B018EDC008E0FEC /* SponsorLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60D21B018EDC008E0FEC /* SponsorLevel.m */; };
-		1FBD60DC1B018EDC008E0FEC /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60D41B018EDC008E0FEC /* Venue.m */; };
+		1FBD60D51B018EDC008E0FEC /* SCEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60C61B018EDC008E0FEC /* SCEvent.m */; };
+		1FBD60D61B018EDC008E0FEC /* SCOrganizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60C81B018EDC008E0FEC /* SCOrganizer.m */; };
+		1FBD60D71B018EDC008E0FEC /* SCRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60CA1B018EDC008E0FEC /* SCRoom.m */; };
+		1FBD60D81B018EDC008E0FEC /* SCSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60CC1B018EDC008E0FEC /* SCSession.m */; };
+		1FBD60D91B018EDC008E0FEC /* SCSpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60CE1B018EDC008E0FEC /* SCSpeaker.m */; };
+		1FBD60DA1B018EDC008E0FEC /* SCSponsor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60D01B018EDC008E0FEC /* SCSponsor.m */; };
+		1FBD60DB1B018EDC008E0FEC /* SCSponsorLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60D21B018EDC008E0FEC /* SCSponsorLevel.m */; };
+		1FBD60DC1B018EDC008E0FEC /* SCVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60D41B018EDC008E0FEC /* SCVenue.m */; };
 		1FBD60DF1B018F04008E0FEC /* SCManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60DE1B018F04008E0FEC /* SCManagedObject.m */; };
 		1FBD60E21B018F81008E0FEC /* SCUpdatedAtCreatedAt.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60E11B018F81008E0FEC /* SCUpdatedAtCreatedAt.m */; };
+		1FBD60E51B019DDE008E0FEC /* NSManagedObjectContext+SCManagedObjectContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60E41B019DDE008E0FEC /* NSManagedObjectContext+SCManagedObjectContext.m */; };
+		1FBD60E81B019DFA008E0FEC /* NSPredicate+SCPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60E71B019DFA008E0FEC /* NSPredicate+SCPredicate.m */; };
+		1FBD60EC1B01A061008E0FEC /* SCAPIStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60EB1B01A061008E0FEC /* SCAPIStrings.m */; };
+		1FBD60EF1B01A908008E0FEC /* SCAPIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60EE1B01A908008E0FEC /* SCAPIService.m */; };
+		1FBD60F21B01AAC4008E0FEC /* SCHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60F11B01AAC4008E0FEC /* SCHTTPSessionManager.m */; };
 		52177A65E8B8CFE8659C76EF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1457BA96527132726AC017 /* libPods.a */; };
 		FEEAC01EB9E2FC1CB6FE80F7 /* libPods-SelfConferenceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8F553853A58875DD1A6969 /* libPods-SelfConferenceTests.a */; };
 /* End PBXBuildFile section */
@@ -64,20 +66,10 @@
 		1F0BAA841A9989460059C73A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1F0BAA871A9989890059C73A /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		1F0BAA8A1A998D520059C73A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		1F0BAA961A9994970059C73A /* SCSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSession.h; sourceTree = "<group>"; };
-		1F0BAA971A9994970059C73A /* SCSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSession.m; sourceTree = "<group>"; };
-		1F0BAA991A9995850059C73A /* SCSpeaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSpeaker.h; sourceTree = "<group>"; };
-		1F0BAA9A1A9995850059C73A /* SCSpeaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSpeaker.m; sourceTree = "<group>"; };
-		1F0BAA9C1A9995DE0059C73A /* SCRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRoom.h; sourceTree = "<group>"; };
-		1F0BAA9D1A9995DE0059C73A /* SCRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCRoom.m; sourceTree = "<group>"; };
-		1F0BAAA01A999C400059C73A /* SCParseSetupService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCParseSetupService.h; sourceTree = "<group>"; };
-		1F0BAAA11A999C400059C73A /* SCParseSetupService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCParseSetupService.m; sourceTree = "<group>"; };
 		1F0BAAA31A99A3680059C73A /* SCSharedStoryboardInstances.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSharedStoryboardInstances.h; sourceTree = "<group>"; };
 		1F0BAAA41A99A3680059C73A /* SCSharedStoryboardInstances.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSharedStoryboardInstances.m; sourceTree = "<group>"; };
 		1F0BAAA61A99A6AB0059C73A /* SCSessionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionTableViewCell.h; sourceTree = "<group>"; };
 		1F0BAAA71A99A6AB0059C73A /* SCSessionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionTableViewCell.m; sourceTree = "<group>"; };
-		1F0BAAAA1A99B23F0059C73A /* SCConfigStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCConfigStrings.h; sourceTree = "<group>"; };
-		1F0BAAAB1A99B23F0059C73A /* SCConfigStrings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCConfigStrings.m; sourceTree = "<group>"; };
 		1F0BAAAE1A99B7DE0059C73A /* NSError+SCError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+SCError.h"; sourceTree = "<group>"; };
 		1F0BAAAF1A99B7DE0059C73A /* NSError+SCError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+SCError.m"; sourceTree = "<group>"; };
 		1F0BAAB11A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+SCUserDefaults.h"; sourceTree = "<group>"; };
@@ -88,12 +80,16 @@
 		1F5AC6FC1ABE4CE10076E341 /* SCSessionsInADayHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionsInADayHeaderTableViewCell.m; sourceTree = "<group>"; };
 		1F5AC6FE1ABE62680076E341 /* SCSessionNameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionNameTableViewCell.h; sourceTree = "<group>"; };
 		1F5AC6FF1ABE62680076E341 /* SCSessionNameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionNameTableViewCell.m; sourceTree = "<group>"; };
-		1F5AC7011ABE62A50076E341 /* SCSessionDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionDetailsTableViewCell.h; sourceTree = "<group>"; };
-		1F5AC7021ABE62A50076E341 /* SCSessionDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionDetailsTableViewCell.m; sourceTree = "<group>"; };
+		1F5AC7011ABE62A50076E341 /* SCSessionAbstractTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionAbstractTableViewCell.h; sourceTree = "<group>"; };
+		1F5AC7021ABE62A50076E341 /* SCSessionAbstractTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionAbstractTableViewCell.m; sourceTree = "<group>"; };
 		1F5AC7041ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionSpeakerHeaderTableViewCell.h; sourceTree = "<group>"; };
 		1F5AC7051ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionSpeakerHeaderTableViewCell.m; sourceTree = "<group>"; };
 		1F5AC7071ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionSpeakerDetailsTableViewCell.h; sourceTree = "<group>"; };
 		1F5AC7081ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionSpeakerDetailsTableViewCell.m; sourceTree = "<group>"; };
+		1F7194491B0423CD0098DB48 /* NSDictionary+SCManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SCManagedObject.h"; sourceTree = "<group>"; };
+		1F71944A1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SCManagedObject.m"; sourceTree = "<group>"; };
+		1F71944C1B0425020098DB48 /* NSSet+SCManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+SCManagedObject.h"; sourceTree = "<group>"; };
+		1F71944D1B0425020098DB48 /* NSSet+SCManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+SCManagedObject.m"; sourceTree = "<group>"; };
 		1F7392B21A9985BE00F4B10F /* SelfConference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelfConference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7392B91A9985BE00F4B10F /* SCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCAppDelegate.h; sourceTree = "<group>"; };
 		1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCAppDelegate.m; sourceTree = "<group>"; };
@@ -111,26 +107,36 @@
 		1F86EF451ABE35E7001E30DD /* SCScheduleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCScheduleTableViewController.h; sourceTree = "<group>"; };
 		1F86EF461ABE35E7001E30DD /* SCScheduleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCScheduleTableViewController.m; sourceTree = "<group>"; };
 		1FBD60A91B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SelfConferenceDataModel.xcdatamodel; sourceTree = "<group>"; };
-		1FBD60C51B018EDC008E0FEC /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
-		1FBD60C61B018EDC008E0FEC /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
-		1FBD60C71B018EDC008E0FEC /* Organizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Organizer.h; sourceTree = "<group>"; };
-		1FBD60C81B018EDC008E0FEC /* Organizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Organizer.m; sourceTree = "<group>"; };
-		1FBD60C91B018EDC008E0FEC /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Room.h; sourceTree = "<group>"; };
-		1FBD60CA1B018EDC008E0FEC /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
-		1FBD60CB1B018EDC008E0FEC /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
-		1FBD60CC1B018EDC008E0FEC /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
-		1FBD60CD1B018EDC008E0FEC /* Speaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Speaker.h; sourceTree = "<group>"; };
-		1FBD60CE1B018EDC008E0FEC /* Speaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Speaker.m; sourceTree = "<group>"; };
-		1FBD60CF1B018EDC008E0FEC /* Sponsor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sponsor.h; sourceTree = "<group>"; };
-		1FBD60D01B018EDC008E0FEC /* Sponsor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sponsor.m; sourceTree = "<group>"; };
-		1FBD60D11B018EDC008E0FEC /* SponsorLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SponsorLevel.h; sourceTree = "<group>"; };
-		1FBD60D21B018EDC008E0FEC /* SponsorLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SponsorLevel.m; sourceTree = "<group>"; };
-		1FBD60D31B018EDC008E0FEC /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
-		1FBD60D41B018EDC008E0FEC /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
+		1FBD60C51B018EDC008E0FEC /* SCEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCEvent.h; sourceTree = "<group>"; };
+		1FBD60C61B018EDC008E0FEC /* SCEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCEvent.m; sourceTree = "<group>"; };
+		1FBD60C71B018EDC008E0FEC /* SCOrganizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCOrganizer.h; sourceTree = "<group>"; };
+		1FBD60C81B018EDC008E0FEC /* SCOrganizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCOrganizer.m; sourceTree = "<group>"; };
+		1FBD60C91B018EDC008E0FEC /* SCRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRoom.h; sourceTree = "<group>"; };
+		1FBD60CA1B018EDC008E0FEC /* SCRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCRoom.m; sourceTree = "<group>"; };
+		1FBD60CB1B018EDC008E0FEC /* SCSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSession.h; sourceTree = "<group>"; };
+		1FBD60CC1B018EDC008E0FEC /* SCSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSession.m; sourceTree = "<group>"; };
+		1FBD60CD1B018EDC008E0FEC /* SCSpeaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSpeaker.h; sourceTree = "<group>"; };
+		1FBD60CE1B018EDC008E0FEC /* SCSpeaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSpeaker.m; sourceTree = "<group>"; };
+		1FBD60CF1B018EDC008E0FEC /* SCSponsor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSponsor.h; sourceTree = "<group>"; };
+		1FBD60D01B018EDC008E0FEC /* SCSponsor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSponsor.m; sourceTree = "<group>"; };
+		1FBD60D11B018EDC008E0FEC /* SCSponsorLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSponsorLevel.h; sourceTree = "<group>"; };
+		1FBD60D21B018EDC008E0FEC /* SCSponsorLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSponsorLevel.m; sourceTree = "<group>"; };
+		1FBD60D31B018EDC008E0FEC /* SCVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCVenue.h; sourceTree = "<group>"; };
+		1FBD60D41B018EDC008E0FEC /* SCVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCVenue.m; sourceTree = "<group>"; };
 		1FBD60DD1B018F04008E0FEC /* SCManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCManagedObject.h; path = SCManagedObject/SCManagedObject.h; sourceTree = "<group>"; };
 		1FBD60DE1B018F04008E0FEC /* SCManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCManagedObject.m; path = SCManagedObject/SCManagedObject.m; sourceTree = "<group>"; };
 		1FBD60E01B018F81008E0FEC /* SCUpdatedAtCreatedAt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCUpdatedAtCreatedAt.h; path = SCUpdatedAtCreatedAt/SCUpdatedAtCreatedAt.h; sourceTree = "<group>"; };
 		1FBD60E11B018F81008E0FEC /* SCUpdatedAtCreatedAt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCUpdatedAtCreatedAt.m; path = SCUpdatedAtCreatedAt/SCUpdatedAtCreatedAt.m; sourceTree = "<group>"; };
+		1FBD60E31B019DDE008E0FEC /* NSManagedObjectContext+SCManagedObjectContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+SCManagedObjectContext.h"; sourceTree = "<group>"; };
+		1FBD60E41B019DDE008E0FEC /* NSManagedObjectContext+SCManagedObjectContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+SCManagedObjectContext.m"; sourceTree = "<group>"; };
+		1FBD60E61B019DFA008E0FEC /* NSPredicate+SCPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+SCPredicate.h"; sourceTree = "<group>"; };
+		1FBD60E71B019DFA008E0FEC /* NSPredicate+SCPredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+SCPredicate.m"; sourceTree = "<group>"; };
+		1FBD60EA1B01A061008E0FEC /* SCAPIStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAPIStrings.h; sourceTree = "<group>"; };
+		1FBD60EB1B01A061008E0FEC /* SCAPIStrings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAPIStrings.m; sourceTree = "<group>"; };
+		1FBD60ED1B01A908008E0FEC /* SCAPIService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAPIService.h; sourceTree = "<group>"; };
+		1FBD60EE1B01A908008E0FEC /* SCAPIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAPIService.m; sourceTree = "<group>"; };
+		1FBD60F01B01AAC4008E0FEC /* SCHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCHTTPSessionManager.h; sourceTree = "<group>"; };
+		1FBD60F11B01AAC4008E0FEC /* SCHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCHTTPSessionManager.m; sourceTree = "<group>"; };
 		2D10993C3C99F6944FEAF14F /* Pods-SelfConferenceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelfConferenceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SelfConferenceTests/Pods-SelfConferenceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		37D95520F9868BAA20A1EBC8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3B1457BA96527132726AC017 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,8 +196,8 @@
 				1F5AC6FC1ABE4CE10076E341 /* SCSessionsInADayHeaderTableViewCell.m */,
 				1F5AC6FE1ABE62680076E341 /* SCSessionNameTableViewCell.h */,
 				1F5AC6FF1ABE62680076E341 /* SCSessionNameTableViewCell.m */,
-				1F5AC7011ABE62A50076E341 /* SCSessionDetailsTableViewCell.h */,
-				1F5AC7021ABE62A50076E341 /* SCSessionDetailsTableViewCell.m */,
+				1F5AC7011ABE62A50076E341 /* SCSessionAbstractTableViewCell.h */,
+				1F5AC7021ABE62A50076E341 /* SCSessionAbstractTableViewCell.m */,
 				1F5AC7041ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.h */,
 				1F5AC7051ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m */,
 				1F5AC7071ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.h */,
@@ -228,32 +234,8 @@
 				1FBD60DD1B018F04008E0FEC /* SCManagedObject.h */,
 				1FBD60DE1B018F04008E0FEC /* SCManagedObject.m */,
 				1FBD60C31B018EDC008E0FEC /* SCManagedObject */,
-				1F0BAA961A9994970059C73A /* SCSession.h */,
-				1F0BAA971A9994970059C73A /* SCSession.m */,
-				1F0BAA991A9995850059C73A /* SCSpeaker.h */,
-				1F0BAA9A1A9995850059C73A /* SCSpeaker.m */,
-				1F0BAA9C1A9995DE0059C73A /* SCRoom.h */,
-				1F0BAA9D1A9995DE0059C73A /* SCRoom.m */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		1F0BAA9F1A999C400059C73A /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				1F0BAAA01A999C400059C73A /* SCParseSetupService.h */,
-				1F0BAAA11A999C400059C73A /* SCParseSetupService.m */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		1F0BAAA91A99B20D0059C73A /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				1F0BAAAA1A99B23F0059C73A /* SCConfigStrings.h */,
-				1F0BAAAB1A99B23F0059C73A /* SCConfigStrings.m */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		1F0BAAAD1A99B7D00059C73A /* Categories */ = {
@@ -267,6 +249,14 @@
 				1F86EF2F1ABE05DD001E30DD /* UIColor+SCColor.m */,
 				1F5AC6F51ABE40A00076E341 /* UIView+SCUtilities.h */,
 				1F5AC6F61ABE40A00076E341 /* UIView+SCUtilities.m */,
+				1FBD60E61B019DFA008E0FEC /* NSPredicate+SCPredicate.h */,
+				1FBD60E71B019DFA008E0FEC /* NSPredicate+SCPredicate.m */,
+				1FBD60E31B019DDE008E0FEC /* NSManagedObjectContext+SCManagedObjectContext.h */,
+				1FBD60E41B019DDE008E0FEC /* NSManagedObjectContext+SCManagedObjectContext.m */,
+				1F7194491B0423CD0098DB48 /* NSDictionary+SCManagedObject.h */,
+				1F71944A1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m */,
+				1F71944C1B0425020098DB48 /* NSSet+SCManagedObject.h */,
+				1F71944D1B0425020098DB48 /* NSSet+SCManagedObject.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -296,12 +286,11 @@
 			children = (
 				1F7392B91A9985BE00F4B10F /* SCAppDelegate.h */,
 				1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */,
+				1FBD60E91B01A053008E0FEC /* API */,
 				1F0BAAAD1A99B7D00059C73A /* Categories */,
 				1F0BAA8C1A998F8B0059C73A /* Controllers */,
-				1F0BAAA91A99B20D0059C73A /* Helpers */,
 				1F0BAA951A9994000059C73A /* Models */,
 				1F0BAA831A9989460059C73A /* Resources */,
-				1F0BAA9F1A999C400059C73A /* Services */,
 				1F0BAA891A998D480059C73A /* Storyboards */,
 				1F0BAA771A99886F0059C73A /* Supporting-Files */,
 				1F0BAA861A9989890059C73A /* Views */,
@@ -339,24 +328,37 @@
 		1FBD60C41B018EDC008E0FEC /* SCUpdatedAtCreatedAt */ = {
 			isa = PBXGroup;
 			children = (
-				1FBD60C51B018EDC008E0FEC /* Event.h */,
-				1FBD60C61B018EDC008E0FEC /* Event.m */,
-				1FBD60C71B018EDC008E0FEC /* Organizer.h */,
-				1FBD60C81B018EDC008E0FEC /* Organizer.m */,
-				1FBD60C91B018EDC008E0FEC /* Room.h */,
-				1FBD60CA1B018EDC008E0FEC /* Room.m */,
-				1FBD60CB1B018EDC008E0FEC /* Session.h */,
-				1FBD60CC1B018EDC008E0FEC /* Session.m */,
-				1FBD60CD1B018EDC008E0FEC /* Speaker.h */,
-				1FBD60CE1B018EDC008E0FEC /* Speaker.m */,
-				1FBD60CF1B018EDC008E0FEC /* Sponsor.h */,
-				1FBD60D01B018EDC008E0FEC /* Sponsor.m */,
-				1FBD60D11B018EDC008E0FEC /* SponsorLevel.h */,
-				1FBD60D21B018EDC008E0FEC /* SponsorLevel.m */,
-				1FBD60D31B018EDC008E0FEC /* Venue.h */,
-				1FBD60D41B018EDC008E0FEC /* Venue.m */,
+				1FBD60C51B018EDC008E0FEC /* SCEvent.h */,
+				1FBD60C61B018EDC008E0FEC /* SCEvent.m */,
+				1FBD60C71B018EDC008E0FEC /* SCOrganizer.h */,
+				1FBD60C81B018EDC008E0FEC /* SCOrganizer.m */,
+				1FBD60C91B018EDC008E0FEC /* SCRoom.h */,
+				1FBD60CA1B018EDC008E0FEC /* SCRoom.m */,
+				1FBD60CB1B018EDC008E0FEC /* SCSession.h */,
+				1FBD60CC1B018EDC008E0FEC /* SCSession.m */,
+				1FBD60CD1B018EDC008E0FEC /* SCSpeaker.h */,
+				1FBD60CE1B018EDC008E0FEC /* SCSpeaker.m */,
+				1FBD60CF1B018EDC008E0FEC /* SCSponsor.h */,
+				1FBD60D01B018EDC008E0FEC /* SCSponsor.m */,
+				1FBD60D11B018EDC008E0FEC /* SCSponsorLevel.h */,
+				1FBD60D21B018EDC008E0FEC /* SCSponsorLevel.m */,
+				1FBD60D31B018EDC008E0FEC /* SCVenue.h */,
+				1FBD60D41B018EDC008E0FEC /* SCVenue.m */,
 			);
 			path = SCUpdatedAtCreatedAt;
+			sourceTree = "<group>";
+		};
+		1FBD60E91B01A053008E0FEC /* API */ = {
+			isa = PBXGroup;
+			children = (
+				1FBD60EA1B01A061008E0FEC /* SCAPIStrings.h */,
+				1FBD60EB1B01A061008E0FEC /* SCAPIStrings.m */,
+				1FBD60ED1B01A908008E0FEC /* SCAPIService.h */,
+				1FBD60EE1B01A908008E0FEC /* SCAPIService.m */,
+				1FBD60F01B01AAC4008E0FEC /* SCHTTPSessionManager.h */,
+				1FBD60F11B01AAC4008E0FEC /* SCHTTPSessionManager.m */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		7A498C1927ACE97829FE04A0 /* Pods */ = {
@@ -546,37 +548,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FBD60D71B018EDC008E0FEC /* Room.m in Sources */,
+				1FBD60D71B018EDC008E0FEC /* SCRoom.m in Sources */,
 				1F86EF441ABE35D2001E30DD /* SCSessionDetailsTableViewController.m in Sources */,
+				1FBD60E51B019DDE008E0FEC /* NSManagedObjectContext+SCManagedObjectContext.m in Sources */,
 				1F5AC7061ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m in Sources */,
-				1F0BAAA21A999C400059C73A /* SCParseSetupService.m in Sources */,
 				1F86EF3C1ABE1C91001E30DD /* SCLogoColorsLineView.m in Sources */,
-				1FBD60DB1B018EDC008E0FEC /* SponsorLevel.m in Sources */,
+				1FBD60DB1B018EDC008E0FEC /* SCSponsorLevel.m in Sources */,
 				1FBD60DF1B018F04008E0FEC /* SCManagedObject.m in Sources */,
 				1F0BAA7B1A99886F0059C73A /* main.m in Sources */,
-				1F0BAA9B1A9995850059C73A /* SCSpeaker.m in Sources */,
-				1F0BAA9E1A9995DE0059C73A /* SCRoom.m in Sources */,
-				1FBD60D81B018EDC008E0FEC /* Session.m in Sources */,
-				1F0BAA981A9994970059C73A /* SCSession.m in Sources */,
+				1FBD60EC1B01A061008E0FEC /* SCAPIStrings.m in Sources */,
+				1FBD60D81B018EDC008E0FEC /* SCSession.m in Sources */,
+				1FBD60EF1B01A908008E0FEC /* SCAPIService.m in Sources */,
 				1F86EF471ABE35E7001E30DD /* SCScheduleTableViewController.m in Sources */,
 				1F86EF411ABE213F001E30DD /* SCLogoColorsNavigationBar.m in Sources */,
-				1F0BAAAC1A99B23F0059C73A /* SCConfigStrings.m in Sources */,
-				1FBD60DA1B018EDC008E0FEC /* Sponsor.m in Sources */,
+				1F71944E1B0425020098DB48 /* NSSet+SCManagedObject.m in Sources */,
+				1FBD60DA1B018EDC008E0FEC /* SCSponsor.m in Sources */,
 				1F5AC6F71ABE40A00076E341 /* UIView+SCUtilities.m in Sources */,
 				1FBD60E21B018F81008E0FEC /* SCUpdatedAtCreatedAt.m in Sources */,
-				1FBD60D51B018EDC008E0FEC /* Event.m in Sources */,
-				1FBD60D91B018EDC008E0FEC /* Speaker.m in Sources */,
+				1FBD60D51B018EDC008E0FEC /* SCEvent.m in Sources */,
+				1FBD60D91B018EDC008E0FEC /* SCSpeaker.m in Sources */,
 				1F0BAAA81A99A6AB0059C73A /* SCSessionTableViewCell.m in Sources */,
+				1FBD60F21B01AAC4008E0FEC /* SCHTTPSessionManager.m in Sources */,
 				1F5AC7091ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m in Sources */,
+				1FBD60E81B019DFA008E0FEC /* NSPredicate+SCPredicate.m in Sources */,
 				1F86EF301ABE05DD001E30DD /* UIColor+SCColor.m in Sources */,
 				1F5AC6FD1ABE4CE10076E341 /* SCSessionsInADayHeaderTableViewCell.m in Sources */,
 				1F0BAAA51A99A3680059C73A /* SCSharedStoryboardInstances.m in Sources */,
 				1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */,
 				1F5AC7001ABE62680076E341 /* SCSessionNameTableViewCell.m in Sources */,
-				1F5AC7031ABE62A50076E341 /* SCSessionDetailsTableViewCell.m in Sources */,
+				1F5AC7031ABE62A50076E341 /* SCSessionAbstractTableViewCell.m in Sources */,
 				1F0BAAB01A99B7DE0059C73A /* NSError+SCError.m in Sources */,
-				1FBD60D61B018EDC008E0FEC /* Organizer.m in Sources */,
-				1FBD60DC1B018EDC008E0FEC /* Venue.m in Sources */,
+				1FBD60D61B018EDC008E0FEC /* SCOrganizer.m in Sources */,
+				1FBD60DC1B018EDC008E0FEC /* SCVenue.m in Sources */,
+				1F71944B1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m in Sources */,
 				1F0BAAB31A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m in Sources */,
 				1FBD60AA1B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld in Sources */,
 			);

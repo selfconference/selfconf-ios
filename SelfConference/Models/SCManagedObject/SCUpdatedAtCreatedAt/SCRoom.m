@@ -6,14 +6,14 @@
 //  Copyright (c) 2015 Self Conference. All rights reserved.
 //
 
-#import "Room.h"
-#import "Event.h"
+#import "SCRoom.h"
+#import "SCEvent.h"
 
-@implementation Room
+@implementation SCRoom
 
-@dynamic name;
 @dynamic roomID;
-@dynamic event;
+@dynamic name;
+@dynamic venue;
 @dynamic sessions;
 
 @end

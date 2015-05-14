@@ -8,17 +8,23 @@
 
 #import "SCUpdatedAtCreatedAt.h"
 
-@class Event, Room;
+@class SCEvent, SCRoom;
 
-@interface Session : SCUpdatedAtCreatedAt
+@interface SCSession : SCUpdatedAtCreatedAt
 
-@property (nonatomic, retain) NSString *sessionID;
+@property (nonatomic) NSInteger sessionID;
+
+/** The date when the session is scheduled to take place. */
 @property (nonatomic, retain) NSDate *slot;
+
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *abstract;
 @property (nonatomic) BOOL isKeynote;
-@property (nonatomic, retain) Event *event;
-@property (nonatomic, retain) Room *room;
+@property (nonatomic, retain) SCEvent *event;
+@property (nonatomic, retain) SCRoom *room;
 @property (nonatomic, retain) NSSet *speakers;
+
+/** Returns 'speakers' ordered based on 'name'. */
+- (NSArray *)speakersOrderedByName;
 
 @end

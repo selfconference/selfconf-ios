@@ -1,23 +1,20 @@
 //
-//  Speaker.m
+//  SponsorLevel.m
 //  SelfConference
 //
 //  Created by Jeff Burt on 5/11/15.
 //  Copyright (c) 2015 Self Conference. All rights reserved.
 //
 
-#import "Speaker.h"
-#import "Event.h"
-#import "Session.h"
+#import "SCSponsorLevel.h"
 
-@implementation Speaker
+@implementation SCSponsorLevel
 
-@dynamic biography;
-@dynamic speakerID;
+@dynamic sponsorLevelID;
 @dynamic name;
-@dynamic twitterHandle;
 @dynamic photoUrlString;
+@dynamic order;
 @dynamic event;
-@dynamic sessions;
+@dynamic sponsors;
 
 @end

@@ -1,5 +1,5 @@
 //
-//  Sponsor.h
+//  SponsorLevel.h
 //  SelfConference
 //
 //  Created by Jeff Burt on 5/11/15.
@@ -8,15 +8,15 @@
 
 #import "SCUpdatedAtCreatedAt.h"
 
-@class Event;
+@class SCEvent;
 
-@interface Sponsor : SCUpdatedAtCreatedAt
+@interface SCSponsorLevel : SCUpdatedAtCreatedAt
 
-@property (nonatomic, retain) NSString *link;
+@property (nonatomic) NSInteger sponsorLevelID;
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSString *sponsorID;
 @property (nonatomic, retain) NSString *photoUrlString;
-@property (nonatomic, retain) Event *event;
-@property (nonatomic, retain) NSSet *sponsorLevels;
+@property (nonatomic) NSInteger order;
+@property (nonatomic, retain) SCEvent *event;
+@property (nonatomic, retain) NSSet *sponsors;
 
 @end

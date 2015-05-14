@@ -6,15 +6,15 @@
 //  Copyright (c) 2015 Self Conference. All rights reserved.
 //
 
-#import "Organizer.h"
-#import "Event.h"
+#import "SCOrganizer.h"
+#import "SCEvent.h"
 
-@implementation Organizer
+@implementation SCOrganizer
 
+@dynamic organizerID;
 @dynamic biography;
 @dynamic name;
 @dynamic photoUrlString;
-@dynamic organizerID;
 @dynamic twitterHandle;
 @dynamic email;
 @dynamic events;

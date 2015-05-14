@@ -7,20 +7,20 @@
 //
 
 #import "SCSessionDetailsTableViewController.h"
-#import "SCSession.h"
 #import "SCSessionNameTableViewCell.h"
-#import "SCSessionDetailsTableViewCell.h"
+#import "SCSessionAbstractTableViewCell.h"
 #import "SCSessionSpeakerHeaderTableViewCell.h"
 #import "SCSessionSpeakerDetailsTableViewCell.h"
 #import "UIColor+SCColor.h"
 #import <MTDates/NSDate+MTDates.h>
+#import "SCSession.h"
 
 typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
     /** Holds the name of the session */
     SCSessionDetailsTableViewSectionName,
     
     /** Holds the details of the session */
-    SCSessionDetailsTableViewSectionDetails,
+    SCSessionDetailsTableViewSectionAbstract,
     
     /** Acts like a header to introduce the speaker(s) */
     SCSessionDetailsTableViewSectionSpeakerLabel,
@@ -54,7 +54,7 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
 }
 
 - (void)setSession:(SCSession *)session {
-    self.navigationItem.title = [session.scheduledAt
+    self.navigationItem.title = [session.slot
                                  mt_stringFromDateWithFormat:@"EEEE ha"
                                  localized:YES];
     
@@ -73,7 +73,7 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
     
     // A session __could__ have more than 1 speaker
     if (section == SCSessionDetailsTableViewSectionSpeakerDetails) {
-        numberOfRows = self.session.speakers.count;
+        numberOfRows = self.session.speakersOrderedByName.count;
     }
     
     return numberOfRows;
@@ -97,15 +97,15 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
             cell = sessionNameTableViewCell;
         } break;
             
-        case SCSessionDetailsTableViewSectionDetails: {
-            SCSessionDetailsTableViewCell *sessionDetailsTableViewCell =
+        case SCSessionDetailsTableViewSectionAbstract: {
+            SCSessionAbstractTableViewCell *sessionAbstractTableViewCell =
             [tableView
-             dequeueReusableCellWithIdentifier:NSStringFromClass([SCSessionDetailsTableViewCell class])
+             dequeueReusableCellWithIdentifier:NSStringFromClass([SCSessionAbstractTableViewCell class])
              forIndexPath:indexPath];
             
-            sessionDetailsTableViewCell.session = self.session;
+            sessionAbstractTableViewCell.session = self.session;
 
-            cell = sessionDetailsTableViewCell;
+            cell = sessionAbstractTableViewCell;
         } break;
             
         case SCSessionDetailsTableViewSectionSpeakerLabel: {
@@ -115,7 +115,7 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
              forIndexPath:indexPath];
             
             [sessionSpeakerHeaderTableViewCell
-             configureWithNumberOfSpeakers:self.session.speakers.count];
+             configureWithNumberOfSpeakers:self.session.speakersOrderedByName.count];
             
             cell = sessionSpeakerHeaderTableViewCell;
         } break;
@@ -127,7 +127,7 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
              forIndexPath:indexPath];
             
             sessionSpeakerDetailsTableViewCell.speaker =
-            self.session.speakers[indexPath.row];
+            self.session.speakersOrderedByName[indexPath.row];
             
             cell = sessionSpeakerDetailsTableViewCell;
         } break;

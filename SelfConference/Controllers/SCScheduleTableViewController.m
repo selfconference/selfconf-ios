@@ -7,10 +7,14 @@
 //
 
 #import "SCScheduleTableViewController.h"
-#import "SCSession.h"
 #import "SCSessionTableViewCell.h"
 #import "SCSessionsInADayHeaderTableViewCell.h"
 #import "SCSessionDetailsTableViewController.h"
+#import "SCEvent.h"
+#import "SCSession.h"
+#import <MagicalRecord/NSManagedObjectContext+MagicalRecord.h>
+#import "NSDictionary+SCManagedObject.h"
+#import "NSSet+SCManagedObject.h"
 
 /** The Storyboard segue that fires when selecting an 'SCSessionTableViewCell' */
 static NSString * const kSCSessionTableViewCellShowSessionDetailsSegue =
@@ -18,8 +22,7 @@ static NSString * const kSCSessionTableViewCellShowSessionDetailsSegue =
 
 @interface SCScheduleTableViewController () <UISplitViewControllerDelegate>
 
-/** An array of 'SCSession' instances */
-@property (nonatomic) NSArray *sessions;
+@property (nonatomic) SCEvent *event;
 
 @end
 
@@ -41,22 +44,32 @@ static NSString * const kSCSessionTableViewCellShowSessionDetailsSegue =
     self.tableView.estimatedRowHeight = 150.0f;
     self.tableView.estimatedSectionHeaderHeight = 50.0f;
     
+    self.event = [SCEvent currentEvent];
+    
     [[NSNotificationCenter defaultCenter]
      addObserver:self
-     selector:@selector(reloadSessionsLocally)
-     name:kSCSessionNotificationNameForInstancesWereUpdatedFromTheServer
-     object:nil];
+     selector:@selector(managedObjectContextObjectsDidChangeWithNotification:)
+     name:NSManagedObjectContextObjectsDidChangeNotification
+     object:[NSManagedObjectContext MR_defaultContext]];
+}
+
+- (void)setEvent:(SCEvent *)event {
+    if (event != _event) {
+        _event = event;
+        
+        [self refreshEventData];
+    }
 }
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.sessions.count;
+    return self.event.sessionsArrangedByDay.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-    return [self.sessions[section] count];
+    return [self.event.sessionsArrangedByDay[section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -66,7 +79,7 @@ static NSString * const kSCSessionTableViewCellShowSessionDetailsSegue =
      dequeueReusableCellWithIdentifier:NSStringFromClass([SCSessionTableViewCell class])
      forIndexPath:indexPath];
     
-    cell.session = self.sessions[indexPath.section][indexPath.row];
+    cell.session = self.event.sessionsArrangedByDay[indexPath.section][indexPath.row];
     
     return cell;
 }
@@ -75,12 +88,12 @@ static NSString * const kSCSessionTableViewCellShowSessionDetailsSegue =
 
 - (UIView *)tableView:(UITableView *)tableView
 viewForHeaderInSection:(NSInteger)section {
-    SCSession *firstSessionInSection = [self.sessions[section] firstObject];
+    SCSession *firstSessionInSection = [self.event.sessionsArrangedByDay[section] firstObject];
     
     SCSessionsInADayHeaderTableViewCell *sessionsInADayHeaderTableViewCell =
     [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SCSessionsInADayHeaderTableViewCell class])];
     
-    [sessionsInADayHeaderTableViewCell configureWithDate:firstSessionInSection.scheduledAt];
+    [sessionsInADayHeaderTableViewCell configureWithDate:firstSessionInSection.slot];
     
     return sessionsInADayHeaderTableViewCell.contentView;
 }
@@ -104,18 +117,6 @@ collapseSecondaryViewController:(UIViewController *)secondaryViewController
 
 #pragma mark - Other
 
-/** 
- Fetches all of the local 'SCSession' instances, stores them, then  reloads 
- '_tableView'.
- */
-- (void)reloadSessionsLocally {
-    [SCSession
-     getLocalSessionsArrangedByDayWithBlock:^(NSArray *sessions, NSError *error) {
-         self.sessions = sessions;
-         [self.tableView reloadData];
-     }];
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:kSCSessionTableViewCellShowSessionDetailsSegue]) {
         SCSessionTableViewCell *sessionTableViewCell = (SCSessionTableViewCell *)sender;
@@ -124,6 +125,24 @@ collapseSecondaryViewController:(UIViewController *)secondaryViewController
         (SCSessionDetailsTableViewController *)[segue.destinationViewController viewControllers].firstObject;
         
         sessionDetailsTableViewController.session = sessionTableViewCell.session;
+    }
+}
+
+/** Refreshes all data associated with '_event'. */
+- (void)refreshEventData {
+    [self.tableView reloadData];
+}
+
+- (void)managedObjectContextObjectsDidChangeWithNotification:(NSNotification *)notification {
+    NSDictionary *userInfo = notification.userInfo;
+    
+    if ([userInfo.SC_insertedObjects SC_containsAtLeastOneObjectKindOfClass:[SCEvent class]]) {
+        // It's possible that we got a new current event. Allow the overridden
+        // setter to decide if it's new or not.
+        self.event = [SCEvent currentEvent];
+    }
+    else if ([userInfo.SC_allChangedObjects containsObject:self.event]) {
+        [self refreshEventData];
     }
 }
 

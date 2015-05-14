@@ -7,10 +7,11 @@
 //
 
 #import "SCAppDelegate.h"
-#import "SCParseSetupService.h"
-#import "SCSession.h"
 #import "UIColor+SCColor.h"
 #import <MagicalRecord/MagicalRecord+Setup.h>
+#import <MagicalRecord/NSManagedObject+MagicalRecord.h>
+#import "SCEvent.h"
+#import "SCVenue.h"
 
 @implementation SCAppDelegate
 
@@ -18,17 +19,15 @@
     [self styleNavigationBarGlobally];
     [self styleTabBarGlobally];
     
-    [SCParseSetupService setupWithLaunchOptions:launchOptions];
-    
-    [self fetchUpdatedSessionsFromTheAPI];
-
     [MagicalRecord setupAutoMigratingCoreDataStack];
+    
+    [self fetchAllDataFromAPI];
     
     return YES;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    [self fetchUpdatedSessionsFromTheAPI];
+    [self fetchAllDataFromAPI];
 }
 
 #pragma mark - Internal
@@ -50,15 +49,17 @@
   @{NSForegroundColorAttributeName: navigationBar.tintColor};
 }
 
-/** 
- Fetches all of the 'SCSession' instances from the server. If called multiple 
- times, only recently updated instances are fetched. 
- */
-- (void)fetchUpdatedSessionsFromTheAPI {
-    [SCSession fetchAllSessionsFromTheAPIWithBlock:^(NSArray *sessions, NSError *error) {
-        NSLog(@"Fetched %zd sessions from the API with error: %@",
-              sessions.count,
-              error.localizedDescription);
+/** Fetches each model from the API. */
+- (void)fetchAllDataFromAPI {
+    [SCVenue getVenuesWithCompletionBlock:NULL];
+    
+    [SCEvent getCurrentEventWithCompletionBlock:^(SCEvent *event, NSError *error) {
+        [event getSpeakersWithCompletionBlock:NULL];
+        [event getSessionsWithCompletionBlock:NULL];
+        [event getSponsorsWithCompletionBlock:NULL];
+        [event getSponsorLevelsWithCompletionBlock:NULL];
+        [event getOrganizersWithCompletionBlock:NULL];
+        [event.venue getRoomsWithCompletionBlock:NULL];
     }];
 }
 
