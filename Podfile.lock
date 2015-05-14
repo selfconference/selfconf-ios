@@ -31,18 +31,24 @@ DEPENDENCIES:
   - AFNetworking
   - Kiwi
   - MagicalRecord (from `https://github.com/magicalpanda/MagicalRecord.git`, tag `v2.3.0-beta.5`)
-  - MTCardLayout
+  - MTCardLayout (from `https://github.com/jeffaburt/MTCardLayout.git`, branch `fix-exceptions-when-0-items`)
   - MTDates
 
 EXTERNAL SOURCES:
   MagicalRecord:
     :git: https://github.com/magicalpanda/MagicalRecord.git
     :tag: v2.3.0-beta.5
+  MTCardLayout:
+    :branch: fix-exceptions-when-0-items
+    :git: https://github.com/jeffaburt/MTCardLayout.git
 
 CHECKOUT OPTIONS:
   MagicalRecord:
     :git: https://github.com/magicalpanda/MagicalRecord.git
     :tag: v2.3.0-beta.5
+  MTCardLayout:
+    :commit: 90f5d5a9d5de4262ffc3fad6839f36a920dbadac
+    :git: https://github.com/jeffaburt/MTCardLayout.git
 
 SPEC CHECKSUMS:
   AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
