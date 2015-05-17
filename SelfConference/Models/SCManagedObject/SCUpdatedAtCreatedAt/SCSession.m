@@ -32,6 +32,11 @@
     [self.speakers sortedArrayUsingDescriptors:@[sortedBySlotSortDescriptor]];
 }
 
+- (NSString *)joinedSpeakerNamesOrderedByName {
+    return [[self.speakersOrderedByName valueForKey:NSStringFromSelector(@selector(name))]
+            componentsJoinedByString:@", "];
+}
+
 - (UIColor *)color {
     NSArray *availableColors = @[[UIColor SC_red],
                                  [UIColor SC_orange],
