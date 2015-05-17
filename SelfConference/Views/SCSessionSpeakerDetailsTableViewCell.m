@@ -10,11 +10,10 @@
 #import "SCSpeaker.h"
 #import "UIColor+SCColor.h"
 #import "UIView+SCUtilities.h"
+#import "SCSession.h"
 
 @interface SCSessionSpeakerDetailsTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UIView *avatarContainerView;
-@property (weak, nonatomic) IBOutlet UILabel *initialLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *biographyLabel;
 
@@ -22,25 +21,14 @@
 
 @implementation SCSessionSpeakerDetailsTableViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
+- (void)setSession:(SCSession *)session {
+    self.nameLabel.text = [NSString stringWithFormat:@"About %@",
+                           session.joinedSpeakerNamesOrderedByName];
     
-    // TODO: Select a random (but consistent) color when setting the speaker
-    self.avatarContainerView.backgroundColor = [UIColor SC_red];
-}
-
-- (void)layoutSubviews {
-    [super layoutSubviews];
+    SCSpeaker *oneSpeaker = session.speakers.anyObject;
+    self.biographyLabel.text = oneSpeaker.biography;
     
-    [self.avatarContainerView SC_makeCircular];
-}
-
-- (void)setSpeaker:(SCSpeaker *)speaker {
-    self.initialLabel.text = [speaker.name substringToIndex:1];
-    self.nameLabel.text = speaker.name;
-    self.biographyLabel.text = speaker.biography;
-
-    _speaker = speaker;
+    _session = session;
 }
 
 @end

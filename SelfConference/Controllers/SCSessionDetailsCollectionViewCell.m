@@ -11,7 +11,6 @@
 #import <MTDates/NSDate+MTDates.h>
 #import "SCSessionNameTableViewCell.h"
 #import "SCSessionAbstractTableViewCell.h"
-#import "SCSessionSpeakerHeaderTableViewCell.h"
 #import "SCSessionSpeakerDetailsTableViewCell.h"
 
 typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
@@ -20,9 +19,6 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
     
     /** Holds the details of the session */
     SCSessionDetailsTableViewSectionAbstract,
-    
-    /** Acts like a header to introduce the speaker(s) */
-    SCSessionDetailsTableViewSectionSpeakerLabel,
     
     /** Holds details about the speaker(s) */
     SCSessionDetailsTableViewSectionSpeakerDetails,
@@ -90,14 +86,7 @@ static CGFloat const kCellShouldCollapseAfterDragOffset = 75.0f;
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-    NSInteger numberOfRows = 1;
-    
-    // A session __could__ have more than 1 speaker
-    if (section == SCSessionDetailsTableViewSectionSpeakerDetails) {
-        numberOfRows = self.session.speakersOrderedByName.count;
-    }
-    
-    return numberOfRows;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -128,27 +117,14 @@ static CGFloat const kCellShouldCollapseAfterDragOffset = 75.0f;
             
             cell = sessionAbstractTableViewCell;
         } break;
-            
-        case SCSessionDetailsTableViewSectionSpeakerLabel: {
-            SCSessionSpeakerHeaderTableViewCell *sessionSpeakerHeaderTableViewCell =
-            [tableView
-             dequeueReusableCellWithIdentifier:NSStringFromClass([SCSessionSpeakerHeaderTableViewCell class])
-             forIndexPath:indexPath];
-            
-            [sessionSpeakerHeaderTableViewCell
-             configureWithNumberOfSpeakers:self.session.speakersOrderedByName.count];
-            
-            cell = sessionSpeakerHeaderTableViewCell;
-        } break;
-            
+                        
         case SCSessionDetailsTableViewSectionSpeakerDetails: {
             SCSessionSpeakerDetailsTableViewCell *sessionSpeakerDetailsTableViewCell =
             [tableView
              dequeueReusableCellWithIdentifier:NSStringFromClass([SCSessionSpeakerDetailsTableViewCell class])
              forIndexPath:indexPath];
             
-            sessionSpeakerDetailsTableViewCell.speaker =
-            self.session.speakersOrderedByName[indexPath.row];
+            sessionSpeakerDetailsTableViewCell.session = self.session;
             
             cell = sessionSpeakerDetailsTableViewCell;
         } break;
@@ -199,11 +175,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
             self.frame = originFrame;
         }
     }
-}
-
-/** The default '_backgroundColor' */
-- (UIColor *)defaultBackgroundColor {
-    return [UIColor whiteColor];
 }
 
 @end

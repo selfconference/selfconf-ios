@@ -17,7 +17,6 @@
 		1F5AC6F71ABE40A00076E341 /* UIView+SCUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC6F61ABE40A00076E341 /* UIView+SCUtilities.m */; };
 		1F5AC7001ABE62680076E341 /* SCSessionNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC6FF1ABE62680076E341 /* SCSessionNameTableViewCell.m */; };
 		1F5AC7031ABE62A50076E341 /* SCSessionAbstractTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7021ABE62A50076E341 /* SCSessionAbstractTableViewCell.m */; };
-		1F5AC7061ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7051ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m */; };
 		1F5AC7091ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7081ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m */; };
 		1F71944B1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F71944A1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m */; };
 		1F71944E1B0425020098DB48 /* NSSet+SCManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F71944D1B0425020098DB48 /* NSSet+SCManagedObject.m */; };
@@ -74,8 +73,6 @@
 		1F5AC6FF1ABE62680076E341 /* SCSessionNameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionNameTableViewCell.m; sourceTree = "<group>"; };
 		1F5AC7011ABE62A50076E341 /* SCSessionAbstractTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionAbstractTableViewCell.h; sourceTree = "<group>"; };
 		1F5AC7021ABE62A50076E341 /* SCSessionAbstractTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionAbstractTableViewCell.m; sourceTree = "<group>"; };
-		1F5AC7041ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionSpeakerHeaderTableViewCell.h; sourceTree = "<group>"; };
-		1F5AC7051ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionSpeakerHeaderTableViewCell.m; sourceTree = "<group>"; };
 		1F5AC7071ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionSpeakerDetailsTableViewCell.h; sourceTree = "<group>"; };
 		1F5AC7081ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionSpeakerDetailsTableViewCell.m; sourceTree = "<group>"; };
 		1F7194491B0423CD0098DB48 /* NSDictionary+SCManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SCManagedObject.h"; sourceTree = "<group>"; };
@@ -180,8 +177,6 @@
 				1F5AC6FF1ABE62680076E341 /* SCSessionNameTableViewCell.m */,
 				1F5AC7011ABE62A50076E341 /* SCSessionAbstractTableViewCell.h */,
 				1F5AC7021ABE62A50076E341 /* SCSessionAbstractTableViewCell.m */,
-				1F5AC7041ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.h */,
-				1F5AC7051ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m */,
 				1F5AC7071ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.h */,
 				1F5AC7081ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m */,
 			);
@@ -530,7 +525,6 @@
 			files = (
 				1FBD60D71B018EDC008E0FEC /* SCRoom.m in Sources */,
 				1FBD60E51B019DDE008E0FEC /* NSManagedObjectContext+SCManagedObjectContext.m in Sources */,
-				1F5AC7061ABE62C10076E341 /* SCSessionSpeakerHeaderTableViewCell.m in Sources */,
 				1F7560851B04448F00795E54 /* SCSessionDetailsCollectionViewCell.m in Sources */,
 				1FBD60DB1B018EDC008E0FEC /* SCSponsorLevel.m in Sources */,
 				1FBD60DF1B018F04008E0FEC /* SCManagedObject.m in Sources */,

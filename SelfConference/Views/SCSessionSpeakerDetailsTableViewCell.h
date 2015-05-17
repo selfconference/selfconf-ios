@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class SCSpeaker;
+@class SCSession;
 
 @interface SCSessionSpeakerDetailsTableViewCell : UITableViewCell
 
-/** The 'SCSpeaker' instance that this cell represents */
-@property (nonatomic) SCSpeaker *speaker;
+/** The 'SCSession' instance that this cell represents */
+@property (nonatomic) SCSession *session;
 
 @end
