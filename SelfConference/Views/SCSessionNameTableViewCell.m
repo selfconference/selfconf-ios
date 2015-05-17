@@ -8,10 +8,14 @@
 
 #import "SCSessionNameTableViewCell.h"
 #import "SCSession.h"
+#import <MTDates/NSDate+MTDates.h>
+#import "SCRoom.h"
+#import "SCSpeaker.h"
 
 @interface SCSessionNameTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *slotAndRoomLabel;
 
 @end
 
@@ -20,8 +24,16 @@
 #pragma mark - Overrides
 
 - (void)setSession:(SCSession *)session {
-    self.nameLabel.text = session.name;
-
+    self.nameLabel.text = [NSString stringWithFormat:@"%@: %@",
+                           session.joinedSpeakerNamesOrderedByName,
+                           session.name];
+    
+    self.slotAndRoomLabel.text = [NSString stringWithFormat:@"%@ - %@",
+                                  [session.slot
+                                   mt_stringFromDateWithFormat:@"EEEE ha"
+                                   localized:YES],
+                                  session.room.name];
+    
     _session = session;
 }
 

@@ -1,19 +1,17 @@
 //
-//  SCSessionDetailsViewController.m
+//  SCScheduleDetailsCollectionViewCell.m
 //  SelfConference
 //
-//  Created by Jeff Burt on 3/21/15.
+//  Created by Jeff Burt on 5/13/15.
 //  Copyright (c) 2015 Self Conference. All rights reserved.
 //
 
-#import "SCSessionDetailsTableViewController.h"
+#import "SCSessionDetailsCollectionViewCell.h"
+#import "SCSession.h"
+#import <MTDates/NSDate+MTDates.h>
 #import "SCSessionNameTableViewCell.h"
 #import "SCSessionAbstractTableViewCell.h"
-#import "SCSessionSpeakerHeaderTableViewCell.h"
 #import "SCSessionSpeakerDetailsTableViewCell.h"
-#import "UIColor+SCColor.h"
-#import <MTDates/NSDate+MTDates.h>
-#import "SCSession.h"
 
 typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
     /** Holds the name of the session */
@@ -22,9 +20,6 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
     /** Holds the details of the session */
     SCSessionDetailsTableViewSectionAbstract,
     
-    /** Acts like a header to introduce the speaker(s) */
-    SCSessionDetailsTableViewSectionSpeakerLabel,
-    
     /** Holds details about the speaker(s) */
     SCSessionDetailsTableViewSectionSpeakerDetails,
     
@@ -32,13 +27,19 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
     SCSessionDetailsTableViewSectionCount
 };
 
-@implementation SCSessionDetailsTableViewController
+static CGFloat const kCellShouldCollapseAfterDragOffset = 75.0f;
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-    self.navigationItem.leftItemsSupplementBackButton = YES;
+@interface SCSessionDetailsCollectionViewCell () <UITableViewDataSource, UITableViewDelegate>
+
+/** Returns the last known width */
+@property (nonatomic) CGFloat previousWidth;
+
+@end
+
+@implementation SCSessionDetailsCollectionViewCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
     
     // Dynamic row heights
     self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -46,19 +47,35 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
     
     // Don't show empty cells at the end of the table
     self.tableView.tableFooterView = [UIView new];
+    
+    CGFloat cornerRadius = 10.0f;
+    
+    self.layer.masksToBounds = NO;
+    self.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.layer.shadowOpacity = 0.5f;
+    self.layer.shadowRadius = cornerRadius;
+    self.layer.shadowOffset = CGSizeZero;
+    self.layer.cornerRadius = cornerRadius;
+    self.tableView.layer.cornerRadius = cornerRadius;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    // TODO: determine this based on the session
-    self.navigationController.navigationBar.barTintColor = [UIColor SC_orange];
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    CGRect bounds = self.bounds;
+    
+    CGFloat currentWidth = CGRectGetWidth(bounds);
+    
+    if (self.previousWidth != currentWidth) {
+        self.layer.shadowPath = [UIBezierPath bezierPathWithRect:bounds].CGPath;
+        self.previousWidth = currentWidth;
+    }
 }
 
 - (void)setSession:(SCSession *)session {
-    self.navigationItem.title = [session.slot
-                                 mt_stringFromDateWithFormat:@"EEEE ha"
-                                 localized:YES];
-    
     _session = session;
+    
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource
@@ -69,14 +86,7 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-    NSInteger numberOfRows = 1;
-    
-    // A session __could__ have more than 1 speaker
-    if (section == SCSessionDetailsTableViewSectionSpeakerDetails) {
-        numberOfRows = self.session.speakersOrderedByName.count;
-    }
-    
-    return numberOfRows;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -104,30 +114,17 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
              forIndexPath:indexPath];
             
             sessionAbstractTableViewCell.session = self.session;
-
+            
             cell = sessionAbstractTableViewCell;
         } break;
-            
-        case SCSessionDetailsTableViewSectionSpeakerLabel: {
-            SCSessionSpeakerHeaderTableViewCell *sessionSpeakerHeaderTableViewCell =
-            [tableView
-             dequeueReusableCellWithIdentifier:NSStringFromClass([SCSessionSpeakerHeaderTableViewCell class])
-             forIndexPath:indexPath];
-            
-            [sessionSpeakerHeaderTableViewCell
-             configureWithNumberOfSpeakers:self.session.speakersOrderedByName.count];
-            
-            cell = sessionSpeakerHeaderTableViewCell;
-        } break;
-            
+                        
         case SCSessionDetailsTableViewSectionSpeakerDetails: {
             SCSessionSpeakerDetailsTableViewCell *sessionSpeakerDetailsTableViewCell =
             [tableView
              dequeueReusableCellWithIdentifier:NSStringFromClass([SCSessionSpeakerDetailsTableViewCell class])
              forIndexPath:indexPath];
             
-            sessionSpeakerDetailsTableViewCell.speaker =
-            self.session.speakersOrderedByName[indexPath.row];
+            sessionSpeakerDetailsTableViewCell.session = self.session;
             
             cell = sessionSpeakerDetailsTableViewCell;
         } break;
@@ -138,6 +135,46 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
     }
     
     return cell;
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.delegate sessionDetailsCollectionViewCellShouldCollapse:self];
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView == self.tableView) {
+        UITableView *tableView = self.tableView;
+        
+        CGPoint tableViewContentOffset = tableView.contentOffset;
+        
+        UICollectionViewLayoutAttributes *attributes = [self.delegate collectionViewLayoutAttributesForSessionDetailsCollectionViewCell:self];
+        CGRect originFrame = attributes.frame;
+
+        CGFloat tableViewContentOffsetY = tableViewContentOffset.y;
+
+        // User is pulling down from the very top of the table
+        if (tableViewContentOffsetY < 0) {
+            CGFloat newY = -tableViewContentOffsetY;
+            
+            // Move 'self' downwards based on the scroll position
+            self.frame = CGRectOffset(originFrame, 0, newY);
+            
+            // If we pass a certain threshold, go ahead and request to be
+            // collapsed (only when the user flicked the table)
+            if (!tableView.dragging &&
+                newY > kCellShouldCollapseAfterDragOffset) {
+                [self.delegate sessionDetailsCollectionViewCellShouldCollapse:self];
+            }
+        }
+        else {
+            self.frame = originFrame;
+        }
+    }
 }
 
 @end

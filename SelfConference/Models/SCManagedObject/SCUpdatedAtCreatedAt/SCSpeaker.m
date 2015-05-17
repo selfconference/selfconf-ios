@@ -17,7 +17,7 @@
 @dynamic name;
 @dynamic twitterHandle;
 @dynamic photoUrlString;
-@dynamic events;
+@dynamic event;
 @dynamic sessions;
 
 @end
