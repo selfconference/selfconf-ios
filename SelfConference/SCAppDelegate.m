@@ -51,15 +51,22 @@
 
 /** Fetches each model from the API. */
 - (void)fetchAllDataFromAPI {
-    [SCVenue getVenuesWithCompletionBlock:NULL];
-    
     [SCEvent getCurrentEventWithCompletionBlock:^(SCEvent *event, NSError *error) {
-        [event getSpeakersWithCompletionBlock:NULL];
-        [event getSessionsWithCompletionBlock:NULL];
-        [event getSponsorsWithCompletionBlock:NULL];
-        [event getSponsorLevelsWithCompletionBlock:NULL];
-        [event getOrganizersWithCompletionBlock:NULL];
-        [event.venue getRoomsWithCompletionBlock:NULL];
+        [event getSpeakersWithCompletionBlock:^(NSArray *objects, NSError *error) {
+            [event getSessionsWithCompletionBlock:^(NSArray *objects, NSError *error) {
+                [event getSponsorsWithCompletionBlock:^(NSArray *objects, NSError *error) {
+                    [event getSponsorLevelsWithCompletionBlock:^(NSArray *objects, NSError *error) {
+                        [event getOrganizersWithCompletionBlock:^(NSArray *objects, NSError *error) {
+                            [SCVenue getVenuesWithCompletionBlock:^(NSArray *objects, NSError *error) {
+                                [event.venue getRoomsWithCompletionBlock:^(NSArray *objects, NSError *error) {
+                                    NSLog(@"Completed network refresh");
+                                }];
+                            }];
+                        }];
+                    }];
+                }];
+            }];
+        }];
     }];
 }
 
