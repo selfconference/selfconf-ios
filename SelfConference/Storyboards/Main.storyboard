@@ -36,20 +36,20 @@
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DZe-uq-NHP" id="TYE-fr-nLE">
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill Wagner: Careful with those People Skills: You'll Poke Somebody's Eye Out!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Asr-HI-9gk" userLabel="Name Label">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill Wagner: Careful with those People Skills: You'll Poke Somebody's Eye Out!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Asr-HI-9gk" userLabel="Name Label" customClass="SCPurpleTextColorLabel">
                                                                         <rect key="frame" x="20" y="10" width="560" height="35"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="35" id="wd6-ft-1C6"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saturday, 9:00 AM - Salon A &amp; B" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ude-pC-a0w" userLabel="Slot And Room Label">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saturday, 9:00 AM - Salon A &amp; B" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ude-pC-a0w" userLabel="Slot And Room Label" customClass="SCRedTextColorLabel">
                                                                         <rect key="frame" x="20" y="45" width="560" height="20"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="20" id="k4a-yY-lSW"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -74,7 +74,7 @@
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dd4-eH-oaf" id="x9o-hC-0Ti">
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHf-yV-DZ2" userLabel="Abstract Label">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHf-yV-DZ2" userLabel="Abstract Label" customClass="SCTealTextColorLabel">
                                                                         <rect key="frame" x="20" y="10" width="560" height="210"/>
                                                                         <string key="text">People skills are offered up as a way to get along with people better, to get them to do what you want, and to generally make your life easier. But often, a simple technique can backfire and produce the opposite response. How do you know you're doing it right? Why do people get mad when you give your feedback exactly like the book says to do it?
 
@@ -96,19 +96,19 @@ Lao Tzu said The world is won by those who let it go. Giving up the steps and pr
                                                                 <outlet property="abstractLabel" destination="uHf-yV-DZ2" id="lIX-rX-wrU"/>
                                                             </connections>
                                                         </tableViewCell>
-                                                        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SCSessionSpeakerDetailsTableViewCell" rowHeight="300" id="gET-uK-sjh" customClass="SCSessionSpeakerDetailsTableViewCell">
+                                                        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SCSessionSpeakerDetailsTableViewCell" rowHeight="250" id="gET-uK-sjh" customClass="SCSessionSpeakerDetailsTableViewCell">
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gET-uK-sjh" id="jvd-Xw-pIu">
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="About Bill Wagner" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ezo-mO-u0n" userLabel="Name Label">
-                                                                        <rect key="frame" x="20" y="0.0" width="560" height="27"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="About Bill Wagner" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ezo-mO-u0n" userLabel="Name Label" customClass="SCRedTextColorLabel">
+                                                                        <rect key="frame" x="20" y="0.0" width="560" height="21"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Npb-ab-hQP" userLabel="Biography Label">
-                                                                        <rect key="frame" x="20" y="37" width="560" height="243"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Npb-ab-hQP" userLabel="Biography Label" customClass="SCTealTextColorLabel">
+                                                                        <rect key="frame" x="20" y="31" width="560" height="199"/>
                                                                         <string key="text">Bill's time is spent between curly braces, primarily with C#. His technical areas of focus are C#, .NET, TypeScript. His other, non-coding passion is to help organizations build effective, high-functioning developer teams.
 
 Bill is the author of the best selling Effective C#, now in its second edition, and More Effective C#. He has created LiveLessons on Async programming in C# and C# Puzzlers. His articles have appeared in MSDN Magazine, the C# Developer Center, Visual C++ Developer's Journal, Visual Studio Magazine, ASP.NET Pro, .NET Developer's Journal and more. He's written hundreds of technical articles for software developers. He actively blogs about technical and business topics. Bill is also a regional director for Microsoft.</string>

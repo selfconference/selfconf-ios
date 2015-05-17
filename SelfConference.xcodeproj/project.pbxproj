@@ -18,6 +18,10 @@
 		1F5AC7001ABE62680076E341 /* SCSessionNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC6FF1ABE62680076E341 /* SCSessionNameTableViewCell.m */; };
 		1F5AC7031ABE62A50076E341 /* SCSessionAbstractTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7021ABE62A50076E341 /* SCSessionAbstractTableViewCell.m */; };
 		1F5AC7091ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7081ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m */; };
+		1F64F03A1B0920F400833292 /* SCLabelWithCommonCoderAndFrameInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64F0371B0920F400833292 /* SCLabelWithCommonCoderAndFrameInitializer.m */; };
+		1F64F03B1B0920F400833292 /* SCPurpleTextColorLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64F0391B0920F400833292 /* SCPurpleTextColorLabel.m */; };
+		1F64F0411B0921DE00833292 /* SCTealTextColorLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64F0401B0921DE00833292 /* SCTealTextColorLabel.m */; };
+		1F64F0441B09220E00833292 /* SCRedTextColorLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64F0431B09220E00833292 /* SCRedTextColorLabel.m */; };
 		1F71944B1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F71944A1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m */; };
 		1F71944E1B0425020098DB48 /* NSSet+SCManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F71944D1B0425020098DB48 /* NSSet+SCManagedObject.m */; };
 		1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */; };
@@ -75,6 +79,14 @@
 		1F5AC7021ABE62A50076E341 /* SCSessionAbstractTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionAbstractTableViewCell.m; sourceTree = "<group>"; };
 		1F5AC7071ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionSpeakerDetailsTableViewCell.h; sourceTree = "<group>"; };
 		1F5AC7081ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionSpeakerDetailsTableViewCell.m; sourceTree = "<group>"; };
+		1F64F0361B0920F400833292 /* SCLabelWithCommonCoderAndFrameInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLabelWithCommonCoderAndFrameInitializer.h; sourceTree = "<group>"; };
+		1F64F0371B0920F400833292 /* SCLabelWithCommonCoderAndFrameInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLabelWithCommonCoderAndFrameInitializer.m; sourceTree = "<group>"; };
+		1F64F0381B0920F400833292 /* SCPurpleTextColorLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPurpleTextColorLabel.h; sourceTree = "<group>"; };
+		1F64F0391B0920F400833292 /* SCPurpleTextColorLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPurpleTextColorLabel.m; sourceTree = "<group>"; };
+		1F64F03F1B0921DE00833292 /* SCTealTextColorLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCTealTextColorLabel.h; sourceTree = "<group>"; };
+		1F64F0401B0921DE00833292 /* SCTealTextColorLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCTealTextColorLabel.m; sourceTree = "<group>"; };
+		1F64F0421B09220E00833292 /* SCRedTextColorLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRedTextColorLabel.h; sourceTree = "<group>"; };
+		1F64F0431B09220E00833292 /* SCRedTextColorLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCRedTextColorLabel.m; sourceTree = "<group>"; };
 		1F7194491B0423CD0098DB48 /* NSDictionary+SCManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SCManagedObject.h"; sourceTree = "<group>"; };
 		1F71944A1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SCManagedObject.m"; sourceTree = "<group>"; };
 		1F71944C1B0425020098DB48 /* NSSet+SCManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+SCManagedObject.h"; sourceTree = "<group>"; };
@@ -232,6 +244,14 @@
 				1F71944A1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m */,
 				1F71944C1B0425020098DB48 /* NSSet+SCManagedObject.h */,
 				1F71944D1B0425020098DB48 /* NSSet+SCManagedObject.m */,
+				1F64F0361B0920F400833292 /* SCLabelWithCommonCoderAndFrameInitializer.h */,
+				1F64F0371B0920F400833292 /* SCLabelWithCommonCoderAndFrameInitializer.m */,
+				1F64F0381B0920F400833292 /* SCPurpleTextColorLabel.h */,
+				1F64F0391B0920F400833292 /* SCPurpleTextColorLabel.m */,
+				1F64F03F1B0921DE00833292 /* SCTealTextColorLabel.h */,
+				1F64F0401B0921DE00833292 /* SCTealTextColorLabel.m */,
+				1F64F0421B09220E00833292 /* SCRedTextColorLabel.h */,
+				1F64F0431B09220E00833292 /* SCRedTextColorLabel.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -531,6 +551,7 @@
 				1F0BAA7B1A99886F0059C73A /* main.m in Sources */,
 				1FBD60EC1B01A061008E0FEC /* SCAPIStrings.m in Sources */,
 				1FBD60D81B018EDC008E0FEC /* SCSession.m in Sources */,
+				1F64F03B1B0920F400833292 /* SCPurpleTextColorLabel.m in Sources */,
 				1FBD60EF1B01A908008E0FEC /* SCAPIService.m in Sources */,
 				1F71944E1B0425020098DB48 /* NSSet+SCManagedObject.m in Sources */,
 				1FBD60DA1B018EDC008E0FEC /* SCSponsor.m in Sources */,
@@ -541,8 +562,10 @@
 				1F7560821B043A8900795E54 /* SCScheduleViewController.m in Sources */,
 				1FBD60F21B01AAC4008E0FEC /* SCHTTPSessionManager.m in Sources */,
 				1F5AC7091ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m in Sources */,
+				1F64F0441B09220E00833292 /* SCRedTextColorLabel.m in Sources */,
 				1FBD60E81B019DFA008E0FEC /* NSPredicate+SCPredicate.m in Sources */,
 				1F86EF301ABE05DD001E30DD /* UIColor+SCColor.m in Sources */,
+				1F64F03A1B0920F400833292 /* SCLabelWithCommonCoderAndFrameInitializer.m in Sources */,
 				1F0BAAA51A99A3680059C73A /* SCSharedStoryboardInstances.m in Sources */,
 				1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */,
 				1F5AC7001ABE62680076E341 /* SCSessionNameTableViewCell.m in Sources */,
@@ -553,6 +576,7 @@
 				1F71944B1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m in Sources */,
 				1F0BAAB31A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m in Sources */,
 				1FBD60AA1B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld in Sources */,
+				1F64F0411B0921DE00833292 /* SCTealTextColorLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
