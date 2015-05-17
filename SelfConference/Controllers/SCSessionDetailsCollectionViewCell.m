@@ -63,13 +63,6 @@ static CGFloat const kCellShouldCollapseAfterDragOffset = 75.0f;
     self.tableView.layer.cornerRadius = cornerRadius;
 }
 
-- (void)prepareForReuse {
-    [super prepareForReuse];
-    
-    self.session = nil;
-    self.backgroundColor = self.defaultBackgroundColor;
-}
-
 - (void)layoutSubviews {
     [super layoutSubviews];
     
@@ -183,8 +176,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         
         CGPoint tableViewContentOffset = tableView.contentOffset;
         
-        UIColor *newContentViewBackgroundColor;
-        
         UICollectionViewLayoutAttributes *attributes = [self.delegate collectionViewLayoutAttributesForSessionDetailsCollectionViewCell:self];
         CGRect originFrame = attributes.frame;
 
@@ -197,9 +188,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
             // Move 'self' downwards based on the scroll position
             self.frame = CGRectOffset(originFrame, 0, newY);
             
-            // Don't show a white area above the session color
-            newContentViewBackgroundColor = self.session.color;
-            
             // If we pass a certain threshold, go ahead and request to be
             // collapsed (only when the user flicked the table)
             if (!tableView.dragging &&
@@ -208,16 +196,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
             }
         }
         else {
-            // If the user pulls up from the bottom, make sure to show the
-            // default background color
-            newContentViewBackgroundColor = self.defaultBackgroundColor;
-            
             self.frame = originFrame;
         }
-        
-        // Set the 'backgroundColor' on 'self' directly that way we don't lose
-        // our top rounded corners.
-        self.backgroundColor = newContentViewBackgroundColor;
     }
 }
 

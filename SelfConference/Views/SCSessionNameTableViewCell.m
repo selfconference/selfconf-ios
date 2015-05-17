@@ -21,7 +21,6 @@
 
 - (void)setSession:(SCSession *)session {
     self.nameLabel.text = session.name;
-    self.contentView.backgroundColor = session.color;
     
     _session = session;
 }
