@@ -51,19 +51,9 @@
 
 #pragma mark - UICollectionViewDataSource
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return self.event.sessionsArrangedByDay.count;
-}
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section {
-    NSInteger count = 0;
-    
-    if (self.event.sessionsArrangedByDay.count > 0) {
-        count = [self.event.sessionsArrangedByDay[section] count];
-    }
-    
-    return count;
+    return self.event.sessionsArrangedByDay.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
@@ -79,7 +69,7 @@
     cell.tableView.userInteractionEnabled = NO;
     cell.tableView.scrollEnabled = NO;
     
-    cell.session = self.event.sessionsArrangedByDay[indexPath.section][indexPath.row];
+    cell.session = self.event.sessionsArrangedByDay[indexPath.row];
     
     return cell;
 }
