@@ -9,6 +9,7 @@
 #import "SCVenue.h"
 #import "SCAPIStrings.h"
 #import "SCRoom.h"
+#import "NSString+SCHTMLTagConverter.h"
 
 @implementation SCVenue
 
@@ -45,6 +46,13 @@
             SCAPIRelativeUrlStrings.venues,
             [@(self.venueID) stringValue],
             SCAPIRelativeUrlStrings.rooms];
+}
+
+#pragma mark MagicalRecord
+
+- (BOOL)importAbout:(NSString *)about {
+    self.about = about.SC_convertedHTMLTagString;
+    return YES;
 }
 
 @end

@@ -18,6 +18,7 @@
 #import "SCSponsorLevel.h"
 #import "SCOrganizer.h"
 #import <MTDates/NSDate+MTDates.h>
+#import "NSString+SCHTMLTagConverter.h"
 
 @implementation SCEvent
 
@@ -195,6 +196,13 @@
 /** Returns a url string to GET the current event's organizers */
 - (NSString *)getOrganizersUrlString {
     return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.organizers];
+}
+
+#pragma mark MagicalRecord
+
+- (BOOL)importAbout:(NSString *)about {
+    self.about = about.SC_convertedHTMLTagString;
+    return YES;
 }
 
 @end

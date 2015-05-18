@@ -9,6 +9,7 @@
 #import "SCSpeaker.h"
 #import "SCEvent.h"
 #import "SCSession.h"
+#import "NSString+SCHTMLTagConverter.h"
 
 @implementation SCSpeaker
 
@@ -19,5 +20,12 @@
 @dynamic photoUrlString;
 @dynamic event;
 @dynamic sessions;
+
+#pragma mark MagicalRecord
+
+- (BOOL)importBiography:(NSString *)biography {
+    self.biography = biography.SC_convertedHTMLTagString;
+    return YES;
+}
 
 @end

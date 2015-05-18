@@ -10,6 +10,7 @@
 #import "SCEvent.h"
 #import "SCRoom.h"
 #import "UIColor+SCColor.h"
+#import "NSString+SCHTMLTagConverter.h"
 
 @implementation SCSession
 
@@ -46,6 +47,13 @@
     NSInteger indexOfColorToUse = self.sessionID % availableColors.count;
     
     return availableColors[indexOfColorToUse];
+}
+
+#pragma mark MagicalRecord
+
+- (BOOL)importAbstract:(NSString *)abstract {
+    self.abstract = abstract.SC_convertedHTMLTagString;
+    return YES;
 }
 
 @end

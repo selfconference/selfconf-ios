@@ -8,6 +8,7 @@
 
 #import "SCOrganizer.h"
 #import "SCEvent.h"
+#import "NSString+SCHTMLTagConverter.h"
 
 @implementation SCOrganizer
 
@@ -18,5 +19,12 @@
 @dynamic twitterHandle;
 @dynamic email;
 @dynamic events;
+
+#pragma mark MagicalRecord
+
+- (BOOL)importBiography:(NSString *)biography {
+    self.biography = biography.SC_convertedHTMLTagString;
+    return YES;
+}
 
 @end
