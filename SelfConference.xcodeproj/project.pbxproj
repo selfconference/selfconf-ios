@@ -22,6 +22,7 @@
 		1F64F03B1B0920F400833292 /* SCPurpleTextColorLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64F0391B0920F400833292 /* SCPurpleTextColorLabel.m */; };
 		1F64F0411B0921DE00833292 /* SCTealTextColorLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64F0401B0921DE00833292 /* SCTealTextColorLabel.m */; };
 		1F64F0441B09220E00833292 /* SCRedTextColorLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64F0431B09220E00833292 /* SCRedTextColorLabel.m */; };
+		1F64F0471B0929EE00833292 /* NSString+SCHTMLTagConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64F0461B0929EE00833292 /* NSString+SCHTMLTagConverter.m */; };
 		1F71944B1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F71944A1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m */; };
 		1F71944E1B0425020098DB48 /* NSSet+SCManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F71944D1B0425020098DB48 /* NSSet+SCManagedObject.m */; };
 		1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */; };
@@ -87,6 +88,8 @@
 		1F64F0401B0921DE00833292 /* SCTealTextColorLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCTealTextColorLabel.m; sourceTree = "<group>"; };
 		1F64F0421B09220E00833292 /* SCRedTextColorLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRedTextColorLabel.h; sourceTree = "<group>"; };
 		1F64F0431B09220E00833292 /* SCRedTextColorLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCRedTextColorLabel.m; sourceTree = "<group>"; };
+		1F64F0451B0929EE00833292 /* NSString+SCHTMLTagConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SCHTMLTagConverter.h"; sourceTree = "<group>"; };
+		1F64F0461B0929EE00833292 /* NSString+SCHTMLTagConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SCHTMLTagConverter.m"; sourceTree = "<group>"; };
 		1F7194491B0423CD0098DB48 /* NSDictionary+SCManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SCManagedObject.h"; sourceTree = "<group>"; };
 		1F71944A1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SCManagedObject.m"; sourceTree = "<group>"; };
 		1F71944C1B0425020098DB48 /* NSSet+SCManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+SCManagedObject.h"; sourceTree = "<group>"; };
@@ -252,6 +255,8 @@
 				1F64F0401B0921DE00833292 /* SCTealTextColorLabel.m */,
 				1F64F0421B09220E00833292 /* SCRedTextColorLabel.h */,
 				1F64F0431B09220E00833292 /* SCRedTextColorLabel.m */,
+				1F64F0451B0929EE00833292 /* NSString+SCHTMLTagConverter.h */,
+				1F64F0461B0929EE00833292 /* NSString+SCHTMLTagConverter.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -570,6 +575,7 @@
 				1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */,
 				1F5AC7001ABE62680076E341 /* SCSessionNameTableViewCell.m in Sources */,
 				1F5AC7031ABE62A50076E341 /* SCSessionAbstractTableViewCell.m in Sources */,
+				1F64F0471B0929EE00833292 /* NSString+SCHTMLTagConverter.m in Sources */,
 				1F0BAAB01A99B7DE0059C73A /* NSError+SCError.m in Sources */,
 				1FBD60D61B018EDC008E0FEC /* SCOrganizer.m in Sources */,
 				1FBD60DC1B018EDC008E0FEC /* SCVenue.m in Sources */,
