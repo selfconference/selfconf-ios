@@ -25,7 +25,7 @@
 @protocol SCSessionDetailsCollectionViewCellDelegate <NSObject>
 
 /** Called when the cell is ready to be closed manually. */
-- (void)sessionDetailsCollectionViewCellShouldCollapse:(SCSessionDetailsCollectionViewCell *)cell;
+- (void)sessionDetailsCollectionViewCellDidTapEmbeddedTableViewCell:(SCSessionDetailsCollectionViewCell *)cell;
 
 - (UICollectionViewLayoutAttributes *)collectionViewLayoutAttributesForSessionDetailsCollectionViewCell:(SCSessionDetailsCollectionViewCell *)cell;
 

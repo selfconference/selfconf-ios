@@ -141,7 +141,7 @@ static CGFloat const kCellShouldCollapseAfterDragOffset = 75.0f;
 
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.delegate sessionDetailsCollectionViewCellShouldCollapse:self];
+    [self.delegate sessionDetailsCollectionViewCellDidTapEmbeddedTableViewCell:self];
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -168,7 +168,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
             // collapsed (only when the user flicked the table)
             if (!tableView.dragging &&
                 newY > kCellShouldCollapseAfterDragOffset) {
-                [self.delegate sessionDetailsCollectionViewCellShouldCollapse:self];
+                [self.delegate sessionDetailsCollectionViewCellDidTapEmbeddedTableViewCell:self];
             }
         }
         else {

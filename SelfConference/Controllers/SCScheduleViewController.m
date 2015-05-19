@@ -66,7 +66,6 @@
     cell.delegate = self;
     
     // Disable scrolling by default, until it becomes exposed
-    cell.tableView.userInteractionEnabled = NO;
     cell.tableView.scrollEnabled = NO;
     
     cell.session = self.event.sessionsArrangedByDay[indexPath.row];
@@ -85,7 +84,6 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     SCSessionDetailsCollectionViewCell *cell =
     (SCSessionDetailsCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
     
-    cell.tableView.userInteractionEnabled = YES;
     cell.tableView.scrollEnabled = YES
     ;
     [self.collectionView setPresenting:YES animated:YES completion:NULL];
@@ -100,7 +98,6 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     SCSessionDetailsCollectionViewCell *cell =
     (SCSessionDetailsCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
     
-    cell.tableView.userInteractionEnabled = NO;
     cell.tableView.scrollEnabled = NO;
     
     cell.tableView.contentOffset = CGPointZero;
@@ -128,15 +125,25 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
 
 #pragma mark - SCSessionDetailsCollectionViewCellDelegate
 
-- (void)sessionDetailsCollectionViewCellShouldCollapse:(SCSessionDetailsCollectionViewCell *)cell {
+- (void)sessionDetailsCollectionViewCellDidTapEmbeddedTableViewCell:(SCSessionDetailsCollectionViewCell *)cell {
     NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
     
-    [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
-    
-    [self.collectionView.delegate collectionView:self.collectionView
-                      didDeselectItemAtIndexPath:indexPath];
-    
-    [self.collectionView setPresenting:NO animated:YES completion:NULL];
+    if (self.collectionView.presenting) {
+        [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
+        
+        [self.collectionView.delegate collectionView:self.collectionView
+                          didDeselectItemAtIndexPath:indexPath];
+        
+        [self.collectionView setPresenting:NO animated:YES completion:NULL];
+    }
+    else {
+        [self.collectionView selectItemAtIndexPath:indexPath
+                                          animated:NO
+                                    scrollPosition:UICollectionViewScrollPositionNone];
+        
+        [self.collectionView.delegate collectionView:self.collectionView
+                            didSelectItemAtIndexPath:indexPath];
+    }
 }
 
 - (UICollectionViewLayoutAttributes *)collectionViewLayoutAttributesForSessionDetailsCollectionViewCell:(SCSessionDetailsCollectionViewCell *)cell {
