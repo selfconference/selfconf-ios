@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZSj-Vx-N7f">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Schedule View Controller-->
@@ -37,7 +38,7 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill Wagner: Careful with those People Skills: You'll Poke Somebody's Eye Out!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Asr-HI-9gk" userLabel="Name Label" customClass="SCPurpleTextColorLabel">
-                                                                        <rect key="frame" x="20" y="10" width="560" height="35"/>
+                                                                        <rect key="frame" x="20" y="10" width="510" height="35"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="35" id="wd6-ft-1C6"/>
                                                                         </constraints>
@@ -45,7 +46,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saturday, 9:00 AM - Salon A &amp; B" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ude-pC-a0w" userLabel="Slot And Room Label" customClass="SCRedTextColorLabel">
-                                                                        <rect key="frame" x="20" y="45" width="560" height="20"/>
+                                                                        <rect key="frame" x="20" y="45" width="510" height="20"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="20" id="k4a-yY-lSW"/>
                                                                         </constraints>
@@ -53,18 +54,34 @@
                                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNV-hP-gRD" userLabel="Favorite Button">
+                                                                        <rect key="frame" x="550" y="23" width="30" height="30"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="qNV-hP-gRD" secondAttribute="height" multiplier="1:1" id="Eg1-7R-9wQ"/>
+                                                                            <constraint firstAttribute="width" constant="30" id="hLI-Gt-UZo"/>
+                                                                        </constraints>
+                                                                        <state key="normal" image="tealUnfilledHeart">
+                                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="didTapFavoriteButton:" destination="DZe-uq-NHP" eventType="touchUpInside" id="Edu-Nj-VPw"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                                 <constraints>
                                                                     <constraint firstItem="ude-pC-a0w" firstAttribute="top" secondItem="Asr-HI-9gk" secondAttribute="bottom" id="2Jv-7U-EfI"/>
                                                                     <constraint firstItem="ude-pC-a0w" firstAttribute="leading" secondItem="Asr-HI-9gk" secondAttribute="leading" id="C4A-ra-Idq"/>
                                                                     <constraint firstItem="ude-pC-a0w" firstAttribute="trailing" secondItem="Asr-HI-9gk" secondAttribute="trailing" id="HaN-Ue-5mf"/>
                                                                     <constraint firstItem="Asr-HI-9gk" firstAttribute="leading" secondItem="TYE-fr-nLE" secondAttribute="leading" constant="20" id="PU8-pR-dQS"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="Asr-HI-9gk" secondAttribute="trailing" constant="20" id="acf-Ty-hbK"/>
+                                                                    <constraint firstAttribute="centerY" secondItem="qNV-hP-gRD" secondAttribute="centerY" id="Q9F-vf-IxF"/>
                                                                     <constraint firstItem="Asr-HI-9gk" firstAttribute="top" secondItem="TYE-fr-nLE" secondAttribute="top" constant="10" id="kJc-re-pbv"/>
                                                                     <constraint firstAttribute="bottom" secondItem="ude-pC-a0w" secondAttribute="bottom" constant="10" id="lQR-My-00b"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="qNV-hP-gRD" secondAttribute="trailing" constant="20" id="mWa-pg-eIH"/>
+                                                                    <constraint firstItem="qNV-hP-gRD" firstAttribute="leading" secondItem="Asr-HI-9gk" secondAttribute="trailing" constant="20" id="wUq-7w-DRp"/>
                                                                 </constraints>
                                                             </tableViewCellContentView>
                                                             <connections>
+                                                                <outlet property="favoriteButton" destination="qNV-hP-gRD" id="uOc-z8-xX2"/>
                                                                 <outlet property="nameLabel" destination="Asr-HI-9gk" id="g5Y-Ov-6gk"/>
                                                                 <outlet property="slotAndRoomLabel" destination="ude-pC-a0w" id="F4q-7e-YKM"/>
                                                             </connections>
@@ -178,4 +195,7 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
             <point key="canvasLocation" x="347" y="1158"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tealUnfilledHeart" width="30" height="30"/>
+    </resources>
 </document>

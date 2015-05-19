@@ -11,11 +11,14 @@
 #import <MTDates/NSDate+MTDates.h>
 #import "SCRoom.h"
 #import "SCSpeaker.h"
+#import <MagicalRecord/MagicalRecord+Actions.h>
+#import <MagicalRecord/NSManagedObject+MagicalRecord.h>
 
 @interface SCSessionNameTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *slotAndRoomLabel;
+@property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
 
 @end
 
@@ -34,7 +37,46 @@
                                    localized:YES],
                                   session.room.name];
     
+    [self setFavoriteButtonImageForIsFavorite:session.isFavorite];
+    
     _session = session;
+}
+
+#pragma mark - UIButton actions
+
+- (IBAction)didTapFavoriteButton:(UIButton *)button {
+    // Toggle the setting
+    BOOL newIsFavoriteValue = !self.session.isFavorite;
+    
+    // Update the UI right away to make it feel snappy
+    [self setFavoriteButtonImageForIsFavorite:newIsFavoriteValue];
+    
+    [MagicalRecord
+     saveWithBlock:^(NSManagedObjectContext *localContext) {
+         SCSession *localSession = [self.session MR_inContext:localContext];
+         localSession.isFavorite = newIsFavoriteValue;
+     }
+     completion:^(BOOL contextDidSave, NSError *error) {
+         if (!contextDidSave) {
+             // Revert it back
+             [self setFavoriteButtonImageForIsFavorite:!newIsFavoriteValue];
+         }
+         else {
+             [self.session refreshOnDefaultContext];
+         }
+     }];
+}
+
+#pragma mark - Other
+
+/** Sets the image on '_favoriteButton' based on '_session.isFavorite'. */
+- (void)setFavoriteButtonImageForIsFavorite:(BOOL)isFavorite {
+    UIImage *newFavoriteImage =
+    isFavorite ?
+    [UIImage imageNamed:@"tealFilledHeart"] :
+    [UIImage imageNamed:@"tealUnfilledHeart"];
+    
+    [self.favoriteButton setImage:newFavoriteImage forState:UIControlStateNormal];
 }
 
 @end
