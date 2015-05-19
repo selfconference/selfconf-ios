@@ -13,7 +13,6 @@
 #import <MagicalRecord/NSManagedObjectContext+MagicalRecord.h>
 #import <MagicalRecord/NSManagedObject+MagicalRecord.h>
 #import "SCSpeaker.h"
-#import "SCSession.h"
 #import "SCSponsor.h"
 #import "SCSponsorLevel.h"
 #import "SCOrganizer.h"
@@ -107,11 +106,15 @@
 #pragma mark - Local fetchers
 
 + (SCEvent *)currentEvent {
+    return [self currentEventInContext:[NSManagedObjectContext MR_defaultContext]];
+}
+
++ (SCEvent *)currentEventInContext:(NSManagedObjectContext *)context {
     SCEvent *currentEvent;
     
     NSArray *currentEvents =
     [self MR_findAllWithPredicate:[self isCurrentEventPredicate]
-                        inContext:[NSManagedObjectContext MR_defaultContext]];
+                        inContext:context];
     
     if (currentEvents.count == 0) {
         NSLog(@"There is no current SCEvent");
@@ -126,14 +129,43 @@
     return currentEvent;
 }
 
-- (NSArray *)sessionsArrangedByDay {
-    NSSortDescriptor *sortedBySlotSortDescriptor =
-    [NSSortDescriptor
-     sortDescriptorWithKey:NSStringFromSelector(@selector(slot))
-     ascending:YES];
+- (NSArray *)sessionsWithSearchTerm:(NSString *)searchTerm
+                             filter:(SCSessionFilter)filter {
+    NSPredicate *filterPredicate = [SCSession predicateForFilter:filter
+                                                         context:self.managedObjectContext];
     
-    return
-    [self.sessions sortedArrayUsingDescriptors:@[sortedBySlotSortDescriptor]];
+    NSPredicate *searchTermPredicate = [SCSession predicateForSearchTerm:searchTerm];
+    
+    NSPredicate *combinedPredicate;
+    
+    // Each predicate could be 'nil' if we're searching for everything with
+    // no filters
+    if (filterPredicate && searchTermPredicate) {
+        combinedPredicate =
+        [[NSCompoundPredicate alloc] initWithType:NSAndPredicateType
+                                    subpredicates:@[filterPredicate, searchTermPredicate]];
+    }
+    else if (filterPredicate) {
+        combinedPredicate = filterPredicate;
+    }
+    else if (searchTermPredicate) {
+        combinedPredicate = searchTermPredicate;
+    }
+    
+    NSArray *sessions;
+    
+    // Prevent the following crash: 'nil is not a valid predicate for filtering'
+    if (combinedPredicate) {
+        NSArray *unsortedSessions =
+        [self.sessions filteredSetUsingPredicate:combinedPredicate].allObjects;
+        
+        sessions = [SCSession sessionsSortedBySlot:unsortedSessions];
+    }
+    else {
+        sessions = self.sessionsArrangedBySlot;
+    }
+    
+    return sessions;
 }
 
 #pragma mark - Internal
@@ -164,6 +196,11 @@
     // this is an open issue).
     return [NSPredicate predicateWithFormat:@"%K == NO",
             NSStringFromSelector(@selector(isCurrent))];
+}
+
+/** Returns 'sessions' sorted based on their 'slot' values. */
+- (NSArray *)sessionsArrangedBySlot {
+    return [SCSession sessionsSortedBySlot:self.sessions.allObjects];
 }
 
 #pragma mark - URL Strings

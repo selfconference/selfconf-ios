@@ -7,6 +7,7 @@
 //
 
 #import "SCUpdatedAtCreatedAt.h"
+#import "SCSession.h"
 
 @class SCVenue;
 
@@ -78,7 +79,11 @@ typedef void (^SCEventWithErrorBlock)(SCEvent *event, NSError *error);
 /** Returns the current 'SCEvent' instance. */
 + (SCEvent *)currentEvent;
 
-/** Returns 'sessions' sorted based on their 'slot' values. */
-- (NSArray *)sessionsArrangedByDay;
+/** Returns the current 'SCEvent' instance in the given 'context'. */
++ (SCEvent *)currentEventInContext:(NSManagedObjectContext *)context;
+
+/** Searches '_sessions' for the given 'searchTerm' and 'filter' combined. */
+- (NSArray *)sessionsWithSearchTerm:(NSString *)searchTerm
+                             filter:(SCSessionFilter)filter;
 
 @end
