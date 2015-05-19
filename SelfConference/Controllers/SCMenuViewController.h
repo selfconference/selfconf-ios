@@ -6,12 +6,12 @@
 //  Copyright (c) 2015 Self Conference. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SCUpdatingEventBaseViewController.h"
 #import "SCSession.h"
 
 @protocol SCMenuViewControllerDelegate;
 
-@interface SCMenuViewController : UIViewController
+@interface SCMenuViewController : SCUpdatingEventBaseViewController
 
 @property (nonatomic, weak) id<SCMenuViewControllerDelegate> delegate;
 

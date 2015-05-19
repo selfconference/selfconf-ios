@@ -227,20 +227,85 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                                     <action selector="didChangeSegmentedControlValue:" destination="iDy-AO-Yue" eventType="valueChanged" id="0QC-Wn-bUl"/>
                                 </connections>
                             </segmentedControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c0n-6l-poF">
+                                <rect key="frame" x="0.0" y="102" width="600" height="498"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bib-1D-XA8">
+                                    <size key="itemSize" width="75" height="75"/>
+                                    <size key="headerReferenceSize" width="50" height="30"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="20"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SCSponsorCollectionViewCell" id="2Fj-9B-k8y" customClass="SCSponsorCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GRF-rA-9Lu">
+                                                    <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="GRF-rA-9Lu" firstAttribute="top" secondItem="2Fj-9B-k8y" secondAttribute="top" id="cfp-vK-jyo"/>
+                                            <constraint firstAttribute="bottom" secondItem="GRF-rA-9Lu" secondAttribute="bottom" id="iTp-FR-R6e"/>
+                                            <constraint firstItem="GRF-rA-9Lu" firstAttribute="leading" secondItem="2Fj-9B-k8y" secondAttribute="leading" id="uBy-jJ-EFF"/>
+                                            <constraint firstAttribute="trailing" secondItem="GRF-rA-9Lu" secondAttribute="trailing" id="yYy-Kb-HGD"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="GRF-rA-9Lu" id="lNQ-jG-IL7"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SCSponsorLevelHeaderView" id="Vrf-VP-fNd" customClass="SCSponsorLevelHeaderView">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1P-dp-T8M" userLabel="Name Label">
+                                            <rect key="frame" x="10" y="0.0" width="580" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="t1P-dp-T8M" secondAttribute="bottom" id="TNH-Ti-Cmc"/>
+                                        <constraint firstItem="t1P-dp-T8M" firstAttribute="top" secondItem="Vrf-VP-fNd" secondAttribute="top" id="ZXh-kw-Z8X"/>
+                                        <constraint firstItem="t1P-dp-T8M" firstAttribute="leading" secondItem="Vrf-VP-fNd" secondAttribute="leading" constant="10" id="kMQ-Iz-3VI"/>
+                                        <constraint firstAttribute="trailing" secondItem="t1P-dp-T8M" secondAttribute="trailing" constant="10" id="tDn-pg-9Wz"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="nameLabel" destination="t1P-dp-T8M" id="r1n-Gd-vXz"/>
+                                    </connections>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="iDy-AO-Yue" id="uTf-ET-Ijt"/>
+                                    <outlet property="delegate" destination="iDy-AO-Yue" id="R22-Aq-hdy"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="c0n-6l-poF" secondAttribute="trailing" id="4n1-Up-EK7"/>
                             <constraint firstItem="bjR-46-Cw2" firstAttribute="leading" secondItem="ohS-K8-Mgc" secondAttribute="leading" id="4r6-P9-KFj"/>
+                            <constraint firstItem="c0n-6l-poF" firstAttribute="leading" secondItem="ohS-K8-Mgc" secondAttribute="leading" id="AUS-9X-wXc"/>
+                            <constraint firstItem="4BI-04-Tge" firstAttribute="top" secondItem="c0n-6l-poF" secondAttribute="bottom" id="CSk-Mg-0nN"/>
                             <constraint firstItem="bjR-46-Cw2" firstAttribute="top" secondItem="mhY-Km-gtH" secondAttribute="bottom" id="EIA-Gq-Ats"/>
                             <constraint firstAttribute="trailing" secondItem="mhY-Km-gtH" secondAttribute="trailing" constant="10" id="Knb-qw-Yzj"/>
                             <constraint firstAttribute="trailing" secondItem="bjR-46-Cw2" secondAttribute="trailing" id="OJc-J6-qCz"/>
                             <constraint firstItem="mhY-Km-gtH" firstAttribute="leading" secondItem="ohS-K8-Mgc" secondAttribute="leading" constant="10" id="YPI-m6-fEn"/>
                             <constraint firstItem="mhY-Km-gtH" firstAttribute="top" secondItem="ohS-K8-Mgc" secondAttribute="top" constant="30" id="lWY-2H-0Q8"/>
+                            <constraint firstItem="c0n-6l-poF" firstAttribute="top" secondItem="bjR-46-Cw2" secondAttribute="bottom" id="qr6-vu-dUq"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
+                        <outlet property="collectionView" destination="c0n-6l-poF" id="uPF-wm-EPq"/>
                         <outlet property="filtersSegmentedControl" destination="mhY-Km-gtH" id="KMr-6E-hUa"/>
                         <outlet property="searchBar" destination="bjR-46-Cw2" id="WZU-da-6Dv"/>
                     </connections>
