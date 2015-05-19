@@ -30,6 +30,7 @@
 		1F7560821B043A8900795E54 /* SCScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7560811B043A8900795E54 /* SCScheduleViewController.m */; };
 		1F7560851B04448F00795E54 /* SCSessionDetailsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7560841B04448F00795E54 /* SCSessionDetailsCollectionViewCell.m */; };
 		1F86EF301ABE05DD001E30DD /* UIColor+SCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF2F1ABE05DD001E30DD /* UIColor+SCColor.m */; };
+		1F9B5A331B0ADC5A009DFD5D /* SCMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B5A321B0ADC5A009DFD5D /* SCMenuViewController.m */; };
 		1FBD60AA1B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60A81B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld */; };
 		1FBD60D51B018EDC008E0FEC /* SCEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60C61B018EDC008E0FEC /* SCEvent.m */; };
 		1FBD60D61B018EDC008E0FEC /* SCOrganizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60C81B018EDC008E0FEC /* SCOrganizer.m */; };
@@ -106,6 +107,8 @@
 		1F7560841B04448F00795E54 /* SCSessionDetailsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCSessionDetailsCollectionViewCell.m; path = ../Controllers/SCSessionDetailsCollectionViewCell.m; sourceTree = "<group>"; };
 		1F86EF2E1ABE05DD001E30DD /* UIColor+SCColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SCColor.h"; sourceTree = "<group>"; };
 		1F86EF2F1ABE05DD001E30DD /* UIColor+SCColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SCColor.m"; sourceTree = "<group>"; };
+		1F9B5A311B0ADC5A009DFD5D /* SCMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMenuViewController.h; sourceTree = "<group>"; };
+		1F9B5A321B0ADC5A009DFD5D /* SCMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMenuViewController.m; sourceTree = "<group>"; };
 		1FBD60A91B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SelfConferenceDataModel.xcdatamodel; sourceTree = "<group>"; };
 		1FBD60C51B018EDC008E0FEC /* SCEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCEvent.h; sourceTree = "<group>"; };
 		1FBD60C61B018EDC008E0FEC /* SCEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCEvent.m; sourceTree = "<group>"; };
@@ -213,6 +216,8 @@
 			children = (
 				1F7560801B043A8900795E54 /* SCScheduleViewController.h */,
 				1F7560811B043A8900795E54 /* SCScheduleViewController.m */,
+				1F9B5A311B0ADC5A009DFD5D /* SCMenuViewController.h */,
+				1F9B5A321B0ADC5A009DFD5D /* SCMenuViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -583,6 +588,7 @@
 				1F0BAAB31A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m in Sources */,
 				1FBD60AA1B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld in Sources */,
 				1F64F0411B0921DE00833292 /* SCTealTextColorLabel.m in Sources */,
+				1F9B5A331B0ADC5A009DFD5D /* SCMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

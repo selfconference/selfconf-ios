@@ -195,6 +195,60 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
             </objects>
             <point key="canvasLocation" x="347" y="1158"/>
         </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="uNH-5b-Wpa">
+            <objects>
+                <viewController storyboardIdentifier="SCMenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iDy-AO-Yue" customClass="SCMenuViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IW5-Au-nV2"/>
+                        <viewControllerLayoutGuide type="bottom" id="4BI-04-Tge"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ohS-K8-Mgc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="bjR-46-Cw2">
+                                <rect key="frame" x="0.0" y="58" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="iDy-AO-Yue" id="rEa-0p-CTn"/>
+                                </connections>
+                            </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mhY-Km-gtH" userLabel="Filters Segmented Control">
+                                <rect key="frame" x="10" y="30" width="580" height="29"/>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="Favorites"/>
+                                    <segment title="Friday"/>
+                                    <segment title="Saturday"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="didChangeSegmentedControlValue:" destination="iDy-AO-Yue" eventType="valueChanged" id="0QC-Wn-bUl"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bjR-46-Cw2" firstAttribute="leading" secondItem="ohS-K8-Mgc" secondAttribute="leading" id="4r6-P9-KFj"/>
+                            <constraint firstItem="bjR-46-Cw2" firstAttribute="top" secondItem="mhY-Km-gtH" secondAttribute="bottom" id="EIA-Gq-Ats"/>
+                            <constraint firstAttribute="trailing" secondItem="mhY-Km-gtH" secondAttribute="trailing" constant="10" id="Knb-qw-Yzj"/>
+                            <constraint firstAttribute="trailing" secondItem="bjR-46-Cw2" secondAttribute="trailing" id="OJc-J6-qCz"/>
+                            <constraint firstItem="mhY-Km-gtH" firstAttribute="leading" secondItem="ohS-K8-Mgc" secondAttribute="leading" constant="10" id="YPI-m6-fEn"/>
+                            <constraint firstItem="mhY-Km-gtH" firstAttribute="top" secondItem="ohS-K8-Mgc" secondAttribute="top" constant="30" id="lWY-2H-0Q8"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="filtersSegmentedControl" destination="mhY-Km-gtH" id="KMr-6E-hUa"/>
+                        <outlet property="searchBar" destination="bjR-46-Cw2" id="WZU-da-6Dv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cgM-vd-cf5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1051" y="1158"/>
+        </scene>
     </scenes>
     <resources>
         <image name="tealUnfilledHeart" width="30" height="30"/>
