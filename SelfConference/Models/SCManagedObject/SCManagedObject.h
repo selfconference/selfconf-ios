@@ -34,4 +34,11 @@ typedef void (^SCManagedObjectObjectsWithErrorBlock)(NSArray *objects, NSError *
 + (void)getObjectsFromUrlString:(NSString *)urlString
                 completionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock;
 
+/**
+ Fetches 'self' in '+[NSManagedObjectContext(MagicalRecord) MR_defaultContext]'
+ and refreshes it, updating all properties in the cache that were changed on
+ another thread context. Returns 'self' on the default context.
+ */
+- (instancetype)refreshOnDefaultContext;
+
 @end

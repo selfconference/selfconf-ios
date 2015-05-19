@@ -125,6 +125,18 @@ insertIntoManagedObjectContext:(NSManagedObjectContext *)context {
      }];
 }
 
+- (instancetype)refreshOnDefaultContext {
+    NSManagedObjectContext *defaultContext =
+    [NSManagedObjectContext MR_defaultContext];
+    
+    SCManagedObject *defaultContextObject =
+    [self MR_inContext:defaultContext];
+    
+    [defaultContext refreshObject:defaultContextObject mergeChanges:YES];
+    
+    return defaultContextObject;
+}
+
 #pragma mark - Internal
 
 /**
@@ -147,23 +159,6 @@ insertIntoManagedObjectContext:(NSManagedObjectContext *)context {
             }
         }
     }
-}
-
-/**
- Fetches 'self' in '+[NSManagedObjectContext(MagicalRecord) MR_defaultContext]'
- and refreshes it, updating all properties in the cache that were changed on
- another thread context. Returns 'self' on the default context.
- */
-- (instancetype)refreshOnDefaultContext {
-    NSManagedObjectContext *defaultContext =
-    [NSManagedObjectContext MR_defaultContext];
-    
-    SCManagedObject *defaultContextObject =
-    [self MR_inContext:defaultContext];
-    
-    [defaultContext refreshObject:defaultContextObject mergeChanges:YES];
-    
-    return defaultContextObject;
 }
 
 @end
