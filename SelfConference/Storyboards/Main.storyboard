@@ -38,7 +38,7 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill Wagner: Careful with those People Skills: You'll Poke Somebody's Eye Out!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Asr-HI-9gk" userLabel="Name Label" customClass="SCPurpleTextColorLabel">
-                                                                        <rect key="frame" x="20" y="10" width="510" height="35"/>
+                                                                        <rect key="frame" x="20" y="10" width="500" height="35"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="35" id="wd6-ft-1C6"/>
                                                                         </constraints>
@@ -46,7 +46,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saturday, 9:00 AM - Salon A &amp; B" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ude-pC-a0w" userLabel="Slot And Room Label" customClass="SCRedTextColorLabel">
-                                                                        <rect key="frame" x="20" y="45" width="510" height="20"/>
+                                                                        <rect key="frame" x="20" y="45" width="500" height="20"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="20" id="k4a-yY-lSW"/>
                                                                         </constraints>
@@ -55,11 +55,12 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNV-hP-gRD" userLabel="Favorite Button">
-                                                                        <rect key="frame" x="550" y="23" width="30" height="30"/>
+                                                                        <rect key="frame" x="530" y="13" width="50" height="50"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="qNV-hP-gRD" secondAttribute="height" multiplier="1:1" id="Eg1-7R-9wQ"/>
-                                                                            <constraint firstAttribute="width" constant="30" id="hLI-Gt-UZo"/>
+                                                                            <constraint firstAttribute="width" constant="50" id="hLI-Gt-UZo"/>
                                                                         </constraints>
+                                                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                                         <state key="normal" image="tealUnfilledHeart">
                                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </state>
@@ -77,7 +78,7 @@
                                                                     <constraint firstItem="Asr-HI-9gk" firstAttribute="top" secondItem="TYE-fr-nLE" secondAttribute="top" constant="10" id="kJc-re-pbv"/>
                                                                     <constraint firstAttribute="bottom" secondItem="ude-pC-a0w" secondAttribute="bottom" constant="10" id="lQR-My-00b"/>
                                                                     <constraint firstAttribute="trailing" secondItem="qNV-hP-gRD" secondAttribute="trailing" constant="20" id="mWa-pg-eIH"/>
-                                                                    <constraint firstItem="qNV-hP-gRD" firstAttribute="leading" secondItem="Asr-HI-9gk" secondAttribute="trailing" constant="20" id="wUq-7w-DRp"/>
+                                                                    <constraint firstItem="qNV-hP-gRD" firstAttribute="leading" secondItem="Asr-HI-9gk" secondAttribute="trailing" constant="10" id="wUq-7w-DRp"/>
                                                                 </constraints>
                                                             </tableViewCellContentView>
                                                             <connections>
