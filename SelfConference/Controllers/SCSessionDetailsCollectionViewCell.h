@@ -29,4 +29,7 @@
 
 - (UICollectionViewLayoutAttributes *)collectionViewLayoutAttributesForSessionDetailsCollectionViewCell:(SCSessionDetailsCollectionViewCell *)cell;
 
+/** Called when the session is favorited or unfavorited. */
+- (void)sessionDetailsCollectionViewCellDidUpdateFavorite:(SCSessionDetailsCollectionViewCell *)cell;
+
 @end

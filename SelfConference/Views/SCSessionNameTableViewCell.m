@@ -48,21 +48,18 @@
     // Toggle the setting
     BOOL newIsFavoriteValue = !self.session.isFavorite;
     
-    // Update the UI right away to make it feel snappy
-    [self setFavoriteButtonImageForIsFavorite:newIsFavoriteValue];
-    
+    // This save is super fast, so we don't really need to worry about making
+    // the UI feel snappy by updating it before the save.
     [MagicalRecord
      saveWithBlock:^(NSManagedObjectContext *localContext) {
          SCSession *localSession = [self.session MR_inContext:localContext];
          localSession.isFavorite = newIsFavoriteValue;
      }
      completion:^(BOOL contextDidSave, NSError *error) {
-         if (!contextDidSave) {
-             // Revert it back
-             [self setFavoriteButtonImageForIsFavorite:!newIsFavoriteValue];
-         }
-         else {
+         if (contextDidSave) {
              [self.session refreshOnDefaultContext];
+             [self setFavoriteButtonImageForIsFavorite:newIsFavoriteValue];
+             [self.delegate sessionNameTableViewCellDidUpdateFavorite:self];
          }
      }];
 }

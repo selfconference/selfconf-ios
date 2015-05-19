@@ -146,6 +146,15 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     return [self.collectionView layoutAttributesForItemAtIndexPath:[self.collectionView indexPathForCell:cell]];
 }
 
+- (void)sessionDetailsCollectionViewCellDidUpdateFavorite:(SCSessionDetailsCollectionViewCell *)cell {
+    // If we're filtering on favorites only, and the user updated a favorite
+    // setting, they probably unfavorited something. In that case, let's go
+    // ahead and remove it from the list.
+    if (self.menuViewController.filter == SCSessionFilterFavorites) {
+        [self refreshEventData];
+    }
+}
+
 #pragma mark - SCMenuViewControllerDelegate
 
 - (void)menuViewController:(SCMenuViewController *)menuViewController

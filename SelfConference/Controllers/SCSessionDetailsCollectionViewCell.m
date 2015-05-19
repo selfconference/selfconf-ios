@@ -29,7 +29,7 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
 
 static CGFloat const kCellShouldCollapseAfterDragOffset = 75.0f;
 
-@interface SCSessionDetailsCollectionViewCell () <UITableViewDataSource, UITableViewDelegate>
+@interface SCSessionDetailsCollectionViewCell () <UITableViewDataSource, UITableViewDelegate, SCSessionNameTableViewCellDelegate>
 
 /** Returns the last known width */
 @property (nonatomic) CGFloat previousWidth;
@@ -102,6 +102,7 @@ static CGFloat const kCellShouldCollapseAfterDragOffset = 75.0f;
              dequeueReusableCellWithIdentifier:NSStringFromClass([SCSessionNameTableViewCell class])
              forIndexPath:indexPath];
             
+            sessionNameTableViewCell.delegate = self;
             sessionNameTableViewCell.session = self.session;
             
             cell = sessionNameTableViewCell;
@@ -175,6 +176,12 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
             self.frame = originFrame;
         }
     }
+}
+
+#pragma mark - SCSessionNameTableViewCellDelegate
+
+- (void)sessionNameTableViewCellDidUpdateFavorite:(SCSessionNameTableViewCell *)cell {
+    [self.delegate sessionDetailsCollectionViewCellDidUpdateFavorite:self];
 }
 
 @end

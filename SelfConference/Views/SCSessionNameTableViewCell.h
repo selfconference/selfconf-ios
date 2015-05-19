@@ -9,10 +9,20 @@
 #import <UIKit/UIKit.h>
 
 @class SCSession;
+@protocol SCSessionNameTableViewCellDelegate;
 
 @interface SCSessionNameTableViewCell : UITableViewCell
 
+@property (nonatomic, weak) id<SCSessionNameTableViewCellDelegate> delegate;
+
 /** The 'SCSession' instance that this cell represents */
 @property (nonatomic) SCSession *session;
+
+@end
+
+@protocol SCSessionNameTableViewCellDelegate <NSObject>
+
+/** Called when the session is favorited or unfavorited. */
+- (void)sessionNameTableViewCellDidUpdateFavorite:(SCSessionNameTableViewCell *)cell;
 
 @end
