@@ -13,8 +13,7 @@
 #import <MagicalRecord/NSManagedObject+MagicalDataImport.h>
 #import "SCAPIService.h"
 
-/** The default dateFormat to use for all date attributes. */
-static NSString * const kSCManagedObjectDefaultDateFormat =
+NSString * const kSCManagedObjectDefaultDateFormat =
 @"yyyy-MM-dd'T'HH:mm:ss.SSSz";
 
 @implementation SCManagedObject

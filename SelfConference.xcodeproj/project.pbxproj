@@ -14,6 +14,8 @@
 		1F0BAAA51A99A3680059C73A /* SCSharedStoryboardInstances.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAA41A99A3680059C73A /* SCSharedStoryboardInstances.m */; };
 		1F0BAAB01A99B7DE0059C73A /* NSError+SCError.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAAF1A99B7DE0059C73A /* NSError+SCError.m */; };
 		1F0BAAB31A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAB21A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m */; };
+		1F2CCF9C1B0B7CA500C24FFC /* NSString+SCFromDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2CCF9B1B0B7CA500C24FFC /* NSString+SCFromDate.m */; };
+		1F2CCFA21B0B818900C24FFC /* NSDateFormatter+SCDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2CCFA11B0B818900C24FFC /* NSDateFormatter+SCDateFormatter.m */; };
 		1F5AC6F71ABE40A00076E341 /* UIView+SCUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC6F61ABE40A00076E341 /* UIView+SCUtilities.m */; };
 		1F5AC7001ABE62680076E341 /* SCSessionNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC6FF1ABE62680076E341 /* SCSessionNameTableViewCell.m */; };
 		1F5AC7031ABE62A50076E341 /* SCSessionAbstractTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7021ABE62A50076E341 /* SCSessionAbstractTableViewCell.m */; };
@@ -73,6 +75,10 @@
 		1F0BAAAF1A99B7DE0059C73A /* NSError+SCError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+SCError.m"; sourceTree = "<group>"; };
 		1F0BAAB11A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+SCUserDefaults.h"; sourceTree = "<group>"; };
 		1F0BAAB21A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+SCUserDefaults.m"; sourceTree = "<group>"; };
+		1F2CCF9A1B0B7CA500C24FFC /* NSString+SCFromDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SCFromDate.h"; sourceTree = "<group>"; };
+		1F2CCF9B1B0B7CA500C24FFC /* NSString+SCFromDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SCFromDate.m"; sourceTree = "<group>"; };
+		1F2CCFA01B0B818900C24FFC /* NSDateFormatter+SCDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+SCDateFormatter.h"; sourceTree = "<group>"; };
+		1F2CCFA11B0B818900C24FFC /* NSDateFormatter+SCDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+SCDateFormatter.m"; sourceTree = "<group>"; };
 		1F5AC6F51ABE40A00076E341 /* UIView+SCUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SCUtilities.h"; sourceTree = "<group>"; };
 		1F5AC6F61ABE40A00076E341 /* UIView+SCUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SCUtilities.m"; sourceTree = "<group>"; };
 		1F5AC6FE1ABE62680076E341 /* SCSessionNameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionNameTableViewCell.h; sourceTree = "<group>"; };
@@ -262,6 +268,10 @@
 				1F64F0431B09220E00833292 /* SCRedTextColorLabel.m */,
 				1F64F0451B0929EE00833292 /* NSString+SCHTMLTagConverter.h */,
 				1F64F0461B0929EE00833292 /* NSString+SCHTMLTagConverter.m */,
+				1F2CCF9A1B0B7CA500C24FFC /* NSString+SCFromDate.h */,
+				1F2CCF9B1B0B7CA500C24FFC /* NSString+SCFromDate.m */,
+				1F2CCFA01B0B818900C24FFC /* NSDateFormatter+SCDateFormatter.h */,
+				1F2CCFA11B0B818900C24FFC /* NSDateFormatter+SCDateFormatter.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -564,12 +574,14 @@
 				1F64F03B1B0920F400833292 /* SCPurpleTextColorLabel.m in Sources */,
 				1FBD60EF1B01A908008E0FEC /* SCAPIService.m in Sources */,
 				1F71944E1B0425020098DB48 /* NSSet+SCManagedObject.m in Sources */,
+				1F2CCF9C1B0B7CA500C24FFC /* NSString+SCFromDate.m in Sources */,
 				1FBD60DA1B018EDC008E0FEC /* SCSponsor.m in Sources */,
 				1F5AC6F71ABE40A00076E341 /* UIView+SCUtilities.m in Sources */,
 				1FBD60E21B018F81008E0FEC /* SCUpdatedAtCreatedAt.m in Sources */,
 				1FBD60D51B018EDC008E0FEC /* SCEvent.m in Sources */,
 				1FBD60D91B018EDC008E0FEC /* SCSpeaker.m in Sources */,
 				1F7560821B043A8900795E54 /* SCScheduleViewController.m in Sources */,
+				1F2CCFA21B0B818900C24FFC /* NSDateFormatter+SCDateFormatter.m in Sources */,
 				1FBD60F21B01AAC4008E0FEC /* SCHTTPSessionManager.m in Sources */,
 				1F5AC7091ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m in Sources */,
 				1F64F0441B09220E00833292 /* SCRedTextColorLabel.m in Sources */,

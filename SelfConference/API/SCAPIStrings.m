@@ -20,3 +20,7 @@ const struct SCAPIRelativeUrlStrings SCAPIRelativeUrlStrings = {
     .sponsorLevels = @"sponsor_levels",
     .organizers = @"organizers"
 };
+
+const struct SCAPIRequestKeys SCAPIRequestKeys = {
+    .fromDate = @"from_date"
+};

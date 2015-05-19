@@ -10,6 +10,7 @@
 #import "SCAPIStrings.h"
 #import "SCRoom.h"
 #import "NSString+SCHTMLTagConverter.h"
+#import "NSString+SCFromDate.h"
 
 @implementation SCVenue
 
@@ -36,16 +37,18 @@
 #pragma mark - Internal
 
 /** Returns a url string to GET all of the venues */
-+ (NSString *)getAllVenuesUrlString {
-    return SCAPIRelativeUrlStrings.venues;
++ (NSString *)getAllVenuesUrlString {    
+    return [SCAPIRelativeUrlStrings.venues
+            stringByAppendingString:[NSString SC_fromDateUrlParameterStringForClass:[self class]]];
 }
 
 /** Returns a url string to GET all of the rooms for the given venue */
 - (NSString *)getRoomsUrlString {
-    return [NSString stringWithFormat:@"%@/%@/%@",
+    return [NSString stringWithFormat:@"%@/%@/%@%@",
             SCAPIRelativeUrlStrings.venues,
             [@(self.venueID) stringValue],
-            SCAPIRelativeUrlStrings.rooms];
+            SCAPIRelativeUrlStrings.rooms,
+            [NSString SC_fromDateUrlParameterStringForClass:[SCRoom class]]];
 }
 
 #pragma mark MagicalRecord

@@ -10,6 +10,9 @@
 
 typedef void (^SCManagedObjectObjectsWithErrorBlock)(NSArray *objects, NSError *error);
 
+/** The default dateFormat to use for all date attributes. */
+FOUNDATION_EXPORT NSString * const kSCManagedObjectDefaultDateFormat;
+
 @interface SCManagedObject : NSManagedObject
 
 /** 

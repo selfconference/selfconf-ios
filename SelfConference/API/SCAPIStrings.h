@@ -21,3 +21,8 @@ extern const struct SCAPIRelativeUrlStrings {
     __unsafe_unretained NSString *sponsorLevels;
     __unsafe_unretained NSString *organizers;
 } SCAPIRelativeUrlStrings;
+
+extern const struct SCAPIRequestKeys {
+    /** Represents the "from_date" url parameter */
+    __unsafe_unretained NSString *fromDate;
+} SCAPIRequestKeys;

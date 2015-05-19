@@ -18,6 +18,7 @@
 #import "SCOrganizer.h"
 #import <MTDates/NSDate+MTDates.h>
 #import "NSString+SCHTMLTagConverter.h"
+#import "NSString+SCFromDate.h"
 
 @implementation SCEvent
 
@@ -171,11 +172,12 @@
 #pragma mark - Internal
 
 /** Returns a GET url string for 'self' and appends 'suffix'/ */
-- (NSString *)getUrlWithSuffix:(NSString *)suffix {
-    return [NSString stringWithFormat:@"%@/%@/%@",
+- (NSString *)getUrlWithSuffix:(NSString *)suffix class:(Class)cls {
+    return [NSString stringWithFormat:@"%@/%@/%@%@",
             SCAPIRelativeUrlStrings.events,
             [@(self.eventID) stringValue],
-            suffix];
+            suffix,
+            [NSString SC_fromDateUrlParameterStringForClass:cls]];
 }
 
 /** Calls a SCEventWithErrorBlock if it exists with the given parameters. */
@@ -207,32 +209,38 @@
 
 /** Returns a url string to GET all of the events */
 + (NSString *)getAllEventsUrlString {
-    return SCAPIRelativeUrlStrings.events;
+    return [SCAPIRelativeUrlStrings.events
+            stringByAppendingString:[NSString SC_fromDateUrlParameterStringForClass:[self class]]];
 }
 
 /** Returns a url string to GET the current event's sessions */
 - (NSString *)getSessionsUrlString {
-    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.sessions];
+    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.sessions
+                            class:[SCSession class]];
 }
 
 /** Returns a url string to GET the current event's speakers */
 - (NSString *)getSpeakersUrlString {
-    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.speakers];
+    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.speakers
+                            class:[SCSpeaker class]];
 }
 
 /** Returns a url string to GET the current event's sponsors */
 - (NSString *)getSponsorsUrlString {
-    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.sponsors];
+    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.sponsors
+                            class:[SCSponsor class]];
 }
 
 /** Returns a url string to GET the current event's sponsor levels */
 - (NSString *)getSponsorLevelsUrlString {
-    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.sponsorLevels];
+    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.sponsorLevels
+                            class:[SCSponsorLevel class]];
 }
 
 /** Returns a url string to GET the current event's organizers */
 - (NSString *)getOrganizersUrlString {
-    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.organizers];
+    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.organizers
+                            class:[SCOrganizer class]];
 }
 
 #pragma mark MagicalRecord
