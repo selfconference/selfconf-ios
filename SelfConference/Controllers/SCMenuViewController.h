@@ -28,7 +28,8 @@
 /** Called when a user searched for a term or changed a filter */
 - (void)menuViewController:(SCMenuViewController *)menuViewController
              didSearchTerm:(NSString *)searchTerm
-                withFilter:(SCSessionFilter)filter;
+                withFilter:(SCSessionFilter)filter
+         isImmediateSearch:(BOOL)isImmediateSearch;
 
 @end
 

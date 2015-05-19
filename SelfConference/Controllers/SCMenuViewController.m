@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *filtersSegmentedControl;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic) BOOL isImmediateSearch;
 
 @property (nonatomic) UITapGestureRecognizer *endSearchTapGestureRecognizer;
 
@@ -72,10 +73,12 @@
 #pragma mark - UISearchBarDelegate
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    self.isImmediateSearch = YES;
     [searchBar resignFirstResponder];
 }
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    self.isImmediateSearch = NO;
     self.endSearchTapGestureRecognizer.enabled = YES;
 }
 
@@ -88,6 +91,8 @@
 #pragma mark - UISegmentedControl
 
 - (IBAction)didChangeSegmentedControlValue:(UISegmentedControl *)segmentedControl {
+    self.isImmediateSearch = YES;
+    
     // Prevent a crash if the user is still editing the search bar and they
     // tap on a different segment index
     if (self.searchBar.isFirstResponder) {
@@ -114,7 +119,8 @@
 - (void)callDidSearchTermWithFilterDelegate {
     [self.delegate menuViewController:self
                         didSearchTerm:self.searchTerm
-                           withFilter:self.filter];
+                           withFilter:self.filter
+                    isImmediateSearch:self.isImmediateSearch];
 }
 
 /** Returns the 'SCSponsorLevel' instance in the given 'section'. */

@@ -159,11 +159,15 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void)menuViewController:(SCMenuViewController *)menuViewController
              didSearchTerm:(NSString *)searchTerm
-                withFilter:(SCSessionFilter)filter {
+                withFilter:(SCSessionFilter)filter
+         isImmediateSearch:(BOOL)isImmediateSearch {
     [self refreshEventData];
     
-    // Expand the card list
-    [self.collectionView setPresenting:NO animated:YES completion:NULL];
+    // Expand the card list if it's an immediate search (i.e. the user pressed
+    // the SEARCH button)
+    if (isImmediateSearch) {
+        [self.collectionView setPresenting:NO animated:YES completion:NULL];
+    }
 }
 
 @end
