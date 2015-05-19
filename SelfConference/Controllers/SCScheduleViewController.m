@@ -152,6 +152,9 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
              didSearchTerm:(NSString *)searchTerm
                 withFilter:(SCSessionFilter)filter {
     [self refreshEventData];
+    
+    // Expand the card list
+    [self.collectionView setPresenting:NO animated:YES completion:NULL];
 }
 
 @end
