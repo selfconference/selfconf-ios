@@ -37,6 +37,10 @@ FOUNDATION_EXPORT NSString * const kSCManagedObjectDefaultDateFormat;
 + (void)getObjectsFromUrlString:(NSString *)urlString
                 completionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock;
 
+/** Sorts and returns 'objects' based on 'propertyName'. */
++ (NSArray *)objects:(NSArray *)objects
+sortedByPropertyName:(NSString *)propertyName;
+
 /**
  Fetches 'self' in '+[NSManagedObjectContext(MagicalRecord) MR_defaultContext]'
  and refreshes it, updating all properties in the cache that were changed on

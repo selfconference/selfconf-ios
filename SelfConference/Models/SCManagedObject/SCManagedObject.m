@@ -124,6 +124,17 @@ insertIntoManagedObjectContext:(NSManagedObjectContext *)context {
      }];
 }
 
++ (NSArray *)objects:(NSArray *)objects
+sortedByPropertyName:(NSString *)propertyName {
+    NSSortDescriptor *sortedBySlotSortDescriptor =
+    [NSSortDescriptor
+     sortDescriptorWithKey:propertyName
+     ascending:YES];
+    
+    return
+    [objects sortedArrayUsingDescriptors:@[sortedBySlotSortDescriptor]];
+}
+
 - (instancetype)refreshOnDefaultContext {
     NSManagedObjectContext *defaultContext =
     [NSManagedObjectContext MR_defaultContext];

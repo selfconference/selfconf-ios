@@ -117,13 +117,8 @@
 }
 
 + (NSArray *)sessionsSortedBySlot:(NSArray *)sessions {
-    NSSortDescriptor *sortedBySlotSortDescriptor =
-    [NSSortDescriptor
-     sortDescriptorWithKey:NSStringFromSelector(@selector(slot))
-     ascending:YES];
-    
-    return
-    [sessions sortedArrayUsingDescriptors:@[sortedBySlotSortDescriptor]];
+    return [self objects:sessions
+    sortedByPropertyName:NSStringFromSelector(@selector(slot))];
 }
 
 #pragma mark MagicalRecord
