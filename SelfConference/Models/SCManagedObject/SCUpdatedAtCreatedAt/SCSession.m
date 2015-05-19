@@ -11,6 +11,8 @@
 #import "SCRoom.h"
 #import "UIColor+SCColor.h"
 #import "NSString+SCHTMLTagConverter.h"
+#import <MTDates/NSDate+MTDates.h>
+#import <MagicalRecord/NSManagedObject+MagicalFinders.h>
 
 @implementation SCSession
 
@@ -48,6 +50,80 @@
     NSInteger indexOfColorToUse = self.sessionID % availableColors.count;
     
     return availableColors[indexOfColorToUse];
+}
+
++ (NSPredicate *)predicateForFilter:(SCSessionFilter)filter
+                            context:(NSManagedObjectContext *)context {
+    NSPredicate *predicate;
+    
+    switch (filter) {
+        case SCSessionFilterAll: {
+            predicate = nil;
+        } break;
+            
+        case SCSessionFilterFavorites: {
+            predicate = [NSPredicate predicateWithFormat:@"%K = YES",
+                         NSStringFromSelector(@selector(isFavorite))];
+        } break;
+            
+        case SCSessionFilterDayOne: {
+            predicate =
+            [self predicateForSlotDuringDate:[SCEvent currentEventInContext:context].startDate];
+        } break;
+            
+        case SCSessionFilterDayTwo: {
+            predicate =
+            [self predicateForSlotDuringDate:[SCEvent currentEventInContext:context].endDate];
+        } break;
+            
+        default: {
+            
+        } break;
+    }
+    
+    return predicate;
+}
+
++ (NSPredicate *)predicateForSearchTerm:(NSString *)searchTerm {
+    NSPredicate *predicate;
+    
+    // Only filter if we have a 'searchTerm'
+    if (searchTerm.length > 0) {
+        // 'CONTAINS[c]' gives us a case insensitive search
+        predicate =
+        [NSPredicate predicateWithFormat:@"(name CONTAINS[c] %@) OR (abstract CONTAINS[c] %@) OR (room.name CONTAINS[c] %@) OR (ANY speakers.name CONTAINS[c] %@) OR (ANY speakers.biography CONTAINS[c] %@)",
+         searchTerm,
+         searchTerm,
+         searchTerm,
+         searchTerm,
+         searchTerm];
+    }
+    
+    return predicate;
+}
+
++ (NSPredicate *)predicateForSlotDuringDate:(NSDate *)date {
+    NSDate *beginningOfDay = date.mt_startOfCurrentDay;
+    NSDate *endOfDay = date.mt_endOfCurrentDay;
+    
+    NSString *slotPropertyName = NSStringFromSelector(@selector(slot));
+    
+    return
+    [NSPredicate predicateWithFormat:@"(%K >= %@) AND (%K <= %@)",
+     slotPropertyName,
+     beginningOfDay,
+     slotPropertyName,
+     endOfDay];
+}
+
++ (NSArray *)sessionsSortedBySlot:(NSArray *)sessions {
+    NSSortDescriptor *sortedBySlotSortDescriptor =
+    [NSSortDescriptor
+     sortDescriptorWithKey:NSStringFromSelector(@selector(slot))
+     ascending:YES];
+    
+    return
+    [sessions sortedArrayUsingDescriptors:@[sortedBySlotSortDescriptor]];
 }
 
 #pragma mark MagicalRecord
