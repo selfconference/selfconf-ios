@@ -19,4 +19,7 @@
 @property (nonatomic, retain) SCEvent *event;
 @property (nonatomic, retain) NSSet *sponsorLevels;
 
+/** Returns 'sponsors' sorted based on 'name'. */
++ (NSArray *)sponsorsOrderedByName:(NSArray *)sponsors;
+
 @end

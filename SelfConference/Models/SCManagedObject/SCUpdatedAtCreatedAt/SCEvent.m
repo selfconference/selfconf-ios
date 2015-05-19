@@ -169,6 +169,10 @@
     return sessions;
 }
 
+- (NSArray *)sponsorLevelsWithSponsorsSortedByOrder {
+    return [SCSponsorLevel sponsorLevelsWithSponsorsSortedByOrder:self.sponsorLevels.allObjects];
+}
+
 #pragma mark - Internal
 
 /** Returns a GET url string for 'self' and appends 'suffix'/ */

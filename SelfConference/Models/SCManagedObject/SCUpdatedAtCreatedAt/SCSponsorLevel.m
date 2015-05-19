@@ -7,6 +7,7 @@
 //
 
 #import "SCSponsorLevel.h"
+#import "SCSponsor.h"
 
 @implementation SCSponsorLevel
 
@@ -16,5 +17,30 @@
 @dynamic order;
 @dynamic event;
 @dynamic sponsors;
+
++ (NSArray *)sponsorLevelsWithSponsorsSortedByOrder:(NSArray *)sponsorLevels {
+    NSArray *filteredSponsorLevels =
+    [sponsorLevels filteredArrayUsingPredicate:[self predicateForSponsorsExist]];
+    
+    return
+    [self objects:filteredSponsorLevels
+    sortedByPropertyName:NSStringFromSelector(@selector(order))];
+}
+
+- (NSArray *)sponsorsSortedByName {
+    return [SCSponsor sponsorsOrderedByName:self.sponsors.allObjects];
+}
+
+#pragma mark - Internal
+
+/** 
+ Returns an 'NSPredicate' instance that will return 'SCSponsorLevel' instances 
+ that have at least 1 'sponsor'. 
+ */
++ (NSPredicate *)predicateForSponsorsExist {
+    return
+    [NSPredicate predicateWithFormat:@"%K.@count >0",
+     NSStringFromSelector(@selector(sponsors))];
+}
 
 @end

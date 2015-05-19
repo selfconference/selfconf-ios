@@ -86,4 +86,10 @@ typedef void (^SCEventWithErrorBlock)(SCEvent *event, NSError *error);
 - (NSArray *)sessionsWithSearchTerm:(NSString *)searchTerm
                              filter:(SCSessionFilter)filter;
 
+/**
+ Returns '_sponsorLevels' that have at least 1 'sponsor' sorted based on 
+ 'order'. 
+ */
+- (NSArray *)sponsorLevelsWithSponsorsSortedByOrder;
+
 @end

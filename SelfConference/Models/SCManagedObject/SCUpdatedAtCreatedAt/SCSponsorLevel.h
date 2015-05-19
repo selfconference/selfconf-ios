@@ -19,4 +19,13 @@
 @property (nonatomic, retain) SCEvent *event;
 @property (nonatomic, retain) NSSet *sponsors;
 
+/** 
+ Sorts an array of 'SCSponsorLevel' instances that have at least 1 'sponsor' 
+ and sorts them based on 'order' values. 
+ */
++ (NSArray *)sponsorLevelsWithSponsorsSortedByOrder:(NSArray *)sponsorLevels;
+
+/** Returns '_sponsors' ordered by 'name'. */
+- (NSArray *)sponsorsSortedByName;
+
 @end

@@ -19,4 +19,9 @@
 @dynamic event;
 @dynamic sponsorLevels;
 
++ (NSArray *)sponsorsOrderedByName:(NSArray *)sponsors {
+    return [self objects:sponsors
+    sortedByPropertyName:NSStringFromSelector(@selector(name))];
+}
+
 @end
