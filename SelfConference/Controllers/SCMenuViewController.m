@@ -88,7 +88,14 @@
 #pragma mark - UISegmentedControl
 
 - (IBAction)didChangeSegmentedControlValue:(UISegmentedControl *)segmentedControl {
-    [self callDidSearchTermWithFilterDelegate];
+    // Prevent a crash if the user is still editing the search bar and they
+    // tap on a different segment index
+    if (self.searchBar.isFirstResponder) {
+        [self.searchBar resignFirstResponder];
+    }
+    else {
+        [self callDidSearchTermWithFilterDelegate];
+    }
 }
 
 #pragma mark - UITapGestureRecognizer
