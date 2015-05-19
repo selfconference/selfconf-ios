@@ -21,7 +21,7 @@ typedef NS_ENUM(NSUInteger, SCSessionFilter) {
 
 @interface SCSession : SCUpdatedAtCreatedAt
 
-@property (nonatomic) NSInteger sessionID;
+@property (nonatomic) int32_t sessionID;
 
 /** The date when the session is scheduled to take place. */
 @property (nonatomic, retain) NSDate *slot;

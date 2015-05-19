@@ -12,7 +12,7 @@
 
 @interface SCSponsor : SCUpdatedAtCreatedAt
 
-@property (nonatomic) NSInteger sponsorID;
+@property (nonatomic) int32_t sponsorID;
 @property (nonatomic, retain) NSString *link;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *photoUrlString;

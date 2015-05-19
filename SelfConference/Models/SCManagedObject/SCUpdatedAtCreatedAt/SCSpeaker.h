@@ -12,7 +12,7 @@
 
 @interface SCSpeaker : SCUpdatedAtCreatedAt
 
-@property (nonatomic) NSInteger speakerID;
+@property (nonatomic) int32_t speakerID;
 @property (nonatomic, retain) NSString *biography;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *twitterHandle;

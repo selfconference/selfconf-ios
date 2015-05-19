@@ -15,7 +15,7 @@
 
 typedef void (^SCEventWithErrorBlock)(SCEvent *event, NSError *error);
 
-@property (nonatomic) NSInteger eventID;
+@property (nonatomic) int32_t eventID;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *about;
 @property (nonatomic, retain) NSString *twitterHandle;
