@@ -8,10 +8,7 @@
 
 #import "SCScheduleViewController.h"
 #import "SCEvent.h"
-#import <MagicalRecord/NSManagedObjectContext+MagicalRecord.h>
 #import "SCSessionDetailsCollectionViewCell.h"
-#import "NSDictionary+SCManagedObject.h"
-#import "NSSet+SCManagedObject.h"
 #import <MTCardLayout/UICollectionView+CardLayout.h>
 #import "UIColor+SCColor.h"
 #import "SCMenuViewController.h"
@@ -20,13 +17,13 @@
 
 @interface SCScheduleViewController () <SCSessionDetailsCollectionViewCellDelegate, UICollectionViewDataSource, UICollectionViewDelegate, SCMenuViewControllerDelegate>
 
-@property (nonatomic) SCEvent *event;
-
 /** 
  Stores the 'SCSession' instances that will be displayed in '_collectionView'. 
- It's possible that they are filtered. 
+ It's possible that they are filtered, which is the reason we're storing them
+ separately.
  */
 @property (nonatomic) NSArray *sessions;
+
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 @property (nonatomic) SCMenuViewController *menuViewController;
 
@@ -39,26 +36,10 @@
     
     self.collectionView.backgroundColor = [UIColor SC_teal];
     
-    self.event = [SCEvent currentEvent];
-
     self.collectionView.cardLayoutPanGestureRecognizer.enabled = NO;
     self.collectionView.cardLayoutTapGestureRecognizer.enabled = NO;
     
     self.collectionView.backgroundView = self.menuViewController.view;
-    
-    [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(managedObjectContextObjectsDidChangeWithNotification:)
-     name:NSManagedObjectContextObjectsDidChangeNotification
-     object:[NSManagedObjectContext MR_defaultContext]];
-}
-
-- (void)setEvent:(SCEvent *)event {
-    if (event != _event) {
-        _event = event;
-        
-        [self refreshEventData];
-    }
 }
 
 - (SCMenuViewController *)menuViewController {
@@ -71,6 +52,17 @@
     }
     
     return _menuViewController;
+}
+#pragma mark - Overrides
+
+- (void)refreshEventData {
+    [super refreshEventData];
+    
+    self.sessions =
+    [self.event sessionsWithSearchTerm:self.menuViewController.searchTerm
+                                filter:self.menuViewController.filter];
+    
+    [self.collectionView reloadData];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -125,30 +117,6 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     cell.tableView.scrollEnabled = NO;
     
     cell.tableView.contentOffset = CGPointZero;
-}
-
-#pragma mark - Other
-
-/** Refreshes all data associated with '_event'. */
-- (void)refreshEventData {
-    self.sessions =
-    [self.event sessionsWithSearchTerm:self.menuViewController.searchTerm
-                                filter:self.menuViewController.filter];
-    
-    [self.collectionView reloadData];
-}
-
-- (void)managedObjectContextObjectsDidChangeWithNotification:(NSNotification *)notification {
-    NSDictionary *userInfo = notification.userInfo;
-    
-    if ([userInfo.SC_insertedObjects SC_containsAtLeastOneObjectKindOfClass:[SCEvent class]]) {
-        // It's possible that we got a new current event. Allow the overridden
-        // setter to decide if it's new or not.
-        self.event = [SCEvent currentEvent];
-    }
-    else if ([userInfo.SC_allChangedObjects containsObject:self.event]) {
-        [self refreshEventData];
-    }
 }
 
 #pragma mark - SCSessionDetailsCollectionViewCellDelegate

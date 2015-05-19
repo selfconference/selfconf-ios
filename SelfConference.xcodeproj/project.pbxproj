@@ -16,6 +16,9 @@
 		1F0BAAB31A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAB21A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m */; };
 		1F2CCF9C1B0B7CA500C24FFC /* NSString+SCFromDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2CCF9B1B0B7CA500C24FFC /* NSString+SCFromDate.m */; };
 		1F2CCFA21B0B818900C24FFC /* NSDateFormatter+SCDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2CCFA11B0B818900C24FFC /* NSDateFormatter+SCDateFormatter.m */; };
+		1F2CCFA81B0B9F3A00C24FFC /* SCSponsorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2CCFA71B0B9F3A00C24FFC /* SCSponsorCollectionViewCell.m */; };
+		1F2CCFAB1B0BA10C00C24FFC /* SCUpdatingEventBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2CCFAA1B0BA10C00C24FFC /* SCUpdatingEventBaseViewController.m */; };
+		1F2CCFAE1B0BA39000C24FFC /* SCSponsorLevelHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2CCFAD1B0BA39000C24FFC /* SCSponsorLevelHeaderView.m */; };
 		1F5AC6F71ABE40A00076E341 /* UIView+SCUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC6F61ABE40A00076E341 /* UIView+SCUtilities.m */; };
 		1F5AC7001ABE62680076E341 /* SCSessionNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC6FF1ABE62680076E341 /* SCSessionNameTableViewCell.m */; };
 		1F5AC7031ABE62A50076E341 /* SCSessionAbstractTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7021ABE62A50076E341 /* SCSessionAbstractTableViewCell.m */; };
@@ -79,6 +82,12 @@
 		1F2CCF9B1B0B7CA500C24FFC /* NSString+SCFromDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SCFromDate.m"; sourceTree = "<group>"; };
 		1F2CCFA01B0B818900C24FFC /* NSDateFormatter+SCDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+SCDateFormatter.h"; sourceTree = "<group>"; };
 		1F2CCFA11B0B818900C24FFC /* NSDateFormatter+SCDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+SCDateFormatter.m"; sourceTree = "<group>"; };
+		1F2CCFA61B0B9F3A00C24FFC /* SCSponsorCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSponsorCollectionViewCell.h; sourceTree = "<group>"; };
+		1F2CCFA71B0B9F3A00C24FFC /* SCSponsorCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSponsorCollectionViewCell.m; sourceTree = "<group>"; };
+		1F2CCFA91B0BA10C00C24FFC /* SCUpdatingEventBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCUpdatingEventBaseViewController.h; sourceTree = "<group>"; };
+		1F2CCFAA1B0BA10C00C24FFC /* SCUpdatingEventBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCUpdatingEventBaseViewController.m; sourceTree = "<group>"; };
+		1F2CCFAC1B0BA39000C24FFC /* SCSponsorLevelHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSponsorLevelHeaderView.h; sourceTree = "<group>"; };
+		1F2CCFAD1B0BA39000C24FFC /* SCSponsorLevelHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSponsorLevelHeaderView.m; sourceTree = "<group>"; };
 		1F5AC6F51ABE40A00076E341 /* UIView+SCUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SCUtilities.h"; sourceTree = "<group>"; };
 		1F5AC6F61ABE40A00076E341 /* UIView+SCUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SCUtilities.m"; sourceTree = "<group>"; };
 		1F5AC6FE1ABE62680076E341 /* SCSessionNameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionNameTableViewCell.h; sourceTree = "<group>"; };
@@ -203,6 +212,10 @@
 				1F5AC7021ABE62A50076E341 /* SCSessionAbstractTableViewCell.m */,
 				1F5AC7071ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.h */,
 				1F5AC7081ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m */,
+				1F2CCFA61B0B9F3A00C24FFC /* SCSponsorCollectionViewCell.h */,
+				1F2CCFA71B0B9F3A00C24FFC /* SCSponsorCollectionViewCell.m */,
+				1F2CCFAC1B0BA39000C24FFC /* SCSponsorLevelHeaderView.h */,
+				1F2CCFAD1B0BA39000C24FFC /* SCSponsorLevelHeaderView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,6 +233,8 @@
 		1F0BAA8C1A998F8B0059C73A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1F2CCFA91B0BA10C00C24FFC /* SCUpdatingEventBaseViewController.h */,
+				1F2CCFAA1B0BA10C00C24FFC /* SCUpdatingEventBaseViewController.m */,
 				1F7560801B043A8900795E54 /* SCScheduleViewController.h */,
 				1F7560811B043A8900795E54 /* SCScheduleViewController.m */,
 				1F9B5A311B0ADC5A009DFD5D /* SCMenuViewController.h */,
@@ -591,7 +606,9 @@
 				1F0BAAA51A99A3680059C73A /* SCSharedStoryboardInstances.m in Sources */,
 				1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */,
 				1F5AC7001ABE62680076E341 /* SCSessionNameTableViewCell.m in Sources */,
+				1F2CCFAB1B0BA10C00C24FFC /* SCUpdatingEventBaseViewController.m in Sources */,
 				1F5AC7031ABE62A50076E341 /* SCSessionAbstractTableViewCell.m in Sources */,
+				1F2CCFAE1B0BA39000C24FFC /* SCSponsorLevelHeaderView.m in Sources */,
 				1F64F0471B0929EE00833292 /* NSString+SCHTMLTagConverter.m in Sources */,
 				1F0BAAB01A99B7DE0059C73A /* NSError+SCError.m in Sources */,
 				1FBD60D61B018EDC008E0FEC /* SCOrganizer.m in Sources */,
@@ -600,6 +617,7 @@
 				1F0BAAB31A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m in Sources */,
 				1FBD60AA1B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld in Sources */,
 				1F64F0411B0921DE00833292 /* SCTealTextColorLabel.m in Sources */,
+				1F2CCFA81B0B9F3A00C24FFC /* SCSponsorCollectionViewCell.m in Sources */,
 				1F9B5A331B0ADC5A009DFD5D /* SCMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

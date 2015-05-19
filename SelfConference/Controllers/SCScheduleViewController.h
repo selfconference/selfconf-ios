@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Self Conference. All rights reserved.
 //
 
-@import UIKit;
+#import "SCUpdatingEventBaseViewController.h"
 
-@interface SCScheduleViewController : UIViewController
+@interface SCScheduleViewController : SCUpdatingEventBaseViewController
 
 @end
