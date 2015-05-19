@@ -22,6 +22,7 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *abstract;
 @property (nonatomic) BOOL isKeynote;
+@property (nonatomic) BOOL isFavorite;
 @property (nonatomic, retain) SCEvent *event;
 @property (nonatomic, retain) SCRoom *room;
 @property (nonatomic, retain) NSSet *speakers;

@@ -19,6 +19,7 @@
 @dynamic name;
 @dynamic abstract;
 @dynamic isKeynote;
+@dynamic isFavorite;
 @dynamic event;
 @dynamic room;
 @dynamic speakers;

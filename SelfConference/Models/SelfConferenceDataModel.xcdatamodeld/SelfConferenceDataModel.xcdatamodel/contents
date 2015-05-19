@@ -202,6 +202,7 @@
                 <entry key="mappedKeyName" value="created_at"/>
             </userInfo>
         </attribute>
+        <attribute name="isFavorite" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isKeynote" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="keynote"/>
@@ -459,7 +460,7 @@
         <element name="Event" positionX="0" positionY="0" width="128" height="330"/>
         <element name="Organizer" positionX="0" positionY="0" width="128" height="210"/>
         <element name="Room" positionX="0" positionY="0" width="128" height="165"/>
-        <element name="Session" positionX="0" positionY="0" width="128" height="225"/>
+        <element name="Session" positionX="0" positionY="0" width="128" height="240"/>
         <element name="Speaker" positionX="0" positionY="0" width="128" height="210"/>
         <element name="Sponsor" positionX="0" positionY="0" width="128" height="195"/>
         <element name="SponsorLevel" positionX="0" positionY="0" width="128" height="195"/>
