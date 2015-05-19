@@ -25,7 +25,7 @@
 
 @protocol SCMenuViewControllerDelegate <NSObject>
 
-/** Called when a user searched for a term */
+/** Called when a user searched for a term or changed a filter */
 - (void)menuViewController:(SCMenuViewController *)menuViewController
              didSearchTerm:(NSString *)searchTerm
                 withFilter:(SCSessionFilter)filter;
