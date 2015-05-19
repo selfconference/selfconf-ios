@@ -14,11 +14,21 @@
 #import "NSSet+SCManagedObject.h"
 #import <MTCardLayout/UICollectionView+CardLayout.h>
 #import "UIColor+SCColor.h"
+#import "SCMenuViewController.h"
+#import "SCSharedStoryboardInstances.h"
+#import <MagicalRecord/NSManagedObject+MagicalRecord.h>
 
-@interface SCScheduleViewController () <SCSessionDetailsCollectionViewCellDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface SCScheduleViewController () <SCSessionDetailsCollectionViewCellDelegate, UICollectionViewDataSource, UICollectionViewDelegate, SCMenuViewControllerDelegate>
 
 @property (nonatomic) SCEvent *event;
+
+/** 
+ Stores the 'SCSession' instances that will be displayed in '_collectionView'. 
+ It's possible that they are filtered. 
+ */
+@property (nonatomic) NSArray *sessions;
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
+@property (nonatomic) SCMenuViewController *menuViewController;
 
 @end
 
@@ -33,6 +43,8 @@
 
     self.collectionView.cardLayoutPanGestureRecognizer.enabled = NO;
     self.collectionView.cardLayoutTapGestureRecognizer.enabled = NO;
+    
+    self.collectionView.backgroundView = self.menuViewController.view;
     
     [[NSNotificationCenter defaultCenter]
      addObserver:self
@@ -49,11 +61,23 @@
     }
 }
 
+- (SCMenuViewController *)menuViewController {
+    if (!_menuViewController) {
+        _menuViewController =
+        [[SCSharedStoryboardInstances sharedMainStoryboardInstance]
+         instantiateViewControllerWithIdentifier:NSStringFromClass([SCMenuViewController class])];
+        
+        _menuViewController.delegate = self;
+    }
+    
+    return _menuViewController;
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section {
-    return self.event.sessionsArrangedByDay.count;
+    return self.sessions.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
@@ -68,7 +92,7 @@
     // Disable scrolling by default, until it becomes exposed
     cell.tableView.scrollEnabled = NO;
     
-    cell.session = self.event.sessionsArrangedByDay[indexPath.row];
+    cell.session = self.sessions[indexPath.row];
     
     return cell;
 }
@@ -107,6 +131,10 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
 
 /** Refreshes all data associated with '_event'. */
 - (void)refreshEventData {
+    self.sessions =
+    [self.event sessionsWithSearchTerm:self.menuViewController.searchTerm
+                                filter:self.menuViewController.filter];
+    
     [self.collectionView reloadData];
 }
 
@@ -148,6 +176,14 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
 
 - (UICollectionViewLayoutAttributes *)collectionViewLayoutAttributesForSessionDetailsCollectionViewCell:(SCSessionDetailsCollectionViewCell *)cell {
     return [self.collectionView layoutAttributesForItemAtIndexPath:[self.collectionView indexPathForCell:cell]];
+}
+
+#pragma mark - SCMenuViewControllerDelegate
+
+- (void)menuViewController:(SCMenuViewController *)menuViewController
+             didSearchTerm:(NSString *)searchTerm
+                withFilter:(SCSessionFilter)filter {
+    [self refreshEventData];
 }
 
 @end
