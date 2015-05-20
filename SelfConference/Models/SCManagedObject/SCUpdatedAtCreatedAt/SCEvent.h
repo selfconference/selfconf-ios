@@ -34,6 +34,7 @@ typedef void (^SCEventWithErrorBlock)(SCEvent *event, NSError *error);
 @property (nonatomic, retain) NSSet *sponsors;
 @property (nonatomic, retain) NSSet *sponsorLevels;
 @property (nonatomic, retain) NSSet *organizers;
+@property (nonatomic, retain) NSSet *rooms;
 @property (nonatomic, retain) SCVenue *venue;
 
 #pragma mark - Typed API requests
@@ -73,6 +74,12 @@ typedef void (^SCEventWithErrorBlock)(SCEvent *event, NSError *error);
  'completionBlock'
  */
 - (void)getOrganizersWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock;
+
+/**
+ Fetches the event's 'SCRoom' entities from the API and returns them inside
+ 'completionBlock'
+ */
+- (void)getRoomsWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock;
 
 #pragma mark - Local fetchers
 

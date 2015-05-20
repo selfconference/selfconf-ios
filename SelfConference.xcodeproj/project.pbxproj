@@ -100,6 +100,7 @@
 		1F2CCFAA1B0BA10C00C24FFC /* SCUpdatingEventBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCUpdatingEventBaseViewController.m; sourceTree = "<group>"; };
 		1F2CCFAC1B0BA39000C24FFC /* SCSponsorLevelHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSponsorLevelHeaderView.h; sourceTree = "<group>"; };
 		1F2CCFAD1B0BA39000C24FFC /* SCSponsorLevelHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSponsorLevelHeaderView.m; sourceTree = "<group>"; };
+		1F4FD4C41B0D2D2B008B4C8A /* SelfConferenceDataModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "SelfConferenceDataModel 2.xcdatamodel"; sourceTree = "<group>"; };
 		1F5AC6F51ABE40A00076E341 /* UIView+SCUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SCUtilities.h"; sourceTree = "<group>"; };
 		1F5AC6F61ABE40A00076E341 /* UIView+SCUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SCUtilities.m"; sourceTree = "<group>"; };
 		1F5AC6FE1ABE62680076E341 /* SCSessionNameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionNameTableViewCell.h; sourceTree = "<group>"; };
@@ -853,9 +854,10 @@
 		1FBD60A81B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				1F4FD4C41B0D2D2B008B4C8A /* SelfConferenceDataModel 2.xcdatamodel */,
 				1FBD60A91B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodel */,
 			);
-			currentVersion = 1FBD60A91B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodel */;
+			currentVersion = 1F4FD4C41B0D2D2B008B4C8A /* SelfConferenceDataModel 2.xcdatamodel */;
 			path = SelfConferenceDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

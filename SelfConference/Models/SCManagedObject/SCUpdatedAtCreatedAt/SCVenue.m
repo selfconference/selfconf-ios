@@ -29,26 +29,12 @@
                   completionBlock:completionBlock];
 }
 
-- (void)getRoomsWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock {
-    [SCRoom getObjectsFromUrlString:self.getRoomsUrlString
-                    completionBlock:completionBlock];
-}
-
 #pragma mark - Internal
 
 /** Returns a url string to GET all of the venues */
 + (NSString *)getAllVenuesUrlString {    
     return [SCAPIRelativeUrlStrings.venues
             stringByAppendingString:[NSString SC_fromDateUrlParameterStringForClass:[self class]]];
-}
-
-/** Returns a url string to GET all of the rooms for the given venue */
-- (NSString *)getRoomsUrlString {
-    return [NSString stringWithFormat:@"%@/%@/%@%@",
-            SCAPIRelativeUrlStrings.venues,
-            [@(self.venueID) stringValue],
-            SCAPIRelativeUrlStrings.rooms,
-            [NSString SC_fromDateUrlParameterStringForClass:[SCRoom class]]];
 }
 
 #pragma mark MagicalRecord

@@ -71,7 +71,7 @@
                     [event getSponsorLevelsWithCompletionBlock:^(NSArray *objects, NSError *error) {
                         [event getOrganizersWithCompletionBlock:^(NSArray *objects, NSError *error) {
                             [SCVenue getVenuesWithCompletionBlock:^(NSArray *objects, NSError *error) {
-                                [event.venue getRoomsWithCompletionBlock:^(NSArray *objects, NSError *error) {
+                                [event getRoomsWithCompletionBlock:^(NSArray *objects, NSError *error) {
                                     NSLog(@"Completed network refresh");
                                 }];
                             }];

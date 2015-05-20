@@ -19,6 +19,7 @@
 #import <MTDates/NSDate+MTDates.h>
 #import "NSString+SCHTMLTagConverter.h"
 #import "NSString+SCFromDate.h"
+#import "SCRoom.h"
 
 @implementation SCEvent
 
@@ -36,6 +37,7 @@
 @dynamic sponsors;
 @dynamic sponsorLevels;
 @dynamic organizers;
+@dynamic rooms;
 @dynamic venue;
 
 #pragma mark - Overrides
@@ -66,6 +68,8 @@
     [self
      getObjectsFromUrlString:[self getAllEventsUrlString]
      completionBlock:^(NSArray *objects, NSError *error) {
+         NSLog(@"Events: %lu", (unsigned long)objects.count);
+         
          if (error) {
              [self callSCEventWithErrorBlock:completionBlock
                                        event:nil
@@ -102,6 +106,11 @@
 - (void)getOrganizersWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock {
     [SCOrganizer getObjectsFromUrlString:self.getOrganizersUrlString
                          completionBlock:completionBlock];
+}
+
+- (void)getRoomsWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock {
+    [SCRoom getObjectsFromUrlString:self.getRoomsUrlString
+                    completionBlock:completionBlock];
 }
 
 #pragma mark - Local fetchers
@@ -245,6 +254,12 @@
 - (NSString *)getOrganizersUrlString {
     return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.organizers
                             class:[SCOrganizer class]];
+}
+
+/** Returns a url string to GET the current event's rooms */
+- (NSString *)getRoomsUrlString {
+    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.rooms
+                            class:[SCRoom class]];
 }
 
 #pragma mark MagicalRecord
