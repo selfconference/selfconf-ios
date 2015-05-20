@@ -11,6 +11,7 @@
 #import <MagicalRecord/NSManagedObject+MagicalFinders.h>
 #import "NSDateFormatter+SCDateFormatter.h"
 #import "SCAPIStrings.h"
+#import <MTDates/NSDate+MTDates.h>
 
 @implementation NSString (SCFromDate)
 
@@ -24,8 +25,10 @@
          updatedAt];
         
         if (updatedAt) {
+            // Workaround for an API bug where the from_date is compared with
+            // a >= sign, when we really want >
             fromDate = [[NSDateFormatter SCC_sharedDateFormatterWithDefaultDateFormat]
-                        stringFromDate:updatedAt];
+                        stringFromDate:updatedAt.mt_oneSecondNext];
         }
     }
     
