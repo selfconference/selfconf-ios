@@ -11,6 +11,9 @@
 #import "SCSession.h"
 #import "NSString+SCHTMLTagConverter.h"
 
+NSString * const kSCSpeakerOpenTwitterProfileForSpeakerNotificationName =
+@"kSCSpeakerOpenTwitterProfileForSpeakerNotificationName";
+
 @implementation SCSpeaker
 
 @dynamic speakerID;

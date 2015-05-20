@@ -9,6 +9,7 @@
 #import "UIAlertController+SCAlertController.h"
 #import "UIAlertAction+SCAlertAction.h"
 #import "SCSponsor.h"
+#import "SCSpeaker.h"
 
 @implementation UIAlertController (SCAlertController)
 
@@ -19,6 +20,33 @@
                          confirmBlock:^(UIAlertAction *action) {
                              [[UIApplication sharedApplication]
                               openURL:[NSURL URLWithString:sponsor.link]];
+                         }];
+}
+
++ (instancetype)SC_alertControllerForOpenTwitterForSpeaker:(SCSpeaker *)speaker {
+    return
+    [self SC_alertControllerWithTitle:[NSString stringWithFormat:@"Open Twitter profile for %@?", speaker.name]
+                   confirmButtonTitle:@"Open"
+                         confirmBlock:^(UIAlertAction *action) {
+                             UIApplication *sharedApplication =
+                             [UIApplication sharedApplication];
+                             
+                             NSURL *nativeTwitterURL =
+                             [NSURL URLWithString:[NSString stringWithFormat:@"twitter://user?screen_name=%@",
+                                                   speaker.twitterHandle]];
+                             
+                             // Try to open it in the Twitter app
+                             if ([sharedApplication canOpenURL:nativeTwitterURL]) {
+                                 [sharedApplication openURL:nativeTwitterURL];
+                             }
+                             // Otherwise, open it in Safari
+                             else {
+                                 NSURL *safariTwitterURL =
+                                 [NSURL URLWithString:[NSString stringWithFormat:@"https://twitter.com/%@",
+                                                       speaker.twitterHandle]];
+                                 
+                                 [sharedApplication openURL:safariTwitterURL];
+                             }
                          }];
 }
 

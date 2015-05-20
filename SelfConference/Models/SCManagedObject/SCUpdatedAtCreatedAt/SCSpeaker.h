@@ -10,6 +10,12 @@
 
 @class SCEvent;
 
+/** 
+ An 'NSNotificationCenter' notification that fires when '_twitterHandle' should 
+ be opened. 
+ */
+FOUNDATION_EXPORT NSString * const kSCSpeakerOpenTwitterProfileForSpeakerNotificationName;
+
 @interface SCSpeaker : SCUpdatedAtCreatedAt
 
 @property (nonatomic) int32_t speakerID;

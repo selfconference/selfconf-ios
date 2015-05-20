@@ -14,6 +14,8 @@
 #import "SCMenuViewController.h"
 #import "SCSharedStoryboardInstances.h"
 #import <MagicalRecord/NSManagedObject+MagicalRecord.h>
+#import "SCSpeaker.h"
+#import "UIAlertController+SCAlertController.h"
 
 @interface SCScheduleViewController () <SCSessionDetailsCollectionViewCellDelegate, UICollectionViewDataSource, UICollectionViewDelegate, SCMenuViewControllerDelegate>
 
@@ -40,6 +42,12 @@
     self.collectionView.cardLayoutTapGestureRecognizer.enabled = NO;
     
     self.collectionView.backgroundView = self.menuViewController.view;
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(openTwitterProfileForSpeakerWithNotification:)
+     name:kSCSpeakerOpenTwitterProfileForSpeakerNotificationName
+     object:nil];
 }
 
 - (SCMenuViewController *)menuViewController {
@@ -168,6 +176,16 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     if (isImmediateSearch) {
         [self.collectionView setPresenting:NO animated:YES completion:NULL];
     }
+}
+
+#pragma mark - NSNotificationCenter
+
+- (void)openTwitterProfileForSpeakerWithNotification:(NSNotification *)notification {
+    SCSpeaker *speaker = notification.object;
+    
+    [self presentViewController:[UIAlertController SC_alertControllerForOpenTwitterForSpeaker:speaker]
+                       animated:YES
+                     completion:NULL];
 }
 
 @end

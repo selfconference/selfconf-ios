@@ -58,4 +58,18 @@
     return cell;
 }
 
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView
+didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    SCSpeakerCollectionViewCell *cell =
+    (SCSpeakerCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    
+    // Since we cannot present view controllers (aka an alert), we need to
+    // notify a view controller to do this for us.
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:kSCSpeakerOpenTwitterProfileForSpeakerNotificationName
+     object:cell.speaker];
+}
+
 @end
