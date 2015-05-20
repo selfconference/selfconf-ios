@@ -254,6 +254,93 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
             </objects>
             <point key="canvasLocation" x="347" y="1158"/>
         </scene>
+        <!--Session Feedback View Controller-->
+        <scene sceneID="1OD-Vr-PMS">
+            <objects>
+                <viewController id="Oyg-3D-lDR" customClass="SCSessionFeedbackViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nzP-dI-Gil"/>
+                        <viewControllerLayoutGuide type="bottom" id="UUc-Md-lTv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KcF-AW-A5I">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session Feedback" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ea9-Kq-dZP">
+                                <rect key="frame" x="20" y="40" width="560" height="24"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add your comments here..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="imK-f8-NTs">
+                                <rect key="frame" x="20" y="137" width="560" height="382"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4M-c6-6fL">
+                                <rect key="frame" x="253" y="539" width="95" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapSubmitButton:" destination="Oyg-3D-lDR" eventType="touchUpInside" id="O4N-VQ-euT"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zd6-hK-T2T">
+                                <rect key="frame" x="225" y="84" width="150" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="YIl-vk-acX"/>
+                                    <constraint firstAttribute="width" constant="150" id="grq-Vx-azl"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="" image="thumbsUpIcon"/>
+                                    <segment title="" image="thumbsDownIcon"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HdN-xT-qQW">
+                                <rect key="frame" x="10" y="26" width="53" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="53" id="0bv-jM-CYy"/>
+                                    <constraint firstAttribute="width" secondItem="HdN-xT-qQW" secondAttribute="height" multiplier="1:1" id="u08-Nv-HJr"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" image="backArrowIcon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zd6-hK-T2T" firstAttribute="centerX" secondItem="Ea9-Kq-dZP" secondAttribute="centerX" id="21v-b0-GZz"/>
+                            <constraint firstItem="imK-f8-NTs" firstAttribute="top" secondItem="zd6-hK-T2T" secondAttribute="bottom" constant="20" id="9Z7-AP-O2E"/>
+                            <constraint firstAttribute="trailing" secondItem="Ea9-Kq-dZP" secondAttribute="trailing" constant="20" id="Lm0-cG-vpy"/>
+                            <constraint firstItem="imK-f8-NTs" firstAttribute="leading" secondItem="Ea9-Kq-dZP" secondAttribute="leading" id="NiE-Oc-jG3"/>
+                            <constraint firstItem="Ea9-Kq-dZP" firstAttribute="top" secondItem="nzP-dI-Gil" secondAttribute="bottom" constant="20" id="Ryo-kI-Jab"/>
+                            <constraint firstItem="zd6-hK-T2T" firstAttribute="top" secondItem="Ea9-Kq-dZP" secondAttribute="bottom" constant="20" id="VRj-x4-MJR"/>
+                            <constraint firstItem="Ea9-Kq-dZP" firstAttribute="centerY" secondItem="HdN-xT-qQW" secondAttribute="centerY" id="Z9p-zF-795"/>
+                            <constraint firstItem="HdN-xT-qQW" firstAttribute="leading" secondItem="KcF-AW-A5I" secondAttribute="leading" constant="10" id="btA-VP-e1X"/>
+                            <constraint firstItem="N4M-c6-6fL" firstAttribute="top" secondItem="imK-f8-NTs" secondAttribute="bottom" constant="20" id="fAa-G1-8mP"/>
+                            <constraint firstItem="UUc-Md-lTv" firstAttribute="top" secondItem="N4M-c6-6fL" secondAttribute="bottom" constant="20" id="ibA-9M-n18"/>
+                            <constraint firstItem="Ea9-Kq-dZP" firstAttribute="leading" secondItem="KcF-AW-A5I" secondAttribute="leading" constant="20" id="jmD-DY-lwu"/>
+                            <constraint firstItem="Ea9-Kq-dZP" firstAttribute="centerX" secondItem="N4M-c6-6fL" secondAttribute="centerX" id="n1x-IT-9mr"/>
+                            <constraint firstItem="imK-f8-NTs" firstAttribute="trailing" secondItem="Ea9-Kq-dZP" secondAttribute="trailing" id="yIc-Fp-wDx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="imK-f8-NTs" id="fMf-wy-9f6"/>
+                        <outlet property="thumbsUpOrDownSegmentedControl" destination="zd6-hK-T2T" id="bbA-oO-bkc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PZc-cK-e5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1039" y="1158"/>
+        </scene>
         <!--Menu View Controller-->
         <scene sceneID="uNH-5b-Wpa">
             <objects>
@@ -371,11 +458,14 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgM-vd-cf5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1051" y="1158"/>
+            <point key="canvasLocation" x="347" y="458"/>
         </scene>
     </scenes>
     <resources>
+        <image name="backArrowIcon" width="33" height="33"/>
         <image name="tealUnfilledHeart" width="30" height="30"/>
+        <image name="thumbsDownIcon" width="33" height="33"/>
+        <image name="thumbsUpIcon" width="33" height="33"/>
         <image name="twitterIcon" width="10" height="10"/>
     </resources>
 </document>
