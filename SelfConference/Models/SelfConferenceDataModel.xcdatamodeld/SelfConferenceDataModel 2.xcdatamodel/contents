@@ -244,7 +244,7 @@
         </relationship>
         <relationship name="room" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="sessions" inverseEntity="Room" syncable="YES">
             <userInfo>
-                <entry key="mappedKeyName" value="room"/>
+                <entry key="mappedKeyName" value="room_id"/>
             </userInfo>
         </relationship>
         <relationship name="speakers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Speaker" inverseName="sessions" inverseEntity="Speaker" syncable="YES">
