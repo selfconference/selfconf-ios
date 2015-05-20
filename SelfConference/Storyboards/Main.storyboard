@@ -126,8 +126,8 @@ Lao Tzu said The world is won by those who let it go. Giving up the steps and pr
                                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Npb-ab-hQP" userLabel="Biography Label" customClass="SCTealTextColorLabel">
-                                                                        <rect key="frame" x="20" y="31" width="560" height="199"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Npb-ab-hQP" userLabel="Biography Label" customClass="SCTealTextColorLabel">
+                                                                        <rect key="frame" x="80" y="31" width="500" height="199"/>
                                                                         <string key="text">Bill's time is spent between curly braces, primarily with C#. His technical areas of focus are C#, .NET, TypeScript. His other, non-coding passion is to help organizations build effective, high-functioning developer teams.
 
 Bill is the author of the best selling Effective C#, now in its second edition, and More Effective C#. He has created LiveLessons on Async programming in C# and C# Puzzlers. His articles have appeared in MSDN Magazine, the C# Developer Center, Visual C++ Developer's Journal, Visual Studio Magazine, ASP.NET Pro, .NET Developer's Journal and more. He's written hundreds of technical articles for software developers. He actively blogs about technical and business topics. Bill is also a regional director for Microsoft.</string>
@@ -135,19 +135,67 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
+                                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Bl4-ji-2tE">
+                                                                        <rect key="frame" x="20" y="31" width="50" height="199"/>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="A1O-2c-yrJ"/>
+                                                                            <constraint firstAttribute="width" constant="50" id="NHN-Rv-5CH"/>
+                                                                        </constraints>
+                                                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PlW-YQ-6PT">
+                                                                            <size key="itemSize" width="50" height="50"/>
+                                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                        </collectionViewFlowLayout>
+                                                                        <cells>
+                                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SCSpeakerCollectionViewCell" id="Tbg-6w-Hk7" customClass="SCSpeakerCollectionViewCell">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                    <subviews>
+                                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7zS-ex-v9W">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                                        </imageView>
+                                                                                    </subviews>
+                                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                                </view>
+                                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                <constraints>
+                                                                                    <constraint firstItem="7zS-ex-v9W" firstAttribute="leading" secondItem="Tbg-6w-Hk7" secondAttribute="leading" id="LpS-p9-Nw2"/>
+                                                                                    <constraint firstItem="7zS-ex-v9W" firstAttribute="top" secondItem="Tbg-6w-Hk7" secondAttribute="top" id="Mau-2W-NwQ"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="7zS-ex-v9W" secondAttribute="bottom" id="dLb-cl-aB7"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="7zS-ex-v9W" secondAttribute="trailing" id="fp2-WC-knX"/>
+                                                                                </constraints>
+                                                                                <connections>
+                                                                                    <outlet property="imageView" destination="7zS-ex-v9W" id="eB9-HO-o7J"/>
+                                                                                </connections>
+                                                                            </collectionViewCell>
+                                                                        </cells>
+                                                                        <connections>
+                                                                            <outlet property="dataSource" destination="gET-uK-sjh" id="y0R-Mv-ni6"/>
+                                                                            <outlet property="delegate" destination="gET-uK-sjh" id="d8A-E1-Uwh"/>
+                                                                        </connections>
+                                                                    </collectionView>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstItem="Ezo-mO-u0n" firstAttribute="leading" secondItem="Npb-ab-hQP" secondAttribute="leading" id="AvJ-LC-qfT"/>
+                                                                    <constraint firstItem="Bl4-ji-2tE" firstAttribute="leading" secondItem="jvd-Xw-pIu" secondAttribute="leading" constant="20" id="As8-LD-hlk"/>
                                                                     <constraint firstAttribute="trailing" secondItem="Ezo-mO-u0n" secondAttribute="trailing" constant="20" id="IJ3-VQ-21a"/>
                                                                     <constraint firstItem="Ezo-mO-u0n" firstAttribute="top" secondItem="jvd-Xw-pIu" secondAttribute="top" id="MuJ-J5-moq"/>
                                                                     <constraint firstItem="Ezo-mO-u0n" firstAttribute="leading" secondItem="jvd-Xw-pIu" secondAttribute="leading" constant="20" id="azn-yn-Z8b"/>
                                                                     <constraint firstItem="Ezo-mO-u0n" firstAttribute="trailing" secondItem="Npb-ab-hQP" secondAttribute="trailing" id="eB1-0n-8Lr"/>
+                                                                    <constraint firstItem="Npb-ab-hQP" firstAttribute="top" secondItem="Bl4-ji-2tE" secondAttribute="top" id="lU0-CP-edI"/>
+                                                                    <constraint firstItem="Npb-ab-hQP" firstAttribute="bottom" secondItem="Bl4-ji-2tE" secondAttribute="bottom" id="mex-Zf-1eX"/>
                                                                     <constraint firstAttribute="bottom" secondItem="Npb-ab-hQP" secondAttribute="bottom" constant="20" id="uHa-Kr-inr"/>
                                                                     <constraint firstItem="Npb-ab-hQP" firstAttribute="top" secondItem="Ezo-mO-u0n" secondAttribute="bottom" constant="10" id="vSw-ch-4nx"/>
+                                                                    <constraint firstItem="Npb-ab-hQP" firstAttribute="leading" secondItem="Bl4-ji-2tE" secondAttribute="trailing" constant="10" id="x93-m0-FEY"/>
                                                                 </constraints>
                                                             </tableViewCellContentView>
                                                             <connections>
                                                                 <outlet property="biographyLabel" destination="Npb-ab-hQP" id="xn0-dw-jnz"/>
+                                                                <outlet property="collectionView" destination="Bl4-ji-2tE" id="Sag-SY-txB"/>
                                                                 <outlet property="nameLabel" destination="Ezo-mO-u0n" id="NOj-gh-XAo"/>
                                                             </connections>
                                                         </tableViewCell>
