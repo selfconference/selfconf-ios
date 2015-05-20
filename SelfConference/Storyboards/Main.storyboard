@@ -158,6 +158,7 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                                                                                     <subviews>
                                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7zS-ex-v9W">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                                         </imageView>
                                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="pFV-8i-8se">
                                                                                             <rect key="frame" x="38" y="38" width="10" height="10"/>
