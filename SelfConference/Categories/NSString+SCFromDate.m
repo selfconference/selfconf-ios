@@ -28,7 +28,7 @@
             // Workaround for an API bug where the from_date is compared with
             // a >= sign, when we really want >
             fromDate = [[NSDateFormatter SCC_sharedDateFormatterWithDefaultDateFormat]
-                        stringFromDate:updatedAt.mt_oneSecondNext];
+                        stringFromDate:[updatedAt mt_dateSecondsAfter:1]];
         }
     }
     
