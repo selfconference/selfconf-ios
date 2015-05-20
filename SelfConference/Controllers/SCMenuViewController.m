@@ -12,6 +12,7 @@
 #import "SCSponsorLevelHeaderView.h"
 #import "SCEvent.h"
 #import "SCSponsorLevel.h"
+#import "UIAlertController+SCAlertController.h"
 
 @interface SCMenuViewController () <UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -169,6 +170,18 @@
     view.sponsorLevel = [self sponsorLevelInSection:indexPath.section];
     
     return view;
+}
+
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView
+didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    SCSponsorCollectionViewCell *cell =
+    (SCSponsorCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    
+    [self presentViewController:[UIAlertController SC_alertControllerForOpenLinkForSponsor:cell.sponsor]
+                       animated:YES
+                     completion:NULL];
 }
 
 @end
