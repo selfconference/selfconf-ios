@@ -31,8 +31,10 @@
                            session.joinedSpeakerNamesOrderedByName,
                            session.name];
     
+    // TODO: Remove the hardcoded 1 hour earlier. There seems to be an issue
+    // with the API and the date it returns. This is a temporary workaround.
     self.slotAndRoomLabel.text = [NSString stringWithFormat:@"%@ - %@",
-                                  [session.slot
+                                  [[session.slot mt_dateHoursBefore:1]
                                    mt_stringFromDateWithFormat:@"EEEE ha"
                                    localized:YES],
                                   session.room.name];
