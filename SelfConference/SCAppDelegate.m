@@ -34,7 +34,7 @@
 /** Applies styles to all 'UISearchBar' instances that are created */
 - (void)styleSearchBarGlobally {
     UISearchBar *searchBar = [UISearchBar appearance];
-
+    
     [searchBar setImage:[UIImage imageNamed:@"whiteSearchBarIcon"]
        forSearchBarIcon:UISearchBarIconSearch
                   state:UIControlStateNormal];
@@ -64,14 +64,14 @@
 
 /** Fetches each model from the API. */
 - (void)fetchAllDataFromAPI {
-    [SCEvent getCurrentEventWithCompletionBlock:^(SCEvent *event, NSError *error) {
-        [event getSpeakersWithCompletionBlock:^(NSArray *objects, NSError *error) {
-            [event getSessionsWithCompletionBlock:^(NSArray *objects, NSError *error) {
-                [event getSponsorsWithCompletionBlock:^(NSArray *objects, NSError *error) {
-                    [event getSponsorLevelsWithCompletionBlock:^(NSArray *objects, NSError *error) {
-                        [event getOrganizersWithCompletionBlock:^(NSArray *objects, NSError *error) {
-                            [SCVenue getVenuesWithCompletionBlock:^(NSArray *objects, NSError *error) {
-                                [event getRoomsWithCompletionBlock:^(NSArray *objects, NSError *error) {
+    [SCVenue getVenuesWithCompletionBlock:^(NSArray *objects, NSError *error) {
+        [SCEvent getCurrentEventWithCompletionBlock:^(SCEvent *event, NSError *error) {
+            [event getOrganizersWithCompletionBlock:^(NSArray *objects, NSError *error) {
+                [event getRoomsWithCompletionBlock:^(NSArray *objects, NSError *error) {
+                    [event getSessionsWithCompletionBlock:^(NSArray *objects, NSError *error) {
+                        [event getSpeakersWithCompletionBlock:^(NSArray *objects, NSError *error) {
+                            [event getSponsorLevelsWithCompletionBlock:^(NSArray *objects, NSError *error) {
+                                [event getSponsorsWithCompletionBlock:^(NSArray *objects, NSError *error) {
                                     NSLog(@"Completed network refresh");
                                 }];
                             }];
