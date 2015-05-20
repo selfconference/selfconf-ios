@@ -10,6 +10,7 @@
 		1F0734EB1B0C1B7B00A74989 /* SCSpeakerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0734EA1B0C1B7B00A74989 /* SCSpeakerCollectionViewCell.m */; };
 		1F0734EE1B0C203900A74989 /* UIAlertController+SCAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0734ED1B0C203900A74989 /* UIAlertController+SCAlertController.m */; };
 		1F0734F11B0C215B00A74989 /* UIAlertAction+SCAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0734F01B0C215B00A74989 /* UIAlertAction+SCAlertAction.m */; };
+		1F0734F41B0C327B00A74989 /* SCFadeWhenHighlightedCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0734F31B0C327B00A74989 /* SCFadeWhenHighlightedCollectionViewCell.m */; };
 		1F0BAA7B1A99886F0059C73A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAA791A99886F0059C73A /* main.m */; };
 		1F0BAA851A9989460059C73A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BAA841A9989460059C73A /* Images.xcassets */; };
 		1F0BAA881A9989890059C73A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BAA871A9989890059C73A /* LaunchScreen.xib */; };
@@ -76,6 +77,8 @@
 		1F0734ED1B0C203900A74989 /* UIAlertController+SCAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+SCAlertController.m"; sourceTree = "<group>"; };
 		1F0734EF1B0C215B00A74989 /* UIAlertAction+SCAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertAction+SCAlertAction.h"; sourceTree = "<group>"; };
 		1F0734F01B0C215B00A74989 /* UIAlertAction+SCAlertAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertAction+SCAlertAction.m"; sourceTree = "<group>"; };
+		1F0734F21B0C327B00A74989 /* SCFadeWhenHighlightedCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCFadeWhenHighlightedCollectionViewCell.h; sourceTree = "<group>"; };
+		1F0734F31B0C327B00A74989 /* SCFadeWhenHighlightedCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCFadeWhenHighlightedCollectionViewCell.m; sourceTree = "<group>"; };
 		1F0BAA781A99886F0059C73A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F0BAA791A99886F0059C73A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F0BAA841A9989460059C73A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -215,6 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				1F0BAA871A9989890059C73A /* LaunchScreen.xib */,
+				1F0734F21B0C327B00A74989 /* SCFadeWhenHighlightedCollectionViewCell.h */,
+				1F0734F31B0C327B00A74989 /* SCFadeWhenHighlightedCollectionViewCell.m */,
 				1F7560831B04448F00795E54 /* SCSessionDetailsCollectionViewCell.h */,
 				1F7560841B04448F00795E54 /* SCSessionDetailsCollectionViewCell.m */,
 				1F5AC6FE1ABE62680076E341 /* SCSessionNameTableViewCell.h */,
@@ -599,6 +604,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FBD60D71B018EDC008E0FEC /* SCRoom.m in Sources */,
+				1F0734F41B0C327B00A74989 /* SCFadeWhenHighlightedCollectionViewCell.m in Sources */,
 				1FBD60E51B019DDE008E0FEC /* NSManagedObjectContext+SCManagedObjectContext.m in Sources */,
 				1F7560851B04448F00795E54 /* SCSessionDetailsCollectionViewCell.m in Sources */,
 				1F0734F11B0C215B00A74989 /* UIAlertAction+SCAlertAction.m in Sources */,

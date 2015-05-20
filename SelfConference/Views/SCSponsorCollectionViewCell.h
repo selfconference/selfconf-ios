@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 Self Conference. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SCFadeWhenHighlightedCollectionViewCell.h"
 
 @class SCSponsor;
 
-@interface SCSponsorCollectionViewCell : UICollectionViewCell
+@interface SCSponsorCollectionViewCell : SCFadeWhenHighlightedCollectionViewCell
 
 @property (nonatomic) SCSponsor *sponsor;
 

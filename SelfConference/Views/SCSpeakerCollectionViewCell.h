@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 Self Conference. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SCFadeWhenHighlightedCollectionViewCell.h"
 
 @class SCSpeaker;
 
-@interface SCSpeakerCollectionViewCell : UICollectionViewCell
+@interface SCSpeakerCollectionViewCell : SCFadeWhenHighlightedCollectionViewCell
 
 @property (nonatomic) SCSpeaker *speaker;
 
