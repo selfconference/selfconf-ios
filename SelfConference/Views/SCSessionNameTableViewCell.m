@@ -27,8 +27,9 @@
 #pragma mark - Overrides
 
 - (void)setSession:(SCSession *)session {
-    self.nameLabel.text = [NSString stringWithFormat:@"%@: %@",
+    self.nameLabel.text = [NSString stringWithFormat:@"%@: %@%@",
                            session.joinedSpeakerNamesOrderedByName,
+                           session.isKeynote ? @"Keynote - " : @"",
                            session.name];
     
     // TODO: Remove the hardcoded 1 hour earlier. There seems to be an issue
