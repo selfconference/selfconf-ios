@@ -11,6 +11,7 @@
 @interface UIColor (SCColor)
 
 + (instancetype)SC_teal;
++ (instancetype)SC_darkTeal;
 + (instancetype)SC_orange;
 + (instancetype)SC_purple;
 + (instancetype)SC_yellow;

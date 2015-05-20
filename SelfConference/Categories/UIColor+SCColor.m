@@ -15,6 +15,11 @@
     [self SC_solidColorWithNumeratorsForRed:51 green:145 blue:148];
 }
 
++ (instancetype)SC_darkTeal {
+    return
+    [self SC_solidColorWithNumeratorsForRed:45 green:130 blue:133];
+}
+
 + (instancetype)SC_orange {
     return
     [self SC_solidColorWithNumeratorsForRed:251 green:107 blue:64];
