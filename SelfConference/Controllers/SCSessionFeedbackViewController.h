@@ -10,8 +10,19 @@
 
 @class SCSession;
 
+@protocol SCSessionFeedbackViewControllerDelegate;
+
 @interface SCSessionFeedbackViewController : UIViewController
 
 @property (nonatomic) SCSession *session;
+
+@property (nonatomic, weak) id<SCSessionFeedbackViewControllerDelegate> delegate;
+
+@end
+
+@protocol SCSessionFeedbackViewControllerDelegate <NSObject>
+
+/** Called when the user just wants to close without submitting feedback. */
+- (void)sessionFeedbackViewControllerDidTapDismissButton:(SCSessionFeedbackViewController *)sessionFeedbackViewController;
 
 @end

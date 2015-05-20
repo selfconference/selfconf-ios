@@ -12,6 +12,10 @@
 #import "SCSessionNameTableViewCell.h"
 #import "SCSessionAbstractTableViewCell.h"
 #import "SCSessionSpeakerDetailsTableViewCell.h"
+#import "SCSessionFeedbackViewController.h"
+#import "UIColor+SCColor.h"
+#import "SCSharedStoryboardInstances.h"
+#import "UIView+SCUtilities.h"
 
 typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
     /** Holds the name of the session */
@@ -29,7 +33,11 @@ typedef NS_ENUM(NSInteger, SCSessionDetailsTableViewSection) {
 
 static CGFloat const kCellShouldCollapseAfterDragOffset = 75.0f;
 
-@interface SCSessionDetailsCollectionViewCell () <UITableViewDataSource, UITableViewDelegate, SCSessionNameTableViewCellDelegate>
+@interface SCSessionDetailsCollectionViewCell () <UITableViewDataSource, UITableViewDelegate, SCSessionNameTableViewCellDelegate, SCSessionFeedbackViewControllerDelegate>
+
+@property (weak, nonatomic) IBOutlet UIButton *submitFeedbackButton;
+
+@property (nonatomic) SCSessionFeedbackViewController *sessionFeedbackViewController;
 
 /** Returns the last known width */
 @property (nonatomic) CGFloat previousWidth;
@@ -45,9 +53,6 @@ static CGFloat const kCellShouldCollapseAfterDragOffset = 75.0f;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 150.0f;
     
-    // Don't show empty cells at the end of the table
-    self.tableView.tableFooterView = [UIView new];
-    
     CGFloat cornerRadius = 10.0f;
     
     self.layer.masksToBounds = NO;
@@ -57,6 +62,9 @@ static CGFloat const kCellShouldCollapseAfterDragOffset = 75.0f;
     self.layer.shadowOffset = CGSizeZero;
     self.layer.cornerRadius = cornerRadius;
     self.tableView.layer.cornerRadius = cornerRadius;
+    
+    [self.submitFeedbackButton setTitleColor:[UIColor SC_orange]
+                                    forState:UIControlStateNormal];
 }
 
 - (void)layoutSubviews {
@@ -182,6 +190,35 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void)sessionNameTableViewCellDidUpdateFavorite:(SCSessionNameTableViewCell *)cell {
     [self.delegate sessionDetailsCollectionViewCellDidUpdateFavorite:self];
+}
+
+#pragma mark - UIButton actions
+
+- (IBAction)didTapSubmitFeedbackButton:(id)sender {
+    [self
+     SC_flipWithOptions:UIViewAnimationOptionTransitionFlipFromLeft
+     halfwayBlock:^(BOOL finished) {
+         self.sessionFeedbackViewController =
+         [[SCSharedStoryboardInstances sharedMainStoryboardInstance]
+          instantiateViewControllerWithIdentifier:NSStringFromClass([SCSessionFeedbackViewController class])];
+         
+         self.sessionFeedbackViewController.delegate = self;
+         
+         [self.contentView SC_addAndFullyConstrainSubview:self.sessionFeedbackViewController.view];
+     }
+     completionBlock:NULL];
+}
+
+#pragma mark - SCSessionFeedbackViewControllerDelegate
+
+- (void)sessionFeedbackViewControllerDidTapDismissButton:(SCSessionFeedbackViewController *)sessionFeedbackViewController {
+    [self
+     SC_flipWithOptions:UIViewAnimationOptionTransitionFlipFromRight
+     halfwayBlock:^(BOOL finished) {
+         [self.sessionFeedbackViewController.view removeFromSuperview];
+         self.sessionFeedbackViewController = nil;
+     }
+     completionBlock:NULL];
 }
 
 @end

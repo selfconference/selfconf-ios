@@ -14,11 +14,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Q1c-4l-GFc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sJV-uR-18p">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="d8q-4k-nwR">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
                                 <gestureRecognizers/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                                 <collectionViewLayout key="collectionViewLayout" id="KyG-oX-anO" customClass="MTCardLayout"/>
@@ -27,11 +27,32 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="461"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="EwR-jc-0FO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="461"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
+                                                    <view key="tableFooterView" contentMode="scaleToFill" id="K8A-mK-VOe">
+                                                        <rect key="frame" x="0.0" y="587" width="600" height="78"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wkr-a1-rc5">
+                                                                <rect key="frame" x="220" y="20" width="161" height="38"/>
+                                                                <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                                                <state key="normal" title="Submit Feedback">
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="didTapSubmitFeedbackButton:" destination="wKV-T4-D0r" eventType="touchUpInside" id="eYj-7R-qqv"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="centerY" secondItem="Wkr-a1-rc5" secondAttribute="centerY" id="VUf-Vl-2iz"/>
+                                                            <constraint firstAttribute="centerX" secondItem="Wkr-a1-rc5" secondAttribute="centerX" id="hGf-yB-Lt8"/>
+                                                        </constraints>
+                                                    </view>
                                                     <prototypes>
                                                         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SCSessionNameTableViewCell" rowHeight="75" id="DZe-uq-NHP" customClass="SCSessionNameTableViewCell">
                                                             <autoresizingMask key="autoresizingMask"/>
@@ -127,7 +148,7 @@ Lao Tzu said The world is won by those who let it go. Giving up the steps and pr
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Npb-ab-hQP" userLabel="Biography Label" customClass="SCTealTextColorLabel">
-                                                                        <rect key="frame" x="80" y="31" width="500" height="199"/>
+                                                                        <rect key="frame" x="80" y="31" width="500" height="219"/>
                                                                         <string key="text">Bill's time is spent between curly braces, primarily with C#. His technical areas of focus are C#, .NET, TypeScript. His other, non-coding passion is to help organizations build effective, high-functioning developer teams.
 
 Bill is the author of the best selling Effective C#, now in its second edition, and More Effective C#. He has created LiveLessons on Async programming in C# and C# Puzzlers. His articles have appeared in MSDN Magazine, the C# Developer Center, Visual C++ Developer's Journal, Visual Studio Magazine, ASP.NET Pro, .NET Developer's Journal and more. He's written hundreds of technical articles for software developers. He actively blogs about technical and business topics. Bill is also a regional director for Microsoft.</string>
@@ -136,7 +157,7 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Bl4-ji-2tE">
-                                                                        <rect key="frame" x="20" y="31" width="50" height="199"/>
+                                                                        <rect key="frame" x="20" y="31" width="50" height="219"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="A1O-2c-yrJ"/>
@@ -198,7 +219,7 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                                                                     <constraint firstItem="Ezo-mO-u0n" firstAttribute="trailing" secondItem="Npb-ab-hQP" secondAttribute="trailing" id="eB1-0n-8Lr"/>
                                                                     <constraint firstItem="Npb-ab-hQP" firstAttribute="top" secondItem="Bl4-ji-2tE" secondAttribute="top" id="lU0-CP-edI"/>
                                                                     <constraint firstItem="Npb-ab-hQP" firstAttribute="bottom" secondItem="Bl4-ji-2tE" secondAttribute="bottom" id="mex-Zf-1eX"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="Npb-ab-hQP" secondAttribute="bottom" constant="20" id="uHa-Kr-inr"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="Npb-ab-hQP" secondAttribute="bottom" id="uHa-Kr-inr"/>
                                                                     <constraint firstItem="Npb-ab-hQP" firstAttribute="top" secondItem="Ezo-mO-u0n" secondAttribute="bottom" constant="10" id="vSw-ch-4nx"/>
                                                                     <constraint firstItem="Npb-ab-hQP" firstAttribute="leading" secondItem="Bl4-ji-2tE" secondAttribute="trailing" constant="10" id="x93-m0-FEY"/>
                                                                 </constraints>
@@ -226,8 +247,9 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                                             <constraint firstItem="EwR-jc-0FO" firstAttribute="leading" secondItem="wKV-T4-D0r" secondAttribute="leading" id="V2P-TU-DG9"/>
                                             <constraint firstItem="EwR-jc-0FO" firstAttribute="top" secondItem="wKV-T4-D0r" secondAttribute="top" id="npI-q6-wQY"/>
                                         </constraints>
-                                        <size key="customSize" width="600" height="461"/>
+                                        <size key="customSize" width="600" height="1200"/>
                                         <connections>
+                                            <outlet property="submitFeedbackButton" destination="Wkr-a1-rc5" id="163-3o-acT"/>
                                             <outlet property="tableView" destination="EwR-jc-0FO" id="8If-Nh-DcO"/>
                                         </connections>
                                     </collectionViewCell>
@@ -246,18 +268,20 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                             <constraint firstItem="d8q-4k-nwR" firstAttribute="leading" secondItem="sJV-uR-18p" secondAttribute="leading" id="qRR-aY-9ui"/>
                         </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="1200"/>
                     <connections>
                         <outlet property="collectionView" destination="d8q-4k-nwR" id="qEK-Dx-oKv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ix3-he-G8R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="347" y="1158"/>
+            <point key="canvasLocation" x="347" y="1458"/>
         </scene>
         <!--Session Feedback View Controller-->
         <scene sceneID="1OD-Vr-PMS">
             <objects>
-                <viewController id="Oyg-3D-lDR" customClass="SCSessionFeedbackViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SCSessionFeedbackViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Oyg-3D-lDR" customClass="SCSessionFeedbackViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nzP-dI-Gil"/>
                         <viewControllerLayoutGuide type="bottom" id="UUc-Md-lTv"/>
@@ -313,6 +337,9 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                                 <state key="normal" image="backArrowIcon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="didTapDismissButton:" destination="Oyg-3D-lDR" eventType="touchUpInside" id="dZl-zK-NXh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>

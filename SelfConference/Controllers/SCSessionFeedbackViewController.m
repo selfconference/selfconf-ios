@@ -33,4 +33,8 @@
     // TODO: Submit feedback for the session
 }
 
+- (IBAction)didTapDismissButton:(id)sender {
+    [self.delegate sessionFeedbackViewControllerDidTapDismissButton:self];
+}
+
 @end
