@@ -16,8 +16,7 @@
 @implementation SCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [self styleNavigationBarGlobally];
-    [self styleTabBarGlobally];
+    [self styleSearchBarGlobally];
     
     [MagicalRecord setupAutoMigratingCoreDataStack];
     
@@ -32,21 +31,35 @@
 
 #pragma mark - Internal
 
-/** Applies styles to all 'UITabBar' instances that are created */
-- (void)styleTabBarGlobally {
-    UITabBar *tabBar = [UITabBar appearance];
-    
-    tabBar.barTintColor = [UIColor SC_teal];
-    tabBar.tintColor = [UIColor whiteColor];
-}
+/** Applies styles to all 'UISearchBar' instances that are created */
+- (void)styleSearchBarGlobally {
+    UISearchBar *searchBar = [UISearchBar appearance];
 
-/** Applies styles to all 'UINavigationBar' instances that are created */
-- (void)styleNavigationBarGlobally {
-    UINavigationBar *navigationBar = [UINavigationBar appearance];
+    [searchBar setImage:[UIImage imageNamed:@"whiteSearchBarIcon"]
+       forSearchBarIcon:UISearchBarIconSearch
+                  state:UIControlStateNormal];
     
-    navigationBar.tintColor = [UIColor whiteColor];
-    navigationBar.titleTextAttributes =
-  @{NSForegroundColorAttributeName: navigationBar.tintColor};
+    [searchBar setImage:[UIImage imageNamed:@"whiteCancelIcon"]
+       forSearchBarIcon:UISearchBarIconClear
+                  state:UIControlStateNormal];
+    
+    [searchBar setImage:[UIImage imageNamed:@"whiteCancelIconHighlighted"]
+       forSearchBarIcon:UISearchBarIconClear
+                  state:UIControlStateHighlighted];
+    
+    UIColor *whiteColor = [UIColor whiteColor];
+    
+    searchBar.tintColor = whiteColor;
+    
+    UITextField *textField =
+    [UITextField appearanceWhenContainedIn:[UISearchBar class], nil];
+    
+    textField.textColor = whiteColor;
+    
+    textField.attributedPlaceholder =
+    [[NSAttributedString alloc]
+     initWithString:@"Search"
+     attributes:@{NSForegroundColorAttributeName: whiteColor}];
 }
 
 /** Fetches each model from the API. */
