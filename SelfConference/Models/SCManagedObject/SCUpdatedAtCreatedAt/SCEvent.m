@@ -67,9 +67,7 @@
 + (void)getCurrentEventWithCompletionBlock:(SCEventWithErrorBlock)completionBlock {
     [self
      getObjectsFromUrlString:[self getAllEventsUrlString]
-     completionBlock:^(NSArray *objects, NSError *error) {
-         NSLog(@"Events: %lu", (unsigned long)objects.count);
-         
+     completionBlock:^(NSArray *objects, NSError *error) {         
          if (error) {
              [self callSCEventWithErrorBlock:completionBlock
                                        event:nil

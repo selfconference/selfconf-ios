@@ -15,5 +15,6 @@
 @dynamic name;
 @dynamic venue;
 @dynamic sessions;
+@dynamic event;
 
 @end
