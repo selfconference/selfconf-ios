@@ -108,8 +108,8 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     SCSessionDetailsCollectionViewCell *cell =
     (SCSessionDetailsCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
     
-    cell.tableView.scrollEnabled = YES
-    ;
+    cell.tableView.scrollEnabled = YES;
+    
     [self.collectionView setPresenting:YES animated:YES completion:NULL];
 }
 
@@ -130,7 +130,12 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
 #pragma mark - SCSessionDetailsCollectionViewCellDelegate
 
 - (void)sessionDetailsCollectionViewCellDidTapEmbeddedTableViewCell:(SCSessionDetailsCollectionViewCell *)cell {
-    NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
+    // If tapping on another card that is collapsed at the bottom of the screen,
+    // '[self.collectionView indexPathForCell:cell];' returns some other cell.
+    // This ensures we properly deselect the selected cell, if it exists.
+    NSIndexPath *indexPath =
+    self.collectionView.indexPathsForSelectedItems.firstObject ?:
+    [self.collectionView indexPathForCell:cell];
     
     if (self.collectionView.presenting) {
         [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
