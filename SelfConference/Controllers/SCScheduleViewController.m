@@ -163,6 +163,17 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     }
 }
 
+- (void)sessionDetailsCollectionViewCell:(SCSessionDetailsCollectionViewCell *)cell
+                    isSubmittingFeedback:(BOOL)isSubmittingFeedback {
+    // Don't allow the user to expand cards while submitting feedback, but allow
+    // them to interact with the feedback screen on the specific cell.
+    for (UICollectionViewCell *visibleCell in self.collectionView.visibleCells) {
+        if (visibleCell != cell) {
+            visibleCell.userInteractionEnabled = !isSubmittingFeedback;
+        }
+    }
+}
+
 #pragma mark - SCMenuViewControllerDelegate
 
 - (void)menuViewController:(SCMenuViewController *)menuViewController

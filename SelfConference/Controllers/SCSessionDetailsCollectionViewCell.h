@@ -32,4 +32,8 @@
 /** Called when the session is favorited or unfavorited. */
 - (void)sessionDetailsCollectionViewCellDidUpdateFavorite:(SCSessionDetailsCollectionViewCell *)cell;
 
+/** Called when the user flips to and from the submit feedback screen. */
+- (void)sessionDetailsCollectionViewCell:(SCSessionDetailsCollectionViewCell *)cell
+                    isSubmittingFeedback:(BOOL)isSubmittingFeedback;
+
 @end

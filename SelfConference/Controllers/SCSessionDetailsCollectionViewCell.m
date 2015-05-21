@@ -213,7 +213,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
          
          [self.contentView SC_addAndFullyConstrainSubview:self.sessionFeedbackViewController.view];
      }
-     completionBlock:NULL];
+     completionBlock:^(BOOL finished) {
+         [self.delegate sessionDetailsCollectionViewCell:self
+                                    isSubmittingFeedback:YES];
+     }];
 }
 
 #pragma mark - SCSessionFeedbackViewControllerDelegate
@@ -241,7 +244,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
          [self.sessionFeedbackViewController.view removeFromSuperview];
          self.sessionFeedbackViewController = nil;
      }
-     completionBlock:NULL];
+     completionBlock:^(BOOL finished) {
+         [self.delegate sessionDetailsCollectionViewCell:self
+                                    isSubmittingFeedback:NO];
+     }];
 }
 
 /** 
