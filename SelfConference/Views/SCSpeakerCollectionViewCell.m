@@ -18,6 +18,13 @@
 
 @implementation SCSpeakerCollectionViewCell
 
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    
+    // In case there is no image for the next speaker, show a black box instead
+    self.imageView.image = nil;
+}
+
 - (void)setSpeaker:(SCSpeaker *)speaker {
     [self.imageView setImageWithURL:[NSURL URLWithString:speaker.photoUrlString]];
     
