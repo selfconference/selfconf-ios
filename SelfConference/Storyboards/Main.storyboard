@@ -780,6 +780,9 @@ Cg
                             <constraint firstAttribute="trailing" secondItem="zmn-fV-myT" secondAttribute="trailing" id="vn2-ln-Hc7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="wPs-Az-oLg" id="jcC-Yh-m9f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tlJ-oM-kFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
