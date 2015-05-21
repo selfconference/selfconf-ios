@@ -56,6 +56,8 @@ static CGFloat const kCellShouldCollapseAfterDragOffset = 75.0f;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 150.0f;
     
+    self.backgroundColor = [UIColor SC_offWhite];
+    
     self.cornerRadius = 10.0f;
     
     self.layer.masksToBounds = NO;

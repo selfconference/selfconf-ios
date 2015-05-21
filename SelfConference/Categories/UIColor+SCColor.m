@@ -40,6 +40,11 @@
     [self SC_solidColorWithNumeratorsForRed:241 green:13 blue:73];
 }
 
++ (instancetype)SC_offWhite {
+    return
+    [self SC_solidColorWithNumeratorsForRed:245 green:244 blue:244];
+}
+
 #pragma mark - Internal
 
 /** Returns an opaque color with the given RGB numerators. */

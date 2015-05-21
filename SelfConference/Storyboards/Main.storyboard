@@ -47,7 +47,7 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="centerY" secondItem="Wkr-a1-rc5" secondAttribute="centerY" id="VUf-Vl-2iz"/>
                                                             <constraint firstAttribute="centerX" secondItem="Wkr-a1-rc5" secondAttribute="centerX" id="hGf-yB-Lt8"/>
@@ -91,6 +91,7 @@
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstItem="ude-pC-a0w" firstAttribute="top" secondItem="Asr-HI-9gk" secondAttribute="bottom" id="2Jv-7U-EfI"/>
                                                                     <constraint firstItem="ude-pC-a0w" firstAttribute="leading" secondItem="Asr-HI-9gk" secondAttribute="leading" id="C4A-ra-Idq"/>
@@ -103,6 +104,7 @@
                                                                     <constraint firstItem="qNV-hP-gRD" firstAttribute="leading" secondItem="Asr-HI-9gk" secondAttribute="trailing" constant="10" id="wUq-7w-DRp"/>
                                                                 </constraints>
                                                             </tableViewCellContentView>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <connections>
                                                                 <outlet property="favoriteButton" destination="qNV-hP-gRD" id="uOc-z8-xX2"/>
                                                                 <outlet property="nameLabel" destination="Asr-HI-9gk" id="g5Y-Ov-6gk"/>
@@ -125,6 +127,7 @@ Lao Tzu said The world is won by those who let it go. Giving up the steps and pr
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="trailing" secondItem="uHf-yV-DZ2" secondAttribute="trailing" constant="20" id="BDO-Ml-UEE"/>
                                                                     <constraint firstItem="uHf-yV-DZ2" firstAttribute="top" secondItem="x9o-hC-0Ti" secondAttribute="top" constant="10" id="W3Q-cs-741"/>
@@ -132,6 +135,7 @@ Lao Tzu said The world is won by those who let it go. Giving up the steps and pr
                                                                     <constraint firstAttribute="bottom" secondItem="uHf-yV-DZ2" secondAttribute="bottom" constant="20" id="eYP-B4-l6a"/>
                                                                 </constraints>
                                                             </tableViewCellContentView>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <connections>
                                                                 <outlet property="abstractLabel" destination="uHf-yV-DZ2" id="lIX-rX-wrU"/>
                                                             </connections>
@@ -158,7 +162,7 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                                                                     </label>
                                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Bl4-ji-2tE">
                                                                         <rect key="frame" x="20" y="31" width="50" height="219"/>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="A1O-2c-yrJ"/>
                                                                             <constraint firstAttribute="width" constant="50" id="NHN-Rv-5CH"/>
@@ -211,6 +215,7 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                                                                         </connections>
                                                                     </collectionView>
                                                                 </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstItem="Bl4-ji-2tE" firstAttribute="leading" secondItem="jvd-Xw-pIu" secondAttribute="leading" constant="20" id="As8-LD-hlk"/>
                                                                     <constraint firstAttribute="trailing" secondItem="Ezo-mO-u0n" secondAttribute="trailing" constant="20" id="IJ3-VQ-21a"/>
@@ -224,6 +229,7 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                                                                     <constraint firstItem="Npb-ab-hQP" firstAttribute="leading" secondItem="Bl4-ji-2tE" secondAttribute="trailing" constant="10" id="x93-m0-FEY"/>
                                                                 </constraints>
                                                             </tableViewCellContentView>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <connections>
                                                                 <outlet property="biographyLabel" destination="Npb-ab-hQP" id="xn0-dw-jnz"/>
                                                                 <outlet property="collectionView" destination="Bl4-ji-2tE" id="Sag-SY-txB"/>
@@ -544,7 +550,7 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wPs-Az-oLg">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">self.conference is a developer community conference intended to create opportunities for education, collaboration and networking. In the interest of creating a safe, enjoyable and fulfilling experiences for all concerned, attendees are expected to show respect and courtesy to other attendees throughout the conference and at all conference events.

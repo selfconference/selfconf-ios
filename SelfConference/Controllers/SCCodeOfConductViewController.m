@@ -7,8 +7,15 @@
 //
 
 #import "SCCodeOfConductViewController.h"
+#import "UIColor+SCColor.h"
 
 @implementation SCCodeOfConductViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor SC_offWhite];
+}
 
 - (IBAction)didTapCloseBarButtonItem:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];

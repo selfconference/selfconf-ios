@@ -16,5 +16,6 @@
 + (instancetype)SC_purple;
 + (instancetype)SC_yellow;
 + (instancetype)SC_red;
++ (instancetype)SC_offWhite;
 
 @end
