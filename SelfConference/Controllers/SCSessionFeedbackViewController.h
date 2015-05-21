@@ -25,4 +25,7 @@
 /** Called when the user just wants to close without submitting feedback. */
 - (void)sessionFeedbackViewControllerDidTapDismissButton:(SCSessionFeedbackViewController *)sessionFeedbackViewController;
 
+/** Called when session feedback has been submitted successfully. */
+- (void)sessionFeedbackViewControllerDidSuccessfullySubmitSessionFeedback:(SCSessionFeedbackViewController *)sessionFeedbackViewController;
+
 @end

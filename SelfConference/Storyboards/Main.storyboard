@@ -296,12 +296,16 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add your comments here..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="imK-f8-NTs">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="imK-f8-NTs">
                                 <rect key="frame" x="20" y="137" width="560" height="382"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Oyg-3D-lDR" id="blt-G1-cQk"/>
+                                </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4M-c6-6fL">
                                 <rect key="frame" x="253" y="539" width="95" height="41"/>
@@ -360,6 +364,7 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="submitButton" destination="N4M-c6-6fL" id="TT1-5u-RNu"/>
                         <outlet property="textView" destination="imK-f8-NTs" id="fMf-wy-9f6"/>
                         <outlet property="thumbsUpOrDownSegmentedControl" destination="zd6-hK-T2T" id="bbA-oO-bkc"/>
                     </connections>
