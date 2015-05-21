@@ -22,7 +22,6 @@
 		1F2CCFA21B0B818900C24FFC /* NSDateFormatter+SCDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2CCFA11B0B818900C24FFC /* NSDateFormatter+SCDateFormatter.m */; };
 		1F2CCFA81B0B9F3A00C24FFC /* SCSponsorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2CCFA71B0B9F3A00C24FFC /* SCSponsorCollectionViewCell.m */; };
 		1F2CCFAB1B0BA10C00C24FFC /* SCUpdatingEventBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2CCFAA1B0BA10C00C24FFC /* SCUpdatingEventBaseViewController.m */; };
-		1F2CCFAE1B0BA39000C24FFC /* SCSponsorLevelHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2CCFAD1B0BA39000C24FFC /* SCSponsorLevelHeaderView.m */; };
 		1F5AC6F71ABE40A00076E341 /* UIView+SCUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC6F61ABE40A00076E341 /* UIView+SCUtilities.m */; };
 		1F5AC7001ABE62680076E341 /* SCSessionNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC6FF1ABE62680076E341 /* SCSessionNameTableViewCell.m */; };
 		1F5AC7031ABE62A50076E341 /* SCSessionAbstractTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7021ABE62A50076E341 /* SCSessionAbstractTableViewCell.m */; };
@@ -58,6 +57,8 @@
 		1FBD60F21B01AAC4008E0FEC /* SCHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60F11B01AAC4008E0FEC /* SCHTTPSessionManager.m */; };
 		1FD2566D1B0D3FA40089122A /* SCSessionFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD2566C1B0D3FA40089122A /* SCSessionFeedbackViewController.m */; };
 		1FD256731B0D58540089122A /* UIView+MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD256721B0D58540089122A /* UIView+MBProgressHUD.m */; };
+		1FE566741B0D7A6B00044DFE /* SCNameLabelHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE566731B0D7A6B00044DFE /* SCNameLabelHeaderView.m */; };
+		1FE566771B0D812000044DFE /* SCCodeOfConductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE566761B0D812000044DFE /* SCCodeOfConductViewController.m */; };
 		52177A65E8B8CFE8659C76EF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1457BA96527132726AC017 /* libPods.a */; };
 		FEEAC01EB9E2FC1CB6FE80F7 /* libPods-SelfConferenceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8F553853A58875DD1A6969 /* libPods-SelfConferenceTests.a */; };
 /* End PBXBuildFile section */
@@ -100,8 +101,6 @@
 		1F2CCFA71B0B9F3A00C24FFC /* SCSponsorCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSponsorCollectionViewCell.m; sourceTree = "<group>"; };
 		1F2CCFA91B0BA10C00C24FFC /* SCUpdatingEventBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCUpdatingEventBaseViewController.h; sourceTree = "<group>"; };
 		1F2CCFAA1B0BA10C00C24FFC /* SCUpdatingEventBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCUpdatingEventBaseViewController.m; sourceTree = "<group>"; };
-		1F2CCFAC1B0BA39000C24FFC /* SCSponsorLevelHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSponsorLevelHeaderView.h; sourceTree = "<group>"; };
-		1F2CCFAD1B0BA39000C24FFC /* SCSponsorLevelHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSponsorLevelHeaderView.m; sourceTree = "<group>"; };
 		1F4FD4C41B0D2D2B008B4C8A /* SelfConferenceDataModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "SelfConferenceDataModel 2.xcdatamodel"; sourceTree = "<group>"; };
 		1F5AC6F51ABE40A00076E341 /* UIView+SCUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SCUtilities.h"; sourceTree = "<group>"; };
 		1F5AC6F61ABE40A00076E341 /* UIView+SCUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SCUtilities.m"; sourceTree = "<group>"; };
@@ -174,6 +173,10 @@
 		1FD2566C1B0D3FA40089122A /* SCSessionFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionFeedbackViewController.m; sourceTree = "<group>"; };
 		1FD256711B0D58540089122A /* UIView+MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MBProgressHUD.h"; sourceTree = "<group>"; };
 		1FD256721B0D58540089122A /* UIView+MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MBProgressHUD.m"; sourceTree = "<group>"; };
+		1FE566721B0D7A6B00044DFE /* SCNameLabelHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCNameLabelHeaderView.h; sourceTree = "<group>"; };
+		1FE566731B0D7A6B00044DFE /* SCNameLabelHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCNameLabelHeaderView.m; sourceTree = "<group>"; };
+		1FE566751B0D812000044DFE /* SCCodeOfConductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCodeOfConductViewController.h; sourceTree = "<group>"; };
+		1FE566761B0D812000044DFE /* SCCodeOfConductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCodeOfConductViewController.m; sourceTree = "<group>"; };
 		2D10993C3C99F6944FEAF14F /* Pods-SelfConferenceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelfConferenceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SelfConferenceTests/Pods-SelfConferenceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		37D95520F9868BAA20A1EBC8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3B1457BA96527132726AC017 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -239,8 +242,8 @@
 				1F2CCFA71B0B9F3A00C24FFC /* SCSponsorCollectionViewCell.m */,
 				1F0734E91B0C1B7B00A74989 /* SCSpeakerCollectionViewCell.h */,
 				1F0734EA1B0C1B7B00A74989 /* SCSpeakerCollectionViewCell.m */,
-				1F2CCFAC1B0BA39000C24FFC /* SCSponsorLevelHeaderView.h */,
-				1F2CCFAD1B0BA39000C24FFC /* SCSponsorLevelHeaderView.m */,
+				1FE566721B0D7A6B00044DFE /* SCNameLabelHeaderView.h */,
+				1FE566731B0D7A6B00044DFE /* SCNameLabelHeaderView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -266,6 +269,8 @@
 				1F9B5A321B0ADC5A009DFD5D /* SCMenuViewController.m */,
 				1FD2566B1B0D3FA40089122A /* SCSessionFeedbackViewController.h */,
 				1FD2566C1B0D3FA40089122A /* SCSessionFeedbackViewController.m */,
+				1FE566751B0D812000044DFE /* SCCodeOfConductViewController.h */,
+				1FE566761B0D812000044DFE /* SCCodeOfConductViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -648,7 +653,6 @@
 				1FD256731B0D58540089122A /* UIView+MBProgressHUD.m in Sources */,
 				1F2CCFAB1B0BA10C00C24FFC /* SCUpdatingEventBaseViewController.m in Sources */,
 				1F5AC7031ABE62A50076E341 /* SCSessionAbstractTableViewCell.m in Sources */,
-				1F2CCFAE1B0BA39000C24FFC /* SCSponsorLevelHeaderView.m in Sources */,
 				1F64F0471B0929EE00833292 /* NSString+SCHTMLTagConverter.m in Sources */,
 				1F0BAAB01A99B7DE0059C73A /* NSError+SCError.m in Sources */,
 				1F0734EE1B0C203900A74989 /* UIAlertController+SCAlertController.m in Sources */,
@@ -659,8 +663,10 @@
 				1F0BAAB31A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m in Sources */,
 				1FBD60AA1B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld in Sources */,
 				1F64F0411B0921DE00833292 /* SCTealTextColorLabel.m in Sources */,
+				1FE566741B0D7A6B00044DFE /* SCNameLabelHeaderView.m in Sources */,
 				1F2CCFA81B0B9F3A00C24FFC /* SCSponsorCollectionViewCell.m in Sources */,
 				1F9B5A331B0ADC5A009DFD5D /* SCMenuViewController.m in Sources */,
+				1FE566771B0D812000044DFE /* SCCodeOfConductViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

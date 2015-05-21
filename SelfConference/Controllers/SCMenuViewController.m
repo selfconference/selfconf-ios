@@ -9,10 +9,12 @@
 #import "SCMenuViewController.h"
 #import "UIColor+SCColor.h"
 #import "SCSponsorCollectionViewCell.h"
-#import "SCSponsorLevelHeaderView.h"
+#import "SCNameLabelHeaderView.h"
 #import "SCEvent.h"
 #import "SCSponsorLevel.h"
 #import "UIAlertController+SCAlertController.h"
+#import "SCSharedStoryboardInstances.h"
+#import "SCCodeOfConductViewController.h"
 
 @interface SCMenuViewController () <UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -129,31 +131,58 @@
     return self.event.sponsorLevelsWithSponsorsSortedByOrder[section];
 }
 
+- (NSInteger)codeOfConductSection {
+    return self.event.sponsorLevelsWithSponsorsSortedByOrder.count;
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return self.event.sponsorLevelsWithSponsorsSortedByOrder.count;
+    return self.event.sponsorLevelsWithSponsorsSortedByOrder.count + 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section {
-    SCSponsorLevel *sponsorLevel =
-    [self sponsorLevelInSection:section];
+    NSInteger numberOfItemsInSection;
     
-    return sponsorLevel.sponsorsSortedByName.count;
+    if (section == self.codeOfConductSection) {
+        numberOfItemsInSection = 1;
+    }
+    else {
+        SCSponsorLevel *sponsorLevel =
+        [self sponsorLevelInSection:section];
+        
+        numberOfItemsInSection = sponsorLevel.sponsorsSortedByName.count;
+    }
+    
+    return numberOfItemsInSection;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    SCSponsorCollectionViewCell *cell =
-    (SCSponsorCollectionViewCell *)[collectionView
-                                    dequeueReusableCellWithReuseIdentifier:NSStringFromClass([SCSponsorCollectionViewCell class])
-                                    forIndexPath:indexPath];
+    UICollectionViewCell *cell;
     
-    SCSponsorLevel *sponsorLevel =
-    [self sponsorLevelInSection:indexPath.section];
+    NSInteger section = indexPath.section;
     
-    cell.sponsor = sponsorLevel.sponsorsSortedByName[indexPath.row];
+    if (section == self.codeOfConductSection) {
+        cell = [collectionView
+                dequeueReusableCellWithReuseIdentifier:@"SCCodeOfConductCollectionViewCell"
+                forIndexPath:indexPath];
+    }
+    else {
+        SCSponsorCollectionViewCell *sponsorCollectionViewCell =
+        (SCSponsorCollectionViewCell *)[collectionView
+                                        dequeueReusableCellWithReuseIdentifier:NSStringFromClass([SCSponsorCollectionViewCell class])
+                                        forIndexPath:indexPath];
+        
+        SCSponsorLevel *sponsorLevel =
+        [self sponsorLevelInSection:section];
+        
+        sponsorCollectionViewCell.sponsor =
+        sponsorLevel.sponsorsSortedByName[indexPath.row];
+        
+        cell = sponsorCollectionViewCell;
+    }
     
     return cell;
 }
@@ -161,13 +190,28 @@
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
            viewForSupplementaryElementOfKind:(NSString *)kind
                                  atIndexPath:(NSIndexPath *)indexPath {
-    SCSponsorLevelHeaderView *view =
-    (SCSponsorLevelHeaderView *)[collectionView
-                                 dequeueReusableSupplementaryViewOfKind:kind
-                                 withReuseIdentifier:NSStringFromClass([SCSponsorLevelHeaderView class])
-                                 forIndexPath:indexPath];
+    SCNameLabelHeaderView *view =
+    (SCNameLabelHeaderView *)[collectionView
+                              dequeueReusableSupplementaryViewOfKind:kind
+                              withReuseIdentifier:NSStringFromClass([SCNameLabelHeaderView class])
+                              forIndexPath:indexPath];
     
-    view.sponsorLevel = [self sponsorLevelInSection:indexPath.section];
+    NSInteger section = indexPath.section;
+    
+    NSString *nameLabelText;
+    
+    if (section == self.codeOfConductSection) {
+        nameLabelText = @"Other";
+    }
+    else {
+        SCSponsorLevel *sponsorLevel =
+        [self sponsorLevelInSection:indexPath.section];
+        
+        nameLabelText =
+        [sponsorLevel.name stringByAppendingString:@" sponsors"];
+    }
+    
+    view.nameLabel.text = nameLabelText;
     
     return view;
 }
@@ -176,10 +220,22 @@
 
 - (void)collectionView:(UICollectionView *)collectionView
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    SCSponsorCollectionViewCell *cell =
-    (SCSponsorCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    UIViewController *viewControllerToPresent;
     
-    [self presentViewController:[UIAlertController SC_alertControllerForOpenLinkForSponsor:cell.sponsor]
+    if (indexPath.section == self.codeOfConductSection) {
+        viewControllerToPresent =
+        [[SCSharedStoryboardInstances sharedMainStoryboardInstance]
+         instantiateViewControllerWithIdentifier:NSStringFromClass([SCCodeOfConductViewController class])];
+    }
+    else {
+        SCSponsorCollectionViewCell *cell =
+        (SCSponsorCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+        
+        viewControllerToPresent =
+        [UIAlertController SC_alertControllerForOpenLinkForSponsor:cell.sponsor];
+    }
+    
+    [self presentViewController:viewControllerToPresent
                        animated:YES
                      completion:NULL];
 }

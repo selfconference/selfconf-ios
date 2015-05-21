@@ -92,6 +92,8 @@
     // Disable scrolling by default, until it becomes exposed
     cell.tableView.scrollEnabled = NO;
     
+    NSLog(@"Section %d", indexPath.section);
+    
     cell.session = self.sessions[indexPath.row];
     
     return cell;

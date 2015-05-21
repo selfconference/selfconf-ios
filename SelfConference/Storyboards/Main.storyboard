@@ -438,8 +438,46 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                                             <outlet property="imageView" destination="GRF-rA-9Lu" id="lNQ-jG-IL7"/>
                                         </connections>
                                     </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SCCodeOfConductCollectionViewCell" id="TmG-qT-UYp" customClass="SCFadeWhenHighlightedCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code of Conduct" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZ7-k7-BTF" userLabel="Code of Conduct Label">
+                                                    <rect key="frame" x="0.0" y="50" width="75" height="25"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="codeOfConductIcon" translatesAutoresizingMaskIntoConstraints="NO" id="LmD-Sm-CfW">
+                                                    <rect key="frame" x="12" y="0.0" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="ZuA-nO-O01"/>
+                                                        <constraint firstAttribute="width" secondItem="LmD-Sm-CfW" secondAttribute="height" multiplier="1:1" id="pMY-RP-hKP"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="LmD-Sm-CfW" secondAttribute="bottom" id="7Dm-ff-rrb"/>
+                                            <constraint firstItem="LmD-Sm-CfW" firstAttribute="top" secondItem="TmG-qT-UYp" secondAttribute="top" id="CAW-fa-zIx"/>
+                                            <constraint firstAttribute="bottom" secondItem="wZ7-k7-BTF" secondAttribute="bottom" id="KV6-uc-3GS"/>
+                                            <constraint firstAttribute="centerX" secondItem="LmD-Sm-CfW" secondAttribute="centerX" id="Pml-Jn-4kq"/>
+                                            <constraint firstAttribute="trailing" secondItem="wZ7-k7-BTF" secondAttribute="trailing" id="PpK-gp-Lz8"/>
+                                            <constraint firstItem="wZ7-k7-BTF" firstAttribute="top" secondItem="LmD-Sm-CfW" secondAttribute="bottom" id="dmq-9h-dog"/>
+                                            <constraint firstItem="wZ7-k7-BTF" firstAttribute="leading" secondItem="TmG-qT-UYp" secondAttribute="leading" id="gbh-7J-ehi"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="7Dm-ff-rrb"/>
+                                            </mask>
+                                        </variation>
+                                    </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SCSponsorLevelHeaderView" id="Vrf-VP-fNd" customClass="SCSponsorLevelHeaderView">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SCNameLabelHeaderView" id="Vrf-VP-fNd" customClass="SCNameLabelHeaderView">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -492,9 +530,260 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
             </objects>
             <point key="canvasLocation" x="347" y="458"/>
         </scene>
+        <!--Code Of Conduct View Controller-->
+        <scene sceneID="zQD-WZ-k1m">
+            <objects>
+                <viewController storyboardIdentifier="SCCodeOfConductViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="szf-Ry-gtQ" customClass="SCCodeOfConductViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uXU-tt-c9x"/>
+                        <viewControllerLayoutGuide type="bottom" id="kSd-1F-Ifr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="r0a-4m-ENQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wPs-Az-oLg">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">self.conference is a developer community conference intended to create opportunities for education, collaboration and networking. In the interest of creating a safe, enjoyable and fulfilling experiences for all concerned, attendees are expected to show respect and courtesy to other attendees throughout the conference and at all conference events.
+All attendees, speakers, sponsors, organizers and volunteers at self.conference events are required to abide by the following Code of Conduct. Organizers will enforce this code throughout the event.
+</string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <color key="NSColor" red="0.20000000000000001" green="0.56862745098039214" blue="0.58039215686274515" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="15" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <font key="NSOriginalFont" size="15" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="15" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.20000000000000001" green="0.56862745098039214" blue="0.58039215686274515" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="The Short Version">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <color key="NSColor" red="0.94509803921568625" green="0.050980392156862744" blue="0.28627450980392155" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="15" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <font key="NSOriginalFont" size="15" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.94509803921568625" green="0.050980392156862744" blue="0.28627450980392155" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <color key="NSColor" red="0.94509803921568625" green="0.050980392156862744" blue="0.28627450980392155" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="15" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <font key="NSOriginalFont" size="15" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.94509803921568625" green="0.050980392156862744" blue="0.28627450980392155" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">self.conference is dedicated to providing a welcoming and harassment-free conference experience for everyone, regardless of gender (cis- or trans-), sexual orientation, disability, physical appearance, body size, race, or religion. We do not tolerate harassment of conference participants in any form.
+</string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <color key="NSColor" red="0.20000000000000001" green="0.56862745098039214" blue="0.58039215686274515" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="15" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <font key="NSOriginalFont" size="15" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="15" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.20000000000000001" green="0.56862745098039214" blue="0.58039215686274515" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="The Longer Version">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <color key="NSColor" red="0.94509803921568625" green="0.050980392156862744" blue="0.28627450980392155" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="15" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <font key="NSOriginalFont" size="15" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.94509803921568625" green="0.050980392156862744" blue="0.28627450980392155" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <color key="NSColor" red="0.94509803921568625" green="0.050980392156862744" blue="0.28627450980392155" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="15" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <font key="NSOriginalFont" size="15" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.94509803921568625" green="0.050980392156862744" blue="0.28627450980392155" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Harassment includes offensive verbal comments related to gender, sexual orientation, disability, physical appearance, body size, race, religion, sexual images in public spaces, deliberate intimidation, stalking, following, harassing photography or recording, sustained disruption of talks or other events, inappropriate physical contact, and unwelcome sexual attention.
+Participants asked to stop any harassing behavior are expected to comply immediately.
+If a participant engages in behavior that violates this code of conduct, the conference organizers may take any action they deem appropriate, including warning the offender or expulsion from the conference with no refund.
+</string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <color key="NSColor" red="0.20000000000000001" green="0.56862745098039214" blue="0.58039215686274515" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="15" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <font key="NSOriginalFont" size="15" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="15" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.20000000000000001" green="0.56862745098039214" blue="0.58039215686274515" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Contact Information">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <color key="NSColor" red="0.94509803921568625" green="0.050980392156862744" blue="0.28627450980392155" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="15" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <font key="NSOriginalFont" size="15" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.94509803921568625" green="0.050980392156862744" blue="0.28627450980392155" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <color key="NSColor" red="0.94509803921568625" green="0.050980392156862744" blue="0.28627450980392155" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="15" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <font key="NSOriginalFont" size="15" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.94509803921568625" green="0.050980392156862744" blue="0.28627450980392155" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">If you are being harassed, notice that someone else is being harassed, or have any other concerns, please contact a self.conference staff member or volunteer immediately.
+You may also contact any volunteer and ask to be put in touch with the conference chairs, Amber Conville &amp; Erika Carlson.
+If the matter is especially urgent, please contact conference co-chair Erika Carlson at (313) 473-7560.
+Conference staff will be happy to help participants contact hotel/venue security or local law enforcement, provide escorts, or otherwise assist those experiencing harassment to feel safe for the duration of the conference. We value your attendance.
+Adapted from </string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <color key="NSColor" red="0.20000000000000001" green="0.56862745098039214" blue="0.58039215686274515" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="15" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <font key="NSOriginalFont" size="15" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="15" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.20000000000000001" green="0.56862745098039214" blue="0.58039215686274515" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <color key="NSColor" red="0.65490196078431373" green="0.0078431372549019607" blue="0.40392156862745099" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="15" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <url key="NSLink" string="http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy"/>
+                                            <font key="NSOriginalFont" size="15" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="15" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.65490196078431373" green="0.0078431372549019607" blue="0.40392156862745099" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <color key="NSColor" red="0.20000000000000001" green="0.56862745098039214" blue="0.58039215686274515" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="15" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <font key="NSOriginalFont" size="15" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="15" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.20000000000000001" green="0.56862745098039214" blue="0.58039215686274515" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                            </textView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zmn-fV-myT">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="b2T-iT-gf4"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.20000000000000001" green="0.56862745100000001" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Code of Conduct" id="bLi-wL-H8D">
+                                        <barButtonItem key="leftBarButtonItem" image="closeIcon" id="yFH-xP-3Z8">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="didTapCloseBarButtonItem:" destination="szf-Ry-gtQ" id="Khy-hU-pPG"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zmn-fV-myT" firstAttribute="leading" secondItem="wPs-Az-oLg" secondAttribute="leading" id="Eyj-0k-8pH"/>
+                            <constraint firstItem="zmn-fV-myT" firstAttribute="leading" secondItem="r0a-4m-ENQ" secondAttribute="leading" id="ZY7-SJ-FLF"/>
+                            <constraint firstItem="zmn-fV-myT" firstAttribute="top" secondItem="r0a-4m-ENQ" secondAttribute="top" id="aPb-rw-yCw"/>
+                            <constraint firstItem="zmn-fV-myT" firstAttribute="trailing" secondItem="wPs-Az-oLg" secondAttribute="trailing" id="iuZ-i4-u5V"/>
+                            <constraint firstItem="kSd-1F-Ifr" firstAttribute="top" secondItem="wPs-Az-oLg" secondAttribute="bottom" id="sDS-tF-mWp"/>
+                            <constraint firstItem="wPs-Az-oLg" firstAttribute="top" secondItem="zmn-fV-myT" secondAttribute="bottom" id="vhs-nE-1l8"/>
+                            <constraint firstAttribute="trailing" secondItem="zmn-fV-myT" secondAttribute="trailing" id="vn2-ln-Hc7"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tlJ-oM-kFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1039" y="458"/>
+        </scene>
     </scenes>
     <resources>
         <image name="backArrowIcon" width="33" height="33"/>
+        <image name="closeIcon" width="20" height="20"/>
+        <image name="codeOfConductIcon" width="75" height="75"/>
         <image name="tealUnfilledHeart" width="30" height="30"/>
         <image name="thumbsDownIcon" width="33" height="33"/>
         <image name="thumbsUpIcon" width="33" height="33"/>
