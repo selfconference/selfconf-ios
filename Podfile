@@ -7,6 +7,7 @@ inhibit_all_warnings!
 pod 'MTDates'
 pod 'AFNetworking'
 pod 'MTCardLayout'
+pod 'MBProgressHUD'
 
 # Since they haven't shipped a release lately. This build is stable though.
 pod 'MagicalRecord', :git => "https://github.com/magicalpanda/MagicalRecord.git", :tag => "v2.3.0-beta.5"

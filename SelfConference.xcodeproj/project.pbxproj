@@ -57,6 +57,7 @@
 		1FBD60EF1B01A908008E0FEC /* SCAPIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60EE1B01A908008E0FEC /* SCAPIService.m */; };
 		1FBD60F21B01AAC4008E0FEC /* SCHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60F11B01AAC4008E0FEC /* SCHTTPSessionManager.m */; };
 		1FD2566D1B0D3FA40089122A /* SCSessionFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD2566C1B0D3FA40089122A /* SCSessionFeedbackViewController.m */; };
+		1FD256731B0D58540089122A /* UIView+MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD256721B0D58540089122A /* UIView+MBProgressHUD.m */; };
 		52177A65E8B8CFE8659C76EF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1457BA96527132726AC017 /* libPods.a */; };
 		FEEAC01EB9E2FC1CB6FE80F7 /* libPods-SelfConferenceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8F553853A58875DD1A6969 /* libPods-SelfConferenceTests.a */; };
 /* End PBXBuildFile section */
@@ -171,6 +172,8 @@
 		1FBD60F11B01AAC4008E0FEC /* SCHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCHTTPSessionManager.m; sourceTree = "<group>"; };
 		1FD2566B1B0D3FA40089122A /* SCSessionFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionFeedbackViewController.h; sourceTree = "<group>"; };
 		1FD2566C1B0D3FA40089122A /* SCSessionFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionFeedbackViewController.m; sourceTree = "<group>"; };
+		1FD256711B0D58540089122A /* UIView+MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MBProgressHUD.h"; sourceTree = "<group>"; };
+		1FD256721B0D58540089122A /* UIView+MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MBProgressHUD.m"; sourceTree = "<group>"; };
 		2D10993C3C99F6944FEAF14F /* Pods-SelfConferenceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelfConferenceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SelfConferenceTests/Pods-SelfConferenceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		37D95520F9868BAA20A1EBC8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3B1457BA96527132726AC017 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -315,6 +318,8 @@
 				1F0734ED1B0C203900A74989 /* UIAlertController+SCAlertController.m */,
 				1F0734EF1B0C215B00A74989 /* UIAlertAction+SCAlertAction.h */,
 				1F0734F01B0C215B00A74989 /* UIAlertAction+SCAlertAction.m */,
+				1FD256711B0D58540089122A /* UIView+MBProgressHUD.h */,
+				1FD256721B0D58540089122A /* UIView+MBProgressHUD.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -640,6 +645,7 @@
 				1F0734EB1B0C1B7B00A74989 /* SCSpeakerCollectionViewCell.m in Sources */,
 				1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */,
 				1F5AC7001ABE62680076E341 /* SCSessionNameTableViewCell.m in Sources */,
+				1FD256731B0D58540089122A /* UIView+MBProgressHUD.m in Sources */,
 				1F2CCFAB1B0BA10C00C24FFC /* SCUpdatingEventBaseViewController.m in Sources */,
 				1F5AC7031ABE62A50076E341 /* SCSessionAbstractTableViewCell.m in Sources */,
 				1F2CCFAE1B0BA39000C24FFC /* SCSponsorLevelHeaderView.m in Sources */,
