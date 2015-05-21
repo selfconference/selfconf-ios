@@ -14,6 +14,7 @@
     NSString *newString = self;
     
     NSArray *replacements = @[@"<br />", @"\n",
+                              @"<br/>", @"\n",
                               @"<ul>", @"\n",
                               @"</ul>", @"\n",
                               @"<li>", @"• ",
