@@ -42,6 +42,9 @@ static CGFloat const kCellShouldCollapseAfterDragOffset = 75.0f;
 /** Returns the last known width */
 @property (nonatomic) CGFloat previousWidth;
 
+/** The corner radius to use around 'self' and '_sessionFeedbackViewController.view' */
+@property (nonatomic) CGFloat cornerRadius;
+
 @end
 
 @implementation SCSessionDetailsCollectionViewCell
@@ -53,15 +56,15 @@ static CGFloat const kCellShouldCollapseAfterDragOffset = 75.0f;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 150.0f;
     
-    CGFloat cornerRadius = 10.0f;
+    self.cornerRadius = 10.0f;
     
     self.layer.masksToBounds = NO;
     self.layer.shadowColor = [UIColor blackColor].CGColor;
     self.layer.shadowOpacity = 0.5f;
-    self.layer.shadowRadius = cornerRadius;
+    self.layer.shadowRadius = self.cornerRadius;
     self.layer.shadowOffset = CGSizeZero;
-    self.layer.cornerRadius = cornerRadius;
-    self.tableView.layer.cornerRadius = cornerRadius;
+    self.layer.cornerRadius = self.cornerRadius;
+    self.tableView.layer.cornerRadius = self.cornerRadius;
     
     [self.submitFeedbackButton setTitleColor:[UIColor SC_orange]
                                     forState:UIControlStateNormal];
@@ -204,6 +207,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
          [[SCSharedStoryboardInstances sharedMainStoryboardInstance]
           instantiateViewControllerWithIdentifier:NSStringFromClass([SCSessionFeedbackViewController class])];
          
+         self.sessionFeedbackViewController.view.layer.cornerRadius = self.cornerRadius;
          self.sessionFeedbackViewController.delegate = self;
          self.sessionFeedbackViewController.session = self.session;
          
