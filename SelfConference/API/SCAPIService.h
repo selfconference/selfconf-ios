@@ -16,4 +16,9 @@ typedef void (^SCAPIServiceResponseObjectWithErrorBlock)(id responseObject, NSEr
 + (void)getUrlString:(NSString *)urlString
      completionBlock:(SCAPIServiceResponseObjectWithErrorBlock)completionBlock;
 
+/** Makes a POST request to the given 'urlString' on the API */
++ (void)postUrlString:(NSString *)urlString
+           parameters:(NSDictionary *)parameters
+      completionBlock:(SCAPIServiceResponseObjectWithErrorBlock)completionBlock;
+
 @end

@@ -13,6 +13,10 @@
 #import "NSString+SCHTMLTagConverter.h"
 #import <MTDates/NSDate+MTDates.h>
 #import <MagicalRecord/NSManagedObject+MagicalFinders.h>
+#import <MagicalRecord/NSManagedObjectContext+MagicalRecord.h>
+#import <MagicalRecord/NSManagedObjectContext+MagicalSaves.h>
+#import "SCAPIService.h"
+#import "SCAPIStrings.h"
 
 @implementation SCSession
 
@@ -25,6 +29,7 @@
 @dynamic event;
 @dynamic room;
 @dynamic speakers;
+@dynamic didSubmitFeedback;
 
 - (NSArray *)speakersOrderedByName {
     NSSortDescriptor *sortedBySlotSortDescriptor =
@@ -121,11 +126,64 @@
     sortedByPropertyName:NSStringFromSelector(@selector(slot))];
 }
 
+- (void)submitFeedbackToTheAPIWithVote:(SCSessionVote)vote
+                              comments:(NSString *)comments
+                       completionBlock:(SCSessionSubmitFeedbackCompletionBlock)completionBlock {
+    NSAssert(vote == SCSessionVoteThumbsDown ||
+             vote == SCSessionVoteThumbsUp,
+             @"Expected vote to be SCSessionVoteThumbsDown or SCSessionVoteThumbsUp");
+    
+    [SCAPIService
+     postUrlString:self.postFeedbackUrlString
+     parameters:@{SCAPIRequestKeys.feedback: @{SCAPIRequestKeys.vote: @(vote),
+                                               SCAPIRequestKeys.comments: comments}}
+     completionBlock:^(id responseObject, NSError *error) {
+         if (error) {
+             [self.class
+              callSCSessionSubmitFeedbackCompletionBlock:completionBlock
+              success:NO
+              error:error];
+         }
+         else {
+             self.didSubmitFeedback = YES;
+             [[NSManagedObjectContext MR_defaultContext]
+              MR_saveToPersistentStoreWithCompletion:^(BOOL contextDidSave, NSError *contextDidSaveError) {
+                  [self.class
+                   callSCSessionSubmitFeedbackCompletionBlock:completionBlock
+                   success:contextDidSave
+                   error:contextDidSaveError];
+              }];
+         }
+     }];
+}
+
 #pragma mark MagicalRecord
 
 - (BOOL)importAbstract:(NSString *)abstract {
     self.abstract = abstract.SC_convertedHTMLTagString;
     return YES;
+}
+
+#pragma mark - Other
+
+/** Returns the URL string needed to POST feedback for the session */
+- (NSString *)postFeedbackUrlString {
+    return [NSString stringWithFormat:@"%@/%@/%@",
+            SCAPIRelativeUrlStrings.sessions,
+            [@(self.sessionID) stringValue],
+            SCAPIRelativeUrlStrings.feedbacks];
+}
+
+/** Calls an instance of 'SCSessionSubmitFeedbackCompletionBlock' if it exists. */
++ (void)callSCSessionSubmitFeedbackCompletionBlock:(SCSessionSubmitFeedbackCompletionBlock)block
+                                           success:(BOOL)success
+                                             error:(NSError *)error {
+    if (block) {
+        block(success, error);
+    }
+    else {
+        NSLog(@"SCManagedObjectObjectsWithErrorBlock is nil");
+    }
 }
 
 @end

@@ -15,6 +15,13 @@ typedef NS_ENUM(NSUInteger, SCSessionFilter) {
     SCSessionFilterDayTwo
 };
 
+typedef NS_ENUM(NSInteger, SCSessionVote) {
+    SCSessionVoteThumbsDown = -1,
+    SCSessionVoteThumbsUp = 1
+};
+
+typedef void (^SCSessionSubmitFeedbackCompletionBlock)(BOOL success, NSError *error);
+
 @import UIKit;
 
 @class SCEvent, SCRoom;
@@ -34,6 +41,7 @@ typedef NS_ENUM(NSUInteger, SCSessionFilter) {
 @property (nonatomic, retain) SCRoom *room;
 @property (nonatomic, retain) NSSet *speakers;
 @property (nonatomic, readonly) UIColor *color;
+@property (nonatomic) BOOL didSubmitFeedback;
 
 /** Returns 'speakers' ordered based on 'name'. */
 - (NSArray *)speakersOrderedByName;
@@ -58,5 +66,13 @@ typedef NS_ENUM(NSUInteger, SCSessionFilter) {
 
 /** Sorts an array of 'SCSession' instances based on 'slot' values. */
 + (NSArray *)sessionsSortedBySlot:(NSArray *)sessions;
+
+/** 
+ Submits feedback to the API for the given session. 'completionBlock' is
+ called when everything is done.
+ */
+- (void)submitFeedbackToTheAPIWithVote:(SCSessionVote)vote
+                              comments:(NSString *)comments
+                       completionBlock:(SCSessionSubmitFeedbackCompletionBlock)completionBlock;
 
 @end

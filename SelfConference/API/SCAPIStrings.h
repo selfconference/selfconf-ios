@@ -20,9 +20,19 @@ extern const struct SCAPIRelativeUrlStrings {
     __unsafe_unretained NSString *sponsors;
     __unsafe_unretained NSString *sponsorLevels;
     __unsafe_unretained NSString *organizers;
+    __unsafe_unretained NSString *feedbacks;
 } SCAPIRelativeUrlStrings;
 
 extern const struct SCAPIRequestKeys {
     /** Represents the "from_date" url parameter */
     __unsafe_unretained NSString *fromDate;
+    
+    /** Represents the "comments" parameter */
+    __unsafe_unretained NSString *comments;
+    
+    /** Represents the "vote" parameter */
+    __unsafe_unretained NSString *vote;
+    
+    /** Represents the "feedback" parameter */
+    __unsafe_unretained NSString *feedback;
 } SCAPIRequestKeys;

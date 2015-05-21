@@ -8,7 +8,7 @@
 
 #import "SCAPIStrings.h"
 
-NSString * const kSCAPIServiceBaseUrlString = @"http://selfconference.org/api";
+NSString * const kSCAPIServiceBaseUrlString = @"http://selfconf-dev.herokuapp.com/api";
 
 const struct SCAPIRelativeUrlStrings SCAPIRelativeUrlStrings = {
     .events = @"events",
@@ -18,9 +18,13 @@ const struct SCAPIRelativeUrlStrings SCAPIRelativeUrlStrings = {
     .speakers = @"speakers",
     .sponsors = @"sponsors",
     .sponsorLevels = @"sponsor_levels",
-    .organizers = @"organizers"
+    .organizers = @"organizers",
+    .feedbacks = @"feedbacks"
 };
 
 const struct SCAPIRequestKeys SCAPIRequestKeys = {
-    .fromDate = @"from_date"
+    .fromDate = @"from_date",
+    .comments = @"comments",
+    .vote = @"vote",
+    .feedback = @"feedback"
 };

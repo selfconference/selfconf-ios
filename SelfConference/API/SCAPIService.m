@@ -31,6 +31,24 @@ typedef void (^SCAPIServiceTaskWithErrorBlock)(NSURLSessionDataTask *task, NSErr
      }];
 }
 
++ (void)postUrlString:(NSString *)urlString
+           parameters:(NSDictionary *)parameters
+      completionBlock:(SCAPIServiceResponseObjectWithErrorBlock)completionBlock {
+    [[SCHTTPSessionManager sharedInstance]
+     POST:urlString
+     parameters:parameters
+     success:^(NSURLSessionDataTask *task, id responseObject) {
+         [self callSCAPIServiceResponseObjectWithErrorBlock:completionBlock
+                                             responseObject:responseObject
+                                                      error:nil];
+     }
+     failure:^(NSURLSessionDataTask *task, NSError *error) {
+         [self callSCAPIServiceResponseObjectWithErrorBlock:completionBlock
+                                             responseObject:nil
+                                                      error:error];
+     }];
+}
+
 #pragma mark - Internal
 
 /**
