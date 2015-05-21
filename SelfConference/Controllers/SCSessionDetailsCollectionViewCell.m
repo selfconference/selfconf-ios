@@ -83,6 +83,8 @@ static CGFloat const kCellShouldCollapseAfterDragOffset = 75.0f;
 - (void)setSession:(SCSession *)session {
     _session = session;
     
+    [self showOrHideSubmitFeedbackButton];
+    
     [self.tableView reloadData];
 }
 
@@ -203,6 +205,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
           instantiateViewControllerWithIdentifier:NSStringFromClass([SCSessionFeedbackViewController class])];
          
          self.sessionFeedbackViewController.delegate = self;
+         self.sessionFeedbackViewController.session = self.session;
          
          [self.contentView SC_addAndFullyConstrainSubview:self.sessionFeedbackViewController.view];
      }
@@ -212,6 +215,22 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 #pragma mark - SCSessionFeedbackViewControllerDelegate
 
 - (void)sessionFeedbackViewControllerDidTapDismissButton:(SCSessionFeedbackViewController *)sessionFeedbackViewController {
+    [self closeSessionFeedbackViewController];
+}
+
+- (void)sessionFeedbackViewControllerDidSuccessfullySubmitSessionFeedback:(SCSessionFeedbackViewController *)sessionFeedbackViewController {
+    [self showOrHideSubmitFeedbackButton];
+    [self closeSessionFeedbackViewController];
+}
+
+#pragma mark - Other
+
+/** 
+ Flips 'self' back around and removes '_sessionFeedbackViewController.view' 
+ from view and nils out '_sessionFeedbackViewController', that way, we always 
+ start with a fresh set of elements on the feedback screen.
+ */
+- (void)closeSessionFeedbackViewController {
     [self
      SC_flipWithOptions:UIViewAnimationOptionTransitionFlipFromRight
      halfwayBlock:^(BOOL finished) {
@@ -219,6 +238,14 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
          self.sessionFeedbackViewController = nil;
      }
      completionBlock:NULL];
+}
+
+/** 
+ Shows or hides '_submitFeedbackButton' based on if session feedback has 
+ already been collected or not. 
+ */
+- (void)showOrHideSubmitFeedbackButton {
+    self.submitFeedbackButton.hidden = self.session.didSubmitFeedback;
 }
 
 @end
