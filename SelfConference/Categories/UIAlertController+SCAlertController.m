@@ -13,6 +13,13 @@
 
 @implementation UIAlertController (SCAlertController)
 
++ (instancetype)SC_alertControllerForSessionFeedbackFailedToSendToAPI {
+    return
+    [self SC_alertControllerWithTitle:@"Feedback failed to send. Please try again."
+                   confirmButtonTitle:nil
+                         confirmBlock:NULL];
+}
+
 + (instancetype)SC_alertControllerForOpenLinkForSponsor:(SCSponsor *)sponsor {
     return
     [self SC_alertControllerWithTitle:[NSString stringWithFormat:@"Open the %@ website in Safari?", sponsor.name]

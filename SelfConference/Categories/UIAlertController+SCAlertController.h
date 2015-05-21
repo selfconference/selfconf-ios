@@ -14,6 +14,12 @@
 
 @interface UIAlertController (SCAlertController)
 
+/**
+ Returns a 'UIAlertController' to be used to when session feedback failed to
+ send to the API.
+ */
++ (instancetype)SC_alertControllerForSessionFeedbackFailedToSendToAPI;
+
 /** 
  Returns a 'UIAlertController' to be used to open a sponsor's website in Safari.
  */
