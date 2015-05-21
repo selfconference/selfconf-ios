@@ -121,9 +121,10 @@
      endOfDay];
 }
 
-+ (NSArray *)sessionsSortedBySlot:(NSArray *)sessions {
++ (NSArray *)sessionsSortedBySlotAndName:(NSArray *)sessions {
     return [self objects:sessions
-    sortedByPropertyName:NSStringFromSelector(@selector(slot))];
+    sortedByPropertyNames:@[NSStringFromSelector(@selector(slot)),
+                            NSStringFromSelector(@selector(name))]];
 }
 
 - (void)submitFeedbackToTheAPIWithVote:(SCSessionVote)vote

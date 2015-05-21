@@ -65,7 +65,7 @@ typedef void (^SCSessionSubmitFeedbackCompletionBlock)(BOOL success, NSError *er
 + (NSPredicate *)predicateForSlotDuringDate:(NSDate *)date;
 
 /** Sorts an array of 'SCSession' instances based on 'slot' values. */
-+ (NSArray *)sessionsSortedBySlot:(NSArray *)sessions;
++ (NSArray *)sessionsSortedBySlotAndName:(NSArray *)sessions;
 
 /** 
  Submits feedback to the API for the given session. 'completionBlock' is

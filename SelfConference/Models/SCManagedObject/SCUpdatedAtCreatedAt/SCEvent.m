@@ -167,7 +167,7 @@
         NSArray *unsortedSessions =
         [self.sessions filteredSetUsingPredicate:combinedPredicate].allObjects;
         
-        sessions = [SCSession sessionsSortedBySlot:unsortedSessions];
+        sessions = [SCSession sessionsSortedBySlotAndName:unsortedSessions];
     }
     else {
         sessions = self.sessionsArrangedBySlot;
@@ -213,7 +213,7 @@
 
 /** Returns 'sessions' sorted based on their 'slot' values. */
 - (NSArray *)sessionsArrangedBySlot {
-    return [SCSession sessionsSortedBySlot:self.sessions.allObjects];
+    return [SCSession sessionsSortedBySlotAndName:self.sessions.allObjects];
 }
 
 #pragma mark - URL Strings

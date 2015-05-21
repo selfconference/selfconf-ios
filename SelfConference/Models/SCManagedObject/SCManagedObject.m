@@ -126,13 +126,22 @@ insertIntoManagedObjectContext:(NSManagedObjectContext *)context {
 
 + (NSArray *)objects:(NSArray *)objects
 sortedByPropertyName:(NSString *)propertyName {
-    NSSortDescriptor *sortedBySlotSortDescriptor =
-    [NSSortDescriptor
-     sortDescriptorWithKey:propertyName
-     ascending:YES];
+    return
+    [self objects:objects sortedByPropertyNames:@[propertyName]];
+}
+
++ (NSArray *)objects:(NSArray *)objects
+sortedByPropertyNames:(NSArray *)propertyNames {
+    NSMutableArray *sortDescriptors = [NSMutableArray array];
+    
+    for (NSString *propertyName in propertyNames) {
+        [sortDescriptors addObject:[NSSortDescriptor
+                                    sortDescriptorWithKey:propertyName
+                                    ascending:YES]];
+    }
     
     return
-    [objects sortedArrayUsingDescriptors:@[sortedBySlotSortDescriptor]];
+    [objects sortedArrayUsingDescriptors:sortDescriptors];
 }
 
 - (instancetype)refreshOnDefaultContext {
