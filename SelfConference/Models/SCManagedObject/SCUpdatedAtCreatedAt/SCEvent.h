@@ -26,9 +26,6 @@ typedef void (^SCEventWithErrorBlock)(SCEvent *event, NSError *error);
 /** The path to use with the Lanyrd service: http://lanyrd.com/ */
 @property (nonatomic, retain) NSString *lanyrdPath;
 
-/** Returns 'YES' if the event is the current running event. */
-@property (nonatomic) BOOL isCurrent;
-
 @property (nonatomic, retain) NSSet *sessions;
 @property (nonatomic, retain) NSSet *speakers;
 @property (nonatomic, retain) NSSet *sponsors;

@@ -33,11 +33,6 @@
                 <entry key="mappedKeyName" value="id"/>
             </userInfo>
         </attribute>
-        <attribute name="isCurrent" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES">
-            <userInfo>
-                <entry key="mappedKeyName" value="current"/>
-            </userInfo>
-        </attribute>
         <attribute name="lanyrdPath" optional="YES" attributeType="String" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="lanyard"/>
@@ -464,7 +459,7 @@
         <relationship name="rooms" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Room" inverseName="venue" inverseEntity="Room" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="0" positionY="0" width="128" height="345"/>
+        <element name="Event" positionX="0" positionY="0" width="128" height="330"/>
         <element name="Organizer" positionX="0" positionY="0" width="128" height="210"/>
         <element name="Room" positionX="0" positionY="0" width="128" height="180"/>
         <element name="Session" positionX="0" positionY="0" width="128" height="255"/>
