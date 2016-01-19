@@ -52,9 +52,9 @@ SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   IHKeyboardAvoiding: c48e2aa88064f502ff3ba135d4b1998c175c6dfe
   Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
-  MagicalRecord: 5b7e807bc07c5d642af1f7d894b7fe0d3c317ca2
+  MagicalRecord: 6c9674adfa596ba5828fbecb21c938f041f64a67
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MTCardLayout: 3baf5ac3bd21e6149b561dd7bca708f1ceccf962
   MTDates: aa8006ac046c3fc4f2bb9df95603e9b5bdac9467
 
-COCOAPODS: 0.37.1
+COCOAPODS: 0.39.0
