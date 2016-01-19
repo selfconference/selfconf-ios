@@ -74,6 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00C93AD11C4EE64D00C4B6B3 /* SelfConferenceDataModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "SelfConferenceDataModel 3.xcdatamodel"; sourceTree = "<group>"; };
 		1F0734E91B0C1B7B00A74989 /* SCSpeakerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSpeakerCollectionViewCell.h; sourceTree = "<group>"; };
 		1F0734EA1B0C1B7B00A74989 /* SCSpeakerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSpeakerCollectionViewCell.m; sourceTree = "<group>"; };
 		1F0734EC1B0C203900A74989 /* UIAlertController+SCAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+SCAlertController.h"; sourceTree = "<group>"; };
@@ -904,10 +905,11 @@
 		1FBD60A81B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				00C93AD11C4EE64D00C4B6B3 /* SelfConferenceDataModel 3.xcdatamodel */,
 				1F4FD4C41B0D2D2B008B4C8A /* SelfConferenceDataModel 2.xcdatamodel */,
 				1FBD60A91B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodel */,
 			);
-			currentVersion = 1F4FD4C41B0D2D2B008B4C8A /* SelfConferenceDataModel 2.xcdatamodel */;
+			currentVersion = 00C93AD11C4EE64D00C4B6B3 /* SelfConferenceDataModel 3.xcdatamodel */;
 			path = SelfConferenceDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
