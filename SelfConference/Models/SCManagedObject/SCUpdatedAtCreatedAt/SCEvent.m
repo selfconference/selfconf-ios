@@ -12,6 +12,7 @@
 #import <MagicalRecord/NSManagedObject+MagicalFinders.h>
 #import <MagicalRecord/NSManagedObjectContext+MagicalRecord.h>
 #import <MagicalRecord/NSManagedObject+MagicalRecord.h>
+#import <MagicalRecord/MagicalImportFunctions.h>
 #import "SCSpeaker.h"
 #import "SCSponsor.h"
 #import "SCSponsorLevel.h"
@@ -66,12 +67,23 @@
              saveCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)saveCompletionBlock {
     NSMutableDictionary *eventDict = [responseObject mutableCopy];
     
-    // The API doesn't yet have a "current" field, but since we only fetch the
-    // current event in this class, let's just assume the fetched event is
-    // the current one.
-    eventDict[@"current"] = @(YES);
+    SCEvent *currentEvent = [self currentEvent];
     
-    [super importFromResponseObject:@[eventDict] saveCompletionBlock:saveCompletionBlock];
+    // The API does not honor "from_date" for the "/events/current" endpoint. So,
+    // let's only import if the event was updated. Otherwise, let's not bother
+    // updating the UI (since it kind of flashes).
+    if (currentEvent.eventID == [eventDict[@"id"] integerValue] &&
+        [currentEvent.updatedAt isEqualToDate:MR_dateFromString(eventDict[@"updated_at"], kSCManagedObjectDefaultDateFormat)]) {
+        [super importFromResponseObject:@[] saveCompletionBlock:saveCompletionBlock];
+    }
+    else {
+        // The API doesn't yet have a "current" field, but since we only fetch the
+        // current event in this class, let's just assume the fetched event is
+        // the current one.
+        eventDict[@"current"] = @(YES);
+        
+        [super importFromResponseObject:@[eventDict] saveCompletionBlock:saveCompletionBlock];
+    }
 }
 
 #pragma mark - Typed API requests
