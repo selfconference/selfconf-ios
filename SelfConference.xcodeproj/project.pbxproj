@@ -827,7 +827,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/SelfConference/Supporting-Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "533be274-fe09-47f7-b580-6fe907b59961";
+				PROVISIONING_PROFILE = "98a2f7c6-ce02-45d4-bb8a-b2e479159d06";
 				SC_BUNDLE_NAME = self.conf;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
