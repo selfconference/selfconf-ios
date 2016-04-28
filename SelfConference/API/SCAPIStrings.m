@@ -19,7 +19,8 @@ const struct SCAPIRelativeUrlStrings SCAPIRelativeUrlStrings = {
     .sponsors = @"sponsors",
     .sponsorLevels = @"sponsor_levels",
     .organizers = @"organizers",
-    .feedbacks = @"feedbacks"
+    .feedbacks = @"feedbacks",
+    .current = @"current"
 };
 
 const struct SCAPIRequestKeys SCAPIRequestKeys = {

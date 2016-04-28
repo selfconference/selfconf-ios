@@ -62,11 +62,23 @@
     [self didChangeValueForKey:isCurrentPropertyName];
 }
 
++ (void)importFromResponseObject:(id)responseObject
+             saveCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)saveCompletionBlock {
+    NSMutableDictionary *eventDict = [responseObject mutableCopy];
+    
+    // The API doesn't yet have a "current" field, but since we only fetch the
+    // current event in this class, let's just assume the fetched event is
+    // the current one.
+    eventDict[@"current"] = @(YES);
+    
+    [super importFromResponseObject:@[eventDict] saveCompletionBlock:saveCompletionBlock];
+}
+
 #pragma mark - Typed API requests
 
 + (void)getCurrentEventWithCompletionBlock:(SCEventWithErrorBlock)completionBlock {
     [self
-     getObjectsFromUrlString:[self getAllEventsUrlString]
+     getObjectsFromUrlString:[self getCurrentEventUrlString]
      completionBlock:^(NSArray *objects, NSError *error) {         
          if (error) {
              [self callSCEventWithErrorBlock:completionBlock
@@ -205,9 +217,7 @@
 
 /** Returns a 'NSPredicate' that can be used to find the current event. */
 + (NSPredicate *)isCurrentEventPredicate {
-    // TODO: Change 'NO' to 'YES' once the API sets 'isCurrent' (currently
-    // this is an open issue).
-    return [NSPredicate predicateWithFormat:@"%K == NO",
+    return [NSPredicate predicateWithFormat:@"%K == YES",
             NSStringFromSelector(@selector(isCurrent))];
 }
 
@@ -218,10 +228,12 @@
 
 #pragma mark - URL Strings
 
-/** Returns a url string to GET all of the events */
-+ (NSString *)getAllEventsUrlString {
-    return [SCAPIRelativeUrlStrings.events
-            stringByAppendingString:[NSString SC_fromDateUrlParameterStringForClass:[self class]]];
+/** Returns a url string to get the current event. */
++ (NSString *)getCurrentEventUrlString {
+    return [NSString stringWithFormat:@"%@/%@%@",
+            SCAPIRelativeUrlStrings.events,
+            SCAPIRelativeUrlStrings.current,
+            [NSString SC_fromDateUrlParameterStringForClass:[self class]]];
 }
 
 /** Returns a url string to GET the current event's sessions */

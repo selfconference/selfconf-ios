@@ -21,6 +21,7 @@ extern const struct SCAPIRelativeUrlStrings {
     __unsafe_unretained NSString *sponsorLevels;
     __unsafe_unretained NSString *organizers;
     __unsafe_unretained NSString *feedbacks;
+    __unsafe_unretained NSString *current;
 } SCAPIRelativeUrlStrings;
 
 extern const struct SCAPIRequestKeys {
