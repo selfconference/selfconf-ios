@@ -31,6 +31,26 @@
 @dynamic speakers;
 @dynamic didSubmitFeedback;
 
+#pragma mark - Overrides
+
++ (void)importFromResponseObject:(id)responseObject
+             saveCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)saveCompletionBlock {
+    NSMutableArray *updatedSessions = [NSMutableArray array];
+    
+    for (NSDictionary *session in responseObject) {
+        // The API returns an entire slot object, but we're still old school
+        // and expect just the datetime string.
+        NSMutableDictionary *mutableSession = [session mutableCopy];
+        mutableSession[@"slot"] = session[@"slot"][@"time"];
+        [updatedSessions addObject:mutableSession];
+    }
+    
+    [super importFromResponseObject:updatedSessions
+                saveCompletionBlock:saveCompletionBlock];
+}
+
+#pragma mark -
+
 - (NSArray *)speakersOrderedByName {
     NSSortDescriptor *sortedBySlotSortDescriptor =
     [NSSortDescriptor
