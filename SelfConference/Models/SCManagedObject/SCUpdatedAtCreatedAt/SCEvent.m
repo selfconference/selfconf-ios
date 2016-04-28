@@ -31,6 +31,7 @@
 @dynamic endDate;
 @dynamic ticketsUrlString;
 @dynamic lanyrdPath;
+@dynamic isCurrent;
 @dynamic sessions;
 @dynamic speakers;
 @dynamic sponsors;
@@ -38,6 +39,28 @@
 @dynamic organizers;
 @dynamic rooms;
 @dynamic venue;
+
+#pragma mark - Overrides
+
+- (void)setIsCurrent:(BOOL)isCurrent {
+    if (isCurrent) {
+        // Delete old events when we mark a new one as current
+        for (SCEvent *event in [self.class MR_findAllInContext:self.managedObjectContext]) {
+            if (event != self) {
+                [event MR_deleteEntityInContext:self.managedObjectContext];
+            }
+        }
+    }
+    
+    NSString *isCurrentPropertyName = NSStringFromSelector(@selector(isCurrent));
+    
+    [self willChangeValueForKey:isCurrentPropertyName];
+    
+    [self setPrimitiveValue:[NSNumber numberWithBool:isCurrent]
+                     forKey:isCurrentPropertyName];
+    
+    [self didChangeValueForKey:isCurrentPropertyName];
+}
 
 #pragma mark - Typed API requests
 
@@ -95,14 +118,20 @@
 }
 
 + (SCEvent *)currentEventInContext:(NSManagedObjectContext *)context {
-    // Get the event with the highest 'eventID'
-    SCEvent *currentEvent =
-    [self MR_findFirstOrderedByAttribute:NSStringFromSelector(@selector(eventID))
-                               ascending:NO
-                               inContext:context];
+    SCEvent *currentEvent;
     
-    if (!currentEvent) {
+    NSArray *currentEvents =
+    [self MR_findAllWithPredicate:[self isCurrentEventPredicate]
+                        inContext:context];
+    
+    if (currentEvents.count == 0) {
         NSLog(@"There is no current SCEvent");
+    }
+    else if (currentEvents.count == 1) {
+        currentEvent = currentEvents.firstObject;
+    }
+    else {
+        NSAssert(NO, @"More than 1 current event exists.");
     }
     
     return currentEvent;
@@ -172,6 +201,14 @@
     else {
         NSLog(@"SCEventWithErrorBlock is nil");
     }
+}
+
+/** Returns a 'NSPredicate' that can be used to find the current event. */
++ (NSPredicate *)isCurrentEventPredicate {
+    // TODO: Change 'NO' to 'YES' once the API sets 'isCurrent' (currently
+    // this is an open issue).
+    return [NSPredicate predicateWithFormat:@"%K == NO",
+            NSStringFromSelector(@selector(isCurrent))];
 }
 
 /** Returns 'sessions' sorted based on their 'slot' values. */
