@@ -27,8 +27,8 @@
 #pragma mark - Overrides
 
 - (void)setSession:(SCSession *)session {
-    self.nameLabel.text = [NSString stringWithFormat:@"%@: %@%@",
-                           session.joinedSpeakerNamesOrderedByName,
+    self.nameLabel.text = [NSString stringWithFormat:@"%@%@%@",
+                           session.speakers.count > 0 ? [session.joinedSpeakerNamesOrderedByName stringByAppendingString:@": "] : @"",
                            session.isKeynote ? @"Keynote - " : @"",
                            session.name];
     

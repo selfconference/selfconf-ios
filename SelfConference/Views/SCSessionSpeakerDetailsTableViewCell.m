@@ -24,8 +24,13 @@
 @implementation SCSessionSpeakerDetailsTableViewCell
 
 - (void)setSession:(SCSession *)session {
-    self.nameLabel.text = [NSString stringWithFormat:@"About %@",
-                           session.joinedSpeakerNamesOrderedByName];
+    if (session.speakers.count > 0) {
+        self.nameLabel.text = [NSString stringWithFormat:@"About %@",
+                               session.joinedSpeakerNamesOrderedByName];
+    }
+    else {
+        self.nameLabel.text = nil;
+    }
     
     SCSpeaker *oneSpeaker = session.speakers.anyObject;
     self.biographyLabel.text = oneSpeaker.biography;
