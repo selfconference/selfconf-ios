@@ -15,6 +15,7 @@ extern const struct SCAPIRelativeUrlStrings {
     __unsafe_unretained NSString *events;
     __unsafe_unretained NSString *venues;
     __unsafe_unretained NSString *sessions;
+    __unsafe_unretained NSString *slots;
     __unsafe_unretained NSString *rooms;
     __unsafe_unretained NSString *speakers;
     __unsafe_unretained NSString *sponsors;

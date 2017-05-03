@@ -33,6 +33,7 @@
 @dynamic ticketsUrlString;
 @dynamic lanyrdPath;
 @dynamic isCurrent;
+@dynamic slots;
 @dynamic sessions;
 @dynamic speakers;
 @dynamic sponsors;
@@ -103,6 +104,12 @@
                                        error:error];
          }
      }];
+}
+
+
+- (void)getSlotsWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock {
+    [SCSession getObjectsFromUrlString:self.getSlotsUrlString
+                       completionBlock:completionBlock];
 }
 
 - (void)getSessionsWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock {
@@ -246,6 +253,11 @@
             SCAPIRelativeUrlStrings.events,
             SCAPIRelativeUrlStrings.current,
             [NSString SC_fromDateUrlParameterStringForClass:[self class]]];
+}
+
+- (NSString *)getSlotsUrlString {
+    return [self getUrlWithSuffix:SCAPIRelativeUrlStrings.slots
+                            class:[SCSession class]];
 }
 
 /** Returns a url string to GET the current event's sessions */

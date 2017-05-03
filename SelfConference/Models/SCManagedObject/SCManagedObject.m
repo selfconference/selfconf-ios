@@ -7,10 +7,7 @@
 //
 
 #import "SCManagedObject.h"
-#import <MagicalRecord/NSManagedObjectContext+MagicalRecord.h>
-#import <MagicalRecord/NSManagedObject+MagicalRecord.h>
-#import <MagicalRecord/MagicalRecord+Actions.h>
-#import <MagicalRecord/NSManagedObject+MagicalDataImport.h>
+#import <MagicalRecord/MagicalRecord.h>
 #import "SCAPIService.h"
 
 NSString * const kSCManagedObjectDefaultDateFormat =

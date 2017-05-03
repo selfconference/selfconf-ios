@@ -29,6 +29,7 @@ typedef void (^SCEventWithErrorBlock)(SCEvent *event, NSError *error);
 /** Returns 'YES' if the event is the current running event. */
 @property (nonatomic) BOOL isCurrent;
 
+@property (nonatomic, retain) NSSet *slots;
 @property (nonatomic, retain) NSSet *sessions;
 @property (nonatomic, retain) NSSet *speakers;
 @property (nonatomic, retain) NSSet *sponsors;
@@ -44,6 +45,8 @@ typedef void (^SCEventWithErrorBlock)(SCEvent *event, NSError *error);
  'completionBlock' 
  */
 + (void)getCurrentEventWithCompletionBlock:(SCEventWithErrorBlock)completionBlock;
+
+- (void)getSlotsWithCompletionBlock:(SCManagedObjectObjectsWithErrorBlock)completionBlock;
 
 /**
  Fetches the event's 'SCSession' entities from the API and returns them inside

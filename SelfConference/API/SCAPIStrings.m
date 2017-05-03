@@ -14,6 +14,7 @@ const struct SCAPIRelativeUrlStrings SCAPIRelativeUrlStrings = {
     .events = @"events",
     .venues = @"venues",
     .sessions = @"sessions",
+    .slots = @"slots",
     .rooms = @"rooms",
     .speakers = @"speakers",
     .sponsors = @"sponsors",

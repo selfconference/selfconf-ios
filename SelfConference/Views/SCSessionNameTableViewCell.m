@@ -10,6 +10,7 @@
 #import "SCSession.h"
 #import <MTDates/NSDate+MTDates.h>
 #import "SCRoom.h"
+#import "SCSlot.h"
 #import "SCSpeaker.h"
 #import <MagicalRecord/MagicalRecord+Actions.h>
 #import <MagicalRecord/NSManagedObject+MagicalRecord.h>
@@ -35,7 +36,7 @@
     // TODO: Remove the hardcoded 1 hour earlier. There seems to be an issue
     // with the API and the date it returns. This is a temporary workaround.
     self.slotAndRoomLabel.text = [NSString stringWithFormat:@"%@ - %@",
-                                  [[session.slot mt_dateHoursBefore:1]
+                                  [[session.slot.startTime mt_dateHoursBefore:1]
                                    mt_stringFromDateWithFormat:@"EEEE ha"
                                    localized:YES],
                                   session.room.name];

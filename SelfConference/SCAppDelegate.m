@@ -68,11 +68,13 @@
         [SCEvent getCurrentEventWithCompletionBlock:^(SCEvent *event, NSError *error) {
             [event getOrganizersWithCompletionBlock:^(NSArray *objects, NSError *error) {
                 [event getRoomsWithCompletionBlock:^(NSArray *objects, NSError *error) {
-                    [event getSessionsWithCompletionBlock:^(NSArray *objects, NSError *error) {
-                        [event getSpeakersWithCompletionBlock:^(NSArray *objects, NSError *error) {
-                            [event getSponsorLevelsWithCompletionBlock:^(NSArray *objects, NSError *error) {
-                                [event getSponsorsWithCompletionBlock:^(NSArray *objects, NSError *error) {
-                                    NSLog(@"Completed network refresh");
+                    [event getSlotsWithCompletionBlock:^(NSArray *objects, NSError *error) {
+                        [event getSessionsWithCompletionBlock:^(NSArray *objects, NSError *error) {
+                            [event getSpeakersWithCompletionBlock:^(NSArray *objects, NSError *error) {
+                                [event getSponsorLevelsWithCompletionBlock:^(NSArray *objects, NSError *error) {
+                                    [event getSponsorsWithCompletionBlock:^(NSArray *objects, NSError *error) {
+                                        NSLog(@"Completed network refresh");
+                                    }];
                                 }];
                             }];
                         }];

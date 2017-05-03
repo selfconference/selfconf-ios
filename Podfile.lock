@@ -22,9 +22,9 @@ PODS:
     - AFNetworking/NSURLSession
   - IHKeyboardAvoiding (2.2)
   - Kiwi (2.3.1)
-  - MagicalRecord (2.3.0-beta.5):
-    - MagicalRecord/Core (= 2.3.0-beta.5)
-  - MagicalRecord/Core (2.3.0-beta.5)
+  - MagicalRecord (2.3.2):
+    - MagicalRecord/Core (= 2.3.2)
+  - MagicalRecord/Core (2.3.2)
   - MBProgressHUD (0.9.1)
   - MTCardLayout (1.0.3)
   - MTDates (1.0.2)
@@ -33,28 +33,20 @@ DEPENDENCIES:
   - AFNetworking
   - IHKeyboardAvoiding
   - Kiwi
-  - MagicalRecord (from `https://github.com/magicalpanda/MagicalRecord.git`, tag `v2.3.0-beta.5`)
+  - MagicalRecord
   - MBProgressHUD
   - MTCardLayout
   - MTDates
-
-EXTERNAL SOURCES:
-  MagicalRecord:
-    :git: https://github.com/magicalpanda/MagicalRecord.git
-    :tag: v2.3.0-beta.5
-
-CHECKOUT OPTIONS:
-  MagicalRecord:
-    :git: https://github.com/magicalpanda/MagicalRecord.git
-    :tag: v2.3.0-beta.5
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   IHKeyboardAvoiding: c48e2aa88064f502ff3ba135d4b1998c175c6dfe
   Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
-  MagicalRecord: 6c9674adfa596ba5828fbecb21c938f041f64a67
+  MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MTCardLayout: 3baf5ac3bd21e6149b561dd7bca708f1ceccf962
   MTDates: aa8006ac046c3fc4f2bb9df95603e9b5bdac9467
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: f52c32595efe3de792623488ab6e639c71cab96c
+
+COCOAPODS: 1.2.1

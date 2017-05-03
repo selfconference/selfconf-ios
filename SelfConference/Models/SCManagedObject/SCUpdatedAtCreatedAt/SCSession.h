@@ -24,14 +24,14 @@ typedef void (^SCSessionSubmitFeedbackCompletionBlock)(BOOL success, NSError *er
 
 @import UIKit;
 
-@class SCEvent, SCRoom;
+@class SCEvent, SCRoom, SCSlot;
 
 @interface SCSession : SCUpdatedAtCreatedAt
 
 @property (nonatomic) int32_t sessionID;
 
 /** The date when the session is scheduled to take place. */
-@property (nonatomic, retain) NSDate *slot;
+@property (nonatomic, retain) SCSlot *slot;
 
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *abstract;
