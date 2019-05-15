@@ -1,33 +1,27 @@
 PODS:
-  - AFNetworking (2.5.4):
-    - AFNetworking/NSURLConnection (= 2.5.4)
-    - AFNetworking/NSURLSession (= 2.5.4)
-    - AFNetworking/Reachability (= 2.5.4)
-    - AFNetworking/Security (= 2.5.4)
-    - AFNetworking/Serialization (= 2.5.4)
-    - AFNetworking/UIKit (= 2.5.4)
-  - AFNetworking/NSURLConnection (2.5.4):
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.5.4):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.5.4)
-  - AFNetworking/Security (2.5.4)
-  - AFNetworking/Serialization (2.5.4)
-  - AFNetworking/UIKit (2.5.4):
-    - AFNetworking/NSURLConnection
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - IHKeyboardAvoiding (2.2)
-  - Kiwi (2.3.1)
+  - IHKeyboardAvoiding (4.6)
+  - Kiwi (3.0.0)
   - MagicalRecord (2.3.0-beta.5):
     - MagicalRecord/Core (= 2.3.0-beta.5)
   - MagicalRecord/Core (2.3.0-beta.5)
-  - MBProgressHUD (0.9.1)
+  - MBProgressHUD (1.1.0)
   - MTCardLayout (1.0.3)
-  - MTDates (1.0.2)
+  - MTDates (1.0.3)
 
 DEPENDENCIES:
   - AFNetworking
@@ -58,13 +52,13 @@ CHECKOUT OPTIONS:
     :tag: v2.3.0-beta.5
 
 SPEC CHECKSUMS:
-  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
-  IHKeyboardAvoiding: c48e2aa88064f502ff3ba135d4b1998c175c6dfe
-  Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  IHKeyboardAvoiding: 2a664fdb5f964359fa7ec8fc5c9aebb447583ff8
+  Kiwi: fbeafef0f00e4d8f7dcb3420a4930afe70af77f7
   MagicalRecord: 6c9674adfa596ba5828fbecb21c938f041f64a67
-  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MTCardLayout: 3baf5ac3bd21e6149b561dd7bca708f1ceccf962
-  MTDates: aa8006ac046c3fc4f2bb9df95603e9b5bdac9467
+  MTDates: c65affdfb7b34001c5c9e3fe0beac4b1b8334a58
 
 PODFILE CHECKSUM: d4a34c3b8a165ff3bdfbb626613185bef010b007
 
