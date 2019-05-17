@@ -11,7 +11,7 @@
 #import "SCSession.h"
 #import "UIView+MBProgressHUD.h"
 #import "UIAlertController+SCAlertController.h"
-#import <IHKeyboardAvoiding/IHKeyboardAvoiding.h>
+@import IHKeyboardAvoiding;
 
 @interface SCSessionFeedbackViewController () <UITextViewDelegate>
 
@@ -40,7 +40,7 @@
     // of comment to go along with the vote.
     [self enableSubmitButton:NO];
     
-    [IHKeyboardAvoiding setAvoidingView:self.textView];
+    [KeyboardAvoiding setAvoidingView:self.textView];
 }
 
 - (NSString *)placeholderText {
