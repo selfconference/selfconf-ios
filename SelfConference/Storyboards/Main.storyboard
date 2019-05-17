@@ -398,7 +398,7 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                                 </connections>
                             </searchBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mhY-Km-gtH" userLabel="Filters Segmented Control">
-                                <rect key="frame" x="10" y="30" width="394" height="29"/>
+                                <rect key="frame" x="10" y="44" width="394" height="29"/>
                                 <segments>
                                     <segment title="All"/>
                                     <segment title="Favorites"/>
@@ -517,7 +517,7 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                             <constraint firstItem="GMQ-Ke-ubu" firstAttribute="trailing" secondItem="mhY-Km-gtH" secondAttribute="trailing" constant="10" id="Knb-qw-Yzj"/>
                             <constraint firstItem="GMQ-Ke-ubu" firstAttribute="trailing" secondItem="bjR-46-Cw2" secondAttribute="trailing" id="OJc-J6-qCz"/>
                             <constraint firstItem="mhY-Km-gtH" firstAttribute="leading" secondItem="GMQ-Ke-ubu" secondAttribute="leading" constant="10" id="YPI-m6-fEn"/>
-                            <constraint firstItem="mhY-Km-gtH" firstAttribute="top" secondItem="ohS-K8-Mgc" secondAttribute="top" constant="30" id="lWY-2H-0Q8"/>
+                            <constraint firstItem="mhY-Km-gtH" firstAttribute="top" secondItem="GMQ-Ke-ubu" secondAttribute="top" id="lWY-2H-0Q8"/>
                             <constraint firstItem="c0n-6l-poF" firstAttribute="top" secondItem="bjR-46-Cw2" secondAttribute="bottom" id="qr6-vu-dUq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GMQ-Ke-ubu"/>
