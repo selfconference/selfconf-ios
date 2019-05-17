@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="d8q-4k-nwR">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="1166"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="1122"/>
                                 <gestureRecognizers/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                                 <collectionViewLayout key="collectionViewLayout" id="KyG-oX-anO" customClass="MTCardLayout"/>
@@ -273,7 +273,7 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="d8q-4k-nwR" firstAttribute="top" secondItem="sJV-uR-18p" secondAttribute="top" id="257-9M-Hir"/>
+                            <constraint firstItem="d8q-4k-nwR" firstAttribute="top" secondItem="i0u-sk-qIt" secondAttribute="top" id="257-9M-Hir"/>
                             <constraint firstItem="i0u-sk-qIt" firstAttribute="bottom" secondItem="d8q-4k-nwR" secondAttribute="bottom" id="Aap-gW-741"/>
                             <constraint firstItem="i0u-sk-qIt" firstAttribute="trailing" secondItem="d8q-4k-nwR" secondAttribute="trailing" id="Pey-Oc-SOL"/>
                             <constraint firstItem="d8q-4k-nwR" firstAttribute="leading" secondItem="i0u-sk-qIt" secondAttribute="leading" id="qRR-aY-9ui"/>
@@ -288,7 +288,7 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ix3-he-G8R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="347" y="1458"/>
+            <point key="canvasLocation" x="-86" y="1438"/>
         </scene>
         <!--Session Feedback View Controller-->
         <scene sceneID="1OD-Vr-PMS">
@@ -417,27 +417,27 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                                         <rect key="frame" x="0.0" y="104" width="414" height="714"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bib-1D-XA8">
-                                            <size key="itemSize" width="75" height="75"/>
+                                            <size key="itemSize" width="75" height="95"/>
                                             <size key="headerReferenceSize" width="50" height="30"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="20"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SCSponsorCollectionViewCell" id="2Fj-9B-k8y" customClass="SCSponsorCollectionViewCell">
-                                                <rect key="frame" x="10" y="30" width="75" height="75"/>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="SCSponsorCollectionViewCell" id="2Fj-9B-k8y" customClass="SCSponsorCollectionViewCell">
+                                                <rect key="frame" x="10" y="30" width="75" height="95"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="75" height="95"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GRF-rA-9Lu">
-                                                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="75" height="135"/>
                                                         </imageView>
                                                     </subviews>
                                                 </view>
                                                 <constraints>
                                                     <constraint firstItem="GRF-rA-9Lu" firstAttribute="top" secondItem="2Fj-9B-k8y" secondAttribute="top" id="cfp-vK-jyo"/>
-                                                    <constraint firstAttribute="bottom" secondItem="GRF-rA-9Lu" secondAttribute="bottom" id="iTp-FR-R6e"/>
+                                                    <constraint firstAttribute="bottom" secondItem="GRF-rA-9Lu" secondAttribute="bottom" constant="-20" id="iTp-FR-R6e"/>
                                                     <constraint firstItem="GRF-rA-9Lu" firstAttribute="leading" secondItem="2Fj-9B-k8y" secondAttribute="leading" id="uBy-jJ-EFF"/>
                                                     <constraint firstAttribute="trailing" secondItem="GRF-rA-9Lu" secondAttribute="trailing" id="yYy-Kb-HGD"/>
                                                 </constraints>
@@ -445,15 +445,15 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                                                     <outlet property="imageView" destination="GRF-rA-9Lu" id="lNQ-jG-IL7"/>
                                                 </connections>
                                             </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SCCodeOfConductCollectionViewCell" id="TmG-qT-UYp" customClass="SCFadeWhenHighlightedCollectionViewCell">
-                                                <rect key="frame" x="116.5" y="30" width="75" height="75"/>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="SCCodeOfConductCollectionViewCell" id="TmG-qT-UYp" customClass="SCFadeWhenHighlightedCollectionViewCell">
+                                                <rect key="frame" x="116.5" y="30" width="75" height="95"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="75" height="95"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code of Conduct" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZ7-k7-BTF" userLabel="Code of Conduct Label">
-                                                            <rect key="frame" x="0.0" y="50" width="75" height="25"/>
+                                                            <rect key="frame" x="0.0" y="50" width="75" height="65"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -483,19 +483,19 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                                                 </variation>
                                             </collectionViewCell>
                                         </cells>
-                                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SCNameLabelHeaderView" id="Vrf-VP-fNd" customClass="SCNameLabelHeaderView">
+                                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="SCNameLabelHeaderView" id="Vrf-VP-fNd" customClass="SCNameLabelHeaderView">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1P-dp-T8M" userLabel="Name Label">
-                                                    <rect key="frame" x="10" y="0.0" width="394" height="30"/>
+                                                    <rect key="frame" x="10" y="0.0" width="394" height="70"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="t1P-dp-T8M" secondAttribute="bottom" id="TNH-Ti-Cmc"/>
+                                                <constraint firstAttribute="bottom" secondItem="t1P-dp-T8M" secondAttribute="bottom" constant="-20" id="TNH-Ti-Cmc"/>
                                                 <constraint firstItem="t1P-dp-T8M" firstAttribute="top" secondItem="Vrf-VP-fNd" secondAttribute="top" id="ZXh-kw-Z8X"/>
                                                 <constraint firstItem="t1P-dp-T8M" firstAttribute="leading" secondItem="Vrf-VP-fNd" secondAttribute="leading" constant="10" id="kMQ-Iz-3VI"/>
                                                 <constraint firstAttribute="trailing" secondItem="t1P-dp-T8M" secondAttribute="trailing" constant="10" id="tDn-pg-9Wz"/>
