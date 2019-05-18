@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		065222E622905293006DB2DA /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 065222E522905293006DB2DA /* Colors.xcassets */; };
 		1099BA1573579EE9343BCCA9 /* libPods-SelfConference.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BA4EAE78649D1E700745240 /* libPods-SelfConference.a */; };
 		1F0734EB1B0C1B7B00A74989 /* SCSpeakerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0734EA1B0C1B7B00A74989 /* SCSpeakerCollectionViewCell.m */; };
 		1F0734EE1B0C203900A74989 /* UIAlertController+SCAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0734ED1B0C203900A74989 /* UIAlertController+SCAlertController.m */; };
@@ -75,6 +76,7 @@
 
 /* Begin PBXFileReference section */
 		00C93AD11C4EE64D00C4B6B3 /* SelfConferenceDataModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "SelfConferenceDataModel 3.xcdatamodel"; sourceTree = "<group>"; };
+		065222E522905293006DB2DA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		0C0622B2A3CA0B426E1FE5D1 /* Pods-SelfConference.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelfConference.appstore.xcconfig"; path = "Target Support Files/Pods-SelfConference/Pods-SelfConference.appstore.xcconfig"; sourceTree = "<group>"; };
 		1F0734E91B0C1B7B00A74989 /* SCSpeakerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSpeakerCollectionViewCell.h; sourceTree = "<group>"; };
 		1F0734EA1B0C1B7B00A74989 /* SCSpeakerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSpeakerCollectionViewCell.m; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				1F0BAA841A9989460059C73A /* Images.xcassets */,
+				065222E522905293006DB2DA /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F0BAA881A9989890059C73A /* LaunchScreen.xib in Resources */,
+				065222E622905293006DB2DA /* Colors.xcassets in Resources */,
 				1F0BAA851A9989460059C73A /* Images.xcassets in Resources */,
 				1F0BAA8B1A998D520059C73A /* Main.storyboard in Resources */,
 			);
@@ -756,7 +760,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/SelfConference/Supporting-Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -783,7 +787,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Amber Conville (6477MFL6C9)";
 				INFOPLIST_FILE = "$(SRCROOT)/SelfConference/Supporting-Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

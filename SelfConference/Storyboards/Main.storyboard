@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -271,14 +272,14 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="SC_teal"/>
                         <constraints>
-                            <constraint firstItem="d8q-4k-nwR" firstAttribute="top" secondItem="i0u-sk-qIt" secondAttribute="top" id="257-9M-Hir"/>
-                            <constraint firstItem="i0u-sk-qIt" firstAttribute="bottom" secondItem="d8q-4k-nwR" secondAttribute="bottom" id="Aap-gW-741"/>
-                            <constraint firstItem="i0u-sk-qIt" firstAttribute="trailing" secondItem="d8q-4k-nwR" secondAttribute="trailing" id="Pey-Oc-SOL"/>
-                            <constraint firstItem="d8q-4k-nwR" firstAttribute="leading" secondItem="i0u-sk-qIt" secondAttribute="leading" id="qRR-aY-9ui"/>
+                            <constraint firstItem="d8q-4k-nwR" firstAttribute="top" secondItem="31t-MM-Hwf" secondAttribute="top" id="257-9M-Hir"/>
+                            <constraint firstItem="31t-MM-Hwf" firstAttribute="bottom" secondItem="d8q-4k-nwR" secondAttribute="bottom" id="Aap-gW-741"/>
+                            <constraint firstItem="31t-MM-Hwf" firstAttribute="trailing" secondItem="d8q-4k-nwR" secondAttribute="trailing" id="Pey-Oc-SOL"/>
+                            <constraint firstItem="d8q-4k-nwR" firstAttribute="leading" secondItem="31t-MM-Hwf" secondAttribute="leading" id="qRR-aY-9ui"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="i0u-sk-qIt"/>
+                        <viewLayoutGuide key="safeArea" id="31t-MM-Hwf"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1200"/>
@@ -358,19 +359,19 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                         <constraints>
                             <constraint firstItem="zd6-hK-T2T" firstAttribute="centerX" secondItem="Ea9-Kq-dZP" secondAttribute="centerX" id="21v-b0-GZz"/>
                             <constraint firstItem="imK-f8-NTs" firstAttribute="top" secondItem="zd6-hK-T2T" secondAttribute="bottom" constant="20" id="9Z7-AP-O2E"/>
-                            <constraint firstItem="3r0-vB-quV" firstAttribute="trailing" secondItem="Ea9-Kq-dZP" secondAttribute="trailing" constant="20" id="Lm0-cG-vpy"/>
+                            <constraint firstItem="RZ2-Kd-DU8" firstAttribute="trailing" secondItem="Ea9-Kq-dZP" secondAttribute="trailing" constant="20" id="Lm0-cG-vpy"/>
                             <constraint firstItem="imK-f8-NTs" firstAttribute="leading" secondItem="Ea9-Kq-dZP" secondAttribute="leading" id="NiE-Oc-jG3"/>
-                            <constraint firstItem="Ea9-Kq-dZP" firstAttribute="top" secondItem="3r0-vB-quV" secondAttribute="top" constant="20" id="Ryo-kI-Jab"/>
+                            <constraint firstItem="Ea9-Kq-dZP" firstAttribute="top" secondItem="RZ2-Kd-DU8" secondAttribute="top" constant="20" id="Ryo-kI-Jab"/>
                             <constraint firstItem="zd6-hK-T2T" firstAttribute="top" secondItem="Ea9-Kq-dZP" secondAttribute="bottom" constant="20" id="VRj-x4-MJR"/>
                             <constraint firstItem="Ea9-Kq-dZP" firstAttribute="centerY" secondItem="HdN-xT-qQW" secondAttribute="centerY" id="Z9p-zF-795"/>
-                            <constraint firstItem="HdN-xT-qQW" firstAttribute="leading" secondItem="3r0-vB-quV" secondAttribute="leading" constant="10" id="btA-VP-e1X"/>
+                            <constraint firstItem="HdN-xT-qQW" firstAttribute="leading" secondItem="RZ2-Kd-DU8" secondAttribute="leading" constant="10" id="btA-VP-e1X"/>
                             <constraint firstItem="N4M-c6-6fL" firstAttribute="top" secondItem="imK-f8-NTs" secondAttribute="bottom" constant="20" id="fAa-G1-8mP"/>
-                            <constraint firstItem="3r0-vB-quV" firstAttribute="bottom" secondItem="N4M-c6-6fL" secondAttribute="bottom" constant="20" id="ibA-9M-n18"/>
-                            <constraint firstItem="Ea9-Kq-dZP" firstAttribute="leading" secondItem="3r0-vB-quV" secondAttribute="leading" constant="20" id="jmD-DY-lwu"/>
+                            <constraint firstItem="RZ2-Kd-DU8" firstAttribute="bottom" secondItem="N4M-c6-6fL" secondAttribute="bottom" constant="20" id="ibA-9M-n18"/>
+                            <constraint firstItem="Ea9-Kq-dZP" firstAttribute="leading" secondItem="RZ2-Kd-DU8" secondAttribute="leading" constant="20" id="jmD-DY-lwu"/>
                             <constraint firstItem="Ea9-Kq-dZP" firstAttribute="centerX" secondItem="N4M-c6-6fL" secondAttribute="centerX" id="n1x-IT-9mr"/>
                             <constraint firstItem="imK-f8-NTs" firstAttribute="trailing" secondItem="Ea9-Kq-dZP" secondAttribute="trailing" id="yIc-Fp-wDx"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="3r0-vB-quV"/>
+                        <viewLayoutGuide key="safeArea" id="RZ2-Kd-DU8"/>
                     </view>
                     <connections>
                         <outlet property="submitButton" destination="N4M-c6-6fL" id="TT1-5u-RNu"/>
@@ -394,7 +395,7 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mhY-Km-gtH" userLabel="Filters Segmented Control">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="29"/>
                                         <segments>
                                             <segment title="All"/>
                                             <segment title="Favorites"/>
@@ -407,14 +408,14 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                                         </connections>
                                     </segmentedControl>
                                     <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="bjR-46-Cw2">
-                                        <rect key="frame" x="0.0" y="48" width="414" height="56"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="56"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <outlet property="delegate" destination="iDy-AO-Yue" id="rEa-0p-CTn"/>
                                         </connections>
                                     </searchBar>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c0n-6l-poF">
-                                        <rect key="frame" x="0.0" y="104" width="414" height="714"/>
+                                        <rect key="frame" x="0.0" y="84" width="414" height="734"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bib-1D-XA8">
                                             <size key="itemSize" width="75" height="95"/>
@@ -512,14 +513,13 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="GMQ-Ke-ubu" firstAttribute="bottom" secondItem="opk-Lk-7k5" secondAttribute="bottom" id="Dps-24-2WY"/>
-                            <constraint firstItem="opk-Lk-7k5" firstAttribute="leading" secondItem="GMQ-Ke-ubu" secondAttribute="leading" id="OSS-XZ-mfB"/>
-                            <constraint firstItem="opk-Lk-7k5" firstAttribute="top" secondItem="GMQ-Ke-ubu" secondAttribute="top" id="ZkC-EC-iKr"/>
-                            <constraint firstItem="GMQ-Ke-ubu" firstAttribute="trailing" secondItem="opk-Lk-7k5" secondAttribute="trailing" id="eD1-f1-OKx"/>
+                            <constraint firstItem="pmx-lU-0mi" firstAttribute="bottom" secondItem="opk-Lk-7k5" secondAttribute="bottom" id="Dps-24-2WY"/>
+                            <constraint firstItem="opk-Lk-7k5" firstAttribute="leading" secondItem="pmx-lU-0mi" secondAttribute="leading" id="OSS-XZ-mfB"/>
+                            <constraint firstItem="opk-Lk-7k5" firstAttribute="top" secondItem="pmx-lU-0mi" secondAttribute="top" id="ZkC-EC-iKr"/>
+                            <constraint firstItem="pmx-lU-0mi" firstAttribute="trailing" secondItem="opk-Lk-7k5" secondAttribute="trailing" id="eD1-f1-OKx"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="GMQ-Ke-ubu"/>
+                        <viewLayoutGuide key="safeArea" id="pmx-lU-0mi"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
@@ -847,14 +847,14 @@ Cg
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="zmn-fV-myT" firstAttribute="leading" secondItem="wPs-Az-oLg" secondAttribute="leading" id="Eyj-0k-8pH"/>
-                            <constraint firstItem="zmn-fV-myT" firstAttribute="leading" secondItem="o1S-ul-oG5" secondAttribute="leading" id="ZY7-SJ-FLF"/>
+                            <constraint firstItem="zmn-fV-myT" firstAttribute="leading" secondItem="SCG-X6-LR9" secondAttribute="leading" id="ZY7-SJ-FLF"/>
                             <constraint firstItem="zmn-fV-myT" firstAttribute="top" secondItem="r0a-4m-ENQ" secondAttribute="top" id="aPb-rw-yCw"/>
                             <constraint firstItem="zmn-fV-myT" firstAttribute="trailing" secondItem="wPs-Az-oLg" secondAttribute="trailing" id="iuZ-i4-u5V"/>
-                            <constraint firstItem="o1S-ul-oG5" firstAttribute="bottom" secondItem="wPs-Az-oLg" secondAttribute="bottom" id="sDS-tF-mWp"/>
+                            <constraint firstItem="SCG-X6-LR9" firstAttribute="bottom" secondItem="wPs-Az-oLg" secondAttribute="bottom" id="sDS-tF-mWp"/>
                             <constraint firstItem="wPs-Az-oLg" firstAttribute="top" secondItem="zmn-fV-myT" secondAttribute="bottom" id="vhs-nE-1l8"/>
-                            <constraint firstItem="o1S-ul-oG5" firstAttribute="trailing" secondItem="zmn-fV-myT" secondAttribute="trailing" id="vn2-ln-Hc7"/>
+                            <constraint firstItem="SCG-X6-LR9" firstAttribute="trailing" secondItem="zmn-fV-myT" secondAttribute="trailing" id="vn2-ln-Hc7"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="o1S-ul-oG5"/>
+                        <viewLayoutGuide key="safeArea" id="SCG-X6-LR9"/>
                     </view>
                     <connections>
                         <outlet property="textView" destination="wPs-Az-oLg" id="jcC-Yh-m9f"/>
@@ -873,5 +873,8 @@ Cg
         <image name="thumbsDownIcon" width="33" height="33"/>
         <image name="thumbsUpIcon" width="33" height="33"/>
         <image name="twitterIcon" width="10" height="10"/>
+        <namedColor name="SC_teal">
+            <color red="0.20000000000000001" green="0.56862745098039214" blue="0.58039215686274515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
