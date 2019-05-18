@@ -431,7 +431,7 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                                                     <rect key="frame" x="0.0" y="0.0" width="75" height="95"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbsUpIcon" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GRF-rA-9Lu">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GRF-rA-9Lu">
                                                             <rect key="frame" x="0.0" y="0.0" width="75" height="115"/>
                                                         </imageView>
                                                     </subviews>
@@ -488,15 +488,15 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1P-dp-T8M" userLabel="Name Label">
-                                                    <rect key="frame" x="10" y="0.0" width="394" height="50"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1P-dp-T8M" userLabel="Name Label">
+                                                    <rect key="frame" x="10" y="0.0" width="394" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="t1P-dp-T8M" secondAttribute="bottom" constant="-20" id="TNH-Ti-Cmc"/>
+                                                <constraint firstAttribute="bottom" secondItem="t1P-dp-T8M" secondAttribute="bottom" id="TNH-Ti-Cmc"/>
                                                 <constraint firstItem="t1P-dp-T8M" firstAttribute="top" secondItem="Vrf-VP-fNd" secondAttribute="top" id="ZXh-kw-Z8X"/>
                                                 <constraint firstItem="t1P-dp-T8M" firstAttribute="leading" secondItem="Vrf-VP-fNd" secondAttribute="leading" constant="10" id="kMQ-Iz-3VI"/>
                                                 <constraint firstAttribute="trailing" secondItem="t1P-dp-T8M" secondAttribute="trailing" constant="10" id="tDn-pg-9Wz"/>
