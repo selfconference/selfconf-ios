@@ -541,8 +541,8 @@ Bill is the author of the best selling Effective C#, now in its second edition, 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wPs-Az-oLg">
-                                <rect key="frame" x="0.0" y="64" width="414" height="798"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" name="SC_offWhite"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">self.conference is a developer community conference intended to create opportunities for education, collaboration and networking. In the interest of creating a safe, enjoyable and fulfilling experiences for all concerned, attendees are expected to show respect and courtesy to other attendees throughout the conference and at all conference events.
@@ -823,11 +823,8 @@ Cg
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                             </textView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zmn-fV-myT">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="b2T-iT-gf4"/>
-                                </constraints>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmn-fV-myT">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <color key="barTintColor" red="0.20000000000000001" green="0.56862745100000001" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -844,11 +841,11 @@ Cg
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="SC_teal"/>
                         <constraints>
                             <constraint firstItem="zmn-fV-myT" firstAttribute="leading" secondItem="wPs-Az-oLg" secondAttribute="leading" id="Eyj-0k-8pH"/>
                             <constraint firstItem="zmn-fV-myT" firstAttribute="leading" secondItem="SCG-X6-LR9" secondAttribute="leading" id="ZY7-SJ-FLF"/>
-                            <constraint firstItem="zmn-fV-myT" firstAttribute="top" secondItem="r0a-4m-ENQ" secondAttribute="top" id="aPb-rw-yCw"/>
+                            <constraint firstItem="zmn-fV-myT" firstAttribute="top" secondItem="SCG-X6-LR9" secondAttribute="top" id="aPb-rw-yCw"/>
                             <constraint firstItem="zmn-fV-myT" firstAttribute="trailing" secondItem="wPs-Az-oLg" secondAttribute="trailing" id="iuZ-i4-u5V"/>
                             <constraint firstItem="SCG-X6-LR9" firstAttribute="bottom" secondItem="wPs-Az-oLg" secondAttribute="bottom" id="sDS-tF-mWp"/>
                             <constraint firstItem="wPs-Az-oLg" firstAttribute="top" secondItem="zmn-fV-myT" secondAttribute="bottom" id="vhs-nE-1l8"/>
@@ -873,6 +870,9 @@ Cg
         <image name="thumbsDownIcon" width="33" height="33"/>
         <image name="thumbsUpIcon" width="33" height="33"/>
         <image name="twitterIcon" width="10" height="10"/>
+        <namedColor name="SC_offWhite">
+            <color red="0.96078431372549022" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="SC_teal">
             <color red="0.20000000000000001" green="0.56862745098039214" blue="0.58039215686274515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
