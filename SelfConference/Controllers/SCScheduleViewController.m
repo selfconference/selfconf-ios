@@ -102,7 +102,7 @@
 - (void)collectionView:(UICollectionView *)collectionView
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [[UIApplication sharedApplication]
-     setStatusBarHidden:YES
+     setStatusBarHidden:NO
      withAnimation:UIStatusBarAnimationSlide];
     
     SCSessionDetailsCollectionViewCell *cell =
