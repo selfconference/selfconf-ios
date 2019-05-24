@@ -24,8 +24,17 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>https://selfconference.org/api</key>
+			<dict/>
+            <key>NSExceptionRequiresForwardSecrecy</key>
+            <true/>
+            <key>NSRequiresCertificateTransparency</key>
+            <true/>
+		</dict>
 		<key>NSAllowsArbitraryLoads</key>
-		<true/>
+		<false/>
 	</dict>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
