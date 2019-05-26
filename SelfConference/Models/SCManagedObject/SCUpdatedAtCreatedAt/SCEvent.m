@@ -21,6 +21,7 @@
 #import "NSString+SCHTMLTagConverter.h"
 #import "NSString+SCFromDate.h"
 #import "SCRoom.h"
+#import "SelfConference-Swift.h"
 
 @implementation SCEvent
 
@@ -73,7 +74,7 @@
     // let's only import if the event was updated. Otherwise, let's not bother
     // updating the UI (since it kind of flashes).
     if (currentEvent.eventID == [eventDict[@"id"] integerValue] &&
-        [currentEvent.updatedAt isEqualToDate:MR_dateFromString(eventDict[@"updated_at"], kSCManagedObjectDefaultDateFormat)]) {
+        [currentEvent.updatedAt isEqualToDate:MR_dateFromString(eventDict[@"updated_at"], [Constants defaultDateFormatterString])]) {
         [super importFromResponseObject:@[] saveCompletionBlock:saveCompletionBlock];
     }
     else {

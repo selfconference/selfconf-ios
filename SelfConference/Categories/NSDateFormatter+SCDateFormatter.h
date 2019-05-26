@@ -11,7 +11,7 @@
 @interface NSDateFormatter (SCDateFormatter)
 
 /**
- Returns an NSDateFormatter instance with kSCManagedObjectDefaultDateFormat set 
+ Returns an NSDateFormatter instance with Cosntants.defaultDateFormatterString set 
  as 'dateFormat'.
  */
 + (instancetype)SCC_sharedDateFormatterWithDefaultDateFormat;

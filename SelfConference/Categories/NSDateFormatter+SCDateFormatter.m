@@ -8,6 +8,7 @@
 
 #import "NSDateFormatter+SCDateFormatter.h"
 #import "SCManagedObject.h"
+#import "SelfConference-Swift.h"
 
 @implementation NSDateFormatter (SCDateFormatter)
 
@@ -17,7 +18,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedDateFormatter = [self new];
-        sharedDateFormatter.dateFormat = kSCManagedObjectDefaultDateFormat;
+        sharedDateFormatter.dateFormat = [Constants defaultDateFormatterString];
         sharedDateFormatter.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
     });
     
