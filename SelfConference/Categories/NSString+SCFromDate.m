@@ -9,7 +9,7 @@
 #import "NSString+SCFromDate.h"
 #import "SCUpdatedAtCreatedAt.h"
 #import <MagicalRecord/NSManagedObject+MagicalFinders.h>
-#import "NSDateFormatter+SCDateFormatter.h"
+#import "SelfConference-Swift.h"
 #import "SCAPIStrings.h"
 #import <MTDates/NSDate+MTDates.h>
 
