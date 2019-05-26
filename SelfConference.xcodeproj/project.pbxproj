@@ -18,7 +18,6 @@
 		1F0BAA881A9989890059C73A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BAA871A9989890059C73A /* LaunchScreen.xib */; };
 		1F0BAA8B1A998D520059C73A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BAA8A1A998D520059C73A /* Main.storyboard */; };
 		1F0BAAA51A99A3680059C73A /* SCSharedStoryboardInstances.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAA41A99A3680059C73A /* SCSharedStoryboardInstances.m */; };
-		1F0BAAB31A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAB21A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m */; };
 		1F2CCF9C1B0B7CA500C24FFC /* NSString+SCFromDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2CCF9B1B0B7CA500C24FFC /* NSString+SCFromDate.m */; };
 		1F2CCFA81B0B9F3A00C24FFC /* SCSponsorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2CCFA71B0B9F3A00C24FFC /* SCSponsorCollectionViewCell.m */; };
 		1F2CCFAB1B0BA10C00C24FFC /* SCUpdatingEventBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2CCFAA1B0BA10C00C24FFC /* SCUpdatingEventBaseViewController.m */; };
@@ -89,8 +88,6 @@
 		1F0BAA8A1A998D520059C73A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1F0BAAA31A99A3680059C73A /* SCSharedStoryboardInstances.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSharedStoryboardInstances.h; sourceTree = "<group>"; };
 		1F0BAAA41A99A3680059C73A /* SCSharedStoryboardInstances.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSharedStoryboardInstances.m; sourceTree = "<group>"; };
-		1F0BAAB11A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+SCUserDefaults.h"; sourceTree = "<group>"; };
-		1F0BAAB21A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+SCUserDefaults.m"; sourceTree = "<group>"; };
 		1F2CCF9A1B0B7CA500C24FFC /* NSString+SCFromDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SCFromDate.h"; sourceTree = "<group>"; };
 		1F2CCF9B1B0B7CA500C24FFC /* NSString+SCFromDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SCFromDate.m"; sourceTree = "<group>"; };
 		1F2CCFA61B0B9F3A00C24FFC /* SCSponsorCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSponsorCollectionViewCell.h; sourceTree = "<group>"; };
@@ -276,8 +273,6 @@
 		1F0BAAAD1A99B7D00059C73A /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				1F0BAAB11A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.h */,
-				1F0BAAB21A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m */,
 				EEB8B19F229B11D4003A9CA2 /* UIColor+SCColor.swift */,
 				1F5AC6F51ABE40A00076E341 /* UIView+SCUtilities.h */,
 				1F5AC6F61ABE40A00076E341 /* UIView+SCUtilities.m */,
@@ -616,7 +611,6 @@
 				EEB8B1A6229B3DD7003A9CA2 /* DateFormatterExtention.swift in Sources */,
 				1FD2566D1B0D3FA40089122A /* SCSessionFeedbackViewController.m in Sources */,
 				EEB8B1A0229B11D4003A9CA2 /* UIColor+SCColor.swift in Sources */,
-				1F0BAAB31A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m in Sources */,
 				1FBD60AA1B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld in Sources */,
 				1FE566741B0D7A6B00044DFE /* SCNameLabelHeaderView.m in Sources */,
 				1F2CCFA81B0B9F3A00C24FFC /* SCSponsorCollectionViewCell.m in Sources */,
