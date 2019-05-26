@@ -58,6 +58,7 @@
 		1FE566771B0D812000044DFE /* SCCodeOfConductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE566761B0D812000044DFE /* SCCodeOfConductViewController.m */; };
 		7DBD12AE835AEF03A63F5646 /* libPods-SelfConferenceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D44B76A75D0987CA105EFC /* libPods-SelfConferenceTests.a */; };
 		EEB8B1A0229B11D4003A9CA2 /* UIColor+SCColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8B19F229B11D4003A9CA2 /* UIColor+SCColor.swift */; };
+		EEB8B1A2229B2414003A9CA2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8B1A1229B2414003A9CA2 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,6 +175,7 @@
 		D3D44B76A75D0987CA105EFC /* libPods-SelfConferenceTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SelfConferenceTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEB8B19E229B11D3003A9CA2 /* SelfConference-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SelfConference-Bridging-Header.h"; sourceTree = "<group>"; };
 		EEB8B19F229B11D4003A9CA2 /* UIColor+SCColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+SCColor.swift"; sourceTree = "<group>"; };
+		EEB8B1A1229B2414003A9CA2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,6 +338,7 @@
 			children = (
 				1F7392B91A9985BE00F4B10F /* SCAppDelegate.h */,
 				1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */,
+				EEB8B1A1229B2414003A9CA2 /* Constants.swift */,
 				1FBD60E91B01A053008E0FEC /* API */,
 				1F0BAAAD1A99B7D00059C73A /* Categories */,
 				1F0BAA8C1A998F8B0059C73A /* Controllers */,
@@ -619,6 +622,7 @@
 				1F0734EE1B0C203900A74989 /* UIAlertController+SCAlertController.m in Sources */,
 				1FBD60D61B018EDC008E0FEC /* SCOrganizer.m in Sources */,
 				1FBD60DC1B018EDC008E0FEC /* SCVenue.m in Sources */,
+				EEB8B1A2229B2414003A9CA2 /* Constants.swift in Sources */,
 				1F71944B1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m in Sources */,
 				1FD2566D1B0D3FA40089122A /* SCSessionFeedbackViewController.m in Sources */,
 				EEB8B1A0229B11D4003A9CA2 /* UIColor+SCColor.swift in Sources */,
