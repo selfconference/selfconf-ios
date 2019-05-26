@@ -39,7 +39,6 @@
 		1F7392D51A9985BE00F4B10F /* SelfConferenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7392D41A9985BE00F4B10F /* SelfConferenceTests.m */; };
 		1F7560821B043A8900795E54 /* SCScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7560811B043A8900795E54 /* SCScheduleViewController.m */; };
 		1F7560851B04448F00795E54 /* SCSessionDetailsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7560841B04448F00795E54 /* SCSessionDetailsCollectionViewCell.m */; };
-		1F86EF301ABE05DD001E30DD /* UIColor+SCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86EF2F1ABE05DD001E30DD /* UIColor+SCColor.m */; };
 		1F9B5A331B0ADC5A009DFD5D /* SCMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B5A321B0ADC5A009DFD5D /* SCMenuViewController.m */; };
 		1FBD60AA1B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60A81B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld */; };
 		1FBD60D51B018EDC008E0FEC /* SCEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60C61B018EDC008E0FEC /* SCEvent.m */; };
@@ -62,6 +61,7 @@
 		1FE566741B0D7A6B00044DFE /* SCNameLabelHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE566731B0D7A6B00044DFE /* SCNameLabelHeaderView.m */; };
 		1FE566771B0D812000044DFE /* SCCodeOfConductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE566761B0D812000044DFE /* SCCodeOfConductViewController.m */; };
 		7DBD12AE835AEF03A63F5646 /* libPods-SelfConferenceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D44B76A75D0987CA105EFC /* libPods-SelfConferenceTests.a */; };
+		EEB8B1A0229B11D4003A9CA2 /* UIColor+SCColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8B19F229B11D4003A9CA2 /* UIColor+SCColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,8 +138,6 @@
 		1F7560811B043A8900795E54 /* SCScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCScheduleViewController.m; sourceTree = "<group>"; };
 		1F7560831B04448F00795E54 /* SCSessionDetailsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCSessionDetailsCollectionViewCell.h; path = ../Controllers/SCSessionDetailsCollectionViewCell.h; sourceTree = "<group>"; };
 		1F7560841B04448F00795E54 /* SCSessionDetailsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCSessionDetailsCollectionViewCell.m; path = ../Controllers/SCSessionDetailsCollectionViewCell.m; sourceTree = "<group>"; };
-		1F86EF2E1ABE05DD001E30DD /* UIColor+SCColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SCColor.h"; sourceTree = "<group>"; };
-		1F86EF2F1ABE05DD001E30DD /* UIColor+SCColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SCColor.m"; sourceTree = "<group>"; };
 		1F9B5A311B0ADC5A009DFD5D /* SCMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMenuViewController.h; sourceTree = "<group>"; };
 		1F9B5A321B0ADC5A009DFD5D /* SCMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMenuViewController.m; sourceTree = "<group>"; };
 		1FBD60A91B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SelfConferenceDataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -186,6 +184,8 @@
 		8CC12258CF4E74435625EA2F /* Pods-SelfConferenceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelfConferenceTests.debug.xcconfig"; path = "Target Support Files/Pods-SelfConferenceTests/Pods-SelfConferenceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C0A7A69665F9D4DB5CF1A9EB /* Pods-SelfConferenceTests.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelfConferenceTests.appstore.xcconfig"; path = "Target Support Files/Pods-SelfConferenceTests/Pods-SelfConferenceTests.appstore.xcconfig"; sourceTree = "<group>"; };
 		D3D44B76A75D0987CA105EFC /* libPods-SelfConferenceTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SelfConferenceTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEB8B19E229B11D3003A9CA2 /* SelfConference-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SelfConference-Bridging-Header.h"; sourceTree = "<group>"; };
+		EEB8B19F229B11D4003A9CA2 /* UIColor+SCColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+SCColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,8 +295,7 @@
 				1F0BAAAF1A99B7DE0059C73A /* NSError+SCError.m */,
 				1F0BAAB11A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.h */,
 				1F0BAAB21A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m */,
-				1F86EF2E1ABE05DD001E30DD /* UIColor+SCColor.h */,
-				1F86EF2F1ABE05DD001E30DD /* UIColor+SCColor.m */,
+				EEB8B19F229B11D4003A9CA2 /* UIColor+SCColor.swift */,
 				1F5AC6F51ABE40A00076E341 /* UIView+SCUtilities.h */,
 				1F5AC6F61ABE40A00076E341 /* UIView+SCUtilities.m */,
 				1FBD60E61B019DFA008E0FEC /* NSPredicate+SCPredicate.h */,
@@ -327,6 +326,7 @@
 				1F0734F01B0C215B00A74989 /* UIAlertAction+SCAlertAction.m */,
 				1FD256711B0D58540089122A /* UIView+MBProgressHUD.h */,
 				1FD256721B0D58540089122A /* UIView+MBProgressHUD.m */,
+				EEB8B19E229B11D3003A9CA2 /* SelfConference-Bridging-Header.h */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -503,6 +503,7 @@
 					1F7392B11A9985BD00F4B10F = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 6477MFL6C9;
+						LastSwiftMigration = 1010;
 					};
 					1F7392CD1A9985BE00F4B10F = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -628,7 +629,6 @@
 				1F5AC7091ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m in Sources */,
 				1F64F0441B09220E00833292 /* SCRedTextColorLabel.m in Sources */,
 				1FBD60E81B019DFA008E0FEC /* NSPredicate+SCPredicate.m in Sources */,
-				1F86EF301ABE05DD001E30DD /* UIColor+SCColor.m in Sources */,
 				1F64F03A1B0920F400833292 /* SCLabelWithCommonCoderAndFrameInitializer.m in Sources */,
 				1F0BAAA51A99A3680059C73A /* SCSharedStoryboardInstances.m in Sources */,
 				1F0734EB1B0C1B7B00A74989 /* SCSpeakerCollectionViewCell.m in Sources */,
@@ -644,6 +644,7 @@
 				1FBD60DC1B018EDC008E0FEC /* SCVenue.m in Sources */,
 				1F71944B1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m in Sources */,
 				1FD2566D1B0D3FA40089122A /* SCSessionFeedbackViewController.m in Sources */,
+				EEB8B1A0229B11D4003A9CA2 /* UIColor+SCColor.swift in Sources */,
 				1F0BAAB31A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m in Sources */,
 				1FBD60AA1B017B06008E0FEC /* SelfConferenceDataModel.xcdatamodeld in Sources */,
 				1F64F0411B0921DE00833292 /* SCTealTextColorLabel.m in Sources */,
@@ -707,7 +708,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -744,7 +745,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -757,6 +758,7 @@
 			baseConfigurationReference = 8A5DC276C319587DB3AE3F5F /* Pods-SelfConference.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/SelfConference/Supporting-Files/Info.plist";
@@ -776,6 +778,9 @@
 				PROVISIONING_PROFILE = "";
 				SC_BUNDLE_IDENTIFIER_SUFFIX = "-debug";
 				SC_BUNDLE_NAME = "SC Debug";
+				SWIFT_OBJC_BRIDGING_HEADER = "SelfConference/Categories/SelfConference-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -785,6 +790,7 @@
 			baseConfigurationReference = 0C0622B2A3CA0B426E1FE5D1 /* Pods-SelfConference.appstore.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Amber Conville (6477MFL6C9)";
 				INFOPLIST_FILE = "$(SRCROOT)/SelfConference/Supporting-Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -802,6 +808,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "98a2f7c6-ce02-45d4-bb8a-b2e479159d06";
 				SC_BUNDLE_NAME = self.conf;
+				SWIFT_OBJC_BRIDGING_HEADER = "SelfConference/Categories/SelfConference-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = AppStore;
@@ -810,6 +818,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8CC12258CF4E74435625EA2F /* Pods-SelfConferenceTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -830,6 +839,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C0A7A69665F9D4DB5CF1A9EB /* Pods-SelfConferenceTests.appstore.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
