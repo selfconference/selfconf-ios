@@ -21,7 +21,6 @@
 		1F0BAAB01A99B7DE0059C73A /* NSError+SCError.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAAF1A99B7DE0059C73A /* NSError+SCError.m */; };
 		1F0BAAB31A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAB21A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m */; };
 		1F2CCF9C1B0B7CA500C24FFC /* NSString+SCFromDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2CCF9B1B0B7CA500C24FFC /* NSString+SCFromDate.m */; };
-		1F2CCFA21B0B818900C24FFC /* NSDateFormatter+SCDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2CCFA11B0B818900C24FFC /* NSDateFormatter+SCDateFormatter.m */; };
 		1F2CCFA81B0B9F3A00C24FFC /* SCSponsorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2CCFA71B0B9F3A00C24FFC /* SCSponsorCollectionViewCell.m */; };
 		1F2CCFAB1B0BA10C00C24FFC /* SCUpdatingEventBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2CCFAA1B0BA10C00C24FFC /* SCUpdatingEventBaseViewController.m */; };
 		1F5AC6F71ABE40A00076E341 /* UIView+SCUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC6F61ABE40A00076E341 /* UIView+SCUtilities.m */; };
@@ -59,6 +58,7 @@
 		EEB8B1A0229B11D4003A9CA2 /* UIColor+SCColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8B19F229B11D4003A9CA2 /* UIColor+SCColor.swift */; };
 		EEB8B1A2229B2414003A9CA2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8B1A1229B2414003A9CA2 /* Constants.swift */; };
 		EEB8B1A4229B29F7003A9CA2 /* String+HTMLTagConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8B1A3229B29F7003A9CA2 /* String+HTMLTagConverter.swift */; };
+		EEB8B1A6229B3DD7003A9CA2 /* DateFormatterExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8B1A5229B3DD6003A9CA2 /* DateFormatterExtention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,8 +96,6 @@
 		1F0BAAB21A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+SCUserDefaults.m"; sourceTree = "<group>"; };
 		1F2CCF9A1B0B7CA500C24FFC /* NSString+SCFromDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SCFromDate.h"; sourceTree = "<group>"; };
 		1F2CCF9B1B0B7CA500C24FFC /* NSString+SCFromDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SCFromDate.m"; sourceTree = "<group>"; };
-		1F2CCFA01B0B818900C24FFC /* NSDateFormatter+SCDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+SCDateFormatter.h"; sourceTree = "<group>"; };
-		1F2CCFA11B0B818900C24FFC /* NSDateFormatter+SCDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+SCDateFormatter.m"; sourceTree = "<group>"; };
 		1F2CCFA61B0B9F3A00C24FFC /* SCSponsorCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSponsorCollectionViewCell.h; sourceTree = "<group>"; };
 		1F2CCFA71B0B9F3A00C24FFC /* SCSponsorCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSponsorCollectionViewCell.m; sourceTree = "<group>"; };
 		1F2CCFA91B0BA10C00C24FFC /* SCUpdatingEventBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCUpdatingEventBaseViewController.h; sourceTree = "<group>"; };
@@ -175,6 +173,7 @@
 		EEB8B19F229B11D4003A9CA2 /* UIColor+SCColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+SCColor.swift"; sourceTree = "<group>"; };
 		EEB8B1A1229B2414003A9CA2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EEB8B1A3229B29F7003A9CA2 /* String+HTMLTagConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTMLTagConverter.swift"; sourceTree = "<group>"; };
+		EEB8B1A5229B3DD6003A9CA2 /* DateFormatterExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtention.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,8 +297,7 @@
 				EEB8B1A3229B29F7003A9CA2 /* String+HTMLTagConverter.swift */,
 				1F2CCF9A1B0B7CA500C24FFC /* NSString+SCFromDate.h */,
 				1F2CCF9B1B0B7CA500C24FFC /* NSString+SCFromDate.m */,
-				1F2CCFA01B0B818900C24FFC /* NSDateFormatter+SCDateFormatter.h */,
-				1F2CCFA11B0B818900C24FFC /* NSDateFormatter+SCDateFormatter.m */,
+				EEB8B1A5229B3DD6003A9CA2 /* DateFormatterExtention.swift */,
 				1F0734EC1B0C203900A74989 /* UIAlertController+SCAlertController.h */,
 				1F0734ED1B0C203900A74989 /* UIAlertController+SCAlertController.m */,
 				1F0734EF1B0C215B00A74989 /* UIAlertAction+SCAlertAction.h */,
@@ -604,7 +602,6 @@
 				1FBD60D51B018EDC008E0FEC /* SCEvent.m in Sources */,
 				1FBD60D91B018EDC008E0FEC /* SCSpeaker.m in Sources */,
 				1F7560821B043A8900795E54 /* SCScheduleViewController.m in Sources */,
-				1F2CCFA21B0B818900C24FFC /* NSDateFormatter+SCDateFormatter.m in Sources */,
 				1FBD60F21B01AAC4008E0FEC /* SCHTTPSessionManager.m in Sources */,
 				1F5AC7091ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m in Sources */,
 				1FBD60E81B019DFA008E0FEC /* NSPredicate+SCPredicate.m in Sources */,
@@ -622,6 +619,7 @@
 				1FBD60DC1B018EDC008E0FEC /* SCVenue.m in Sources */,
 				EEB8B1A2229B2414003A9CA2 /* Constants.swift in Sources */,
 				1F71944B1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m in Sources */,
+				EEB8B1A6229B3DD7003A9CA2 /* DateFormatterExtention.swift in Sources */,
 				1FD2566D1B0D3FA40089122A /* SCSessionFeedbackViewController.m in Sources */,
 				EEB8B1A0229B11D4003A9CA2 /* UIColor+SCColor.swift in Sources */,
 				1F0BAAB31A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m in Sources */,
