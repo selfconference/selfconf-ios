@@ -172,7 +172,7 @@ sortedByPropertyNames:(NSArray *)propertyNames {
                 
                 NSAssert(dateFormatIsCorrect,
                          @"Expected dateFormat to be set to %@",
-                         kSCManagedObjectDefaultDateFormat);
+                         [Constants defaultDateFormatterString]);
             }
         }
     }
