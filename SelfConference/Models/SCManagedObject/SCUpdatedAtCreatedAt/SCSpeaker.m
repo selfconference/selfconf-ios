@@ -9,7 +9,7 @@
 #import "SCSpeaker.h"
 #import "SCEvent.h"
 #import "SCSession.h"
-#import "NSString+SCHTMLTagConverter.h"
+#import "SelfConference-Swift.h"
 
 NSString * const kSCSpeakerOpenTwitterProfileForSpeakerNotificationName =
 @"kSCSpeakerOpenTwitterProfileForSpeakerNotificationName";

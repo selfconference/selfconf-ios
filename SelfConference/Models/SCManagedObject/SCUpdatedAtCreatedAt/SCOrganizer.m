@@ -8,7 +8,7 @@
 
 #import "SCOrganizer.h"
 #import "SCEvent.h"
-#import "NSString+SCHTMLTagConverter.h"
+#import "SelfConference-Swift.h"
 
 @implementation SCOrganizer
 

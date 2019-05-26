@@ -18,7 +18,7 @@
 #import "SCSponsorLevel.h"
 #import "SCOrganizer.h"
 #import <MTDates/NSDate+MTDates.h>
-#import "NSString+SCHTMLTagConverter.h"
+#import "SelfConference-Swift.h"
 #import "NSString+SCFromDate.h"
 #import "SCRoom.h"
 #import "SelfConference-Swift.h"

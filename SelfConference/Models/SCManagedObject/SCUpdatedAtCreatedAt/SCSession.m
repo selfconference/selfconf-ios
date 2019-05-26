@@ -10,7 +10,7 @@
 #import "SCEvent.h"
 #import "SCRoom.h"
 #import "SelfConference-Swift.h"
-#import "NSString+SCHTMLTagConverter.h"
+#import "SelfConference-Swift.h"
 #import <MTDates/NSDate+MTDates.h>
 #import <MagicalRecord/NSManagedObject+MagicalFinders.h>
 #import <MagicalRecord/NSManagedObjectContext+MagicalRecord.h>
