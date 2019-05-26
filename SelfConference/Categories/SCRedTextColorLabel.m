@@ -7,8 +7,7 @@
 //
 
 #import "SCRedTextColorLabel.h"
-#import "UIColor+SCColor.h"
-
+#import "SelfConference-Swift.h"
 @implementation SCRedTextColorLabel
 
 - (void)commonCoderAndFrameInitializer {

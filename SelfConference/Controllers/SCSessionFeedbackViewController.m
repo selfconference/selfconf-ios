@@ -7,7 +7,7 @@
 //
 
 #import "SCSessionFeedbackViewController.h"
-#import "UIColor+SCColor.h"
+#import "SelfConference-Swift.h"
 #import "SCSession.h"
 #import "UIView+MBProgressHUD.h"
 #import "UIAlertController+SCAlertController.h"

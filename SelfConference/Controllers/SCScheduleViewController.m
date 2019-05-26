@@ -10,7 +10,7 @@
 #import "SCEvent.h"
 #import "SCSessionDetailsCollectionViewCell.h"
 #import <MTCardLayout/UICollectionView+CardLayout.h>
-#import "UIColor+SCColor.h"
+#import "SelfConference-Swift.h"
 #import "SCMenuViewController.h"
 #import "SCSharedStoryboardInstances.h"
 #import <MagicalRecord/NSManagedObject+MagicalRecord.h>

@@ -7,7 +7,7 @@
 //
 
 #import "SCAppDelegate.h"
-#import "UIColor+SCColor.h"
+#import "SelfConference-Swift.h"
 #import <MagicalRecord/MagicalRecord+Setup.h>
 #import <MagicalRecord/NSManagedObject+MagicalRecord.h>
 #import "SCEvent.h"

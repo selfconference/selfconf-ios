@@ -7,8 +7,7 @@
 //
 
 #import "SCPurpleTextColorLabel.h"
-#import "UIColor+SCColor.h"
-
+#import "SelfConference-Swift.h"
 @implementation SCPurpleTextColorLabel
 
 - (void)commonCoderAndFrameInitializer {

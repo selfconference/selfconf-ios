@@ -7,7 +7,7 @@
 //
 
 #import "SCTealTextColorLabel.h"
-#import "UIColor+SCColor.h"
+#import "SelfConference-Swift.h"
 
 @implementation SCTealTextColorLabel
 

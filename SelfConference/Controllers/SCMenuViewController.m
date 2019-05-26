@@ -7,7 +7,7 @@
 //
 
 #import "SCMenuViewController.h"
-#import "UIColor+SCColor.h"
+#import "SelfConference-Swift.h"
 #import "SCSponsorCollectionViewCell.h"
 #import "SCNameLabelHeaderView.h"
 #import "SCEvent.h"

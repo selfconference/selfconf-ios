@@ -9,7 +9,7 @@
 #import "SCSession.h"
 #import "SCEvent.h"
 #import "SCRoom.h"
-#import "UIColor+SCColor.h"
+#import "SelfConference-Swift.h"
 #import "NSString+SCHTMLTagConverter.h"
 #import <MTDates/NSDate+MTDates.h>
 #import <MagicalRecord/NSManagedObject+MagicalFinders.h>

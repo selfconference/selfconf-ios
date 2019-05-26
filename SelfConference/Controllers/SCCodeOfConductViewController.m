@@ -7,8 +7,7 @@
 //
 
 #import "SCCodeOfConductViewController.h"
-#import "UIColor+SCColor.h"
-
+#import "SelfConference-Swift.h"
 @interface SCCodeOfConductViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
