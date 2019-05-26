@@ -28,7 +28,6 @@
 		1F5AC7001ABE62680076E341 /* SCSessionNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC6FF1ABE62680076E341 /* SCSessionNameTableViewCell.m */; };
 		1F5AC7031ABE62A50076E341 /* SCSessionAbstractTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7021ABE62A50076E341 /* SCSessionAbstractTableViewCell.m */; };
 		1F5AC7091ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AC7081ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m */; };
-		1F64F0471B0929EE00833292 /* NSString+SCHTMLTagConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64F0461B0929EE00833292 /* NSString+SCHTMLTagConverter.m */; };
 		1F71944B1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F71944A1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m */; };
 		1F71944E1B0425020098DB48 /* NSSet+SCManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F71944D1B0425020098DB48 /* NSSet+SCManagedObject.m */; };
 		1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7392BA1A9985BE00F4B10F /* SCAppDelegate.m */; };
@@ -59,6 +58,7 @@
 		7DBD12AE835AEF03A63F5646 /* libPods-SelfConferenceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D44B76A75D0987CA105EFC /* libPods-SelfConferenceTests.a */; };
 		EEB8B1A0229B11D4003A9CA2 /* UIColor+SCColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8B19F229B11D4003A9CA2 /* UIColor+SCColor.swift */; };
 		EEB8B1A2229B2414003A9CA2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8B1A1229B2414003A9CA2 /* Constants.swift */; };
+		EEB8B1A4229B29F7003A9CA2 /* String+HTMLTagConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8B1A3229B29F7003A9CA2 /* String+HTMLTagConverter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,8 +111,6 @@
 		1F5AC7021ABE62A50076E341 /* SCSessionAbstractTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionAbstractTableViewCell.m; sourceTree = "<group>"; };
 		1F5AC7071ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionSpeakerDetailsTableViewCell.h; sourceTree = "<group>"; };
 		1F5AC7081ABE62CE0076E341 /* SCSessionSpeakerDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionSpeakerDetailsTableViewCell.m; sourceTree = "<group>"; };
-		1F64F0451B0929EE00833292 /* NSString+SCHTMLTagConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SCHTMLTagConverter.h"; sourceTree = "<group>"; };
-		1F64F0461B0929EE00833292 /* NSString+SCHTMLTagConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SCHTMLTagConverter.m"; sourceTree = "<group>"; };
 		1F7194491B0423CD0098DB48 /* NSDictionary+SCManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SCManagedObject.h"; sourceTree = "<group>"; };
 		1F71944A1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SCManagedObject.m"; sourceTree = "<group>"; };
 		1F71944C1B0425020098DB48 /* NSSet+SCManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+SCManagedObject.h"; sourceTree = "<group>"; };
@@ -176,6 +174,7 @@
 		EEB8B19E229B11D3003A9CA2 /* SelfConference-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SelfConference-Bridging-Header.h"; sourceTree = "<group>"; };
 		EEB8B19F229B11D4003A9CA2 /* UIColor+SCColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+SCColor.swift"; sourceTree = "<group>"; };
 		EEB8B1A1229B2414003A9CA2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EEB8B1A3229B29F7003A9CA2 /* String+HTMLTagConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTMLTagConverter.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,8 +295,7 @@
 				1F71944A1B0423CD0098DB48 /* NSDictionary+SCManagedObject.m */,
 				1F71944C1B0425020098DB48 /* NSSet+SCManagedObject.h */,
 				1F71944D1B0425020098DB48 /* NSSet+SCManagedObject.m */,
-				1F64F0451B0929EE00833292 /* NSString+SCHTMLTagConverter.h */,
-				1F64F0461B0929EE00833292 /* NSString+SCHTMLTagConverter.m */,
+				EEB8B1A3229B29F7003A9CA2 /* String+HTMLTagConverter.swift */,
 				1F2CCF9A1B0B7CA500C24FFC /* NSString+SCFromDate.h */,
 				1F2CCF9B1B0B7CA500C24FFC /* NSString+SCFromDate.m */,
 				1F2CCFA01B0B818900C24FFC /* NSDateFormatter+SCDateFormatter.h */,
@@ -617,9 +615,9 @@
 				1FD256731B0D58540089122A /* UIView+MBProgressHUD.m in Sources */,
 				1F2CCFAB1B0BA10C00C24FFC /* SCUpdatingEventBaseViewController.m in Sources */,
 				1F5AC7031ABE62A50076E341 /* SCSessionAbstractTableViewCell.m in Sources */,
-				1F64F0471B0929EE00833292 /* NSString+SCHTMLTagConverter.m in Sources */,
 				1F0BAAB01A99B7DE0059C73A /* NSError+SCError.m in Sources */,
 				1F0734EE1B0C203900A74989 /* UIAlertController+SCAlertController.m in Sources */,
+				EEB8B1A4229B29F7003A9CA2 /* String+HTMLTagConverter.swift in Sources */,
 				1FBD60D61B018EDC008E0FEC /* SCOrganizer.m in Sources */,
 				1FBD60DC1B018EDC008E0FEC /* SCVenue.m in Sources */,
 				EEB8B1A2229B2414003A9CA2 /* Constants.swift in Sources */,
