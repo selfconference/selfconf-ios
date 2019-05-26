@@ -14,4 +14,6 @@ class Constants: NSObject {
     // Preventing this class from being initalized
     private override init() {}
     
+    @objc
+    static let defaultDateFormatterString = "yyyy-MM-dd'T'HH:mm:ss.SSSz"
 }
