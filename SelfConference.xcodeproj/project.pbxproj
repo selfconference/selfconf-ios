@@ -18,7 +18,6 @@
 		1F0BAA881A9989890059C73A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BAA871A9989890059C73A /* LaunchScreen.xib */; };
 		1F0BAA8B1A998D520059C73A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BAA8A1A998D520059C73A /* Main.storyboard */; };
 		1F0BAAA51A99A3680059C73A /* SCSharedStoryboardInstances.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAA41A99A3680059C73A /* SCSharedStoryboardInstances.m */; };
-		1F0BAAB01A99B7DE0059C73A /* NSError+SCError.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAAF1A99B7DE0059C73A /* NSError+SCError.m */; };
 		1F0BAAB31A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BAAB21A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m */; };
 		1F2CCF9C1B0B7CA500C24FFC /* NSString+SCFromDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2CCF9B1B0B7CA500C24FFC /* NSString+SCFromDate.m */; };
 		1F2CCFA81B0B9F3A00C24FFC /* SCSponsorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2CCFA71B0B9F3A00C24FFC /* SCSponsorCollectionViewCell.m */; };
@@ -90,8 +89,6 @@
 		1F0BAA8A1A998D520059C73A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1F0BAAA31A99A3680059C73A /* SCSharedStoryboardInstances.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSharedStoryboardInstances.h; sourceTree = "<group>"; };
 		1F0BAAA41A99A3680059C73A /* SCSharedStoryboardInstances.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSharedStoryboardInstances.m; sourceTree = "<group>"; };
-		1F0BAAAE1A99B7DE0059C73A /* NSError+SCError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+SCError.h"; sourceTree = "<group>"; };
-		1F0BAAAF1A99B7DE0059C73A /* NSError+SCError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+SCError.m"; sourceTree = "<group>"; };
 		1F0BAAB11A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+SCUserDefaults.h"; sourceTree = "<group>"; };
 		1F0BAAB21A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+SCUserDefaults.m"; sourceTree = "<group>"; };
 		1F2CCF9A1B0B7CA500C24FFC /* NSString+SCFromDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SCFromDate.h"; sourceTree = "<group>"; };
@@ -279,8 +276,6 @@
 		1F0BAAAD1A99B7D00059C73A /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				1F0BAAAE1A99B7DE0059C73A /* NSError+SCError.h */,
-				1F0BAAAF1A99B7DE0059C73A /* NSError+SCError.m */,
 				1F0BAAB11A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.h */,
 				1F0BAAB21A99C65A0059C73A /* NSUserDefaults+SCUserDefaults.m */,
 				EEB8B19F229B11D4003A9CA2 /* UIColor+SCColor.swift */,
@@ -612,7 +607,6 @@
 				1FD256731B0D58540089122A /* UIView+MBProgressHUD.m in Sources */,
 				1F2CCFAB1B0BA10C00C24FFC /* SCUpdatingEventBaseViewController.m in Sources */,
 				1F5AC7031ABE62A50076E341 /* SCSessionAbstractTableViewCell.m in Sources */,
-				1F0BAAB01A99B7DE0059C73A /* NSError+SCError.m in Sources */,
 				1F0734EE1B0C203900A74989 /* UIAlertController+SCAlertController.m in Sources */,
 				EEB8B1A4229B29F7003A9CA2 /* String+HTMLTagConverter.swift in Sources */,
 				1FBD60D61B018EDC008E0FEC /* SCOrganizer.m in Sources */,
