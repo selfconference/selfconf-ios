@@ -49,7 +49,6 @@
 		1FBD60EF1B01A908008E0FEC /* SCAPIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60EE1B01A908008E0FEC /* SCAPIService.m */; };
 		1FBD60F21B01AAC4008E0FEC /* SCHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD60F11B01AAC4008E0FEC /* SCHTTPSessionManager.m */; };
 		1FD2566D1B0D3FA40089122A /* SCSessionFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD2566C1B0D3FA40089122A /* SCSessionFeedbackViewController.m */; };
-		1FD256731B0D58540089122A /* UIView+MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD256721B0D58540089122A /* UIView+MBProgressHUD.m */; };
 		1FE566741B0D7A6B00044DFE /* SCNameLabelHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE566731B0D7A6B00044DFE /* SCNameLabelHeaderView.m */; };
 		1FE566771B0D812000044DFE /* SCCodeOfConductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE566761B0D812000044DFE /* SCCodeOfConductViewController.m */; };
 		7DBD12AE835AEF03A63F5646 /* libPods-SelfConferenceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D44B76A75D0987CA105EFC /* libPods-SelfConferenceTests.a */; };
@@ -57,6 +56,7 @@
 		EEB8B1A2229B2414003A9CA2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8B1A1229B2414003A9CA2 /* Constants.swift */; };
 		EEB8B1A4229B29F7003A9CA2 /* String+HTMLTagConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8B1A3229B29F7003A9CA2 /* String+HTMLTagConverter.swift */; };
 		EEB8B1A6229B3DD7003A9CA2 /* DateFormatterExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8B1A5229B3DD6003A9CA2 /* DateFormatterExtention.swift */; };
+		EEB8B1AC229B52E6003A9CA2 /* UIView+MBProgressHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8B1AB229B52E6003A9CA2 /* UIView+MBProgressHud.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,8 +152,6 @@
 		1FBD60F11B01AAC4008E0FEC /* SCHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCHTTPSessionManager.m; sourceTree = "<group>"; };
 		1FD2566B1B0D3FA40089122A /* SCSessionFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionFeedbackViewController.h; sourceTree = "<group>"; };
 		1FD2566C1B0D3FA40089122A /* SCSessionFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionFeedbackViewController.m; sourceTree = "<group>"; };
-		1FD256711B0D58540089122A /* UIView+MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MBProgressHUD.h"; sourceTree = "<group>"; };
-		1FD256721B0D58540089122A /* UIView+MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MBProgressHUD.m"; sourceTree = "<group>"; };
 		1FE566721B0D7A6B00044DFE /* SCNameLabelHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCNameLabelHeaderView.h; sourceTree = "<group>"; };
 		1FE566731B0D7A6B00044DFE /* SCNameLabelHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCNameLabelHeaderView.m; sourceTree = "<group>"; };
 		1FE566751B0D812000044DFE /* SCCodeOfConductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCodeOfConductViewController.h; sourceTree = "<group>"; };
@@ -168,6 +166,7 @@
 		EEB8B1A1229B2414003A9CA2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EEB8B1A3229B29F7003A9CA2 /* String+HTMLTagConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTMLTagConverter.swift"; sourceTree = "<group>"; };
 		EEB8B1A5229B3DD6003A9CA2 /* DateFormatterExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtention.swift; sourceTree = "<group>"; };
+		EEB8B1AB229B52E6003A9CA2 /* UIView+MBProgressHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+MBProgressHud.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,8 +291,7 @@
 				1F0734ED1B0C203900A74989 /* UIAlertController+SCAlertController.m */,
 				1F0734EF1B0C215B00A74989 /* UIAlertAction+SCAlertAction.h */,
 				1F0734F01B0C215B00A74989 /* UIAlertAction+SCAlertAction.m */,
-				1FD256711B0D58540089122A /* UIView+MBProgressHUD.h */,
-				1FD256721B0D58540089122A /* UIView+MBProgressHUD.m */,
+				EEB8B1AB229B52E6003A9CA2 /* UIView+MBProgressHud.swift */,
 				EEB8B19E229B11D3003A9CA2 /* SelfConference-Bridging-Header.h */,
 			);
 			path = Categories;
@@ -575,6 +573,7 @@
 			files = (
 				1FBD60D71B018EDC008E0FEC /* SCRoom.m in Sources */,
 				1F0734F41B0C327B00A74989 /* SCFadeWhenHighlightedCollectionViewCell.m in Sources */,
+				EEB8B1AC229B52E6003A9CA2 /* UIView+MBProgressHud.swift in Sources */,
 				1FBD60E51B019DDE008E0FEC /* NSManagedObjectContext+SCManagedObjectContext.m in Sources */,
 				1F7560851B04448F00795E54 /* SCSessionDetailsCollectionViewCell.m in Sources */,
 				1F0734F11B0C215B00A74989 /* UIAlertAction+SCAlertAction.m in Sources */,
@@ -599,7 +598,6 @@
 				1F0734EB1B0C1B7B00A74989 /* SCSpeakerCollectionViewCell.m in Sources */,
 				1F7392BB1A9985BE00F4B10F /* SCAppDelegate.m in Sources */,
 				1F5AC7001ABE62680076E341 /* SCSessionNameTableViewCell.m in Sources */,
-				1FD256731B0D58540089122A /* UIView+MBProgressHUD.m in Sources */,
 				1F2CCFAB1B0BA10C00C24FFC /* SCUpdatingEventBaseViewController.m in Sources */,
 				1F5AC7031ABE62A50076E341 /* SCSessionAbstractTableViewCell.m in Sources */,
 				1F0734EE1B0C203900A74989 /* UIAlertController+SCAlertController.m in Sources */,
