@@ -13,7 +13,7 @@
 #import "SCSessionAbstractTableViewCell.h"
 #import "SCSessionSpeakerDetailsTableViewCell.h"
 #import "SCSessionFeedbackViewController.h"
-#import "UIColor+SCColor.h"
+#import "SelfConference-Swift.h"
 #import "SCSharedStoryboardInstances.h"
 #import "UIView+SCUtilities.h"
 

@@ -9,7 +9,7 @@
 #import "SCVenue.h"
 #import "SCAPIStrings.h"
 #import "SCRoom.h"
-#import "NSString+SCHTMLTagConverter.h"
+#import "SelfConference-Swift.h"
 #import "NSString+SCFromDate.h"
 
 @implementation SCVenue

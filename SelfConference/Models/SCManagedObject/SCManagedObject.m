@@ -12,9 +12,7 @@
 #import <MagicalRecord/MagicalRecord+Actions.h>
 #import <MagicalRecord/NSManagedObject+MagicalDataImport.h>
 #import "SCAPIService.h"
-
-NSString * const kSCManagedObjectDefaultDateFormat =
-@"yyyy-MM-dd'T'HH:mm:ss.SSSz";
+#import "SelfConference-Swift.h"
 
 @implementation SCManagedObject
 
@@ -170,11 +168,11 @@ sortedByPropertyNames:(NSArray *)propertyNames {
             if (attributeDescription.attributeType == NSDateAttributeType) {
                 BOOL dateFormatIsCorrect =
                 [attributeDescription.userInfo[kMagicalRecordImportCustomDateFormatKey]
-                 isEqualToString:kSCManagedObjectDefaultDateFormat];
+                 isEqualToString: [Constants defaultDateFormatterString]];
                 
                 NSAssert(dateFormatIsCorrect,
                          @"Expected dateFormat to be set to %@",
-                         kSCManagedObjectDefaultDateFormat);
+                         [Constants defaultDateFormatterString]);
             }
         }
     }

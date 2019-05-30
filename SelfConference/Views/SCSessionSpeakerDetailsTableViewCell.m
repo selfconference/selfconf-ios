@@ -8,7 +8,7 @@
 
 #import "SCSessionSpeakerDetailsTableViewCell.h"
 #import "SCSpeaker.h"
-#import "UIColor+SCColor.h"
+#import "SelfConference-Swift.h"
 #import "UIView+SCUtilities.h"
 #import "SCSession.h"
 #import "SCSpeakerCollectionViewCell.h"
